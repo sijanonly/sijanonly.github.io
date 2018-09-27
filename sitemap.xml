@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+ <url>
+  <loc>http://sijanb.com.np/</loc>
+  <lastmod>2018-09-27T08:01:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://sijanb.com.np/archive.html</loc>
+  <lastmod>2018-09-27T09:18:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://sijanb.com.np/blog/</loc>
+  <lastmod>2018-09-27T07:54:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://sijanb.com.np/categories/</loc>
+  <lastmod>2018-09-27T06:26:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://sijanb.com.np/galleries/</loc>
+  <lastmod>2018-09-27T06:26:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://sijanb.com.np/listings/</loc>
+  <lastmod>2018-09-27T06:26:00Z</lastmod>
+ </url>
+</urlset>
