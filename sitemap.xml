@@ -15,7 +15,7 @@
  </url>
  <url>
   <loc>http://sijanb.com.np/archive.html</loc>
-  <lastmod>2018-10-23T20:32:00Z</lastmod>
+  <lastmod>2018-10-23T21:13:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/blog/</loc>
@@ -23,7 +23,19 @@
  </url>
  <url>
   <loc>http://sijanb.com.np/categories/</loc>
-  <lastmod>2018-09-27T06:26:00Z</lastmod>
+  <lastmod>2018-10-23T21:13:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://sijanb.com.np/categories/deep-learning/</loc>
+  <lastmod>2018-10-23T21:13:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://sijanb.com.np/categories/neural-network/</loc>
+  <lastmod>2018-10-23T21:13:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://sijanb.com.np/categories/perceptron/</loc>
+  <lastmod>2018-10-23T21:13:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/galleries/</loc>
@@ -34,7 +46,15 @@
   <lastmod>2018-09-27T06:26:00Z</lastmod>
  </url>
  <url>
+  <loc>http://sijanb.com.np/posts/using-perceptron-model-for-classification-an-illustrative-approach/</loc>
+  <lastmod>2018-10-23T21:13:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://sijanb.com.np/posts/what-is-deep-learning-and-neural-network/</loc>
   <lastmod>2018-10-23T20:30:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://sijanb.com.np/posts/what-is-perceptron-and-how-it-works/</loc>
+  <lastmod>2018-10-23T21:13:00Z</lastmod>
  </url>
 </urlset>

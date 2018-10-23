@@ -6,15 +6,27 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>http://sijanb.com.np/categories/deep-learning.xml</loc>
+  <lastmod>2018-10-23T21:13:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://sijanb.com.np/categories/neural-network.xml</loc>
+  <lastmod>2018-10-23T21:13:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://sijanb.com.np/categories/perceptron.xml</loc>
+  <lastmod>2018-10-23T21:13:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>http://sijanb.com.np/galleries/rss.xml</loc>
-  <lastmod>2018-10-23T20:32:00Z</lastmod>
+  <lastmod>2018-10-23T21:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://sijanb.com.np/rss.xml</loc>
-  <lastmod>2018-10-23T20:32:00Z</lastmod>
+  <lastmod>2018-10-23T21:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://sijanb.com.np/sitemap.xml</loc>
-  <lastmod>2018-10-23T20:32:00Z</lastmod>
+  <lastmod>2018-10-23T21:13:00Z</lastmod>
  </sitemap>
 </sitemapindex>

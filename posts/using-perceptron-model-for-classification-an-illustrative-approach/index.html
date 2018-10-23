@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html prefix="" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Using perceptron model for classification : an illustrative approach | CODEBUG</title>
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../../assets/css/screen.css">
+<link rel="stylesheet" type="text/css" href="../../assets/css/nav.css">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400%7CInconsolata">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="http://sijanb.com.np/posts/using-perceptron-model-for-classification-an-illustrative-approach/">
+<link rel="icon" href="../../favicon.ico" sizes="16x16">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Sijan Bhandari">
+<link rel="prev" href="../what-is-perceptron-and-how-it-works/" title="What is perceptron and how it works?" type="text/html">
+<meta property="og:site_name" content="CODEBUG">
+<meta property="og:title" content="Using perceptron model for classification : an illustrative approach">
+<meta property="og:url" content="http://sijanb.com.np/posts/using-perceptron-model-for-classification-an-illustrative-approach/">
+<meta property="og:description" content="In this post, we are going to devise a measurement tool (perceptron model) in order to classify : whether a person is infected by a diseases or not.
+In binary terms, the output will be
+
+       {
+     ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2018-10-24T02:27:54+05:45">
+<meta property="article:tag" content="perceptron">
+</head>
+<body class="nav-closed">
+
+<div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+<li class="nav-opened" role="presentation">
+            <a href="../../blog/">Blog</a>
+        </li>
+        <li class="nav-opened" role="presentation">
+            <a href="../../categories/">Tags</a>
+        </li>
+        <li class="nav-opened" role="presentation">
+            <a href="../../rss.xml">RSS feed</a>
+        </li>
+    
+    
+    </ul>
+</div>
+<span class="nav-cover"></span>
+
+<div class="site-wrapper">
+    <header class="main-header post-head no-cover"><nav class="main-nav overlay clearfix"><a class="blog-logo" href="http://sijanb.com.np/"><img src="../../images/logo.png" alt="Blog Logo"></a>
+            <a class="menu-button" href="#"><span class="burger">☰</span><span class="word">Menu</span></a>
+        </nav></header><main id="content" class="content" role="main"><article class="post post"><header class="post-header"><h1 class="post-title">Using perceptron model for classification : an illustrative approach</h1>
+        <section class="post-meta"> by
+            Sijan Bhandari
+            on
+                <a href="../../categories/perceptron/">#perceptron</a>,
+            <time class="post-date" datetime="2018-10-24T02:27:54+05:45">
+                2018-10-24 02:27
+            </time></section></header><section class="post-content"><div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this post, we are going to devise a measurement tool (perceptron model) in order to classify : whether a person is infected by a diseases or not.</p>
+<p>In binary terms, the output will be</p>
+
+<pre><code>       {
+            1   if infected 
+            0   not infected
+        } 
+
+</code></pre>
+<p>To build inputs for our neural network, we take readings from the patients and we will treat readings as follows :</p>
+
+<pre><code>  body temperator = {
+                          1   if body temperator &gt; 99'F
+                         -1   if body temperator = 99'F
+                     }
+
+  heart rate = {
+                      1   if heart rate &gt; 60 to 100
+                     -1   if heart rate = 60 to 100
+                 }
+
+   blood pressure = {
+                          1   if heart rate &gt; 120/80
+                         -1   if heart rate = 120/80
+                     }
+
+</code></pre>
+<p>So, input from each patient will be represented as a three dimensional vector:</p>
+
+<pre><code>  input = (body temperatur, heart rate, blood pressure)
+</code></pre>
+<p>So, a person can now be represented as :</p>
+
+<pre><code>(1, -1, 1)
+i.e (body temperator &gt; 99'F, heart rate = 60 to 100, heart rate &gt; 120/80)</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let us create two inputs with desired output value</p>
+
+<pre><code>      x1 = (1, 1, 1), d1 = 1 (infected)
+       x2 = (-1, -1, -1), d2 = 0 (not infected)
+</code></pre>
+<p>Let us take initial values for weights and biases:
+          weights, w0 = (-1, 0.5, 0)
+          bias, b0 = 0.5</p>
+<p>And, activation function:</p>
+
+<pre><code>         A(S)   = {
+                    1 if S &gt;=0
+                    0 otherwise
+                  }
+</code></pre>
+<h5 id="STEP-1">STEP 1<a class="anchor-link" href="#STEP-1">¶</a>
+</h5>
+<p>Feed <code>x1 = (1, 1, 1)</code> into the network.</p>
+<p>weighted_sum:</p>
+
+<pre><code>S = (-1, 0.5, 0) * (1, 1, 1)^T + 0
+  = -1 + 0.5 + 0 + 0
+  = -0.5
+
+</code></pre>
+<p>When passed through activation function A(-0.5) = 0 = y1
+We passed an <code>infected</code> input vector, but our perceptron classified it as <code>not infected</code>.
+Let's calculate the error term:</p>
+
+<pre><code>             e = d1 - y1 = 1 - 0 = 1
+</code></pre>
+<p>Update weight as:</p>
+
+<pre><code>             w1 = w0 + e * x1 = (-1, 0.5, 0) + 1 * (1, 1, 1) = (0, 1.5, 1)
+</code></pre>
+<p>And, update bias as:</p>
+
+<pre><code>             b1 = b0 + e = 1</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="STEP-2">STEP 2<a class="anchor-link" href="#STEP-2">¶</a>
+</h5>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, we feed second input <code>(-1, -1, -1)</code> into our network.</p>
+<p>weighted_sum :</p>
+
+<pre><code>S = w1 * x2^T + b1 
+  = (0, 1.5, 1) * (-1, -1, -1)^T + 1
+  = -1.5 - 1 + 1
+  = -1.5
+</code></pre>
+<p>When passed through activation function A(-1.5) = 0 = y2
+ We passed an <code>not infected</code> input vector, and our perceptron successfully classified it as <code>not infected</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="STEP-3">STEP 3<a class="anchor-link" href="#STEP-3">¶</a>
+</h5>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Since, our first input is mis-classified, so we will go for it.</p>
+<p>weighted_sum :</p>
+
+<pre><code>S = w1 * x1^T + b1 
+  = (0, 1.5, 1) * (1, 1, 1)^T + 1
+  = 1.5 + 1 + 1
+  = 3.5
+</code></pre>
+<p>When passed through activation function A(3.5) = 1 = y3
+ We passed an <code>infected</code> input vector, and our perceptron successfully classified it as <code>infected</code>.</p>
+<p>Here, both input vectors are correctly classified. i.e algorithm is converged to a solution point.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+    </section><footer class="post-footer"><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="blog-sijanb-com-np",
+            disqus_url="http://sijanb.com.np/posts/using-perceptron-model-for-classification-an-illustrative-approach/",
+        disqus_title="Using perceptron model for classification : an illustrative approach",
+        disqus_identifier="cache/posts/using-perceptron-model-for-classification-an-illustrative-approach.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+        </script></footer></article><script>var disqus_shortname="blog-sijanb-com-np";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer class="site-footer clearfix"><section class="poweredby">Contents © 2018         <a href="mailto:sijanonly@gmail.com">Sijan Bhandari</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </section></footer>
+</div>
+
+    <script type="text/javascript" src="../../assets/js/jquery.js"></script><script type="text/javascript" src="../../assets/js/jquery.fitvids.js"></script><script type="text/javascript" src="../../assets/js/index.js"></script>
+</body>
+</html>

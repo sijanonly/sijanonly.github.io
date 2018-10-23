@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>What is Deep Learning and Neural Network? | CODEBUG</title>
+<title>What is perceptron and how it works? | CODEBUG</title>
 <link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
@@ -15,18 +15,19 @@
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
-<link rel="canonical" href="http://sijanb.com.np/posts/what-is-deep-learning-and-neural-network/">
+<link rel="canonical" href="http://sijanb.com.np/posts/what-is-perceptron-and-how-it-works/">
 <link rel="icon" href="../../favicon.ico" sizes="16x16">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Sijan Bhandari">
-<link rel="next" href="../what-is-perceptron-and-how-it-works/" title="What is perceptron and how it works?" type="text/html">
+<link rel="prev" href="../what-is-deep-learning-and-neural-network/" title="What is Deep Learning and Neural Network?" type="text/html">
+<link rel="next" href="../using-perceptron-model-for-classification-an-illustrative-approach/" title="Using perceptron model for classification : an illustrative approach" type="text/html">
 <meta property="og:site_name" content="CODEBUG">
-<meta property="og:title" content="What is Deep Learning and Neural Network?">
-<meta property="og:url" content="http://sijanb.com.np/posts/what-is-deep-learning-and-neural-network/">
-<meta property="og:description" content="Deep learning, in simpler version is a learning mechanisms for Neural networks. And, Neural networks are computational model mimicing human nervous system which are capable of learning. Like interconn">
+<meta property="og:title" content="What is perceptron and how it works?">
+<meta property="og:url" content="http://sijanb.com.np/posts/what-is-perceptron-and-how-it-works/">
+<meta property="og:description" content="Perceptron is simply an artificial neuron capable of solving linear classification problems. It is made up of single layer feed-forward neural network.
+A percentron can only takes binary input values ">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2018-10-24T02:05:00+05:45">
-<meta property="article:tag" content="deep learning">
-<meta property="article:tag" content="neural network">
+<meta property="article:published_time" content="2018-10-24T02:21:47+05:45">
+<meta property="article:tag" content="perceptron">
 </head>
 <body class="nav-closed">
 
@@ -54,42 +55,32 @@
 <div class="site-wrapper">
     <header class="main-header post-head no-cover"><nav class="main-nav overlay clearfix"><a class="blog-logo" href="http://sijanb.com.np/"><img src="../../images/logo.png" alt="Blog Logo"></a>
             <a class="menu-button" href="#"><span class="burger">☰</span><span class="word">Menu</span></a>
-        </nav></header><main id="content" class="content" role="main"><article class="post post"><header class="post-header"><h1 class="post-title">What is Deep Learning and Neural Network?</h1>
+        </nav></header><main id="content" class="content" role="main"><article class="post post"><header class="post-header"><h1 class="post-title">What is perceptron and how it works?</h1>
         <section class="post-meta"> by
             Sijan Bhandari
             on
-                <a href="../../categories/deep-learning/">#deep learning</a>,
-                <a href="../../categories/neural-network/">#neural network</a>,
-            <time class="post-date" datetime="2018-10-24T02:05:00+05:45">
-                2018-10-24 02:05
+                <a href="../../categories/perceptron/">#perceptron</a>,
+            <time class="post-date" datetime="2018-10-24T02:21:47+05:45">
+                2018-10-24 02:21
             </time></section></header><section class="post-content"><div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Deep learning, in simpler version is a learning mechanisms for Neural networks. And, Neural networks are computational model mimicing human nervous system which are capable of learning. Like interconnected neurons in human brains, the neural network is also connected by different nodes. It receives signals as a set of inputs, perform calcuations and signals output based on some activation value.</p>
-<p><img src="../../images/artificial_neuron.png"></p>
-<p>Here are some list of problems, that deep learning can solve</p>
-<ol>
-<li>Classification : object and speech recongnistion, classify sentiments from text</li>
-<li>Clustering : Fraud detection </li>
-</ol>
-<!-- TEASER_END --><p>Elements of Neural Networks</p>
-<ol>
-<li>
-<p>Weights
- Biological neurons has synaptic strengths to define the importance of particular inputs. In the similar fashion, inputs to NNs have associated relative weights. These weights ultimately defines the connection intensity of the input to any neuron. These weights are adaptive in nature since they will be modified in the process of training.</p>
-</li>
-<li>
-<p>Summation
- This is the first step in NN, where each input is multiplied by its corresponding weight and weighted sum is computed.</p>
-</li>
-<li>
-<p>Transfer 
-In the transfer process, we simply compare the summation output with threshold value and decide the final neural output.</p>
-</li>
-</ol>
+<p>Perceptron is simply an artificial neuron capable of solving linear classification problems. It is made up of single layer feed-forward neural network.</p>
+<p>A percentron can only takes binary input values and signals binary output for decision making.
+The output decision (either0 or 1), is based on the value of weighted sum of inputs and weights.</p>
+<p>Mathematically perceptron can be defined as :</p>
+<p>output O(n)=<br>
+                                {
+     0   if   ∑wixi + $\theta$ &lt;= 0 <br>
+                                                  1   if   ∑wixi + $\theta$ &gt; 0
+             <br>
+                                          } <br></p>
+<p>$\theta$ = threshold / bias</p>
+<p><img src="../../images/perceptron.png"></p>
+
 </div>
 </div>
 </div>
@@ -98,25 +89,84 @@ In the transfer process, we simply compare the summation output with threshold v
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>An example would be,</p>
+<!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Perceptron-Learning-Algorithm">Perceptron Learning Algorithm<a class="anchor-link" href="#Perceptron-Learning-Algorithm">¶</a>
+</h5>
+<p>Perceptron learning is basically done by adjusting the weights and bias in training process.</p>
 
-<pre><code>inputs
-(x1) = 2
-(x2) = 1
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Initially, we will have <code>training set</code> of input vector</p>
 
-weights
-(w1) = 0.7
-(w2) = 0.8
-
-threshold = 2
+<pre><code>[x_1(n), x_2(n),....x_m(n) ]
 
 </code></pre>
-<p>Summation value :</p>
+<p>And, weight vetor</p>
 
-<pre><code> x1w1 + x2w2 = (2 x 0.7) + (1 x 0.8) = 2.2
+<pre><code>[w_1(n), w_2(n),....w_m(n)]
 
 </code></pre>
-<p>Since summation value is greather than threshold, neuron will be fired.</p>
+<p>And, bias = b</p>
+<p>For convenience let w0=b(n) and x0(n) = 1</p>
+<p>i.e input vector = <code>[1, x_1(n),x_2(n),.....x_m(n)]</code> <br>
+and weight vector = <code>[b(n), w_1(n), w_2(n),....,w_m(n)]</code> <br></p>
+<p>y(n) = actual output in training <br>
+d(n) = desired output <br>
+η = the learning rate <br></p>
+<p>And, suppose, M and N are two different classes. Where output +1 belongs to M
+and -1 belongs N.</p>
+<p>learning steps:</p>
+<h5 id="1.-Initialization">1. Initialization<a class="anchor-link" href="#1.-Initialization">¶</a>
+</h5>
+<p>We will set initial value for weights : w(0) = 0</p>
+<h5 id="2.-For-number-of-iterations-(Iternations-will-be-your-selection)">2. For number of iterations (Iternations will be your selection)<a class="anchor-link" href="#2.-For-number-of-iterations-(Iternations-will-be-your-selection)">¶</a>
+</h5>
+<h5 id="a.-Activation">a. Activation<a class="anchor-link" href="#a.-Activation">¶</a>
+</h5>
+<p>We will supply (input vector, desired output) = [x(n), d(n)] to perceptron.</p>
+<h5 id="b.-Actual-Response">b. Actual Response<a class="anchor-link" href="#b.-Actual-Response">¶</a>
+</h5>
+<p>For each input vector, we will calculate the actual output based on</p>
+
+<pre><code>      y(n) = sgn[w(n)x(n)]
+
+Where sgn(.) represents signum function as following:
+
+    sgn(x) = {  +1 if x&gt;=0
+                -1 if x&lt;0 }
+
+</code></pre>
+<h5 id="c.-Weight-adjustment-:">c. Weight adjustment :<a class="anchor-link" href="#c.-Weight-adjustment-:">¶</a>
+</h5>
+<p>We will adjust the weight vector as follows:</p>
+<p>calculate error :</p>
+
+<pre><code>         e = d(n) - y(n) 
+</code></pre>
+<p><br></p>
+
+<pre><code>    w(n+1) = w(n) + eta * e * x(n)
+
+</code></pre>
+<p>where</p>
+
+<pre><code>      d(n) = { +1   if x(n) classified as M
+             -1   if x(n) classified as N
+             }</code></pre>
 
 </div>
 </div>
@@ -141,9 +191,9 @@ threshold = 2
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="blog-sijanb-com-np",
-            disqus_url="http://sijanb.com.np/posts/what-is-deep-learning-and-neural-network/",
-        disqus_title="What is Deep Learning and Neural Network?",
-        disqus_identifier="cache/posts/what-is-deep-learning-and-neural-network.html",
+            disqus_url="http://sijanb.com.np/posts/what-is-perceptron-and-how-it-works/",
+        disqus_title="What is perceptron and how it works?",
+        disqus_identifier="cache/posts/what-is-perceptron-and-how-it-works.html",
         disqus_config = function () {
             this.language = "en";
         };
