@@ -7,11 +7,15 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>http://sijanb.com.np/</loc>
-  <lastmod>2018-09-27T11:37:00Z</lastmod>
+  <lastmod>2018-10-23T20:30:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://sijanb.com.np/2018/</loc>
+  <lastmod>2018-10-23T20:30:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/archive.html</loc>
-  <lastmod>2018-10-23T20:00:00Z</lastmod>
+  <lastmod>2018-10-23T20:30:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/blog/</loc>
@@ -28,5 +32,9 @@
  <url>
   <loc>http://sijanb.com.np/listings/</loc>
   <lastmod>2018-09-27T06:26:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://sijanb.com.np/posts/what-is-deep-learning-and-neural-network/</loc>
+  <lastmod>2018-10-23T20:30:00Z</lastmod>
  </url>
 </urlset>
