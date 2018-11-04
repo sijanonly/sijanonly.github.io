@@ -56,7 +56,212 @@
     </header><main id="content" class="content" role="main"><div class="postindex">
 
 
-<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/using-perceptron-model-for-classification-an-illustrative-approach/">Using perceptron model for classification : an illustrative approach</a></h2>
+<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/understanding-probability/">Understanding Probability</a></h2>
+    </header><section class="post-excerpt"><div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Randomness is not a property of a phenomenon. It is simply an unpredectability of occurence of events around you.  It occurs in different scenarios of our life. For example, while roaming around street, you found a coin; now you would certainly look for other coin around that spot. But, there will be not any certainty or possibility or pattern of finding one. Other examples are - tossing coin / dice, fluctuating market prices for common goods.</p>
+<p>In the field of Mathematics and probability, we assign some numerical value for identifying each of this random outcome. i.e. we use probability to quantify randomness. And, probability of certain event is calculated by the relative frequency of that event in the experiment.</p>
+<p>In probability, the current occurrence / selection you do for your experiment is an event. For example,fliping a coin is an event.And, the act of tossing the coin is called independent trail. If you do number of trails, it is called an experiment. And, all the possible outcomes of an experiment is called sample space. So, we can say that an event is also a subset of sample space.</p>
+<p>Another example : Suppose you need to choose a point from an interval (10, 100). Your selection E = (12, 34) is an event.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Disjoint-and-Independent-Event">Disjoint and Independent Event<a class="anchor-link" href="../posts/understanding-probability/#Disjoint-and-Independent-Event">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Disjoint event means if an event occurs than other events can't occur simultaneously. That means joint probabilit will be zero P(A and B) = 0.
+We can say that disjoint events are very dependent. That is : when an event occurs with certain probability, then other event will have zero chance of occurrence.
+For example: when tossing a coin, the result can either be heads or tails but cannot be both.</p>
+<p>On the other hand, independent events are those where occurrence of one does not affect the occurence of another event. For example: when tossing two coins, the result of one flip does not affect the result of the other.</p>
+
+<pre><code>       conditions for independence
+          P(A and B) = P(A)×P(B)
+          P(A, given that B occurs) = P(A)</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Joint-and-Marginal-Probability">Joint and Marginal Probability<a class="anchor-link" href="../posts/understanding-probability/#Joint-and-Marginal-Probability">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Joint probability measure the probability that two events will occur simultaneously and marginal probability is the probability of single event.</p>
+<p><img src="../images/joint_marginal_prob.png"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Joint probability is expressed as :P(A1,A2 ...,An) ; where A1, A2...An are the events.</p>
+<p>Let us take an example:</p>
+<p>P(life expectancy=70, nationality=Nepal) = 0.5 means there is 0.5 chances of a person, picked from a population, is a Nepali and has the life expectancy of 70 years.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Conditional-Probability">Conditional Probability<a class="anchor-link" href="../posts/understanding-probability/#Conditional-Probability">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Formally, conditional probability can be defined as the probability of an event (A); given the probability of another event (B).</p>
+<p>Mathematically, it is denoted as P(A | B).</p>
+
+<pre><code>   P(A | B) = P(A and B) / P(B)   ; P(A and B) - joint probability of A and B.</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let us take an example :</p>
+<p>Consider that a student has an 70% chance of being accepted in a university, only 40% of all of the accepted students will get the student residence offer. 
+Then the chance of student getting accepted and receiving student residence offer is defined by</p>
+
+<pre><code>P(Accepted and Student resi.) = P(Student resi.|Accepted)P(Accepted)
+                               = (0.40)*(0.70) = 0.28 </code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Bayes'-Law">Bayes' Law<a class="anchor-link" href="../posts/understanding-probability/#Bayes'-Law">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let us suppose that we have a prior knowledge of a probability for a disease D to occurs when there is a symptom S P(S|D); and the probability of having disease D P(D); the probability of having symptom S P(S). If we have all these three information; we can calculate the probability of occurrence of disease D; given that the person has symptom S i.e P(D|S).</p>
+<p>By using joint probability,</p>
+
+<pre><code>     P(A and B) = P(A|B) * P(A) = P(B|A) * P(B)
+
+     Which leads to
+
+      P(A|B) =  P(A)   *   P(B|A) / P(B)
+            (prior prob.)   (Posterior prob.)
+
+
+       or
+
+
+       P(B|A) =P(A|B)P(B) / [P(A|B)P(B) + P(A|B′)P(B′)]
+
+       P(B′) is the probability of B not occurring.</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Example:</p>
+<p>Suppose it has been observed empirically that the word “Congratulations” occurs in 1 out of 10 spam emails, but that “Congratulations” only occurs in 1 out of 1000 non-spam emails. Suppose it has also been observed empirically that about 4 out of 10 emails are spam. Suppose we get a new email that contains “Congratulations”.Then, what is the probability of this email being a spam?</p>
+<p>Ans : 
+Let C be the event representing emails having word 'Congratulations' and S be the event saying the email is spam.</p>
+<p>Now, we need to calculate : P ( S | C ) ?</p>
+<p>Here</p>
+
+<pre><code> P(C|S) ~= 1/10
+ P(C|S') ~= 1/1000
+ P(S) ~= 4/10
+ P(S') ~= 6/10
+
+</code></pre>
+<p>By Bayes’ Theorem: P(S|C) = P(C|S )P(S) / [P(C|S )P(S) + P(C|S')P(S')]</p>
+
+<pre><code>                      = (1/10) (4/10) / [ 1/10 * 4/10 + 1/1000 * 6/10]
+                      = 0.985</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+    </section><footer class="post-meta">
+                Sijan Bhandari
+
+        on
+
+        <time class="post-date" datetime="2018-11-04T21:23:45+05:45">
+            2018-11-04 21:23
+        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/using-perceptron-model-for-classification-an-illustrative-approach/">Using perceptron model for classification : an illustrative approach</a></h2>
     </header><section class="post-excerpt"><div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -74,7 +279,7 @@
 </code></pre>
 <p>To build inputs for our neural network, we take readings from the patients and we will treat readings as follows :</p>
 
-<pre><code>  body temperator = {
+<pre><code>  body temperature = {
                           1   if body temperator &gt; 99'F
                          -1   if body temperator = 99'F
                      }
