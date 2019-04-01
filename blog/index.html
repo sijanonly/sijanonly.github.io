@@ -56,7 +56,237 @@
     </header><main id="content" class="content" role="main"><div class="postindex">
 
 
-<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/understanding-probability/">Understanding Probability</a></h2>
+<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/implementation-of-perceptron-in-python/">implementation of perceptron in python</a></h2>
+    </header><section class="post-excerpt"><div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1"># @Author: Sijan</span>
+<span class="c1"># @Date:   2019-04-01</span>
+
+<span class="kn">from</span> <span class="nn">random</span> <span class="k">import</span> <span class="n">randint</span>
+
+
+<span class="k">def</span> <span class="nf">step_function</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Simple linear function which will be activated if the value is greater than 0.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">result</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="mi">0</span>
+
+
+<span class="k">class</span> <span class="nc">Perceptron</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    Perceptron class defines a neuron with attributes : weights, bias and learning rate.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.5</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">input_size</span><span class="p">)]</span>
+
+
+<span class="k">def</span> <span class="nf">feedforward</span><span class="p">(</span><span class="n">perceptron</span><span class="p">,</span> <span class="n">node_input</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Implements product between input and weights</span>
+<span class="sd">    """</span>
+    <span class="n">node_sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">node_sum</span> <span class="o">+=</span> <span class="n">perceptron</span><span class="o">.</span><span class="n">bias</span>
+
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">node_input</span><span class="p">):</span>
+        <span class="c1"># print('input node is', item)</span>
+        <span class="n">node_sum</span> <span class="o">+=</span> <span class="n">item</span> <span class="o">*</span> <span class="n">perceptron</span><span class="o">.</span><span class="n">weights</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">step_function</span><span class="p">(</span><span class="n">node_sum</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">adjust_weight</span><span class="p">(</span><span class="n">perceptron</span><span class="p">,</span> <span class="n">node_input</span><span class="p">,</span> <span class="n">error</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Adjust weightage based on error. It simply scales input values towards right direction.</span>
+
+<span class="sd">    """</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">node_input</span><span class="p">):</span>
+        <span class="n">perceptron</span><span class="o">.</span><span class="n">weights</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">+=</span> <span class="n">item</span> <span class="o">*</span> <span class="n">error</span> <span class="o">*</span> <span class="n">perceptron</span><span class="o">.</span><span class="n">learning_rate</span>
+
+    <span class="n">perceptron</span><span class="o">.</span><span class="n">bias</span> <span class="o">+=</span> <span class="n">error</span> <span class="o">*</span> <span class="n">perceptron</span><span class="o">.</span><span class="n">learning_rate</span>
+
+
+<span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">perceptron</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">outputs</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Trains perceptron for given inputs.</span>
+<span class="sd">    """</span>
+    <span class="k">for</span> <span class="n">training_input</span><span class="p">,</span> <span class="n">training_output</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">outputs</span><span class="p">):</span>
+        <span class="n">actual_output</span> <span class="o">=</span> <span class="n">feedforward</span><span class="p">(</span><span class="n">perceptron</span><span class="p">,</span> <span class="n">training_input</span><span class="p">)</span>
+        <span class="n">desired_output</span> <span class="o">=</span> <span class="n">training_output</span>
+        <span class="n">error</span> <span class="o">=</span> <span class="n">desired_output</span> <span class="o">-</span> <span class="n">actual_output</span>
+        <span class="n">adjust_weight</span><span class="p">(</span><span class="n">perceptron</span><span class="p">,</span> <span class="n">training_input</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'weight after adjustment'</span><span class="p">,</span> <span class="n">perceptron</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'bias after adjustment'</span><span class="p">,</span> <span class="n">perceptron</span><span class="o">.</span><span class="n">bias</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">perceptron</span><span class="p">,</span> <span class="n">test_input</span><span class="p">,</span> <span class="n">test_output</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Predicts new inputs.</span>
+<span class="sd">    """</span>
+    <span class="n">prediction</span> <span class="o">=</span> <span class="n">feedforward</span><span class="p">(</span><span class="n">perceptron</span><span class="p">,</span> <span class="n">test_input</span><span class="p">)</span>
+
+    <span class="c1"># if test_input[1] == test_output:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'input :</span><span class="si">%s</span><span class="s1"> gives output :</span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">test_input</span><span class="p">,</span> <span class="n">prediction</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'input :</span><span class="si">%s</span><span class="s1"> has true output :</span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">test_input</span><span class="p">,</span> <span class="n">test_output</span><span class="p">))</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+
+    <span class="n">train_inputs</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
+    <span class="n">train_outputs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># train perceptron</span>
+    <span class="n">perceptron</span> <span class="o">=</span> <span class="n">Perceptron</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">epochs</span> <span class="o">=</span> <span class="mi">10</span>
+
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+        <span class="n">train</span><span class="p">(</span><span class="n">perceptron</span><span class="p">,</span> <span class="n">train_inputs</span><span class="p">,</span> <span class="n">train_outputs</span><span class="p">)</span>
+
+    <span class="c1"># test perceptron</span>
+    <span class="n">test_input</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">test_output</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'...................................'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'...................................'</span><span class="p">)</span>
+    <span class="n">predict</span><span class="p">(</span><span class="n">perceptron</span><span class="p">,</span> <span class="n">test_input</span><span class="p">,</span> <span class="n">test_output</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>weight after adjustment [0.0, 0.0]
+bias after adjustment 0.0
+weight after adjustment [0.0, 0.0]
+bias after adjustment 0.0
+weight after adjustment [0.0, 0.0]
+bias after adjustment 0.0
+weight after adjustment [0.5, 0.5]
+bias after adjustment 0.5
+weight after adjustment [0.5, 0.5]
+bias after adjustment 0.0
+weight after adjustment [0.5, 0.0]
+bias after adjustment -0.5
+weight after adjustment [0.5, 0.0]
+bias after adjustment -0.5
+weight after adjustment [1.0, 0.5]
+bias after adjustment 0.0
+weight after adjustment [1.0, 0.5]
+bias after adjustment 0.0
+weight after adjustment [1.0, 0.0]
+bias after adjustment -0.5
+weight after adjustment [0.5, 0.0]
+bias after adjustment -1.0
+weight after adjustment [1.0, 0.5]
+bias after adjustment -0.5
+weight after adjustment [1.0, 0.5]
+bias after adjustment -0.5
+weight after adjustment [1.0, 0.5]
+bias after adjustment -0.5
+weight after adjustment [0.5, 0.5]
+bias after adjustment -1.0
+weight after adjustment [1.0, 1.0]
+bias after adjustment -0.5
+weight after adjustment [1.0, 1.0]
+bias after adjustment -0.5
+weight after adjustment [1.0, 0.5]
+bias after adjustment -1.0
+weight after adjustment [1.0, 0.5]
+bias after adjustment -1.0
+weight after adjustment [1.0, 0.5]
+bias after adjustment -1.0
+weight after adjustment [1.0, 0.5]
+bias after adjustment -1.0
+weight after adjustment [1.0, 0.5]
+bias after adjustment -1.0
+weight after adjustment [1.0, 0.5]
+bias after adjustment -1.0
+weight after adjustment [1.0, 0.5]
+bias after adjustment -1.0
+weight after adjustment [1.0, 0.5]
+bias after adjustment -1.0
+weight after adjustment [1.0, 0.5]
+bias after adjustment -1.0
+weight after adjustment [1.0, 0.5]
+bias after adjustment -1.0
+weight after adjustment [1.0, 0.5]
+bias after adjustment -1.0
+weight after adjustment [1.0, 0.5]
+bias after adjustment -1.0
+weight after adjustment [1.0, 0.5]
+bias after adjustment -1.0
+weight after adjustment [1.0, 0.5]
+bias after adjustment -1.0
+weight after adjustment [1.0, 0.5]
+bias after adjustment -1.0
+weight after adjustment [1.0, 0.5]
+bias after adjustment -1.0
+weight after adjustment [1.0, 0.5]
+bias after adjustment -1.0
+weight after adjustment [1.0, 0.5]
+bias after adjustment -1.0
+weight after adjustment [1.0, 0.5]
+bias after adjustment -1.0
+weight after adjustment [1.0, 0.5]
+bias after adjustment -1.0
+weight after adjustment [1.0, 0.5]
+bias after adjustment -1.0
+weight after adjustment [1.0, 0.5]
+bias after adjustment -1.0
+weight after adjustment [1.0, 0.5]
+bias after adjustment -1.0
+...................................
+...................................
+input :(1, 1) gives output :1
+input :(1, 1) has true output :1
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+    </section><footer class="post-meta">
+                Sijan Bhandari
+
+        on
+
+        <time class="post-date" datetime="2019-04-01T16:07:46+05:45">
+            2019-04-01 16:07
+        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/understanding-probability/">Understanding Probability</a></h2>
     </header><section class="post-excerpt"><div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -658,7 +888,7 @@ threshold = 2
         
        <script>var disqus_shortname="blog-sijanb-com-np";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
-        </script></main><footer class="site-footer clearfix"><section class="poweredby">Contents © 2018         <a href="mailto:sijanonly@gmail.com">Sijan Bhandari</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </section></footer>
+        </script></main><footer class="site-footer clearfix"><section class="poweredby">Contents © 2019         <a href="mailto:sijanonly@gmail.com">Sijan Bhandari</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </section></footer>
 </div>
 
     <script type="text/javascript" src="../assets/js/jquery.js"></script><script type="text/javascript" src="../assets/js/jquery.fitvids.js"></script><script type="text/javascript" src="../assets/js/index.js"></script>

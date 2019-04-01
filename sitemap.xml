@@ -7,15 +7,19 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>http://sijanb.com.np/</loc>
-  <lastmod>2018-10-23T20:30:00Z</lastmod>
+  <lastmod>2019-04-01T10:34:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/2018/</loc>
   <lastmod>2018-10-23T20:30:00Z</lastmod>
  </url>
  <url>
+  <loc>http://sijanb.com.np/2019/</loc>
+  <lastmod>2019-04-01T10:34:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://sijanb.com.np/archive.html</loc>
-  <lastmod>2018-11-04T15:43:00Z</lastmod>
+  <lastmod>2019-04-01T10:34:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/blog/</loc>
@@ -44,6 +48,10 @@
  <url>
   <loc>http://sijanb.com.np/listings/</loc>
   <lastmod>2018-09-27T06:26:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://sijanb.com.np/posts/implementation-of-perceptron-in-python/</loc>
+  <lastmod>2019-04-01T10:34:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/posts/understanding-probability/</loc>
