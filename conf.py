@@ -25,7 +25,7 @@ SITE_URL = "http://sijanb.com.np/"
 # If not set, defaults to SITE_URL
 # BASE_URL = "http://sijanb.com.np/"
 BLOG_EMAIL = "sijanonly@gmail.com"
-BLOG_DESCRIPTION = "My personal site: current status, cv, blog and so on."  # (translatable)
+BLOG_DESCRIPTION = "Random exploring...."  # (translatable)
 
 # Nikola is multilingual!
 #
