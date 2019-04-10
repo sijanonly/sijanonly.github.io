@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html prefix="" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Why you need to understand bias and variance in Machine Learning | CODEBUG</title>
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../../assets/css/screen.css">
+<link rel="stylesheet" type="text/css" href="../../assets/css/nav.css">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400%7CInconsolata">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="http://sijanb.com.np/posts/why-you-need-to-understand-bias-and-variance-in-machine-learning/">
+<link rel="icon" href="../../favicon.ico" sizes="16x16">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Sijan Bhandari">
+<link rel="prev" href="../implementation-of-perceptron-in-python/" title="implementation of perceptron in python" type="text/html">
+<meta property="og:site_name" content="CODEBUG">
+<meta property="og:title" content="Why you need to understand bias and variance in Machine Learning">
+<meta property="og:url" content="http://sijanb.com.np/posts/why-you-need-to-understand-bias-and-variance-in-machine-learning/">
+<meta property="og:description" content="Let me start with an example. Suppose you have built a ML model under supervised learning which can detect faces from your family members. You simply feed all the family photos to your model. And, at ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2019-04-11T00:40:44+05:45">
+</head>
+<body class="nav-closed">
+
+<div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+<li class="nav-opened" role="presentation">
+            <a href="../../blog/">Blog</a>
+        </li>
+        <li class="nav-opened" role="presentation">
+            <a href="../../categories/">Tags</a>
+        </li>
+        <li class="nav-opened" role="presentation">
+            <a href="../../rss.xml">RSS feed</a>
+        </li>
+    
+    
+    </ul>
+</div>
+<span class="nav-cover"></span>
+
+<div class="site-wrapper">
+    <header class="main-header post-head no-cover"><nav class="main-nav overlay clearfix"><a class="blog-logo" href="http://sijanb.com.np/"><img src="../../images/logo.png" alt="Blog Logo"></a>
+            <a class="menu-button" href="#"><span class="burger">☰</span><span class="word">Menu</span></a>
+        </nav></header><main id="content" class="content" role="main"><article class="post post"><header class="post-header"><h1 class="post-title">Why you need to understand bias and variance in Machine Learning</h1>
+        <section class="post-meta"> by
+            Sijan Bhandari
+            on
+            <time class="post-date" datetime="2019-04-11T00:40:44+05:45">
+                2019-04-11 00:40
+            </time></section></header><section class="post-content"><div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let me start with an example. Suppose you have built a ML model under supervised learning which can detect faces from your family members. You simply feed all the family photos to your model. And, at the end, you would like to know how much your model learnt from your training process.</p>
+<p><img src="../../images/bias_variance.png"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>After training your model, you will find a function that maps input (image) to output labels(family members).
+If we represent your ML model with a function 'f',we can write this process as:</p>
+
+<pre><code>  y = f(x),
+   where  x = input  (your family photos)
+          y = output (model prediction) (predictiong whether the photo is your father, mother or sister)
+
+
+</code></pre>
+<p>Suppose, you use <code>50</code> images for your training process and use the same images to see whether the model can predict the label correctly or not. If you found that <code>10</code> out of <code>50</code> images are not predicted well, you can say : <code>20%</code> training error. 
+If you think about the intuition behind this calculation, it is saying that 'the model is not doing well with the training data itself'. That means it underfits the data. It does not want to carry all the information available in your data.</p>
+<p>*NOTE: If your model 'f' is a linear model than it will be really hard for your model to classify the photos using linear function.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let us consider the different scenario. You found that there is only <code>2%</code> training error after training your model. And, you are happy that only <code>1</code> image out of <code>50</code> is being wrongly predicted. But, you are still suspicious about your model and apply different strategy this time. You captured new <code>10</code> photos of your family and gave it to the model. And, at this time all the <code>10</code> photos are wrongly predicted by your model.
+What we can see is that 'your model learn everything from the training data without considering the generalization of data' (increased variance). We can also say that model overfits your training data. Obviously, learning everything from training data will reduce the biasness but it increases the variance in your data.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+    </section><footer class="post-footer"><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="blog-sijanb-com-np",
+            disqus_url="http://sijanb.com.np/posts/why-you-need-to-understand-bias-and-variance-in-machine-learning/",
+        disqus_title="Why you need to understand bias and variance in Machine Learning",
+        disqus_identifier="cache/posts/why-you-need-to-understand-bias-and-variance-in-machine-learning.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+        </script></footer></article><script>var disqus_shortname="blog-sijanb-com-np";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer class="site-footer clearfix"><section class="poweredby">Contents © 2019         <a href="mailto:sijanonly@gmail.com">Sijan Bhandari</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </section></footer>
+</div>
+
+    <script type="text/javascript" src="../../assets/js/jquery.js"></script><script type="text/javascript" src="../../assets/js/jquery.fitvids.js"></script><script type="text/javascript" src="../../assets/js/index.js"></script>
+</body>
+</html>

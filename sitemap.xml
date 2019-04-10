@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>http://sijanb.com.np/archive.html</loc>
-  <lastmod>2019-04-01T10:35:00Z</lastmod>
+  <lastmod>2019-04-10T20:02:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/blog/</loc>
@@ -68,5 +68,9 @@
  <url>
   <loc>http://sijanb.com.np/posts/what-is-perceptron-and-how-it-works/</loc>
   <lastmod>2018-10-23T21:13:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://sijanb.com.np/posts/why-you-need-to-understand-bias-and-variance-in-machine-learning/</loc>
+  <lastmod>2019-04-10T20:02:00Z</lastmod>
  </url>
 </urlset>

@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>CODEBUG</title><link>http://sijanb.com.np/</link><description>Random exploring....</description><atom:link rel="self" type="application/rss+xml" href="http://sijanb.com.np/rss.xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Mon, 01 Apr 2019 10:35:49 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>implementation of perceptron in python</title><link>http://sijanb.com.np/posts/implementation-of-perceptron-in-python/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>CODEBUG</title><link>http://sijanb.com.np/</link><description>Random exploring....</description><atom:link type="application/rss+xml" href="http://sijanb.com.np/rss.xml" rel="self"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Wed, 10 Apr 2019 20:02:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Why you need to understand bias and variance in Machine Learning</title><link>http://sijanb.com.np/posts/why-you-need-to-understand-bias-and-variance-in-machine-learning/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Let me start with an example. Suppose you have built a ML model under supervised learning which can detect faces from your family members. You simply feed all the family photos to your model. And, at the end, you would like to know how much your model learnt from your training process.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://sijanb.com.np/images/bias_variance.png"&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;After training your model, you will find a function that maps input (image) to output labels(family members).
+If we represent your ML model with a function 'f',we can write this process as:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  y = f(x),
+   where  x = input  (your family photos)
+          y = output (model prediction) (predictiong whether the photo is your father, mother or sister)
+
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Suppose, you use &lt;code&gt;50&lt;/code&gt; images for your training process and use the same images to see whether the model can predict the label correctly or not. If you found that &lt;code&gt;10&lt;/code&gt; out of &lt;code&gt;50&lt;/code&gt; images are not predicted well, you can say : &lt;code&gt;20%&lt;/code&gt; training error. 
+If you think about the intuition behind this calculation, it is saying that 'the model is not doing well with the training data itself'. That means it underfits the data. It does not want to carry all the information available in your data.&lt;/p&gt;
+&lt;p&gt;*NOTE: If your model 'f' is a linear model than it will be really hard for your model to classify the photos using linear function.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="http://sijanb.com.np/posts/why-you-need-to-understand-bias-and-variance-in-machine-learning/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>http://sijanb.com.np/posts/why-you-need-to-understand-bias-and-variance-in-machine-learning/</guid><pubDate>Wed, 10 Apr 2019 18:55:44 GMT</pubDate></item><item><title>implementation of perceptron in python</title><link>http://sijanb.com.np/posts/implementation-of-perceptron-in-python/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;In [2]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
