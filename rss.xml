@@ -1,5 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>CODEBUG</title><link>http://sijanb.com.np/</link><description>Random exploring....</description><atom:link type="application/rss+xml" href="http://sijanb.com.np/rss.xml" rel="self"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Sun, 19 May 2019 15:09:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>How Nearest Centroid Classifier works?</title><link>http://sijanb.com.np/posts/how-nearest-centroid-classifier-works/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>CODEBUG</title><link>http://sijanb.com.np/</link><description>Random exploring....</description><atom:link rel="self" type="application/rss+xml" href="http://sijanb.com.np/rss.xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Sun, 19 May 2019 20:23:54 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Why we need Support Vector Machine (SVM) ?</title><link>http://sijanb.com.np/posts/why-we-need-support-vector-machine-svm/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Support vector machine (SVM) is a supervised machine learning algorithm which is considered
+effective tool for both classification and regression problem.&lt;/p&gt;
+&lt;p&gt;In a simple word, SVM tries to find a linearly separable hyperplane in order to separate
+members of one class from another. If SVM can not find the hyperplane for a given data set,
+it applies non-linear mapping to the training data and transform them to higher dimension
+where it searches for the optimal hyperplane. The SVM algorithm uses support vectors and
+margins in order to draw these hyperplanes in the training data.&lt;/p&gt;
+&lt;p&gt;Since it has ability to understand the complex relation in input data by applying 
+nonlinear mapping, it has high accuracy compare to other supervised classification algorithms
+(kNN, NCC..)&lt;/p&gt;
+&lt;p&gt;People have been using SVM for different applications like : text data classification,
+image data(handwritten) recognition and more.&lt;/p&gt;
+&lt;p&gt;Intuition:&lt;/p&gt;
+&lt;p&gt;Let us see a linearly separable problem as shown in the diagram below.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://sijanb.com.np/images/svm_ill.png"&gt;&lt;/p&gt;
+&lt;p&gt;In the given diagram, we can draw infinite lines that can separate data into two different
+classes.&lt;/p&gt;
+&lt;p&gt;Can you decide Which of the lines (pink, yellow, green) better suits our problem? If you look
+closely, the green line is close to red dots and any minor change in data point may caues 
+this point to fall into other class.
+On the other hand, Pink line is close to blue dots and similarly, a minor twist on data are 
+prone to change the class of new point to other side and may misclassified.&lt;/p&gt;
+&lt;p&gt;But, the yellow line looks more stable, in the sense, it is far from data points on either
+side and not susceptible to the small changes in data observations.&lt;/p&gt;
+&lt;p&gt;Support vector machines help us to make a decision on this problem. If you think 'yellow' line
+in the figure is the optimal hyperplane for this problem, we can take this as an intuition that
+an optimal choice from the number of choices of hyperplanes is the one which is farthest
+from our training data points.&lt;/p&gt;
+&lt;p&gt;We can compute the perpendicular distances from all our training points to all possible
+hyperplanes and choose the one which has largest minimum distance to the training examples.
+The minimum distance between hyperplane and the observation point is called margin.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://sijanb.com.np/images/svm_margin.png"&gt;&lt;/p&gt;
+&lt;p&gt;In summary, SVMs maximize the margin around our separating hyperplane. And, The idea is 
+to draw a margin of some width around the separating hyperplane, up to the nearest point.&lt;/p&gt;
+&lt;p&gt;The training data that falls exactly on the boundaries of the margin are called&lt;/p&gt;
+&lt;p&gt;the support vectors. If these points shifted on any direction, they also influence the
+ hyperplanes passing through the margin points and they also shifted. It is important
+ to notice that support vectors are critical data points on our training set since they
+ are the one defining margin boundaries.&lt;/p&gt;
+&lt;p&gt;It is important to note that the complexity of SVM is characterized by the number of
+support vectors, rather than the dimension of the feature space.
+ That is the reason SVM has a comparatively less tendency to overfit.&lt;/p&gt;
+&lt;h4 id='Support-vectors-"support-the-plane"-and-are-hence-called-Support-Vectors.'&gt;Support vectors "support the plane" and are hence called Support Vectors.&lt;a class="anchor-link" href="http://sijanb.com.np/posts/why-we-need-support-vector-machine-svm/#Support-vectors-%22support-the-plane%22-and-are-hence-called-Support-Vectors."&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Upto now, we are trying to find the hard-margin for our hyperplane. But, as shown
+in the diagram below, a single point can have high influence on our boundary.
+So hard margin SVM are sensitive to outliers, giving overfitted model.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://sijanb.com.np/images/svm_outlier.png"&gt;&lt;/p&gt;
+&lt;p&gt;What about we relax our hard margin condition? where, a small amount of data points are allowed
+to cross the margins/boundaries .i.e data points can be on incorrect side as well.
+This approach is called soft-margin. Soft in the sense that few data points can violate the 
+margin condition.
+The softness is measured by slack variable; which control the position of training data points
+relative to the margins and our hyperplane.
+The ultimate goal is, our SVM tries to maximize the soft margin.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://sijanb.com.np/images/svm_slack.png"&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;&lt;/div&gt;</description><guid>http://sijanb.com.np/posts/why-we-need-support-vector-machine-svm/</guid><pubDate>Sun, 19 May 2019 16:09:33 GMT</pubDate></item><item><title>How Nearest Centroid Classifier works?</title><link>http://sijanb.com.np/posts/how-nearest-centroid-classifier-works/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;The Nearest centroid classifier (NCC) says that we should classify a data point to a class whose centroid is closest to this data point.&lt;/p&gt;

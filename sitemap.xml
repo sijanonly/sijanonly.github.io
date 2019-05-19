@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>http://sijanb.com.np/archive.html</loc>
-  <lastmod>2019-05-19T15:15:00Z</lastmod>
+  <lastmod>2019-05-19T20:23:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/blog/</loc>
@@ -76,6 +76,10 @@
  <url>
   <loc>http://sijanb.com.np/posts/what-is-perceptron-and-how-it-works/</loc>
   <lastmod>2018-10-23T21:13:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://sijanb.com.np/posts/why-we-need-support-vector-machine-svm/</loc>
+  <lastmod>2019-05-19T20:23:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/posts/why-you-need-to-understand-bias-and-variance-in-machine-learning/</loc>
