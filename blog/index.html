@@ -56,7 +56,81 @@
     </header><main id="content" class="content" role="main"><div class="postindex">
 
 
-<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/how-k-nearest-neighbors-works/">How k-Nearest Neighbors works?</a></h2>
+<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/how-nearest-centroid-classifier-works/">How Nearest Centroid Classifier works?</a></h2>
+    </header><section class="post-excerpt"><div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The Nearest centroid classifier (NCC) says that we should classify a data point to a class whose centroid is closest to this data point.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The algorithms follows:</p>
+<p>Suppose $ c_l $ represents the set of indices which belong to class <code>l</code>. And n = |$c_l$|</p>
+<h5 id="1.Training-step-:">1.Training step :<a class="anchor-link" href="../posts/how-nearest-centroid-classifier-works/#1.Training-step-:">¶</a>
+</h5>
+<p>We compute the centroids(CTs) for each of the classes as:</p>
+<p>$CT_l$  = $ \frac{1}{n}  \sum_{i \in c_l} x_i $</p>
+<h5 id="2.Prediction-step-:">2.Prediction step :<a class="anchor-link" href="../posts/how-nearest-centroid-classifier-works/#2.Prediction-step-:">¶</a>
+</h5>
+<p>a. Given a new data point $x_{new}$, compute the distance between $x_{new}$ and each centroids as</p>
+<p><code>distance</code> : $|| x_{new} - $CT_l$||_2$   (Euclidean distance)</p>
+<p>b. Assign the class to this new point which has minimum <code>distance</code> value.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let us taken an example. We have to classify fruits into two classes : Apple and Orange, based on their height and width.</p>
+<p>Our inputs (x) are :</p>
+<p><code>x1=[5,6], x2=[5,7],  x3=[4,3], x4=[5,7], x5=[6,4]</code> and corrresponding labels (y) are</p>
+<p><code>𝑦1='AP'  𝑦2='AP'   𝑦3='AP'  𝑦4='ORG'  𝑦5='ORG'</code></p>
+<p>Here $x_i$ = [width, height] , 'AP' = 'Apple', 'ORG' = 'Orange'.</p>
+<p>Now, centroids for two classes are :</p>
+<p>$ CT_{AP} $ = $ \frac{1}{3} (5 + 5 + 4, 6 + 7 + 3) $ = ($\frac{14}{3}, \frac{16}{3} $)</p>
+<p>$ CT_{ORG} $ = $ \frac{1}{2} (5 + 6, 7 + 4) $ = ($\frac{11}{2}, \frac{11}{2} $)</p>
+<p>Suppose, you got a new test data point  : (3, 7) i.e $x_{new}$, and you want to classify this point. We can calculate the distance between new point and our centroids as:</p>
+<p>$ ||x_{new} - CT_{AP} || $ = || (3,7) - ($\frac{14}{3}, \frac{16}{3} $) || = 2.357</p>
+<p>$ ||x_{new} - CT_{ORG} || $ = || (3,7) - ($\frac{11}{2}, \frac{11}{2} $) || = 2.915</p>
+<p>Here, the new data point is classified as 'Apple' as the new data point is closest to the centroid of data points that belong to class 'Apple'</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+    </section><footer class="post-meta">
+                Sijan Bhandari
+
+        on
+
+        <time class="post-date" datetime="2019-05-19T20:03:11+05:45">
+            2019-05-19 20:03
+        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/how-k-nearest-neighbors-works/">How k-Nearest Neighbors works?</a></h2>
     </header><section class="post-excerpt"><div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -101,7 +175,7 @@ these 4 training data. </code></pre>
 </li>
 </ol>
 <pre><code>      In our case, suppose 3 out of 4 training instances have the same label. Then, the majority count
-      will assign this lable to new data point</code></pre>
+      will assign the label to new data point</code></pre>
 
 </div>
 </div>
