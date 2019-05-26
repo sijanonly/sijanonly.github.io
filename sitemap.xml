@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>http://sijanb.com.np/archive.html</loc>
-  <lastmod>2019-05-19T20:23:00Z</lastmod>
+  <lastmod>2019-05-26T19:36:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/blog/</loc>
@@ -60,6 +60,10 @@
  <url>
   <loc>http://sijanb.com.np/posts/implementation-of-perceptron-in-python/</loc>
   <lastmod>2019-04-01T10:34:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://sijanb.com.np/posts/implementation-of-stochastic-subgradient-descent-for-support-vector-machine-using-python/</loc>
+  <lastmod>2019-05-26T19:36:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/posts/understanding-probability/</loc>

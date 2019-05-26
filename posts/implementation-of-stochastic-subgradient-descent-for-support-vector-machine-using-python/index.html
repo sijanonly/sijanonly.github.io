@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html prefix="" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Implementation of stochastic subgradient descent for support vector machine using Python | CODEBUG</title>
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../../assets/css/screen.css">
+<link rel="stylesheet" type="text/css" href="../../assets/css/nav.css">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400%7CInconsolata">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="http://sijanb.com.np/posts/implementation-of-stochastic-subgradient-descent-for-support-vector-machine-using-python/">
+<link rel="icon" href="../../favicon.ico" sizes="16x16">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Sijan Bhandari">
+<link rel="prev" href="../why-we-need-support-vector-machine-svm/" title="Why we need Support Vector Machine (SVM) ?" type="text/html">
+<meta property="og:site_name" content="CODEBUG">
+<meta property="og:title" content="Implementation of stochastic subgradient descent for support vector ma">
+<meta property="og:url" content="http://sijanb.com.np/posts/implementation-of-stochastic-subgradient-descent-for-support-vector-machine-using-python/">
+<meta property="og:description" content="In this post, we will see how we can train support vector machines using stochastic gradient descent (SGD). Before jumping to the algorithm, we need to know why subgradients?
+
+
+
+
+
+
+
+Here is a brief su">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2019-05-26T23:52:15+05:45">
+</head>
+<body class="nav-closed">
+
+<div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+<li class="nav-opened" role="presentation">
+            <a href="../../blog/">Blog</a>
+        </li>
+        <li class="nav-opened" role="presentation">
+            <a href="../../categories/">Tags</a>
+        </li>
+        <li class="nav-opened" role="presentation">
+            <a href="../../rss.xml">RSS feed</a>
+        </li>
+    
+    
+    </ul>
+</div>
+<span class="nav-cover"></span>
+
+<div class="site-wrapper">
+    <header class="main-header post-head no-cover"><nav class="main-nav overlay clearfix"><a class="blog-logo" href="http://sijanb.com.np/"><img src="../../images/logo.png" alt="Blog Logo"></a>
+            <a class="menu-button" href="#"><span class="burger">☰</span><span class="word">Menu</span></a>
+        </nav></header><main id="content" class="content" role="main"><article class="post post"><header class="post-header"><h1 class="post-title">Implementation of stochastic subgradient descent for support vector machine using Python</h1>
+        <section class="post-meta"> by
+            Sijan Bhandari
+            on
+            <time class="post-date" datetime="2019-05-26T23:52:15+05:45">
+                2019-05-26 23:52
+            </time></section></header><section class="post-content"><div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this post, we will see how we can train support vector machines using stochastic gradient descent (SGD). Before jumping to the algorithm, we need to know why subgradients?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here is a brief summary of the 0-1 loss and hinge loss:</p>
+<p><img src="../../images/svm_ill.png"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>But, we don't we use 0-1 loss ?? The obvious reason is it is not convex. Another factor could be it's reaction to small changes in parameters. You can see from the graph, if you change (w,b) the loss will flip to either 0 or 1 very fast without acknowledging the in between values.
+The hinge loss,on the other hand, has smooth change until it reaches '1' along x-axis.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../../images/svm_obj_1.jpg"></p>
+<p><img src="../../images/svm_obj_2.jpg"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_regularization</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">subgradient_w</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    The total loss :( 1/2 * ||w||^2 + Hingle_loss) has w term to be added after getting subgradient of 'w'</span>
+<span class="sd">    </span>
+<span class="sd">      total_w = regularization_term + subgradient_term</span>
+<span class="sd">    i.e total_w = w + C *  ∑ (-y*x)</span>
+<span class="sd">    </span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="n">w</span> <span class="o">+</span> <span class="n">subgradient_w</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [48]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">subgradients</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">C</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    :x: inputs [[x1,x2], [x2,x2],...]</span>
+<span class="sd">    :y: labels [1, -1,...]</span>
+<span class="sd">    :w: initial w</span>
+<span class="sd">    :b: initial b</span>
+<span class="sd">    :C: tradeoff/ hyperparameter</span>
+<span class="sd">    </span>
+<span class="sd">    """</span>
+    <span class="n">subgrad_w</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">subgrad_b</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="c1"># sum over all subgradients of hinge loss for a given samples x,y</span>
+    <span class="k">for</span> <span class="n">x_i</span><span class="p">,</span> <span class="n">y_i</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+        <span class="n">f_xi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">x_i</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span>
+
+        <span class="n">decision_value</span> <span class="o">=</span> <span class="n">y_i</span> <span class="o">*</span> <span class="n">f_xi</span>
+
+        <span class="k">if</span> <span class="n">decision_value</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">subgrad_w</span> <span class="o">+=</span> <span class="o">-</span> <span class="n">y_i</span><span class="o">*</span><span class="n">x_i</span>
+            <span class="n">subgrad_b</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">y_i</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">subgrad_w</span> <span class="o">+=</span> <span class="mi">0</span>
+            <span class="n">subgrad_b</span> <span class="o">+=</span> <span class="mi">0</span>
+    
+    <span class="c1"># multiply by C after summation of all subgradients for a given samples of x,y</span>
+    <span class="n">subgrad_w</span> <span class="o">=</span> <span class="n">C</span> <span class="o">*</span> <span class="n">subgrad_w</span>
+    <span class="n">subgrad_b</span> <span class="o">=</span> <span class="n">C</span> <span class="o">*</span> <span class="n">subgrad_b</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">add_regularization</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">subgrad_w</span><span class="p">),</span> <span class="n">subgrad_b</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [49]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">stochastic_subgrad_descent</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">initial_values</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    :data: Pandas data frame</span>
+<span class="sd">    :initial_values: initialization for w and b</span>
+<span class="sd">    :B: sample size for random data selection</span>
+<span class="sd">    :C: hyperparameter, tradeoff between hard margin and hinge loss</span>
+<span class="sd">    :T: # of iterations</span>
+<span class="sd">    </span>
+<span class="sd">    """</span>
+    <span class="n">w</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">initial_values</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">T</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        
+        <span class="c1"># randomly select B data points </span>
+        <span class="n">training_sample</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+        
+        <span class="c1"># set learning rate</span>
+        <span class="n">learning_rate</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">t</span>
+        
+        <span class="c1"># prepare inputs in the form [[h1, w1], [h2, w2], ....]</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">training_sample</span><span class="p">[[</span><span class="s1">'height'</span><span class="p">,</span> <span class="s1">'weight'</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+      
+        <span class="c1"># prepare labels in the form [1, -1, 1, 1, - 1 ......]</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">training_sample</span><span class="p">[</span><span class="s1">'gender'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+      
+        <span class="n">sub_grads</span> <span class="o">=</span> <span class="n">subgradients</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">C</span><span class="p">)</span>
+        
+        <span class="c1"># update weights</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="n">w</span> <span class="o">-</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">sub_grads</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        
+        <span class="c1"># update bias</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">-</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">sub_grads</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [50]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+
+<span class="n">data</span><span class="p">[</span><span class="s1">'height'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">160</span><span class="p">,</span> <span class="mi">190</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">'weight'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">data</span><span class="p">[</span><span class="s1">'gender'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="k">else</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)]</span>
+
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[50]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>height</th>
+      <th>weight</th>
+      <th>gender</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>167</td>
+      <td>82</td>
+      <td>1</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>183</td>
+      <td>57</td>
+      <td>-1</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>184</td>
+      <td>50</td>
+      <td>-1</td>
+    </tr>
+<tr>
+<th>3</th>
+      <td>178</td>
+      <td>53</td>
+      <td>-1</td>
+    </tr>
+<tr>
+<th>4</th>
+      <td>166</td>
+      <td>72</td>
+      <td>1</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [51]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">initial_weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">initial_bias</span> <span class="o">=</span> <span class="mi">12</span>
+
+<span class="n">initial_values</span> <span class="o">=</span> <span class="p">(</span><span class="n">initial_weights</span><span class="p">,</span> <span class="n">initial_bias</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [52]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">w</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="n">stochastic_subgrad_descent</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">initial_values</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [53]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">w</span><span class="p">,</span><span class="n">b</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[53]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(array([-0.798,  4.648]), 14.891692339980313)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+    </section><footer class="post-footer"><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="blog-sijanb-com-np",
+            disqus_url="http://sijanb.com.np/posts/implementation-of-stochastic-subgradient-descent-for-support-vector-machine-using-python/",
+        disqus_title="Implementation of stochastic subgradient descent for support vector machine using Python",
+        disqus_identifier="cache/posts/implementation-of-stochastic-subgradient-descent-for-support-vector-machine-using-python.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script></footer></article><script>var disqus_shortname="blog-sijanb-com-np";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer class="site-footer clearfix"><section class="poweredby">Contents © 2019         <a href="mailto:sijanonly@gmail.com">Sijan Bhandari</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </section></footer>
+</div>
+
+    <script type="text/javascript" src="../../assets/js/jquery.js"></script><script type="text/javascript" src="../../assets/js/jquery.fitvids.js"></script><script type="text/javascript" src="../../assets/js/index.js"></script>
+</body>
+</html>
