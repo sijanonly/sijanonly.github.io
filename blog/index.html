@@ -18,6 +18,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="http://sijanb.com.np/blog/">
 <link rel="icon" href="../favicon.ico" sizes="16x16">
+<link rel="next" href="index-1.html" type="text/html">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="nav-closed">
@@ -56,7 +57,122 @@
     </header><main id="content" class="content" role="main"><div class="postindex">
 
 
-<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/implementation-of-stochastic-subgradient-descent-for-support-vector-machine-using-python/">Implementation of stochastic subgradient descent for support vector machine using Python</a></h2>
+<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/understanding-term-frequencey-and-inverse-document-frequency/">Understanding Term Frequencey and Inverse Document Frequency</a></h2>
+    </header><section class="post-excerpt"><div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In any document, the frequency of occurrence of terms is taken as an important measure of score for that document (Term Frequency). For example : a document has total 100 words, and 30 words are 'mountains', we ,without hesitation, say that this document is talking about 'Mountains'.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>But, if we only include most frequent word as our score metric, we will eventually loose the actual relevancy score of the document. Since same word could exist in number of documents and it's just frequent occurrence without adding much meaning to current context. In the above example : Suppose, there are two documents talking about 'Mt. Everest'. We obviously know that there will be higher occurrence of word 'Mountains'. But, if we use 'Term Frequecy (tf)' alone, term 'Mountains' will get highest weight rather than term 'Everest'. It's not fair. And, Inverse-Document-Frequency will tackle it.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Term-Frequency-(TF):">Term Frequency (TF):<a class="anchor-link" href="../posts/understanding-term-frequencey-and-inverse-document-frequency/#Term-Frequency-(TF):">¶</a>
+</h4>
+<p>It simply measures the frequency/occurent of a term in a document. So, it gives equal important to all terms. Longer document could have large number of terms than smaller documents, so better to normalize this metric by dividing with total number of terms in the document.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Applications:">Applications:<a class="anchor-link" href="../posts/understanding-term-frequencey-and-inverse-document-frequency/#Applications:">¶</a>
+</h4>
+<ol>
+<li>Summarizing a document by extracting keywords.</li>
+<li>Comparing two documents (similary/ relevancy check)</li>
+<li>Search query to documents matching for building query results for search engine</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Inverse-Document-Frequency-(IDF):">Inverse Document Frequency (IDF):<a class="anchor-link" href="../posts/understanding-term-frequencey-and-inverse-document-frequency/#Inverse-Document-Frequency-(IDF):">¶</a>
+</h4>
+<p>It gives the importance to more relevant/significant term in the document. It tries to lower the weights to terms having less importance.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Suppose, I have two sentences representing blog content. I want to summarize it with extracting major keyword.</p>
+<h5 id="Document-I-:-'Nepal-is-a-Country'">Document I : 'Nepal is a Country'<a class="anchor-link" href="../posts/understanding-term-frequencey-and-inverse-document-frequency/#Document-I-:-'Nepal-is-a-Country'">¶</a>
+</h5>
+<h5 id="Document-II-:-'Nepal-is-a-landlocked-Country'">Document II : 'Nepal is a landlocked Country'<a class="anchor-link" href="../posts/understanding-term-frequencey-and-inverse-document-frequency/#Document-II-:-'Nepal-is-a-landlocked-Country'">¶</a>
+</h5>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../images/tf_1.png"><img src="../images/tf_2.png"><img src="../images/tf_3.png"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can see that, although, term 'country' has prominent occurrence, 'tf-idf' gives priority to word 'landlocked'.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+    </section><footer class="post-meta">
+                Sijan Bhandari
+
+        on
+
+        <time class="post-date" datetime="2019-07-29T23:30:08+05:45">
+            2019-07-29 23:30
+        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/implementation-of-stochastic-subgradient-descent-for-support-vector-machine-using-python/">Implementation of stochastic subgradient descent for support vector machine using Python</a></h2>
     </header><section class="post-excerpt"><div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1748,96 +1864,14 @@ Where sgn(.) represents signum function as following:
 
         <time class="post-date" datetime="2018-10-24T02:21:47+05:45">
             2018-10-24 02:21
-        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/what-is-deep-learning-and-neural-network/">What is Deep Learning and Neural Network?</a></h2>
-    </header><section class="post-excerpt"><div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Deep learning, in simpler version is a learning mechanisms for Neural networks. And, Neural networks are computational model mimicing human nervous system which are capable of learning. Like interconnected neurons in human brains, the neural network is also connected by different nodes. It receives signals as a set of inputs, perform calcuations and signals output based on some activation value.</p>
-<p><img src="../images/artificial_neuron.png"></p>
-<p>Here are some list of problems, that deep learning can solve</p>
-<ol>
-<li>Classification : object and speech recongnistion, classify sentiments from text</li>
-<li>Clustering : Fraud detection </li>
-</ol>
-<!-- TEASER_END --><p>Elements of Neural Networks</p>
-<ol>
-<li>
-<p>Weights
- Biological neurons has synaptic strengths to define the importance of particular inputs. In the similar fashion, inputs to NNs have associated relative weights. These weights ultimately defines the connection intensity of the input to any neuron. These weights are adaptive in nature since they will be modified in the process of training.</p>
-</li>
-<li>
-<p>Summation
- This is the first step in NN, where each input is multiplied by its corresponding weight and weighted sum is computed.</p>
-</li>
-<li>
-<p>Transfer 
-In the transfer process, we simply compare the summation output with threshold value and decide the final neural output.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>An example would be,</p>
-
-<pre><code>inputs
-(x1) = 2
-(x2) = 1
-
-weights
-(w1) = 0.7
-(w2) = 0.8
-
-threshold = 2
-
-</code></pre>
-<p>Summation value :</p>
-
-<pre><code> x1w1 + x2w2 = (2 x 0.7) + (1 x 0.8) = 2.2
-
-</code></pre>
-<p>Since summation value is greather than threshold, neuron will be fired.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-</div>
-    </section><footer class="post-meta">
-                Sijan Bhandari
-
-        on
-                <a href="../categories/deep-learning/">#deep learning</a>,
-                <a href="../categories/neural-network/">#neural network</a>,
-
-        <time class="post-date" datetime="2018-10-24T02:05:00+05:45">
-            2018-10-24 02:05
         </time></footer></article>
 </div>
 
-
-
-        
-       <script>var disqus_shortname="blog-sijanb-com-np";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        <nav class="postindexpager"><ul class="pager">
+<li class="next">
+                <a href="index-1.html" rel="next">Older posts</a>
+            </li>
+        </ul></nav><script>var disqus_shortname="blog-sijanb-com-np";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
