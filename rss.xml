@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>CODEBUG</title><link>http://sijanb.com.np/</link><description>Random exploring....</description><atom:link type="application/rss+xml" href="http://sijanb.com.np/rss.xml" rel="self"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Mon, 29 Jul 2019 18:52:18 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Understanding Term Frequencey and Inverse Document Frequency</title><link>http://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>CODEBUG</title><link>http://sijanb.com.np/</link><description>Random exploring....</description><atom:link href="http://sijanb.com.np/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Mon, 29 Jul 2019 20:15:39 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Understanding Term Frequencey and Inverse Document Frequency</title><link>http://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;In any document, the frequency of occurrence of terms is taken as an important measure of score for that document (Term Frequency). For example : a document has total 100 words, and 30 words are 'mountains', we ,without hesitation, say that this document is talking about 'Mountains'.&lt;/p&gt;
@@ -30,6 +30,7 @@
 &lt;li&gt;Summarizing a document by extracting keywords.&lt;/li&gt;
 &lt;li&gt;Comparing two documents (similary/ relevancy check)&lt;/li&gt;
 &lt;li&gt;Search query to documents matching for building query results for search engine&lt;/li&gt;
+&lt;li&gt;Weighting 'terms' in the document.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;/div&gt;
@@ -38,7 +39,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="Inverse-Document-Frequency-(IDF):"&gt;Inverse Document Frequency (IDF):&lt;a class="anchor-link" href="http://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/#Inverse-Document-Frequency-(IDF):"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;It gives the importance to more relevant/significant term in the document. It tries to lower the weights to terms having less importance.&lt;/p&gt;
+&lt;h4 id="Inverse-Document-Frequency-(IDF):"&gt;Inverse Document Frequency (IDF):&lt;a class="anchor-link" href="http://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/#Inverse-Document-Frequency-(IDF):"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;It gives the importance to more relevant/significant term in the document. It tries to lower the weights to terms having less importance. And, rare terms will get significant weights.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -46,7 +47,15 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Suppose, I have two sentences representing blog content. I want to summarize it with extracting major keyword.&lt;/p&gt;
+&lt;h4 id="TF-IDF:"&gt;TF-IDF:&lt;a class="anchor-link" href="http://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/#TF-IDF:"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;It tries to prioritize the terms based on their occurrence and uniqueness.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Suppose, I have two documents in my corpus and I want to give tf-idf weighting to the terms.&lt;/p&gt;
 &lt;h5 id="Document-I-:-'Nepal-is-a-Country'"&gt;Document I : 'Nepal is a Country'&lt;a class="anchor-link" href="http://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/#Document-I-:-'Nepal-is-a-Country'"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;h5 id="Document-II-:-'Nepal-is-a-landlocked-Country'"&gt;Document II : 'Nepal is a landlocked Country'&lt;a class="anchor-link" href="http://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/#Document-II-:-'Nepal-is-a-landlocked-Country'"&gt;¶&lt;/a&gt;&lt;/h5&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -64,7 +73,10 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;We can see that, although, term 'country' has prominent occurrence, 'tf-idf' gives priority to word 'landlocked'.&lt;/p&gt;
+&lt;p&gt;We can see that, although, term 'country' has prominent occurrence, 'tf-idf' gives priority to word 'landlocked' and it carries more information about the document.&lt;/p&gt;
+&lt;h4 id="NOTE-1-:"&gt;NOTE 1 :&lt;a class="anchor-link" href="http://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/#NOTE-1-:"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;These weights are eventually used for vector-space model, where each term represents the axes, and document are the vectors on that space. Since 'tf-idf' value is zero (as shown above)' this representation is very sparse.&lt;/p&gt;
+&lt;h4 id="NOTE-2-:"&gt;NOTE 2 :&lt;a class="anchor-link" href="http://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/#NOTE-2-:"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Suppose, we are building a search engine system. The query is also converted into vector in vector-space model and compare with documents
+(NOTE 1) to get the similarity between them.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;

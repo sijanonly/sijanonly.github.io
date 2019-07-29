@@ -102,6 +102,7 @@
 <li>Summarizing a document by extracting keywords.</li>
 <li>Comparing two documents (similary/ relevancy check)</li>
 <li>Search query to documents matching for building query results for search engine</li>
+<li>Weighting 'terms' in the document.</li>
 </ol>
 </div>
 </div>
@@ -113,7 +114,7 @@
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Inverse-Document-Frequency-(IDF):">Inverse Document Frequency (IDF):<a class="anchor-link" href="../posts/understanding-term-frequencey-and-inverse-document-frequency/#Inverse-Document-Frequency-(IDF):">¶</a>
 </h4>
-<p>It gives the importance to more relevant/significant term in the document. It tries to lower the weights to terms having less importance.</p>
+<p>It gives the importance to more relevant/significant term in the document. It tries to lower the weights to terms having less importance. And, rare terms will get significant weights.</p>
 
 </div>
 </div>
@@ -123,7 +124,19 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Suppose, I have two sentences representing blog content. I want to summarize it with extracting major keyword.</p>
+<h4 id="TF-IDF:">TF-IDF:<a class="anchor-link" href="../posts/understanding-term-frequencey-and-inverse-document-frequency/#TF-IDF:">¶</a>
+</h4>
+<p>It tries to prioritize the terms based on their occurrence and uniqueness.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Suppose, I have two documents in my corpus and I want to give tf-idf weighting to the terms.</p>
 <h5 id="Document-I-:-'Nepal-is-a-Country'">Document I : 'Nepal is a Country'<a class="anchor-link" href="../posts/understanding-term-frequencey-and-inverse-document-frequency/#Document-I-:-'Nepal-is-a-Country'">¶</a>
 </h5>
 <h5 id="Document-II-:-'Nepal-is-a-landlocked-Country'">Document II : 'Nepal is a landlocked Country'<a class="anchor-link" href="../posts/understanding-term-frequencey-and-inverse-document-frequency/#Document-II-:-'Nepal-is-a-landlocked-Country'">¶</a>
@@ -146,7 +159,14 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can see that, although, term 'country' has prominent occurrence, 'tf-idf' gives priority to word 'landlocked'.</p>
+<p>We can see that, although, term 'country' has prominent occurrence, 'tf-idf' gives priority to word 'landlocked' and it carries more information about the document.</p>
+<h4 id="NOTE-1-:">NOTE 1 :<a class="anchor-link" href="../posts/understanding-term-frequencey-and-inverse-document-frequency/#NOTE-1-:">¶</a>
+</h4>
+<p>These weights are eventually used for vector-space model, where each term represents the axes, and document are the vectors on that space. Since 'tf-idf' value is zero (as shown above)' this representation is very sparse.</p>
+<h4 id="NOTE-2-:">NOTE 2 :<a class="anchor-link" href="../posts/understanding-term-frequencey-and-inverse-document-frequency/#NOTE-2-:">¶</a>
+</h4>
+<p>Suppose, we are building a search engine system. The query is also converted into vector in vector-space model and compare with documents
+(NOTE 1) to get the similarity between them.</p>
 
 </div>
 </div>
