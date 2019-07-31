@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html prefix="" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Interpreting Centrality Measures for Network Analysis | CODEBUG</title>
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../../assets/css/screen.css">
+<link rel="stylesheet" type="text/css" href="../../assets/css/nav.css">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400%7CInconsolata">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="http://sijanb.com.np/posts/interpreting-centrality-measures-for-network-analysis/">
+<link rel="icon" href="../../favicon.ico" sizes="16x16">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Sijan Bhandari">
+<link rel="prev" href="../understanding-term-frequencey-and-inverse-document-frequency/" title="Understanding Term Frequencey and Inverse Document Frequency" type="text/html">
+<meta property="og:site_name" content="CODEBUG">
+<meta property="og:title" content="Interpreting Centrality Measures for Network Analysis">
+<meta property="og:url" content="http://sijanb.com.np/posts/interpreting-centrality-measures-for-network-analysis/">
+<meta property="og:description" content="Network has been taken as a tool for describing complex systems or interactions around us. Few prominent complex systems are:
+
+Our society where almost 7 billions individuals exist/ and the interactio">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2019-07-31T23:26:36+05:45">
+</head>
+<body class="nav-closed">
+
+<div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+<li class="nav-opened" role="presentation">
+            <a href="../../blog/">Blog</a>
+        </li>
+        <li class="nav-opened" role="presentation">
+            <a href="../../categories/">Tags</a>
+        </li>
+        <li class="nav-opened" role="presentation">
+            <a href="../../rss.xml">RSS feed</a>
+        </li>
+    
+    
+    </ul>
+</div>
+<span class="nav-cover"></span>
+
+<div class="site-wrapper">
+    <header class="main-header post-head no-cover"><nav class="main-nav overlay clearfix"><a class="blog-logo" href="http://sijanb.com.np/"><img src="../../images/logo.png" alt="Blog Logo"></a>
+            <a class="menu-button" href="#"><span class="burger">☰</span><span class="word">Menu</span></a>
+        </nav></header><main id="content" class="content" role="main"><article class="post post"><header class="post-header"><h1 class="post-title">Interpreting Centrality Measures for Network Analysis</h1>
+        <section class="post-meta"> by
+            Sijan Bhandari
+            on
+            <time class="post-date" datetime="2019-07-31T23:26:36+05:45">
+                2019-07-31 23:26
+            </time></section></header><section class="post-content"><div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Network has been taken as a tool for describing complex systems or interactions around us. Few prominent complex systems are:</p>
+<ol>
+<li>
+<p>Our society where almost 7 billions individuals exist/ and the interactions between them in one or other ways.</p>
+</li>
+<li>
+<p>Genes in our body, interactions between gene molecules ( Protein-Protein interaction networks)</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Peoply usually visualize the network to see cluter/ densely linked clusters and try to analyze, predict relation between nodes, figure out similarity between nodes in the network.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Figuring out the central nodes/vertices is also an important network analysis process because centrality measures :</p>
+
+<pre><code>        a. Existing influence of a node on other nodes
+        b. Information flow in and out from a node or towards it
+        c. Finding node/s which is/are acting as bridge between two different/big groups</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's talk about few important centrality measures:</p>
+<p>A. Degree Centrality :</p>
+<p>Degree centrality is considered as a local measure which captures the direct influence of a node and its access to first hand information in the network.</p>
+<p>Algorithm for calculationg degree centrality:</p>
+
+<pre><code>          i. Rank all vertices based on their degree values
+          ii. Highest degree vertex will be considered as central one.
+
+
+
+</code></pre>
+<p>For a directed graph, we can divide this measure into two:</p>
+
+<pre><code>      a) Indegree centrality : It can measured by counting number of edges going into a vertex. A node having highest indegree cenrality can be seen as 'popular node .i.e having many followers.
+
+      b) Outdegree centrality : It can measured by counting number of edges leaving a vertex. And a node with highest outdegree centrality can be seen as more social node i.e having good reach.
+
+
+</code></pre>
+<p>B. Closeness Centrality :</p>
+<p>Closeness centrality says that important nodes are always stay close to other nodes. It can been as a measure of time to spread a message/information from a node to other nodes sequentially. It is calculated based on sum of the length of the shortest paths from a node to all other nodes.</p>
+<p>Algorithm for calculating closeness centrality:</p>
+
+<pre><code>           i. Calculate the shortest paths between a node to other nodes.
+           ii. Sum those distance values and take the reciprocal
+           iii. Repeat (i), (ii) for all nodes.
+
+</code></pre>
+<p>Since the sum of shortest paths between nodes u and v will be low if these two nodes are more central and will be high if those are less central, which is opposite to other centrality measures ( for Degree centrality: higher value signify higher centrality). Therefore, it is taken as inverse measure.</p>
+<p>so, closeness centrality of a node 'v', closeness(v) =   $  \frac{n-1}{\sum_{u=1}^{n-1}d(u,v)} $</p>
+<p>where d(u,v) is the geodesic path = shortest path through a network between two vertices u and v.</p>
+<p>NOTE : path from v to u is the number of edges along that path.</p>
+<p><img src="../../images/closeness.png"></p>
+<p>C. Betweenness Centrality</p>
+<p>Betweenness centrality measures the bridgeness of node. It says that 'central nodes are those which act as bridge nodes'. We can calculate the number of times a node acts as bridge along the shortest path between two nodes.</p>
+<p>Betweenness centrality of a node 'v' is betw(v) = $ \sum_{s,t \ne v}  \frac{\delta_{st}(v)}{del_{st}}   $</p>
+<p>Where :</p>
+<p>$ \delta_{st}(v) $ : The number of shortest paths between s and t via v.</p>
+<p>and $ \delta_{st} $ : The number of shortest paths between s ant t.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+    </section><footer class="post-footer"><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="blog-sijanb-com-np",
+            disqus_url="http://sijanb.com.np/posts/interpreting-centrality-measures-for-network-analysis/",
+        disqus_title="Interpreting Centrality Measures for Network Analysis",
+        disqus_identifier="cache/posts/interpreting-centrality-measures-for-network-analysis.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script></footer></article><script>var disqus_shortname="blog-sijanb-com-np";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer class="site-footer clearfix"><section class="poweredby">Contents © 2019         <a href="mailto:sijanonly@gmail.com">Sijan Bhandari</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </section></footer>
+</div>
+
+    <script type="text/javascript" src="../../assets/js/jquery.js"></script><script type="text/javascript" src="../../assets/js/jquery.fitvids.js"></script><script type="text/javascript" src="../../assets/js/index.js"></script>
+</body>
+</html>
