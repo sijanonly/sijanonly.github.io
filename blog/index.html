@@ -105,71 +105,9 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>.. TEASER_END</p>
-
+<p class="more"><a href="../posts/interpreting-centrality-measures-for-network-analysis/">Read more…</a></p>
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's talk about few important centrality measures:</p>
-<p>A. Degree Centrality :</p>
-<p>Degree centrality is considered as a local measure which captures the direct influence of a node and its access to first hand information in the network.</p>
-<p>Algorithm for calculationg degree centrality:</p>
-
-<pre><code>          i. Rank all vertices based on their degree values
-          ii. Highest degree vertex will be considered as central one.
-
-
-
-</code></pre>
-<p>For a directed graph, we can divide this measure into two:</p>
-
-<pre><code>      a) Indegree centrality : It can measured by counting number of edges going into a vertex. A node having highest indegree cenrality can be seen as 'popular node .i.e having many followers.
-
-      b) Outdegree centrality : It can measured by counting number of edges leaving a vertex. And a node with highest outdegree centrality can be seen as more social node i.e having good reach.
-
-
-</code></pre>
-<p>B. Closeness Centrality :</p>
-<p>Closeness centrality says that important nodes are always stay close to other nodes. It can been as a measure of time to spread a message/information from a node to other nodes sequentially. It is calculated based on sum of the length of the shortest paths from a node to all other nodes.</p>
-<p>Algorithm for calculating closeness centrality:</p>
-
-<pre><code>           i. Calculate the shortest paths between a node to other nodes.
-           ii. Sum those distance values and take the reciprocal
-           iii. Repeat (i), (ii) for all nodes.
-
-</code></pre>
-<p>Since the sum of shortest paths between nodes u and v will be low if these two nodes are more central and will be high if those are less central, which is opposite to other centrality measures ( for Degree centrality: higher value signify higher centrality). Therefore, it is taken as inverse measure.</p>
-<p>so, closeness centrality of a node 'v', closeness(v) =   $  \frac{n-1}{\sum_{u=1}^{n-1}d(u,v)} $</p>
-<p>where d(u,v) is the geodesic path = shortest path through a network between two vertices u and v.</p>
-<p>NOTE : path from v to u is the number of edges along that path.</p>
-<p><img src="../images/closeness.png"></p>
-<p>C. Betweenness Centrality</p>
-<p>Betweenness centrality measures the bridgeness of node. It says that 'central nodes are those which act as bridge nodes'. We can calculate the number of times a node acts as bridge along the shortest path between two nodes.</p>
-<p>Betweenness centrality of a node 'v' is betw(v) = $ \sum_{s,t \ne v}  \frac{\delta_{st}(v)}{del_{st}}   $</p>
-<p>Where :</p>
-<p>$ \delta_{st}(v) $ : The number of shortest paths between s and t via v.</p>
-<p>and $ \delta_{st} $ : The number of shortest paths between s ant t.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
 </div>
 </div>
     </section><footer class="post-meta">
