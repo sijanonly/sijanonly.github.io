@@ -57,7 +57,181 @@
     </header><main id="content" class="content" role="main"><div class="postindex">
 
 
-<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/what-is-perceptron-and-how-it-works/">What is perceptron and how it works?</a></h2>
+<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/using-perceptron-model-for-classification-an-illustrative-approach/">Using perceptron model for classification : an illustrative approach</a></h2>
+    </header><section class="post-excerpt"><div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this post, we are going to devise a measurement tool (perceptron model) in order to classify : whether a person is infected by a diseases or not.</p>
+<p>In binary terms, the output will be</p>
+
+<pre><code>       {
+            1   if infected 
+            0   not infected
+        } 
+
+</code></pre>
+<p>To build inputs for our neural network, we take readings from the patients and we will treat readings as follows :</p>
+
+<pre><code>  body temperature = {
+                          1   if body temperator &gt; 99'F
+                         -1   if body temperator = 99'F
+                     }
+
+  heart rate = {
+                      1   if heart rate &gt; 60 to 100
+                     -1   if heart rate = 60 to 100
+                 }
+
+   blood pressure = {
+                          1   if heart rate &gt; 120/80
+                         -1   if heart rate = 120/80
+                     }
+
+</code></pre>
+<p>So, input from each patient will be represented as a three dimensional vector:</p>
+
+<pre><code>  input = (body temperatur, heart rate, blood pressure)
+</code></pre>
+<p>So, a person can now be represented as :</p>
+
+<pre><code>(1, -1, 1)
+i.e (body temperator &gt; 99'F, heart rate = 60 to 100, heart rate &gt; 120/80)</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let us create two inputs with desired output value</p>
+
+<pre><code>      x1 = (1, 1, 1), d1 = 1 (infected)
+       x2 = (-1, -1, -1), d2 = 0 (not infected)
+</code></pre>
+<p>Let us take initial values for weights and biases:
+          weights, w0 = (-1, 0.5, 0)
+          bias, b0 = 0.5</p>
+<p>And, activation function:</p>
+
+<pre><code>         A(S)   = {
+                    1 if S &gt;=0
+                    0 otherwise
+                  }
+</code></pre>
+<h5 id="STEP-1">STEP 1<a class="anchor-link" href="../posts/using-perceptron-model-for-classification-an-illustrative-approach/#STEP-1">¶</a>
+</h5>
+<p>Feed <code>x1 = (1, 1, 1)</code> into the network.</p>
+<p>weighted_sum:</p>
+
+<pre><code>S = (-1, 0.5, 0) * (1, 1, 1)^T + 0
+  = -1 + 0.5 + 0 + 0
+  = -0.5
+
+</code></pre>
+<p>When passed through activation function A(-0.5) = 0 = y1
+We passed an <code>infected</code> input vector, but our perceptron classified it as <code>not infected</code>.
+Let's calculate the error term:</p>
+
+<pre><code>             e = d1 - y1 = 1 - 0 = 1
+</code></pre>
+<p>Update weight as:</p>
+
+<pre><code>             w1 = w0 + e * x1 = (-1, 0.5, 0) + 1 * (1, 1, 1) = (0, 1.5, 1)
+</code></pre>
+<p>And, update bias as:</p>
+
+<pre><code>             b1 = b0 + e = 1</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="STEP-2">STEP 2<a class="anchor-link" href="../posts/using-perceptron-model-for-classification-an-illustrative-approach/#STEP-2">¶</a>
+</h5>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, we feed second input <code>(-1, -1, -1)</code> into our network.</p>
+<p>weighted_sum :</p>
+
+<pre><code>S = w1 * x2^T + b1 
+  = (0, 1.5, 1) * (-1, -1, -1)^T + 1
+  = -1.5 - 1 + 1
+  = -1.5
+</code></pre>
+<p>When passed through activation function A(-1.5) = 0 = y2
+ We passed an <code>not infected</code> input vector, and our perceptron successfully classified it as <code>not infected</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="STEP-3">STEP 3<a class="anchor-link" href="../posts/using-perceptron-model-for-classification-an-illustrative-approach/#STEP-3">¶</a>
+</h5>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Since, our first input is mis-classified, so we will go for it.</p>
+<p>weighted_sum :</p>
+
+<pre><code>S = w1 * x1^T + b1 
+  = (0, 1.5, 1) * (1, 1, 1)^T + 1
+  = 1.5 + 1 + 1
+  = 3.5
+</code></pre>
+<p>When passed through activation function A(3.5) = 1 = y3
+ We passed an <code>infected</code> input vector, and our perceptron successfully classified it as <code>infected</code>.</p>
+<p>Here, both input vectors are correctly classified. i.e algorithm is converged to a solution point.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+    </section><footer class="post-meta">
+                Sijan Bhandari
+
+        on
+                <a href="../categories/perceptron/">#perceptron</a>,
+
+        <time class="post-date" datetime="2018-10-24T02:27:54+05:45">
+            2018-10-24 02:27
+        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/what-is-perceptron-and-how-it-works/">What is perceptron and how it works?</a></h2>
     </header><section class="post-excerpt"><div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">

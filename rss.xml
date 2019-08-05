@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>CODEBUG</title><link>http://sijanb.com.np/</link><description>Random exploring....</description><atom:link href="http://sijanb.com.np/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Wed, 31 Jul 2019 19:24:17 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Interpreting Centrality Measures for Network Analysis</title><link>http://sijanb.com.np/posts/interpreting-centrality-measures-for-network-analysis/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>CODEBUG</title><link>http://sijanb.com.np/</link><description>Random exploring....</description><atom:link href="http://sijanb.com.np/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Mon, 05 Aug 2019 18:27:07 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Intuition behind Gradient Descent for Machine Learning Algorithms</title><link>http://sijanb.com.np/posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;img src="http://sijanb.com.np/images/gradient_descent.png"&gt;&lt;/p&gt;
+&lt;p&gt;Before jumping to Gradient Descent, let's be clear about difference between backpropagation and gradient descent. Comparing things make it easier to learn !&lt;/p&gt;
+&lt;h5 id="Backpropagation-:"&gt;Backpropagation :&lt;a class="anchor-link" href="http://sijanb.com.np/posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/#Backpropagation-:"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Backpropagation is an efficient way of calculating gradients using chain rule.&lt;/p&gt;
+&lt;h5 id="Gradient-Descent:"&gt;Gradient Descent:&lt;a class="anchor-link" href="http://sijanb.com.np/posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/#Gradient-Descent:"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Gradient Descent is an optimization algorithm which is used in different machine learning algorithms to find parameters/combination of parameters which mimimizes the loss function.&lt;/p&gt;
+&lt;p&gt;** In case of neural network, we use backpropagation to calculate the gradient of loss function w.r.t to weights. Weights are the parameters of neural network.&lt;/p&gt;
+&lt;p&gt;** In case of linear regression, coefficients are the parameters!.&lt;/p&gt;
+&lt;p&gt;** Many machine learning algorithms are convex problems, so using gradient descent to get extrema makes more sense. For example, if you remember the solution of linear regression :&lt;/p&gt;
+&lt;p&gt;$ \beta = (X^T X)^{-1} X^T y  $&lt;/p&gt;
+&lt;p&gt;Here, we can get the analytical solution by simply solving above equations. But, inverse calculation has $ O(N^3) $ complexity. It will be worst if our data size increases.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="http://sijanb.com.np/posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>http://sijanb.com.np/posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/</guid><pubDate>Mon, 05 Aug 2019 16:52:30 GMT</pubDate></item><item><title>Interpreting Centrality Measures for Network Analysis</title><link>http://sijanb.com.np/posts/interpreting-centrality-measures-for-network-analysis/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Network has been taken as a tool for describing complex systems or interactions around us. Few prominent complex systems are:&lt;/p&gt;
@@ -1099,150 +1118,4 @@ input :(1, 1) has true output :1
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="http://sijanb.com.np/posts/understanding-probability/"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>http://sijanb.com.np/posts/understanding-probability/</guid><pubDate>Sun, 04 Nov 2018 15:38:45 GMT</pubDate></item><item><title>Using perceptron model for classification : an illustrative approach</title><link>http://sijanb.com.np/posts/using-perceptron-model-for-classification-an-illustrative-approach/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;In this post, we are going to devise a measurement tool (perceptron model) in order to classify : whether a person is infected by a diseases or not.&lt;/p&gt;
-&lt;p&gt;In binary terms, the output will be&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;       {
-            1   if infected 
-            0   not infected
-        } 
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;To build inputs for our neural network, we take readings from the patients and we will treat readings as follows :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;  body temperature = {
-                          1   if body temperator &amp;gt; 99'F
-                         -1   if body temperator = 99'F
-                     }
-
-  heart rate = {
-                      1   if heart rate &amp;gt; 60 to 100
-                     -1   if heart rate = 60 to 100
-                 }
-
-   blood pressure = {
-                          1   if heart rate &amp;gt; 120/80
-                         -1   if heart rate = 120/80
-                     }
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;So, input from each patient will be represented as a three dimensional vector:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;  input = (body temperatur, heart rate, blood pressure)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;So, a person can now be represented as :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;(1, -1, 1)
-i.e (body temperator &amp;gt; 99'F, heart rate = 60 to 100, heart rate &amp;gt; 120/80)&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Let us create two inputs with desired output value&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;      x1 = (1, 1, 1), d1 = 1 (infected)
-       x2 = (-1, -1, -1), d2 = 0 (not infected)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Let us take initial values for weights and biases:
-          weights, w0 = (-1, 0.5, 0)
-          bias, b0 = 0.5&lt;/p&gt;
-&lt;p&gt;And, activation function:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;         A(S)   = {
-                    1 if S &amp;gt;=0
-                    0 otherwise
-                  }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h5 id="STEP-1"&gt;STEP 1&lt;a class="anchor-link" href="http://sijanb.com.np/posts/using-perceptron-model-for-classification-an-illustrative-approach/#STEP-1"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Feed &lt;code&gt;x1 = (1, 1, 1)&lt;/code&gt; into the network.&lt;/p&gt;
-&lt;p&gt;weighted_sum:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;S = (-1, 0.5, 0) * (1, 1, 1)^T + 0
-  = -1 + 0.5 + 0 + 0
-  = -0.5
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;When passed through activation function A(-0.5) = 0 = y1
-We passed an &lt;code&gt;infected&lt;/code&gt; input vector, but our perceptron classified it as &lt;code&gt;not infected&lt;/code&gt;.
-Let's calculate the error term:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;             e = d1 - y1 = 1 - 0 = 1
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Update weight as:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;             w1 = w0 + e * x1 = (-1, 0.5, 0) + 1 * (1, 1, 1) = (0, 1.5, 1)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;And, update bias as:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;             b1 = b0 + e = 1&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="STEP-2"&gt;STEP 2&lt;a class="anchor-link" href="http://sijanb.com.np/posts/using-perceptron-model-for-classification-an-illustrative-approach/#STEP-2"&gt;¶&lt;/a&gt;&lt;/h5&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Now, we feed second input &lt;code&gt;(-1, -1, -1)&lt;/code&gt; into our network.&lt;/p&gt;
-&lt;p&gt;weighted_sum :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;S = w1 * x2^T + b1 
-  = (0, 1.5, 1) * (-1, -1, -1)^T + 1
-  = -1.5 - 1 + 1
-  = -1.5
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;When passed through activation function A(-1.5) = 0 = y2
- We passed an &lt;code&gt;not infected&lt;/code&gt; input vector, and our perceptron successfully classified it as &lt;code&gt;not infected&lt;/code&gt;.&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="STEP-3"&gt;STEP 3&lt;a class="anchor-link" href="http://sijanb.com.np/posts/using-perceptron-model-for-classification-an-illustrative-approach/#STEP-3"&gt;¶&lt;/a&gt;&lt;/h5&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Since, our first input is mis-classified, so we will go for it.&lt;/p&gt;
-&lt;p&gt;weighted_sum :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;S = w1 * x1^T + b1 
-  = (0, 1.5, 1) * (1, 1, 1)^T + 1
-  = 1.5 + 1 + 1
-  = 3.5
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;When passed through activation function A(3.5) = 1 = y3
- We passed an &lt;code&gt;infected&lt;/code&gt; input vector, and our perceptron successfully classified it as &lt;code&gt;infected&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Here, both input vectors are correctly classified. i.e algorithm is converged to a solution point.&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;&lt;/div&gt;</description><category>perceptron</category><guid>http://sijanb.com.np/posts/using-perceptron-model-for-classification-an-illustrative-approach/</guid><pubDate>Tue, 23 Oct 2018 20:42:54 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="http://sijanb.com.np/posts/understanding-probability/"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>http://sijanb.com.np/posts/understanding-probability/</guid><pubDate>Sun, 04 Nov 2018 15:38:45 GMT</pubDate></item></channel></rss>

@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>http://sijanb.com.np/archive.html</loc>
-  <lastmod>2019-07-31T19:24:00Z</lastmod>
+  <lastmod>2019-08-05T18:27:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/blog/</loc>
@@ -27,7 +27,7 @@
  </url>
  <url>
   <loc>http://sijanb.com.np/blog/index-1.html</loc>
-  <lastmod>2019-07-31T19:24:00Z</lastmod>
+  <lastmod>2019-08-05T18:27:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/categories/</loc>
@@ -72,6 +72,10 @@
  <url>
   <loc>http://sijanb.com.np/posts/interpreting-centrality-measures-for-network-analysis/</loc>
   <lastmod>2019-07-31T19:11:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://sijanb.com.np/posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/</loc>
+  <lastmod>2019-08-05T18:27:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/posts/understanding-probability/</loc>

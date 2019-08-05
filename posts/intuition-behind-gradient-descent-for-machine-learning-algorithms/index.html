@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Interpreting Centrality Measures for Network Analysis | CODEBUG</title>
+<title>Intuition behind Gradient Descent for Machine Learning Algorithms | CODEBUG</title>
 <link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
@@ -15,19 +15,17 @@
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
-<link rel="canonical" href="http://sijanb.com.np/posts/interpreting-centrality-measures-for-network-analysis/">
+<link rel="canonical" href="http://sijanb.com.np/posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/">
 <link rel="icon" href="../../favicon.ico" sizes="16x16">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Sijan Bhandari">
-<link rel="prev" href="../understanding-term-frequencey-and-inverse-document-frequency/" title="Understanding Term Frequencey and Inverse Document Frequency" type="text/html">
-<link rel="next" href="../intuition-behind-gradient-descent-for-machine-learning-algorithms/" title="Intuition behind Gradient Descent for Machine Learning Algorithms" type="text/html">
+<link rel="prev" href="../interpreting-centrality-measures-for-network-analysis/" title="Interpreting Centrality Measures for Network Analysis" type="text/html">
 <meta property="og:site_name" content="CODEBUG">
-<meta property="og:title" content="Interpreting Centrality Measures for Network Analysis">
-<meta property="og:url" content="http://sijanb.com.np/posts/interpreting-centrality-measures-for-network-analysis/">
-<meta property="og:description" content="Network has been taken as a tool for describing complex systems or interactions around us. Few prominent complex systems are:
-
-Our society where almost 7 billions individuals exist/ and the interactio">
+<meta property="og:title" content="Intuition behind Gradient Descent for Machine Learning Algorithms">
+<meta property="og:url" content="http://sijanb.com.np/posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/">
+<meta property="og:description" content="Before jumping to Gradient Descent, let's be clear about difference between backpropagation and gradient descent. Comparing things make it easier to learn !
+Backpropagation :¶Backpropagation is an eff">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2019-07-31T23:26:36+05:45">
+<meta property="article:published_time" content="2019-08-05T22:37:30+05:45">
 </head>
 <body class="nav-closed">
 
@@ -55,50 +53,31 @@ Our society where almost 7 billions individuals exist/ and the interactio">
 <div class="site-wrapper">
     <header class="main-header post-head no-cover"><nav class="main-nav overlay clearfix"><a class="blog-logo" href="http://sijanb.com.np/"><img src="../../images/logo.png" alt="Blog Logo"></a>
             <a class="menu-button" href="#"><span class="burger">☰</span><span class="word">Menu</span></a>
-        </nav></header><main id="content" class="content" role="main"><article class="post post"><header class="post-header"><h1 class="post-title">Interpreting Centrality Measures for Network Analysis</h1>
+        </nav></header><main id="content" class="content" role="main"><article class="post post"><header class="post-header"><h1 class="post-title">Intuition behind Gradient Descent for Machine Learning Algorithms</h1>
         <section class="post-meta"> by
             Sijan Bhandari
             on
-            <time class="post-date" datetime="2019-07-31T23:26:36+05:45">
-                2019-07-31 23:26
+            <time class="post-date" datetime="2019-08-05T22:37:30+05:45">
+                2019-08-05 22:37
             </time></section></header><section class="post-content"><div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Network has been taken as a tool for describing complex systems or interactions around us. Few prominent complex systems are:</p>
-<ol>
-<li>
-<p>Our society where almost 7 billions individuals exist/ and the interactions between them in one or other ways.</p>
-</li>
-<li>
-<p>Genes in our body, interactions between gene molecules ( Protein-Protein interaction networks)</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Peoply usually visualize the network to see cluter/ densely linked clusters and try to analyze, predict relation between nodes, figure out similarity between nodes in the network.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Figuring out the central nodes/vertices is also an important network analysis process because centrality measures :</p>
-
-<pre><code>        a. Existing influence of a node on other nodes
-        b. Information flow in and out from a node or towards it
-        c. Finding node/s which is/are acting as bridge between two different/big groups</code></pre>
+<p><img src="../../images/gradient_descent.png"></p>
+<p>Before jumping to Gradient Descent, let's be clear about difference between backpropagation and gradient descent. Comparing things make it easier to learn !</p>
+<h5 id="Backpropagation-:">Backpropagation :<a class="anchor-link" href="#Backpropagation-:">¶</a>
+</h5>
+<p>Backpropagation is an efficient way of calculating gradients using chain rule.</p>
+<h5 id="Gradient-Descent:">Gradient Descent:<a class="anchor-link" href="#Gradient-Descent:">¶</a>
+</h5>
+<p>Gradient Descent is an optimization algorithm which is used in different machine learning algorithms to find parameters/combination of parameters which mimimizes the loss function.</p>
+<p>** In case of neural network, we use backpropagation to calculate the gradient of loss function w.r.t to weights. Weights are the parameters of neural network.</p>
+<p>** In case of linear regression, coefficients are the parameters!.</p>
+<p>** Many machine learning algorithms are convex problems, so using gradient descent to get extrema makes more sense. For example, if you remember the solution of linear regression :</p>
+<p>$ \beta = (X^T X)^{-1} X^T y  $</p>
+<p>Here, we can get the analytical solution by simply solving above equations. But, inverse calculation has $ O(N^3) $ complexity. It will be worst if our data size increases.</p>
 
 </div>
 </div>
@@ -117,46 +96,48 @@ Our society where almost 7 billions individuals exist/ and the interactio">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's talk about few important centrality measures:</p>
-<p>A. Degree Centrality :</p>
-<p>Degree centrality is considered as a local measure which captures the direct influence of a node and its access to first hand information in the network.</p>
-<p>Algorithm for calculationg degree centrality:</p>
-
-<pre><code>          i. Rank all vertices based on their degree values
-          ii. Highest degree vertex will be considered as central one.
-
-
-
-</code></pre>
-<p>For a directed graph, we can divide this measure into two:</p>
-
-<pre><code>      a) Indegree centrality : It can measured by counting number of edges going into a vertex. A node having highest indegree cenrality can be seen as 'popular node .i.e having many followers.
-
-      b) Outdegree centrality : It can measured by counting number of edges leaving a vertex. And a node with highest outdegree centrality can be seen as more social node i.e having good reach.
-
-
-</code></pre>
-<p>B. Closeness Centrality :</p>
-<p>Closeness centrality says that important nodes are always stay close to other nodes. It can been as a measure of time to spread a message/information from a node to other nodes sequentially. It is calculated based on sum of the length of the shortest paths from a node to all other nodes.</p>
-<p>Algorithm for calculating closeness centrality:</p>
-
-<pre><code>           i. Calculate the shortest paths between a node to other nodes.
-           ii. Sum those distance values and take the reciprocal
-           iii. Repeat (i), (ii) for all nodes.
-
-</code></pre>
-<p>Since the sum of shortest paths between nodes u and v will be low if these two nodes are more central and will be high if those are less central, which is opposite to other centrality measures ( for Degree centrality: higher value signify higher centrality). Therefore, it is taken as inverse measure.</p>
-<p>so, closeness centrality of a node 'v', closeness(v) =   $  \frac{n-1}{\sum_{u=1}^{n-1}d(u,v)} $</p>
-<p>where d(u,v) is the geodesic path = shortest path through a network between two vertices u and v.</p>
-<p>NOTE : path from v to u is the number of edges along that path.</p>
-<p><img src="../../images/closeness.png"></p>
-<p>C. Betweenness Centrality</p>
-<p>Betweenness centrality measures the bridgeness of node. It says that 'central nodes are those which act as bridge nodes'. We can calculate the number of times a node acts as bridge along the shortest path between two nodes.</p>
-<p>Betweenness centrality of a node 'v' is betw(v) = $ \sum_{s,t \ne v}  \frac{\delta_{st}(v)}{del_{st}}   $</p>
-<p>Where :</p>
-<p>$ \delta_{st}(v) $ : The number of shortest paths between s and t via v.</p>
-<p>and $ \delta_{st} $ : The number of shortest paths between s ant t.</p>
-
+<p>The algorithm has major three steps:</p>
+<ol>
+<li>Randomly select initial position (x) (e.g : setting initial weights/baises in neural network)</li>
+<li>Calculate derivative of the cost function (f) at that position, figuring out which direction we should move. </li>
+<li>
+<p>Follow the direction, where the function is descending fastest, with small step of $ \alpha $ (learning rate)</p>
+<p>if $ f^{'}(x) $ &gt; 0 . f is increasing. so we have to move x to little left.</p>
+<p>if $ f^{'}(x) $ &lt; 0 . f is decreasing. so we have to move x to little right.</p>
+<p>NOTE : If the derivative is +ve, it means the slope is going up when you move right so you have to descent to left.
+and if the derivative is -ve, it means the slope goes down when you move left so you need to descent to right.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So, at each position, we calcuate the derivative of the loss function to get the direction and move with a single step. But, how much is the ideal step size ? We have two different scenarios:</p>
+<ol>
+<li>If we set $\alpha$ to small, convergence will take longer.</li>
+<li>If we set $\alpha$ to large, algorithm might overshoot the minimum and jumps to-and-fro. So, algorithm might not be converging, in worst, it diverges from actual minimal.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Major Take-Aways</p>
+<ol>
+<li>Gradient descent is applied to minimize a function.</li>
+<li>Gradient descent will give optimal solution if the problem is convex.</li>
+<li>Using analytical solution could be computationally inefficient( e.g. linear regression), so applying Gradient descent on huge data sets is a good decision.</li>
+</ol>
+<p>Just curious !</p>
+<h6 id="Can-we-still-use-gradient-descent-for-non-convex-problem-and-use-the-solution-as-a-starting-point-or-approximation?">Can we still use gradient descent for non-convex problem and use the solution as a starting point or approximation?<a class="anchor-link" href="#Can-we-still-use-gradient-descent-for-non-convex-problem-and-use-the-solution-as-a-starting-point-or-approximation?">¶</a>
+</h6>
 </div>
 </div>
 </div>
@@ -180,9 +161,9 @@ Our society where almost 7 billions individuals exist/ and the interactio">
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="blog-sijanb-com-np",
-            disqus_url="http://sijanb.com.np/posts/interpreting-centrality-measures-for-network-analysis/",
-        disqus_title="Interpreting Centrality Measures for Network Analysis",
-        disqus_identifier="cache/posts/interpreting-centrality-measures-for-network-analysis.html",
+            disqus_url="http://sijanb.com.np/posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/",
+        disqus_title="Intuition behind Gradient Descent for Machine Learning Algorithms",
+        disqus_identifier="cache/posts/intuition-behind-gradient-descent-for-machine-learning-algorithms.html",
         disqus_config = function () {
             this.language = "en";
         };
