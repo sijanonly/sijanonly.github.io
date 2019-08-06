@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>CODEBUG</title><link>http://sijanb.com.np/</link><description>Random exploring....</description><atom:link href="http://sijanb.com.np/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Mon, 05 Aug 2019 18:27:07 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Intuition behind Gradient Descent for Machine Learning Algorithms</title><link>http://sijanb.com.np/posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>CODEBUG</title><link>http://sijanb.com.np/</link><description>Random exploring....</description><atom:link type="application/rss+xml" rel="self" href="http://sijanb.com.np/rss.xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Tue, 06 Aug 2019 19:32:01 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Graphical illustration of K Means algorithm</title><link>http://sijanb.com.np/posts/graphical-illustration-of-k-means-algorithm/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;img src="http://sijanb.com.np/images/k-means_algorithm_1.png"&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="http://sijanb.com.np/posts/graphical-illustration-of-k-means-algorithm/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>http://sijanb.com.np/posts/graphical-illustration-of-k-means-algorithm/</guid><pubDate>Tue, 06 Aug 2019 16:12:00 GMT</pubDate></item><item><title>Intuition behind Gradient Descent for Machine Learning Algorithms</title><link>http://sijanb.com.np/posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;img src="http://sijanb.com.np/images/gradient_descent.png"&gt;&lt;/p&gt;
@@ -1104,18 +1115,4 @@ input :(1, 1) has true output :1
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><guid>http://sijanb.com.np/posts/implementation-of-perceptron-in-python/</guid><pubDate>Mon, 01 Apr 2019 10:22:46 GMT</pubDate></item><item><title>Understanding Probability</title><link>http://sijanb.com.np/posts/understanding-probability/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Randomness is not a property of a phenomenon. It is simply an unpredectability of occurence of events around you.  It occurs in different scenarios of our life. For example, while roaming around street, you found a coin; now you would certainly look for other coin around that spot. But, there will be not any certainty or possibility or pattern of finding one. Other examples are - tossing coin / dice, fluctuating market prices for common goods.&lt;/p&gt;
-&lt;p&gt;In the field of Mathematics and probability, we assign some numerical value for identifying each of this random outcome. i.e. we use probability to quantify randomness. And, probability of certain event is calculated by the relative frequency of that event in the experiment.&lt;/p&gt;
-&lt;p&gt;In probability, the current occurrence / selection you do for your experiment is an event. For example,fliping a coin is an event.And, the act of tossing the coin is called independent trail. If you do number of trails, it is called an experiment. And, all the possible outcomes of an experiment is called sample space. So, we can say that an event is also a subset of sample space.&lt;/p&gt;
-&lt;p&gt;Another example : Suppose you need to choose a point from an interval (10, 100). Your selection E = (12, 34) is an event.&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="http://sijanb.com.np/posts/understanding-probability/"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>http://sijanb.com.np/posts/understanding-probability/</guid><pubDate>Sun, 04 Nov 2018 15:38:45 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><guid>http://sijanb.com.np/posts/implementation-of-perceptron-in-python/</guid><pubDate>Mon, 01 Apr 2019 10:22:46 GMT</pubDate></item></channel></rss>
