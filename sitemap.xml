@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>http://sijanb.com.np/archive.html</loc>
-  <lastmod>2019-08-06T19:32:00Z</lastmod>
+  <lastmod>2019-08-11T13:50:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/blog/</loc>
@@ -27,7 +27,7 @@
  </url>
  <url>
   <loc>http://sijanb.com.np/blog/index-1.html</loc>
-  <lastmod>2019-08-06T19:32:00Z</lastmod>
+  <lastmod>2019-08-11T13:50:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/categories/</loc>
@@ -64,6 +64,10 @@
  <url>
   <loc>http://sijanb.com.np/posts/how-nearest-centroid-classifier-works/</loc>
   <lastmod>2019-05-19T15:09:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://sijanb.com.np/posts/implementation-of-k-means-clustering-algorithm-in-python/</loc>
+  <lastmod>2019-08-11T13:50:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/posts/implementation-of-perceptron-in-python/</loc>
