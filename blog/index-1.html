@@ -57,7 +57,58 @@
     </header><main id="content" class="content" role="main"><div class="postindex">
 
 
-<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/implementation-of-perceptron-in-python/">implementation of perceptron in python</a></h2>
+<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/why-you-need-to-understand-bias-and-variance-in-machine-learning/">Why you need to understand bias and variance in Machine Learning</a></h2>
+    </header><section class="post-excerpt"><div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let me start with an example. Suppose you have built a ML model under supervised learning which can detect faces from your family members. You simply feed all the family photos to your model. And, at the end, you would like to know how much your model learnt from your training process.</p>
+<p><img src="../images/bias_variance.png"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>After training your model, you will find a function that maps input (image) to output labels(family members).
+If we represent your ML model with a function 'f',we can write this process as:</p>
+
+<pre><code>  y = f(x),
+   where  x = input  (your family photos)
+          y = output (model prediction) (predictiong whether the photo is your father, mother or sister)
+
+
+</code></pre>
+<p>Suppose, you use <code>50</code> images for your training process and use the same images to see whether the model can predict the label correctly or not. If you found that <code>10</code> out of <code>50</code> images are not predicted well, you can say : <code>20%</code> training error. 
+If you think about the intuition behind this calculation, it is saying that 'the model is not doing well with the training data itself'. That means it underfits the data. It does not want to carry all the information available in your data.</p>
+<p>*NOTE: If your model 'f' is a linear model than it will be really hard for your model to classify the photos using linear function.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="../posts/why-you-need-to-understand-bias-and-variance-in-machine-learning/">Read more…</a></p>
+</div>
+</div>
+</div>
+</div>
+    </section><footer class="post-meta">
+                Sijan Bhandari
+
+        on
+
+        <time class="post-date" datetime="2019-04-11T00:40:44+05:45">
+            2019-04-11 00:40
+        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/implementation-of-perceptron-in-python/">implementation of perceptron in python</a></h2>
     </header><section class="post-excerpt"><div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">

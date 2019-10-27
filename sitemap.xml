@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>http://sijanb.com.np/archive.html</loc>
-  <lastmod>2019-08-11T13:55:00Z</lastmod>
+  <lastmod>2019-10-27T15:21:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/blog/</loc>
@@ -27,7 +27,7 @@
  </url>
  <url>
   <loc>http://sijanb.com.np/blog/index-1.html</loc>
-  <lastmod>2019-08-11T13:55:00Z</lastmod>
+  <lastmod>2019-10-27T15:21:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/categories/</loc>
@@ -88,6 +88,10 @@
  <url>
   <loc>http://sijanb.com.np/posts/understanding-probability/</loc>
   <lastmod>2018-11-04T15:43:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://sijanb.com.np/posts/understanding-regularization-for-support-vector-machines-svms/</loc>
+  <lastmod>2019-10-27T15:21:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/</loc>
