@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>http://sijanb.com.np/</loc>
-  <lastmod>2019-04-01T10:34:00Z</lastmod>
+  <lastmod>2020-03-14T21:14:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/2018/</loc>
@@ -18,8 +18,12 @@
   <lastmod>2019-04-01T10:34:00Z</lastmod>
  </url>
  <url>
+  <loc>http://sijanb.com.np/2020/</loc>
+  <lastmod>2020-03-14T21:14:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://sijanb.com.np/archive.html</loc>
-  <lastmod>2019-10-27T15:27:00Z</lastmod>
+  <lastmod>2020-03-14T21:14:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/blog/</loc>
@@ -27,7 +31,7 @@
  </url>
  <url>
   <loc>http://sijanb.com.np/blog/index-1.html</loc>
-  <lastmod>2019-10-27T15:27:00Z</lastmod>
+  <lastmod>2020-03-14T21:14:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/categories/</loc>
@@ -52,6 +56,10 @@
  <url>
   <loc>http://sijanb.com.np/listings/</loc>
   <lastmod>2018-09-27T06:26:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://sijanb.com.np/posts/coding-linear-regression-with-maximum-likelihood-mse-regularized-mse-and-bayesian-learning-approach-from-scratch/</loc>
+  <lastmod>2020-03-14T21:14:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/posts/graphical-illustration-of-k-means-algorithm/</loc>

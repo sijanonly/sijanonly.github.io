@@ -57,7 +57,380 @@
     </header><main id="content" class="content" role="main"><div class="postindex">
 
 
-<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/why-you-need-to-understand-bias-and-variance-in-machine-learning/">Why you need to understand bias and variance in Machine Learning</a></h2>
+<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/how-k-nearest-neighbors-works/">How k-Nearest Neighbors works?</a></h2>
+    </header><section class="post-excerpt"><div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>K-Nearest Neighbors (k-NN) is one of the classification algorithms in Machine learing. Since, K-NN simply memories or stores the rules in memory, we can also say that it does not follow actual machine learning paradigm.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Before going to implementation, let us build some standard notation so that it is easier to follow the code in the implementation section (next post):</p>
+
+<pre><code>          X_training = given training data
+          Y = labels for your given training data
+          X_test = new data (For which we need to predict the labels)
+
+
+</code></pre>
+<p>The whole algorithm can be divided into three major steps:</p>
+<ol>
+<li>
+<p>Finding most nearest neighbors (similar data instances) from your training data for a given test data (X_test)</p>
+
+<pre><code>Let's say we have total 20 training data, and you find out 4 training instances as nearest neighbors for
+one of your test data</code></pre>
+</li>
+<li>
+<p>Once you get the nearest neighbors from your training data, collect all the labels of your selected training
+data</p>
+
+<pre><code>In our case, we have 4 training instances as nearest neighbors. So, we will collect labels for all
+these 4 training data. </code></pre>
+</li>
+<li>
+<p>Finally, predict the label of your test data (X_test) based on majority count.</p>
+</li>
+</ol>
+<pre><code>      In our case, suppose 3 out of 4 training instances have the same label. Then, the majority count
+      will assign the label to new data point</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <code>K</code> defines the number of neighbors that the algorithm will collect for making the prediction of your new data.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h6 id="Example">Example<a class="anchor-link" href="../posts/how-k-nearest-neighbors-works/#Example">¶</a>
+</h6>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Suppose, we have a data set of a students with features : weight and height and labels as "Asian, European, American" as follows:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">display</span>
+<span class="kn">import</span> <span class="nn">tabulate</span>
+<span class="n">table</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">"Height(cm)"</span><span class="p">,</span><span class="s2">"Weight(kg)"</span><span class="p">,</span><span class="s2">"Class"</span><span class="p">],</span>
+         <span class="p">[</span><span class="mi">169</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="s1">'Asian'</span><span class="p">],</span>
+         <span class="p">[</span><span class="mi">171</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="s1">'Asian'</span><span class="p">],</span>
+         <span class="p">[</span><span class="mi">172</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="s1">'European'</span><span class="p">],</span>
+         <span class="p">[</span><span class="mi">179</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="s1">'European'</span><span class="p">],</span>
+         <span class="p">[</span><span class="mi">170</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="s1">'Asian'</span><span class="p">],</span>
+         <span class="p">[</span><span class="mi">175</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="s1">'American'</span><span class="p">],</span>
+         <span class="p">[</span><span class="mi">176</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="s1">'American'</span><span class="p">],</span>
+         <span class="p">[</span><span class="mi">180</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="s1">'European'</span><span class="p">],</span>
+         <span class="p">[</span><span class="mi">171</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="s1">'American'</span><span class="p">],</span>
+        
+        
+        <span class="p">]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">tabulate</span><span class="o">.</span><span class="n">tabulate</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">tablefmt</span><span class="o">=</span><span class="s1">'html'</span><span class="p">)))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<table><tbody>
+<tr>
+<td>Height(cm)</td>
+<td>Weight(kg)</td>
+<td>Class   </td>
+</tr>
+<tr>
+<td>169       </td>
+<td>60        </td>
+<td>Asian   </td>
+</tr>
+<tr>
+<td>171       </td>
+<td>59        </td>
+<td>Asian   </td>
+</tr>
+<tr>
+<td>172       </td>
+<td>70        </td>
+<td>European</td>
+</tr>
+<tr>
+<td>179       </td>
+<td>69        </td>
+<td>European</td>
+</tr>
+<tr>
+<td>170       </td>
+<td>75        </td>
+<td>Asian   </td>
+</tr>
+<tr>
+<td>175       </td>
+<td>80        </td>
+<td>American</td>
+</tr>
+<tr>
+<td>176       </td>
+<td>79        </td>
+<td>American</td>
+</tr>
+<tr>
+<td>180       </td>
+<td>71        </td>
+<td>European</td>
+</tr>
+<tr>
+<td>171       </td>
+<td>76        </td>
+<td>American</td>
+</tr>
+</tbody></table>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, suppose new student enters the class with feature</p>
+
+<pre><code>     Height : 168
+     Weight : 65
+
+</code></pre>
+<p>Which class this new student belongs to?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, let us use some distance measure between this new point and all the training data points as follows:</p>
+<p><code>sqrt((169-168)^2 + (60-65)^2) = 5.09</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">):</span>
+    <span class="n">sq_distance</span> <span class="o">=</span> <span class="p">(</span><span class="n">p1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">p2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">p1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">p2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">sq_distance</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">"Height(cm)"</span><span class="p">,</span><span class="s2">"Weight(kg)"</span><span class="p">,</span><span class="s2">"Class"</span><span class="p">,</span> <span class="s2">"Distance"</span><span class="p">],</span>
+         <span class="p">[</span><span class="mi">169</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="s1">'Asian'</span><span class="p">,</span> <span class="n">distance</span><span class="p">([</span><span class="mi">169</span><span class="p">,</span> <span class="mi">60</span><span class="p">],</span> <span class="p">[</span><span class="mi">168</span><span class="p">,</span> <span class="mi">65</span><span class="p">])],</span>
+         <span class="p">[</span><span class="mi">171</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="s1">'Asian'</span><span class="p">,</span> <span class="n">distance</span><span class="p">([</span><span class="mi">171</span><span class="p">,</span> <span class="mi">59</span><span class="p">],</span> <span class="p">[</span><span class="mi">168</span><span class="p">,</span> <span class="mi">65</span><span class="p">])],</span>
+         <span class="p">[</span><span class="mi">172</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="s1">'European'</span><span class="p">,</span> <span class="n">distance</span><span class="p">([</span><span class="mi">172</span><span class="p">,</span> <span class="mi">70</span><span class="p">],</span> <span class="p">[</span><span class="mi">168</span><span class="p">,</span> <span class="mi">65</span><span class="p">])],</span>
+         <span class="p">[</span><span class="mi">179</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="s1">'European'</span><span class="p">,</span> <span class="n">distance</span><span class="p">([</span><span class="mi">179</span><span class="p">,</span> <span class="mi">69</span><span class="p">],</span> <span class="p">[</span><span class="mi">168</span><span class="p">,</span> <span class="mi">65</span><span class="p">])],</span>
+         <span class="p">[</span><span class="mi">170</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="s1">'Asian'</span><span class="p">,</span> <span class="n">distance</span><span class="p">([</span><span class="mi">170</span><span class="p">,</span> <span class="mi">72</span><span class="p">],</span> <span class="p">[</span><span class="mi">168</span><span class="p">,</span> <span class="mi">65</span><span class="p">])],</span>
+         <span class="p">[</span><span class="mi">175</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="s1">'American'</span><span class="p">,</span> <span class="n">distance</span><span class="p">([</span><span class="mi">175</span><span class="p">,</span> <span class="mi">80</span><span class="p">],</span> <span class="p">[</span><span class="mi">168</span><span class="p">,</span> <span class="mi">65</span><span class="p">])],</span>
+         <span class="p">[</span><span class="mi">176</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="s1">'American'</span><span class="p">,</span> <span class="n">distance</span><span class="p">([</span><span class="mi">176</span><span class="p">,</span> <span class="mi">79</span><span class="p">],</span> <span class="p">[</span><span class="mi">168</span><span class="p">,</span> <span class="mi">65</span><span class="p">])],</span>
+         <span class="p">[</span><span class="mi">180</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="s1">'European'</span><span class="p">,</span> <span class="n">distance</span><span class="p">([</span><span class="mi">180</span><span class="p">,</span> <span class="mi">71</span><span class="p">],</span> <span class="p">[</span><span class="mi">168</span><span class="p">,</span> <span class="mi">65</span><span class="p">])],</span>
+         <span class="p">[</span><span class="mi">171</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="s1">'American'</span><span class="p">,</span> <span class="n">distance</span><span class="p">([</span><span class="mi">171</span><span class="p">,</span> <span class="mi">76</span><span class="p">],</span> <span class="p">[</span><span class="mi">168</span><span class="p">,</span> <span class="mi">65</span><span class="p">])],</span>
+        
+        
+        <span class="p">]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">tabulate</span><span class="o">.</span><span class="n">tabulate</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">tablefmt</span><span class="o">=</span><span class="s1">'html'</span><span class="p">)))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<table><tbody>
+<tr>
+<td>Height(cm)</td>
+<td>Weight(kg)</td>
+<td>Class   </td>
+<td>Distance</td>
+</tr>
+<tr>
+<td>169       </td>
+<td>60        </td>
+<td>Asian   </td>
+<td>6       </td>
+</tr>
+<tr>
+<td>171       </td>
+<td>59        </td>
+<td>Asian   </td>
+<td>7       </td>
+</tr>
+<tr>
+<td>172       </td>
+<td>70        </td>
+<td>European</td>
+<td>7       </td>
+</tr>
+<tr>
+<td>179       </td>
+<td>69        </td>
+<td>European</td>
+<td>12      </td>
+</tr>
+<tr>
+<td>170       </td>
+<td>75        </td>
+<td>Asian   </td>
+<td>8       </td>
+</tr>
+<tr>
+<td>175       </td>
+<td>80        </td>
+<td>American</td>
+<td>17      </td>
+</tr>
+<tr>
+<td>176       </td>
+<td>79        </td>
+<td>American</td>
+<td>17      </td>
+</tr>
+<tr>
+<td>180       </td>
+<td>71        </td>
+<td>European</td>
+<td>14      </td>
+</tr>
+<tr>
+<td>171       </td>
+<td>76        </td>
+<td>American</td>
+<td>12      </td>
+</tr>
+</tbody></table>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>From the result table, let's select k=3, neighbors having minimal distance(nearest points)</p>
+
+<pre><code> a. 169     60  Asian         6 
+ b. 171     59  Asian         7 
+ c. 172     70  European        7 </code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So all possible labels in our final result is : ['Asian', 'Asian', 'European']</p>
+<p>With majority vote, we can classify the new student as 'Asian'</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+    </section><footer class="post-meta">
+                Sijan Bhandari
+
+        on
+
+        <time class="post-date" datetime="2019-04-27T00:16:44+05:45">
+            2019-04-27 00:16
+        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/why-you-need-to-understand-bias-and-variance-in-machine-learning/">Why you need to understand bias and variance in Machine Learning</a></h2>
     </header><section class="post-excerpt"><div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -630,7 +1003,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script></main><footer class="site-footer clearfix"><section class="poweredby">Contents © 2019         <a href="mailto:sijanonly@gmail.com">Sijan Bhandari</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </section></footer>
+</script></main><footer class="site-footer clearfix"><section class="poweredby">Contents © 2020         <a href="mailto:sijanonly@gmail.com">Sijan Bhandari</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </section></footer>
 </div>
 
     <script type="text/javascript" src="../assets/js/jquery.js"></script><script type="text/javascript" src="../assets/js/jquery.fitvids.js"></script><script type="text/javascript" src="../assets/js/index.js"></script>
