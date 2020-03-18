@@ -57,14 +57,14 @@
     </header><main id="content" class="content" role="main"><div class="postindex">
 
 
-<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/coding-linear-regression-with-maximum-likelihood-mse-regularized-mse-and-bayesian-learning-approach-from-scratch/">Coding Linear Regression with Maximum Likelihood (MSE), Regularized MSE and Bayesian Learning Approach from scratch</a></h2>
+<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/">Linear Regression with Maximum Likelihood (MSE) and Bayesian Learning Approach from scratch</a></h2>
     </header><section class="post-excerpt"><div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="1.-Setup">1. Setup<a class="anchor-link" href="../posts/coding-linear-regression-with-maximum-likelihood-mse-regularized-mse-and-bayesian-learning-approach-from-scratch/#1.-Setup">¶</a>
+<h4 id="1.-Setup">1. Setup<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#1.-Setup">¶</a>
 </h4>
 </div>
 </div>
@@ -97,7 +97,7 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="2.-Objective-Functions">2. Objective Functions<a class="anchor-link" href="../posts/coding-linear-regression-with-maximum-likelihood-mse-regularized-mse-and-bayesian-learning-approach-from-scratch/#2.-Objective-Functions">¶</a>
+<h4 id="2.-Objective-Functions">2. Objective Functions<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#2.-Objective-Functions">¶</a>
 </h4>
 </div>
 </div>
@@ -107,10 +107,10 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="a.-Maximum-Likelihood-objective-(MLE)-.i.e-.-(-Mean-Squared-Error-)">a. Maximum Likelihood objective (MLE) .i.e . ( Mean Squared Error )<a class="anchor-link" href="../posts/coding-linear-regression-with-maximum-likelihood-mse-regularized-mse-and-bayesian-learning-approach-from-scratch/#a.-Maximum-Likelihood-objective-(MLE)-.i.e-.-(-Mean-Squared-Error-)">¶</a>
+<h5 id="a.-Maximum-Likelihood-objective-(MLE)-.i.e-.-(-Mean-Squared-Error-)">a. Maximum Likelihood objective (MLE) .i.e . ( Mean Squared Error )<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#a.-Maximum-Likelihood-objective-(MLE)-.i.e-.-(-Mean-Squared-Error-)">¶</a>
 </h5>
 <p>J(w) =  $ \frac{1}{2} \sum_i^N \{t_i - w^T \phi(x_i) \}^2 $</p>
-<h5 id="b.-Regularized-Linear-Regression">b. Regularized Linear Regression<a class="anchor-link" href="../posts/coding-linear-regression-with-maximum-likelihood-mse-regularized-mse-and-bayesian-learning-approach-from-scratch/#b.-Regularized-Linear-Regression">¶</a>
+<h5 id="b.-Regularized-Linear-Regression">b. Regularized Linear Regression<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#b.-Regularized-Linear-Regression">¶</a>
 </h5>
 <p>J(w) =  $ \frac{1}{2} \sum_i^N \{t_i - w^T \phi(x_i) \}^2 $ + $ \frac{\lambda}{2} w^T w $</p>
 
@@ -122,7 +122,7 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="3.-Closed-Form-Solutions">3. Closed Form Solutions<a class="anchor-link" href="../posts/coding-linear-regression-with-maximum-likelihood-mse-regularized-mse-and-bayesian-learning-approach-from-scratch/#3.-Closed-Form-Solutions">¶</a>
+<h4 id="3.-Closed-Form-Solutions">3. Closed Form Solutions<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#3.-Closed-Form-Solutions">¶</a>
 </h4>
 </div>
 </div>
@@ -132,11 +132,11 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="a.-For-MSE">a. For MSE<a class="anchor-link" href="../posts/coding-linear-regression-with-maximum-likelihood-mse-regularized-mse-and-bayesian-learning-approach-from-scratch/#a.-For-MSE">¶</a>
+<h5 id="a.-For-MSE">a. For MSE<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#a.-For-MSE">¶</a>
 </h5>
 <p>$ w_{MLE} = ( \phi^T \phi )^{-1} \phi^T t $</p>
 <p>$ ( \phi^T \phi )^{-1} $ is called Moore-Penrose inverse.</p>
-<h5 id="b.-For-Regularized-MSE">b. For Regularized MSE<a class="anchor-link" href="../posts/coding-linear-regression-with-maximum-likelihood-mse-regularized-mse-and-bayesian-learning-approach-from-scratch/#b.-For-Regularized-MSE">¶</a>
+<h5 id="b.-For-Regularized-MSE">b. For Regularized MSE<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#b.-For-Regularized-MSE">¶</a>
 </h5>
 <p>$ w_{MLE} = ( \lambda I + \phi^T \phi )^{-1} \phi^T t $</p>
 
@@ -148,7 +148,7 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="4.-Bayesian-Learning">4. Bayesian Learning<a class="anchor-link" href="../posts/coding-linear-regression-with-maximum-likelihood-mse-regularized-mse-and-bayesian-learning-approach-from-scratch/#4.-Bayesian-Learning">¶</a>
+<h4 id="4.-Bayesian-Learning">4. Bayesian Learning<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#4.-Bayesian-Learning">¶</a>
 </h4>
 </div>
 </div>
@@ -163,7 +163,7 @@
 <p>$ p(w|t) $ - Posterior distribution
    $ p(t|w) $ - Likelihood of data given parameters
    $ p(w) $ - Prior distribution over paramters (w)</p>
-<h5 id="a.-Pior-on-w-:">a. Pior on w :<a class="anchor-link" href="../posts/coding-linear-regression-with-maximum-likelihood-mse-regularized-mse-and-bayesian-learning-approach-from-scratch/#a.-Pior-on-w-:">¶</a>
+<h5 id="a.-Pior-on-w-:">a. Pior on w :<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#a.-Pior-on-w-:">¶</a>
 </h5>
 </div>
 </div>
@@ -173,7 +173,7 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="../posts/coding-linear-regression-with-maximum-likelihood-mse-regularized-mse-and-bayesian-learning-approach-from-scratch/">Read more…</a></p>
+<p class="more"><a href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/">Read more…</a></p>
 </div>
 </div>
 </div>
