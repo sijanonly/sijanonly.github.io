@@ -23,7 +23,7 @@
  </url>
  <url>
   <loc>http://sijanb.com.np/archive.html</loc>
-  <lastmod>2020-03-14T21:14:00Z</lastmod>
+  <lastmod>2020-03-18T21:05:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/blog/</loc>
@@ -31,15 +31,27 @@
  </url>
  <url>
   <loc>http://sijanb.com.np/blog/index-1.html</loc>
-  <lastmod>2020-03-14T21:14:00Z</lastmod>
+  <lastmod>2020-03-18T21:05:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/categories/</loc>
-  <lastmod>2018-10-23T21:13:00Z</lastmod>
+  <lastmod>2020-03-18T21:05:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://sijanb.com.np/categories/bayesian-learning/</loc>
+  <lastmod>2020-03-18T21:05:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/categories/deep-learning/</loc>
   <lastmod>2018-10-23T21:13:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://sijanb.com.np/categories/linear-regression/</loc>
+  <lastmod>2020-03-18T21:05:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://sijanb.com.np/categories/maximum-likelihood-estimation/</loc>
+  <lastmod>2020-03-18T21:05:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/categories/neural-network/</loc>

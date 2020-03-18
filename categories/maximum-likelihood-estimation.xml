@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>CODEBUG (Posts about maximum-likelihood-estimation)</title><link>http://sijanb.com.np/</link><description></description><atom:link href="http://sijanb.com.np/categories/maximum-likelihood-estimation.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Wed, 18 Mar 2020 21:05:37 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Coding Linear Regression with Maximum Likelihood (MSE), Regularized MSE and Bayesian Learning Approach from scratch</title><link>http://sijanb.com.np/posts/coding-linear-regression-with-maximum-likelihood-mse-regularized-mse-and-bayesian-learning-approach-from-scratch/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h4 id="1.-Setup"&gt;1. Setup&lt;a class="anchor-link" href="http://sijanb.com.np/posts/coding-linear-regression-with-maximum-likelihood-mse-regularized-mse-and-bayesian-learning-approach-from-scratch/#1.-Setup"&gt;¶&lt;/a&gt;&lt;/h4&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Given the input dataset $ \textbf{D} = \{(x_i, t_i)\}_{i=1}^{N}  $, our goal is to learn the parameters that model this data and use those parameters (w) for the prediction new data point.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;We often define the features (basis functions) as : $ \{ \phi_1(x),......,\phi_m(x) \} $ and the linear regression model is defined as :&lt;/p&gt;
+&lt;p&gt;$ y(x,w)  = \sum_{i=1}^m w_i \phi_i (x) + \varepsilon_i $&lt;/p&gt;
+&lt;p&gt;$ \varepsilon_i $ suggesting that we can not perfectly model the data generation process and there will be certain noise in our designed model(paramters). Usually, we assume that the noise is Gaussian. 
+  $ \varepsilon_i \sim Normal(0, \beta^{-1} )$&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h4 id="2.-Objective-Functions"&gt;2. Objective Functions&lt;a class="anchor-link" href="http://sijanb.com.np/posts/coding-linear-regression-with-maximum-likelihood-mse-regularized-mse-and-bayesian-learning-approach-from-scratch/#2.-Objective-Functions"&gt;¶&lt;/a&gt;&lt;/h4&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h5 id="a.-Maximum-Likelihood-objective-(MLE)-.i.e-.-(-Mean-Squared-Error-)"&gt;a. Maximum Likelihood objective (MLE) .i.e . ( Mean Squared Error )&lt;a class="anchor-link" href="http://sijanb.com.np/posts/coding-linear-regression-with-maximum-likelihood-mse-regularized-mse-and-bayesian-learning-approach-from-scratch/#a.-Maximum-Likelihood-objective-(MLE)-.i.e-.-(-Mean-Squared-Error-)"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;J(w) =  $ \frac{1}{2} \sum_i^N \{t_i - w^T \phi(x_i) \}^2 $&lt;/p&gt;
+&lt;h5 id="b.-Regularized-Linear-Regression"&gt;b. Regularized Linear Regression&lt;a class="anchor-link" href="http://sijanb.com.np/posts/coding-linear-regression-with-maximum-likelihood-mse-regularized-mse-and-bayesian-learning-approach-from-scratch/#b.-Regularized-Linear-Regression"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;J(w) =  $ \frac{1}{2} \sum_i^N \{t_i - w^T \phi(x_i) \}^2 $ + $ \frac{\lambda}{2} w^T w $&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h4 id="3.-Closed-Form-Solutions"&gt;3. Closed Form Solutions&lt;a class="anchor-link" href="http://sijanb.com.np/posts/coding-linear-regression-with-maximum-likelihood-mse-regularized-mse-and-bayesian-learning-approach-from-scratch/#3.-Closed-Form-Solutions"&gt;¶&lt;/a&gt;&lt;/h4&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h5 id="a.-For-MSE"&gt;a. For MSE&lt;a class="anchor-link" href="http://sijanb.com.np/posts/coding-linear-regression-with-maximum-likelihood-mse-regularized-mse-and-bayesian-learning-approach-from-scratch/#a.-For-MSE"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;$ w_{MLE} = ( \phi^T \phi )^{-1} \phi^T t $&lt;/p&gt;
+&lt;p&gt;$ ( \phi^T \phi )^{-1} $ is called Moore-Penrose inverse.&lt;/p&gt;
+&lt;h5 id="b.-For-Regularized-MSE"&gt;b. For Regularized MSE&lt;a class="anchor-link" href="http://sijanb.com.np/posts/coding-linear-regression-with-maximum-likelihood-mse-regularized-mse-and-bayesian-learning-approach-from-scratch/#b.-For-Regularized-MSE"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;$ w_{MLE} = ( \lambda I + \phi^T \phi )^{-1} \phi^T t $&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h4 id="4.-Bayesian-Learning"&gt;4. Bayesian Learning&lt;a class="anchor-link" href="http://sijanb.com.np/posts/coding-linear-regression-with-maximum-likelihood-mse-regularized-mse-and-bayesian-learning-approach-from-scratch/#4.-Bayesian-Learning"&gt;¶&lt;/a&gt;&lt;/h4&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;By using Bayes rule, we have :&lt;/p&gt;
+&lt;p&gt;$ p(w | t) = \frac{p(t|w)p(w)}{p(t)} $&lt;/p&gt;
+&lt;p&gt;$ p(w|t) $ - Posterior distribution
+   $ p(t|w) $ - Likelihood of data given parameters
+   $ p(w) $ - Prior distribution over paramters (w)&lt;/p&gt;
+&lt;h5 id="a.-Pior-on-w-:"&gt;a. Pior on w :&lt;a class="anchor-link" href="http://sijanb.com.np/posts/coding-linear-regression-with-maximum-likelihood-mse-regularized-mse-and-bayesian-learning-approach-from-scratch/#a.-Pior-on-w-:"&gt;¶&lt;/a&gt;&lt;/h5&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="http://sijanb.com.np/posts/coding-linear-regression-with-maximum-likelihood-mse-regularized-mse-and-bayesian-learning-approach-from-scratch/"&gt;Read more…&lt;/a&gt; (39 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>bayesian-learning</category><category>linear-regression</category><category>maximum-likelihood-estimation</category><guid>http://sijanb.com.np/posts/coding-linear-regression-with-maximum-likelihood-mse-regularized-mse-and-bayesian-learning-approach-from-scratch/</guid><pubDate>Sat, 14 Mar 2020 16:07:38 GMT</pubDate></item></channel></rss>

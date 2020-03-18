@@ -32,6 +32,9 @@
 Given the input dataset $ \textbf{D} = \{(x_i, t_i)\}_{i=1}^{N}  $, our goal is to learn the parameters that model this data and use those parameters (w) for the prediction new data po">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2020-03-14T21:52:38+05:45">
+<meta property="article:tag" content="bayesian-learning">
+<meta property="article:tag" content="linear-regression">
+<meta property="article:tag" content="maximum-likelihood-estimation">
 </head>
 <body class="nav-closed">
 
@@ -63,6 +66,9 @@ Given the input dataset $ \textbf{D} = \{(x_i, t_i)\}_{i=1}^{N}  $, our goal is 
         <section class="post-meta"> by
             Sijan Bhandari
             on
+                <a href="../../categories/bayesian-learning/">#bayesian-learning</a>,
+                <a href="../../categories/linear-regression/">#linear-regression</a>,
+                <a href="../../categories/maximum-likelihood-estimation/">#maximum-likelihood-estimation</a>,
             <time class="post-date" datetime="2020-03-14T21:52:38+05:45">
                 2020-03-14 21:52
             </time></section></header><section class="post-content"><div>
@@ -172,6 +178,23 @@ Given the input dataset $ \textbf{D} = \{(x_i, t_i)\}_{i=1}^{N}  $, our goal is 
    $ p(w) $ - Prior distribution over paramters (w)</p>
 <h5 id="a.-Pior-on-w-:">a. Pior on w :<a class="anchor-link" href="#a.-Pior-on-w-:">¶</a>
 </h5>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$ p(w) \sim Normal( w | m_o, S_o) $</p>
 <p>And, For convenience, we will use $ m_o = 0  $ and $ S_o = \alpha^{-1} I $
  i.e.  $ p(w) \sim Normal( 0,  \alpha^{-1} I) $</p>
@@ -598,10 +621,10 @@ also Gaussian.</p>
 
 
 
-<div id="a130c59a-b638-494b-91e7-f8838dbb3a97"></div>
+<div id="567cb213-a205-4aa4-bc02-25c1a800dc5b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a130c59a-b638-494b-91e7-f8838dbb3a97');
+var element = $('#567cb213-a205-4aa4-bc02-25c1a800dc5b');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -1438,10 +1461,10 @@ if (IPython.notebook.kernel != null) {
 
 
 
-<div id="2ddc7ccb-b103-488f-8348-e0f2ced86f1a"></div>
+<div id="9475f073-1a2c-4645-8104-dbfe404f8162"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#2ddc7ccb-b103-488f-8348-e0f2ced86f1a');
+var element = $('#9475f073-1a2c-4645-8104-dbfe404f8162');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -2276,10 +2299,10 @@ if (IPython.notebook.kernel != null) {
 
 
 
-<div id="f75cfb83-220c-498a-8f5a-c2318a76507c"></div>
+<div id="6cf75803-af6f-4858-8237-75d448f0faac"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#f75cfb83-220c-498a-8f5a-c2318a76507c');
+var element = $('#6cf75803-af6f-4858-8237-75d448f0faac');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -3093,7 +3116,7 @@ if (IPython.notebook.kernel != null) {
         var disqus_shortname ="blog-sijanb-com-np",
             disqus_url="http://sijanb.com.np/posts/coding-linear-regression-with-maximum-likelihood-mse-regularized-mse-and-bayesian-learning-approach-from-scratch/",
         disqus_title="Coding Linear Regression with Maximum Likelihood (MSE), Regularized MSE and Bayesian Learning Approach from scratch",
-        disqus_identifier="cache/posts/coding-linear-regression-with-maximum-likelihood-mse-regularized-mse-and-bayesian-learning-approach-from-scratch.html",
+        disqus_identifier="cache/posts/linear-regression-using-maximum-likelihood-and-bayesian-learning.html",
         disqus_config = function () {
             this.language = "en";
         };
