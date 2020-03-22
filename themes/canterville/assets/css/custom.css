@@ -504,3 +504,6 @@ fieldset[disabled] .btn-success.active {
   display: none;
 }
 
+hr {
+  margin: 1em 0;
+}
