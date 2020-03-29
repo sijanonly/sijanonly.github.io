@@ -23,7 +23,7 @@
  </url>
  <url>
   <loc>http://sijanb.com.np/archive.html</loc>
-  <lastmod>2020-03-22T21:18:00Z</lastmod>
+  <lastmod>2020-03-29T10:03:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/blog/</loc>
@@ -31,7 +31,7 @@
  </url>
  <url>
   <loc>http://sijanb.com.np/blog/index-1.html</loc>
-  <lastmod>2020-03-22T21:18:00Z</lastmod>
+  <lastmod>2020-03-29T10:03:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/categories/</loc>
@@ -72,6 +72,10 @@
  <url>
   <loc>http://sijanb.com.np/posts/graphical-illustration-of-k-means-algorithm/</loc>
   <lastmod>2019-08-06T19:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://sijanb.com.np/posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/</loc>
+  <lastmod>2020-03-29T10:03:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/posts/how-k-nearest-neighbors-works/</loc>

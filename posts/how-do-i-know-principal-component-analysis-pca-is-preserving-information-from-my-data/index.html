@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html prefix="" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>How do I know Principal Component Analysis (PCA) is preserving information from my data ? | CODEBUG</title>
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../../assets/css/screen.css">
+<link rel="stylesheet" type="text/css" href="../../assets/css/nav.css">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400%7CInconsolata">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="http://sijanb.com.np/posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/">
+<link rel="icon" href="../../favicon.ico" sizes="16x16">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Sijan Bhandari">
+<link rel="prev" href="../principal-component-analysis-pca-for-visualization-using-python/" title="Principal Component Analysis (PCA) for Visualization using Python" type="text/html">
+<meta property="og:site_name" content="CODEBUG">
+<meta property="og:title" content="How do I know Principal Component Analysis (PCA) is preserving informa">
+<meta property="og:url" content="http://sijanb.com.np/posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/">
+<meta property="og:description" content="Principal Component Analysis is used for dimension reduction of high-dimensional data. We also refer PCA as feature extraction technique, where new features take the linear combinations from original ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2020-03-28T23:02:59+05:45">
+</head>
+<body class="nav-closed">
+
+<div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+<li class="nav-opened" role="presentation">
+            <a href="../../blog/">Blog</a>
+        </li>
+        <li class="nav-opened" role="presentation">
+            <a href="../../categories/">Tags</a>
+        </li>
+        <li class="nav-opened" role="presentation">
+            <a href="../../rss.xml">RSS feed</a>
+        </li>
+    
+    
+    </ul>
+</div>
+<span class="nav-cover"></span>
+
+<div class="site-wrapper">
+    <header class="main-header post-head no-cover"><nav class="main-nav overlay clearfix"><a class="blog-logo" href="http://sijanb.com.np/"><img src="../../images/logo.png" alt="Blog Logo"></a>
+            <a class="menu-button" href="#"><span class="burger">☰</span><span class="word">Menu</span></a>
+        </nav></header><main id="content" class="content" role="main"><article class="post post"><header class="post-header"><h1 class="post-title">How do I know Principal Component Analysis (PCA) is preserving information from my data ?</h1>
+        <section class="post-meta"> by
+            Sijan Bhandari
+            on
+            <time class="post-date" datetime="2020-03-28T23:02:59+05:45">
+                2020-03-28 23:02
+            </time></section></header><section class="post-content"><div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Principal Component Analysis is used for dimension reduction of high-dimensional data. We also refer PCA as feature extraction technique, where new features take the linear combinations from original features.</p>
+<p>More on PCA : <a href="https://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/">principal-component-analysis-pca-for-visualization-using-python</a></p>
+<p>In this post, we will investigate 'how reliable the information is as preserved by PCA'. In order to do that, we will use labelled data and evaluate the trained model to see the final performance. (In side note, PCA is unsupervised learning algorithm. But, in our case, we are using in supervised fashion to assess the model performance)</p>
+<p>To make it more interesting, we will also see Random Forests as 'feature selection' and compare the result with PCA.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="1.-PCA-as-Feature-Extraction">1. PCA as Feature Extraction<a class="anchor-link" href="#1.-PCA-as-Feature-Extraction">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
+
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="k">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">accuracy_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="k">import</span> <span class="n">DecisionTreeClassifier</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [40]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="s1">'https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data'</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">','</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'CLASS'</span><span class="p">,</span> <span class="s1">'ALCOHOL_LEVEL'</span><span class="p">,</span> <span class="s1">'MALIC_ACID'</span><span class="p">,</span> <span class="s1">'ASH'</span><span class="p">,</span> <span class="s1">'ALCALINITY'</span><span class="p">,</span><span class="s1">'MAGNESIUM'</span><span class="p">,</span> <span class="s1">'PHENOLS'</span><span class="p">,</span> 
+              <span class="s1">'FLAVANOIDS'</span><span class="p">,</span> <span class="s1">'NON_FLAVANOID_PHENOL'</span><span class="p">,</span> <span class="s1">'PROANTHOCYANINS'</span><span class="p">,</span> <span class="s1">'COLOR_INTENSITY'</span><span class="p">,</span> 
+              <span class="s1">'HUE'</span><span class="p">,</span> <span class="s1">'OD280/OD315_DILUTED'</span><span class="p">,</span><span class="s1">'PROLINE'</span><span class="p">]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[40]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>CLASS</th>
+      <th>ALCOHOL_LEVEL</th>
+      <th>MALIC_ACID</th>
+      <th>ASH</th>
+      <th>ALCALINITY</th>
+      <th>MAGNESIUM</th>
+      <th>PHENOLS</th>
+      <th>FLAVANOIDS</th>
+      <th>NON_FLAVANOID_PHENOL</th>
+      <th>PROANTHOCYANINS</th>
+      <th>COLOR_INTENSITY</th>
+      <th>HUE</th>
+      <th>OD280/OD315_DILUTED</th>
+      <th>PROLINE</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>1</td>
+      <td>14.23</td>
+      <td>1.71</td>
+      <td>2.43</td>
+      <td>15.6</td>
+      <td>127</td>
+      <td>2.80</td>
+      <td>3.06</td>
+      <td>0.28</td>
+      <td>2.29</td>
+      <td>5.64</td>
+      <td>1.04</td>
+      <td>3.92</td>
+      <td>1065</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>1</td>
+      <td>13.20</td>
+      <td>1.78</td>
+      <td>2.14</td>
+      <td>11.2</td>
+      <td>100</td>
+      <td>2.65</td>
+      <td>2.76</td>
+      <td>0.26</td>
+      <td>1.28</td>
+      <td>4.38</td>
+      <td>1.05</td>
+      <td>3.40</td>
+      <td>1050</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>1</td>
+      <td>13.16</td>
+      <td>2.36</td>
+      <td>2.67</td>
+      <td>18.6</td>
+      <td>101</td>
+      <td>2.80</td>
+      <td>3.24</td>
+      <td>0.30</td>
+      <td>2.81</td>
+      <td>5.68</td>
+      <td>1.03</td>
+      <td>3.17</td>
+      <td>1185</td>
+    </tr>
+<tr>
+<th>3</th>
+      <td>1</td>
+      <td>14.37</td>
+      <td>1.95</td>
+      <td>2.50</td>
+      <td>16.8</td>
+      <td>113</td>
+      <td>3.85</td>
+      <td>3.49</td>
+      <td>0.24</td>
+      <td>2.18</td>
+      <td>7.80</td>
+      <td>0.86</td>
+      <td>3.45</td>
+      <td>1480</td>
+    </tr>
+<tr>
+<th>4</th>
+      <td>1</td>
+      <td>13.24</td>
+      <td>2.59</td>
+      <td>2.87</td>
+      <td>21.0</td>
+      <td>118</td>
+      <td>2.80</td>
+      <td>2.69</td>
+      <td>0.39</td>
+      <td>1.82</td>
+      <td>4.32</td>
+      <td>1.04</td>
+      <td>2.93</td>
+      <td>735</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [41]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'ALCOHOL_LEVEL'</span><span class="p">,</span> <span class="s1">'MALIC_ACID'</span><span class="p">,</span> <span class="s1">'ASH'</span><span class="p">,</span> <span class="s1">'ALCALINITY'</span><span class="p">,</span><span class="s1">'MAGNESIUM'</span><span class="p">,</span> <span class="s1">'PHENOLS'</span><span class="p">,</span> 
+              <span class="s1">'FLAVANOIDS'</span><span class="p">,</span> <span class="s1">'NON_FLAVANOID_PHENOL'</span><span class="p">,</span> <span class="s1">'PROANTHOCYANINS'</span><span class="p">,</span> <span class="s1">'COLOR_INTENSITY'</span><span class="p">,</span> 
+              <span class="s1">'HUE'</span><span class="p">,</span> <span class="s1">'OD280/OD315_DILUTED'</span><span class="p">,</span><span class="s1">'PROLINE'</span><span class="p">]</span>
+<span class="n">label</span> <span class="o">=</span> <span class="s1">'CLASS'</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">features</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">label</span><span class="p">]</span>
+
+<span class="c1"># train test split with 70% for training</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="a.-Preparing-Projected-data-using-PCA">a. Preparing Projected data using PCA<a class="anchor-link" href="#a.-Preparing-Projected-data-using-PCA">¶</a>
+</h5>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [42]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># prepare correlation matrix</span>
+<span class="c1"># standar scaler for normalization</span>
+<span class="n">N</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="c1"># Correlation estimation</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Z</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span> <span class="o">/</span> <span class="n">N</span>
+
+<span class="c1"># eigendecomposition</span>
+<span class="n">eigen_values</span><span class="p">,</span> <span class="n">eigen_vectors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+
+<span class="c1"># prepare projection matrix</span>
+<span class="n">value_idx</span> <span class="o">=</span> <span class="n">eigen_values</span><span class="o">.</span><span class="n">argsort</span><span class="p">()[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">eigen_vectors_sorted</span> <span class="o">=</span> <span class="n">eigen_vectors</span><span class="p">[:,</span> <span class="n">value_idx</span><span class="p">]</span>
+
+<span class="c1"># Projection matrix with 3 PCs ( 3 PCs cover 65% variance in the data)</span>
+<span class="c1"># more on : https://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">eigen_vectors_sorted</span><span class="p">[</span><span class="mi">0</span><span class="p">][:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span>
+               <span class="n">eigen_vectors_sorted</span><span class="p">[</span><span class="mi">1</span><span class="p">][:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span>
+               <span class="n">eigen_vectors_sorted</span><span class="p">[</span><span class="mi">2</span><span class="p">][:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]))</span>
+
+<span class="c1"># projected data</span>
+<span class="n">projected_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asmatrix</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">asmatrix</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="b.-Using-Projected-data-for-the-training-and-prediction-using-Decision-Tree">b. Using Projected data for the training and prediction using Decision Tree<a class="anchor-link" href="#b.-Using-Projected-data-for-the-training-and-prediction-using-Decision-Tree">¶</a>
+</h5>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [43]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># train test split for training</span>
+<span class="n">Xpc_train</span><span class="p">,</span> <span class="n">Xpc_test</span><span class="p">,</span> <span class="n">ypc_train</span><span class="p">,</span> <span class="n">ypc_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span> <span class="n">projected_data</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">tree_pca</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">tree_pca</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Z_pca_train</span><span class="p">,</span> <span class="n">y_pca_train</span><span class="p">)</span>
+
+<span class="n">y_pca_pred</span> <span class="o">=</span> <span class="n">tree_pca</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Z_pca_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Test accuracy using Decision tree on PCA projected data: </span><span class="si">%.2f</span><span class="s1">'</span> <span class="o">%</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_pca_test</span><span class="p">,</span> <span class="n">y_pca_pred</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Test accuracy using Decision tree on PCA projected data: 0.78
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="2.-Random-Forest-as-Feature-Selection">2. Random Forest as Feature Selection<a class="anchor-link" href="#2.-Random-Forest-as-Feature-Selection">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Random Forest is an ensemble learning of decision trees, where number of decision trees will give better generalization performance to the final model.</p>
+<h5 id="a.-Training">a. Training<a class="anchor-link" href="#a.-Training">¶</a>
+</h5>
+<p>We will be using the same Wine data as we used in our previous post.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [44]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Random Forests with 100 decision trees</span>
+<span class="c1"># using parallized ( assign 2 cores for computation (n_jobs))</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n_jobs</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[44]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+                       max_depth=None, max_features='auto', max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=100, n_jobs=2,
+                       oob_score=False, random_state=1, verbose=0,
+                       warm_start=False)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [45]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Test accuracy using Random Forests: </span><span class="si">%.2f</span><span class="s1">'</span> <span class="o">%</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predictions</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Test accuracy using Random Forests: 0.96
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="b.-Calculate-Feature-importance">b. Calculate Feature importance<a class="anchor-link" href="#b.-Calculate-Feature-importance">¶</a>
+</h5>
+<p>Random Forest calculates the feature importance based on it's contribution to model accuracy. It simply assigns a value between 0 and 1 to each feature. Value near to 1 signifies it's higher contribution for model correct prediction.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [46]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">feature_imp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'feature'</span><span class="p">:</span> <span class="n">features</span><span class="p">,</span><span class="s1">'importances'</span><span class="p">:</span> <span class="n">model</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">})</span><span class="o">.</span>\
+                    <span class="n">sort_values</span><span class="p">(</span><span class="s1">'importances'</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+
+<span class="n">feature_imp</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[46]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>feature</th>
+      <th>importances</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>9</th>
+      <td>COLOR_INTENSITY</td>
+      <td>0.164909</td>
+    </tr>
+<tr>
+<th>6</th>
+      <td>FLAVANOIDS</td>
+      <td>0.164451</td>
+    </tr>
+<tr>
+<th>12</th>
+      <td>PROLINE</td>
+      <td>0.158675</td>
+    </tr>
+<tr>
+<th>11</th>
+      <td>OD280/OD315_DILUTED</td>
+      <td>0.154081</td>
+    </tr>
+<tr>
+<th>0</th>
+      <td>ALCOHOL_LEVEL</td>
+      <td>0.115701</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [47]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">feature_imp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">'feature'</span><span class="p">,</span> <span class="s1">'importances'</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">'bar'</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[47]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f4d74eb06a0&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAX0AAAGDCAYAAADH4cA4AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAADl0RVh0U29mdHdhcmUAbWF0cGxvdGxpYiB2ZXJzaW9uIDMuMC4zLCBodHRwOi8vbWF0cGxvdGxpYi5vcmcvnQurowAAIABJREFUeJzt3XmcHFW5//HPN2EJsoMBkS0gAQxbwCQqiwhcArgQFJBNAWURWVwQNVz9cRX1ioICFxFF4CLIKiJGCYKyCIhCwhYNiwQMEMRrRGUVyfL9/XGqk06nZ6Zn+nT39NTzfr3mle6q6jonM91PV53lObJNCCGEchjW6QqEEEJonwj6IYRQIhH0QwihRCLohxBCiUTQDyGEEomgH0IIJRJBP4QQSiSCfgghlEgE/RBCKJFlOl2BWq9//es9atSoTlcjhBC6yr333vs32yP7Om7QBf1Ro0Yxffr0TlcjhBC6iqQnGzkumndCCKFEIuiHEEKJRNAPIYQSGXRt+iGEwWvevHnMmTOHV199tdNVKa0RI0aw3nrrseyyyw7o9RH0QwgNmzNnDiuvvDKjRo1CUqerUzq2ee6555gzZw4bbbTRgM4RzTshhIa9+uqrrLnmmhHwO0QSa665ZlN3WhH0Qwj9EgG/s5r9/UfQDyGEEok2/RDCgI2afH3W880+7d19HrP99ttz1113ZS23N7Nnz+auu+7i4IMPbluZrdRVQX8gb7BG3kSdKieE0H/tDPjz589n9uzZXH755UMm6EfzTgihq6y00koA3Hbbbey8885MmjSJjTfemMmTJ3PZZZcxYcIEttpqKx5//HEADj/8cI455hjGjRvHpptuys9//nMgdUp/+MMfZquttmLbbbfl1ltvBeDiiy9m7733Ztddd2W33XZj8uTJ3HHHHYwdO5YzzzyT2bNns9NOO7Hddtux3XbbLfoSuu2223jnO9/Jfvvtx+abb84hhxyCbQCmTZvG9ttvzzbbbMOECRN48cUXWbBgAZ/5zGcYP348W2+9Nd/73vcAePbZZ3nHO97B2LFj2XLLLbnjjjuy/v4autKXtCdwNjAcuMD2aTX73wGcBWwNHGj7mqp9GwAXAOsDBt5le3aW2ocQSu3BBx/k4YcfZo011mDjjTfmyCOP5J577uHss8/mnHPO4ayzzgJSE80999zD448/zi677MKsWbM499xzkcTvf/97HnnkESZOnMgf//hHAO677z5mzJjBGmuswW233cYZZ5yx6MvilVde4Ze//CUjRozgscce46CDDlqUL+z+++9n5syZvPGNb2SHHXbgN7/5DRMmTOCAAw7gqquuYvz48bzwwgussMIKXHjhhay66qpMmzaNf//73+ywww5MnDiRa6+9lj322IPPf/7zLFiwgFdeeSXr76zPoC9pOHAusDswB5gmaYrth6oOewo4HDipzikuAb5q+5eSVgIWNl3rEEIAxo8fzzrrrAPAm970JiZOnAjAVltttejKHeADH/gAw4YNY/To0Wy88cY88sgj3HnnnZxwwgkAbL755my44YaLgv7uu+/OGmusUbfMefPmcfzxx/PAAw8wfPjwRa8BmDBhAuuttx4AY8eOZfbs2ay66qqss846jB8/HoBVVlkFgJtuuokZM2ZwzTXpGvn555/nscceY/z48XzkIx9h3rx57LPPPowdOzbb7wsau9KfAMyy/QSApCuBScCioF+5cpe0RECXNAZYxvYvi+NeylPtEEKA5ZdfftHjYcOGLXo+bNgw5s+fv2hf7TDHvoY9rrjiij3uO/PMM1l77bV58MEHWbhwISNGjKhbn+HDhy9Rh1q2Oeecc9hjjz2W2nf77bdz/fXXc/jhh3PiiSdy6KGH9lrf/mikTX9d4Omq53OKbY3YFPinpGsl3S/p9OLOIYQQ2uZHP/oRCxcu5PHHH+eJJ55gs802Y6edduKyyy4D4I9//CNPPfUUm2222VKvXXnllXnxxRcXPX/++edZZ511GDZsGJdeeikLFizotezNNtuMZ599lmnTpgHw4osvMn/+fPbYYw/OO+885s2bt6gOL7/8Mk8++SRrr702Rx11FEceeST33Xdfrl8D0PrRO8sAOwHbkpqAriI1A11YfZCko4GjATbYYIMWVymEkEu3jFrbYIMNmDBhAi+88ALf/e53GTFiBMceeywf+9jH2GqrrVhmmWW4+OKLl7hSr9h6660ZPnw422yzDYcffjjHHnss++67L5dccgl77rlnr3cFAMsttxxXXXUVJ5xwAv/6179YYYUV+NWvfsWRRx7J7Nmz2W677bDNyJEjue6667jttts4/fTTWXbZZVlppZW45JJLsv4uVOld7vEA6e3AF23vUTw/GcD21+ocezHw80pH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">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can see that four features 'Color intensity', 'Flavanoids', 'Proline', and 'OD280/OD315_DILUTED' have higher importance and we can use them in order to classify different wines.</p>
+<p>For the simplicity, we will use first three features ('Color intensity', 'Flavanoids', 'Proline') and use for our classification.</p>
+<p>NOTE* : Since we are using 3 Principal components, we will use 3 features from Random Forests to build our new model.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="c.-Prepare-Decision-Tree-model-based-on-features-selected-by-Random-Forests">c. Prepare Decision Tree model based on features selected by Random Forests<a class="anchor-link" href="#c.-Prepare-Decision-Tree-model-based-on-features-selected-by-Random-Forests">¶</a>
+</h5>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [48]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># select only two features for new data, that we will use for training/prediction</span>
+<span class="n">X_rf</span> <span class="o">=</span> <span class="n">X</span><span class="p">[[</span><span class="s1">'COLOR_INTENSITY'</span><span class="p">,</span> <span class="s1">'FLAVANOIDS'</span><span class="p">,</span> <span class="s1">'PROLINE'</span><span class="p">]]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [49]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># train test split on X_rf</span>
+
+<span class="n">Xrf_train</span><span class="p">,</span> <span class="n">Xrf_test</span><span class="p">,</span> <span class="n">yrf_train</span><span class="p">,</span> <span class="n">yrf_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_rf</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># prepare decision tree model based on features selected by Random Forests</span>
+<span class="n">model_rf</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">model_rf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xrf_train</span><span class="p">,</span> <span class="n">yrf_train</span><span class="p">)</span>
+
+<span class="n">yrf_prediction</span> <span class="o">=</span> <span class="n">model_rf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xrf_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Test accuracy using Decision tree on data based on Features by Random Forests: </span><span class="si">%.2f</span><span class="s1">'</span> <span class="o">%</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">yrf_test</span><span class="p">,</span> <span class="n">yrf_prediction</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Test accuracy using Decision tree on data based on Features by Random Forests: 0.94
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We train two different Decision Tree based on PCA projected data and important features given by Random Forests. We saw that the Test Accuracy by PCA based model is 78% whereas that based on Random Forests features is 94 %. The results are not much comparable but the goal here is to understand - 'PCA preserves the information'. I have used only 3 principal components (which covers only 65% variance in the data). We can add more principal components to get the comparable results.</p>
+
+</div>
+</div>
+</div>
+</div>
+    </section><footer class="post-footer"><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="blog-sijanb-com-np",
+            disqus_url="http://sijanb.com.np/posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/",
+        disqus_title="How do I know Principal Component Analysis (PCA) is preserving information from my data ?",
+        disqus_identifier="cache/posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data ?.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script></footer></article><script>var disqus_shortname="blog-sijanb-com-np";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer class="site-footer clearfix"><section class="poweredby">Contents © 2020         <a href="mailto:sijanonly@gmail.com">Sijan Bhandari</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </section></footer>
+</div>
+
+    <script type="text/javascript" src="../../assets/js/jquery.js"></script><script type="text/javascript" src="../../assets/js/jquery.fitvids.js"></script><script type="text/javascript" src="../../assets/js/index.js"></script>
+</body>
+</html>
