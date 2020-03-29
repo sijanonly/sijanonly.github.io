@@ -91,7 +91,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [39]:</div>
+<div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
@@ -115,7 +115,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [40]:</div>
+<div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
@@ -137,7 +137,7 @@
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[40]:</div>
+    <div class="prompt output_prompt">Out[14]:</div>
 
 
 
@@ -273,7 +273,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [41]:</div>
+<div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'ALCOHOL_LEVEL'</span><span class="p">,</span> <span class="s1">'MALIC_ACID'</span><span class="p">,</span> <span class="s1">'ASH'</span><span class="p">,</span> <span class="s1">'ALCALINITY'</span><span class="p">,</span><span class="s1">'MAGNESIUM'</span><span class="p">,</span> <span class="s1">'PHENOLS'</span><span class="p">,</span> 
@@ -305,7 +305,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [42]:</div>
+<div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># prepare correlation matrix</span>
@@ -350,17 +350,17 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [43]:</div>
+<div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># train test split for training</span>
 <span class="n">Xpc_train</span><span class="p">,</span> <span class="n">Xpc_test</span><span class="p">,</span> <span class="n">ypc_train</span><span class="p">,</span> <span class="n">ypc_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span> <span class="n">projected_data</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="n">tree_pca</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">tree_pca</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Z_pca_train</span><span class="p">,</span> <span class="n">y_pca_train</span><span class="p">)</span>
+<span class="n">tree_pca</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xpc_train</span><span class="p">,</span> <span class="n">ypc_train</span><span class="p">)</span>
 
-<span class="n">y_pca_pred</span> <span class="o">=</span> <span class="n">tree_pca</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Z_pca_test</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Test accuracy using Decision tree on PCA projected data: </span><span class="si">%.2f</span><span class="s1">'</span> <span class="o">%</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_pca_test</span><span class="p">,</span> <span class="n">y_pca_pred</span><span class="p">))</span>
+<span class="n">ypca_pred</span> <span class="o">=</span> <span class="n">tree_pca</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xpc_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Test accuracy using Decision tree on PCA projected data: </span><span class="si">%.2f</span><span class="s1">'</span> <span class="o">%</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">ypc_test</span><span class="p">,</span> <span class="n">ypca_pred</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -377,7 +377,7 @@
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Test accuracy using Decision tree on PCA projected data: 0.78
+<pre>Test accuracy using Decision tree on PCA projected data: 0.76
 </pre>
 </div>
 </div>
@@ -420,7 +420,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [44]:</div>
+<div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Random Forests with 100 decision trees</span>
@@ -439,7 +439,7 @@
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[44]:</div>
+    <div class="prompt output_prompt">Out[18]:</div>
 
 
 
@@ -462,7 +462,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [45]:</div>
+<div class="prompt input_prompt">In [19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
@@ -506,7 +506,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [46]:</div>
+<div class="prompt input_prompt">In [20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">feature_imp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'feature'</span><span class="p">:</span> <span class="n">features</span><span class="p">,</span><span class="s1">'importances'</span><span class="p">:</span> <span class="n">model</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">})</span><span class="o">.</span>\
@@ -525,7 +525,7 @@
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[46]:</div>
+    <div class="prompt output_prompt">Out[20]:</div>
 
 
 
@@ -589,7 +589,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [47]:</div>
+<div class="prompt input_prompt">In [21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">feature_imp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">'feature'</span><span class="p">,</span> <span class="s1">'importances'</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">'bar'</span><span class="p">)</span>
@@ -605,13 +605,13 @@
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[47]:</div>
+    <div class="prompt output_prompt">Out[21]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f4d74eb06a0&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f07429c0710&gt;</pre>
 </div>
 
 </div>
@@ -657,7 +657,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [48]:</div>
+<div class="prompt input_prompt">In [22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># select only two features for new data, that we will use for training/prediction</span>
@@ -671,7 +671,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [49]:</div>
+<div class="prompt input_prompt">In [23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># train test split on X_rf</span>
@@ -714,10 +714,23 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We train two different Decision Tree based on PCA projected data and important features given by Random Forests. We saw that the Test Accuracy by PCA based model is 78% whereas that based on Random Forests features is 94 %. The results are not much comparable but the goal here is to understand - 'PCA preserves the information'. I have used only 3 principal components (which covers only 65% variance in the data). We can add more principal components to get the comparable results.</p>
+<p>We train two different Decision Tree based on PCA projected data and important features given by Random Forests. We saw that the Test Accuracy by PCA based model is 76% whereas that based on Random Forests features is 94 %. The results are not much comparable but the goal here is to understand - 'PCA preserves the information'. I have used only 3 principal components (which covers only 65% variance in the data). We can add more principal components to get the comparable results.</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div>
 </div>
     </section><footer class="post-footer"><section class="comments hidden-print"><h2>Comments</h2>
