@@ -23,7 +23,7 @@
  </url>
  <url>
   <loc>http://sijanb.com.np/archive.html</loc>
-  <lastmod>2020-03-29T10:03:00Z</lastmod>
+  <lastmod>2020-03-29T11:06:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/blog/</loc>
@@ -31,15 +31,19 @@
  </url>
  <url>
   <loc>http://sijanb.com.np/blog/index-1.html</loc>
-  <lastmod>2020-03-29T10:03:00Z</lastmod>
+  <lastmod>2020-03-29T11:06:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/categories/</loc>
-  <lastmod>2020-03-18T21:05:00Z</lastmod>
+  <lastmod>2020-03-29T10:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/categories/bayesian-learning/</loc>
   <lastmod>2020-03-18T21:05:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://sijanb.com.np/categories/decision-tree/</loc>
+  <lastmod>2020-03-29T10:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/categories/deep-learning/</loc>
@@ -60,6 +64,14 @@
  <url>
   <loc>http://sijanb.com.np/categories/perceptron/</loc>
   <lastmod>2018-10-23T21:13:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://sijanb.com.np/categories/principal-component-analysis/</loc>
+  <lastmod>2020-03-29T10:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://sijanb.com.np/categories/random-forest/</loc>
+  <lastmod>2020-03-29T10:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/galleries/</loc>
