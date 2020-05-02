@@ -1,4 +1,4 @@
-Sitemap: http://sijanb.com.np/sitemapindex.xml
+Sitemap: https://sijanb.com.np/sitemapindex.xml
 
 User-Agent: *
 Host: sijanb.com.np

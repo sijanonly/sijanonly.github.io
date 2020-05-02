@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>CODEBUG</title><link>http://sijanb.com.np/</link><description>Random exploring....</description><atom:link href="http://sijanb.com.np/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Sat, 02 May 2020 14:56:19 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>K-Nearest Neighbors Algorithm using Python and Scikit-Learn</title><link>http://sijanb.com.np/posts/k-nearest-neighbors-algorithm-using-python-and-scikit-learn/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>CODEBUG</title><link>https://sijanb.com.np/</link><description>Data Exploration...</description><atom:link href="https://sijanb.com.np/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Sat, 02 May 2020 17:57:56 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>K-Nearest Neighbors Algorithm using Python and Scikit-Learn</title><link>https://sijanb.com.np/posts/k-nearest-neighbors-algorithm-using-python-and-scikit-learn/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;K nearest Neighbors (kNN) works based on calculating distance between given test data point and all the training samples. We, then, collect first K closest points from training set and the majority vote gives you the predicted class for a given test data point.&lt;/p&gt;
@@ -167,7 +167,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="http://sijanb.com.np/posts/k-nearest-neighbors-algorithm-using-python-and-scikit-learn/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>kNN</category><category>machine-learning</category><guid>http://sijanb.com.np/posts/k-nearest-neighbors-algorithm-using-python-and-scikit-learn/</guid><pubDate>Sat, 02 May 2020 09:38:27 GMT</pubDate></item><item><title>How do I know Principal Component Analysis (PCA) is preserving information from my data ?</title><link>http://sijanb.com.np/posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/k-nearest-neighbors-algorithm-using-python-and-scikit-learn/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>kNN</category><category>machine-learning</category><guid>https://sijanb.com.np/posts/k-nearest-neighbors-algorithm-using-python-and-scikit-learn/</guid><pubDate>Sat, 02 May 2020 09:38:27 GMT</pubDate></item><item><title>How do I know Principal Component Analysis (PCA) is preserving information from my data ?</title><link>https://sijanb.com.np/posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Principal Component Analysis is used for dimension reduction of high-dimensional data. We also refer PCA as feature extraction technique, where new features take the linear combinations from original features.&lt;/p&gt;
@@ -181,7 +181,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="1.-PCA-as-Feature-Extraction"&gt;1. PCA as Feature Extraction&lt;a class="anchor-link" href="http://sijanb.com.np/posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/#1.-PCA-as-Feature-Extraction"&gt;¶&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id="1.-PCA-as-Feature-Extraction"&gt;1. PCA as Feature Extraction&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/#1.-PCA-as-Feature-Extraction"&gt;¶&lt;/a&gt;&lt;/h4&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -394,7 +394,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="a.-Preparing-Projected-data-using-PCA"&gt;a. Preparing Projected data using PCA&lt;a class="anchor-link" href="http://sijanb.com.np/posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/#a.-Preparing-Projected-data-using-PCA"&gt;¶&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id="a.-Preparing-Projected-data-using-PCA"&gt;a. Preparing Projected data using PCA&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/#a.-Preparing-Projected-data-using-PCA"&gt;¶&lt;/a&gt;&lt;/h5&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -436,7 +436,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="b.-Using-Projected-data-for-the-training-and-prediction-using-Decision-Tree"&gt;b. Using Projected data for the training and prediction using Decision Tree&lt;a class="anchor-link" href="http://sijanb.com.np/posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/#b.-Using-Projected-data-for-the-training-and-prediction-using-Decision-Tree"&gt;¶&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id="b.-Using-Projected-data-for-the-training-and-prediction-using-Decision-Tree"&gt;b. Using Projected data for the training and prediction using Decision Tree&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/#b.-Using-Projected-data-for-the-training-and-prediction-using-Decision-Tree"&gt;¶&lt;/a&gt;&lt;/h5&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -481,10 +481,10 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="http://sijanb.com.np/posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>decision-tree</category><category>principal-component-analysis</category><category>random-forest</category><guid>http://sijanb.com.np/posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/</guid><pubDate>Sat, 28 Mar 2020 17:17:59 GMT</pubDate></item><item><title>Principal Component Analysis (PCA) for Visualization using Python</title><link>http://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>decision-tree</category><category>principal-component-analysis</category><category>random-forest</category><guid>https://sijanb.com.np/posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/</guid><pubDate>Sat, 28 Mar 2020 17:17:59 GMT</pubDate></item><item><title>Principal Component Analysis (PCA) for Visualization using Python</title><link>https://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="1.-Basic-Setup"&gt;1. Basic Setup&lt;a class="anchor-link" href="http://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/#1.-Basic-Setup"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Principal Component Analysis (PCA) is being used to reduce the dimensionality of data whilst retaining as much of information as possible. The general idea of PCA works as follows:&lt;/p&gt;
+&lt;h4 id="1.-Basic-Setup"&gt;1. Basic Setup&lt;a class="anchor-link" href="https://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/#1.-Basic-Setup"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Principal Component Analysis (PCA) is being used to reduce the dimensionality of data whilst retaining as much of information as possible. The general idea of PCA works as follows:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt; a. Find the principal components from your original data
  b. Project your original data into the space spanned by principal components from (a)
@@ -505,7 +505,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="2.-Principal-Component-Analysis-Algorithm-(Pseudocode)"&gt;2. Principal Component Analysis Algorithm (Pseudocode)&lt;a class="anchor-link" href="http://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/#2.-Principal-Component-Analysis-Algorithm-(Pseudocode)"&gt;¶&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id="2.-Principal-Component-Analysis-Algorithm-(Pseudocode)"&gt;2. Principal Component Analysis Algorithm (Pseudocode)&lt;a class="anchor-link" href="https://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/#2.-Principal-Component-Analysis-Algorithm-(Pseudocode)"&gt;¶&lt;/a&gt;&lt;/h4&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -524,17 +524,17 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="3.-Basic-Data-Analysis"&gt;3. Basic Data Analysis&lt;a class="anchor-link" href="http://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/#3.-Basic-Data-Analysis"&gt;¶&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id="3.-Basic-Data-Analysis"&gt;3. Basic Data Analysis&lt;a class="anchor-link" href="https://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/#3.-Basic-Data-Analysis"&gt;¶&lt;/a&gt;&lt;/h4&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="http://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/"&gt;Read more…&lt;/a&gt; (4 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>http://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/</guid><pubDate>Thu, 19 Mar 2020 11:34:26 GMT</pubDate></item><item><title>Linear Regression with Maximum Likelihood (MSE) and Bayesian Learning Approach from scratch</title><link>http://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/"&gt;Read more…&lt;/a&gt; (4 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/</guid><pubDate>Thu, 19 Mar 2020 11:34:26 GMT</pubDate></item><item><title>Linear Regression with Maximum Likelihood (MSE) and Bayesian Learning Approach from scratch</title><link>https://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="1.-Setup"&gt;1. Setup&lt;a class="anchor-link" href="http://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#1.-Setup"&gt;¶&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id="1.-Setup"&gt;1. Setup&lt;a class="anchor-link" href="https://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#1.-Setup"&gt;¶&lt;/a&gt;&lt;/h4&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -560,15 +560,15 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="2.-Objective-Functions"&gt;2. Objective Functions&lt;a class="anchor-link" href="http://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#2.-Objective-Functions"&gt;¶&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id="2.-Objective-Functions"&gt;2. Objective Functions&lt;a class="anchor-link" href="https://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#2.-Objective-Functions"&gt;¶&lt;/a&gt;&lt;/h4&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="a.-Maximum-Likelihood-objective-(MLE)-.i.e-.-(-Mean-Squared-Error-)"&gt;a. Maximum Likelihood objective (MLE) .i.e . ( Mean Squared Error )&lt;a class="anchor-link" href="http://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#a.-Maximum-Likelihood-objective-(MLE)-.i.e-.-(-Mean-Squared-Error-)"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;J(w) =  $ \frac{1}{2} \sum_i^N \{t_i - w^T \phi(x_i) \}^2 $&lt;/p&gt;
-&lt;h5 id="b.-Regularized-Linear-Regression"&gt;b. Regularized Linear Regression&lt;a class="anchor-link" href="http://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#b.-Regularized-Linear-Regression"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;J(w) =  $ \frac{1}{2} \sum_i^N \{t_i - w^T \phi(x_i) \}^2 $ + $ \frac{\lambda}{2} w^T w $&lt;/p&gt;
+&lt;h5 id="a.-Maximum-Likelihood-objective-(MLE)-.i.e-.-(-Mean-Squared-Error-)"&gt;a. Maximum Likelihood objective (MLE) .i.e . ( Mean Squared Error )&lt;a class="anchor-link" href="https://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#a.-Maximum-Likelihood-objective-(MLE)-.i.e-.-(-Mean-Squared-Error-)"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;J(w) =  $ \frac{1}{2} \sum_i^N \{t_i - w^T \phi(x_i) \}^2 $&lt;/p&gt;
+&lt;h5 id="b.-Regularized-Linear-Regression"&gt;b. Regularized Linear Regression&lt;a class="anchor-link" href="https://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#b.-Regularized-Linear-Regression"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;J(w) =  $ \frac{1}{2} \sum_i^N \{t_i - w^T \phi(x_i) \}^2 $ + $ \frac{\lambda}{2} w^T w $&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -576,16 +576,16 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="3.-Closed-Form-Solutions"&gt;3. Closed Form Solutions&lt;a class="anchor-link" href="http://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#3.-Closed-Form-Solutions"&gt;¶&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id="3.-Closed-Form-Solutions"&gt;3. Closed Form Solutions&lt;a class="anchor-link" href="https://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#3.-Closed-Form-Solutions"&gt;¶&lt;/a&gt;&lt;/h4&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="a.-For-MSE"&gt;a. For MSE&lt;a class="anchor-link" href="http://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#a.-For-MSE"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;$ w_{MLE} = ( \phi^T \phi )^{-1} \phi^T t $&lt;/p&gt;
+&lt;h5 id="a.-For-MSE"&gt;a. For MSE&lt;a class="anchor-link" href="https://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#a.-For-MSE"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;$ w_{MLE} = ( \phi^T \phi )^{-1} \phi^T t $&lt;/p&gt;
 &lt;p&gt;$ ( \phi^T \phi )^{-1} $ is called Moore-Penrose inverse.&lt;/p&gt;
-&lt;h5 id="b.-For-Regularized-MSE"&gt;b. For Regularized MSE&lt;a class="anchor-link" href="http://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#b.-For-Regularized-MSE"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;$ w_{MLE} = ( \lambda I + \phi^T \phi )^{-1} \phi^T t $&lt;/p&gt;
+&lt;h5 id="b.-For-Regularized-MSE"&gt;b. For Regularized MSE&lt;a class="anchor-link" href="https://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#b.-For-Regularized-MSE"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;$ w_{MLE} = ( \lambda I + \phi^T \phi )^{-1} \phi^T t $&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -593,7 +593,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="4.-Bayesian-Learning"&gt;4. Bayesian Learning&lt;a class="anchor-link" href="http://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#4.-Bayesian-Learning"&gt;¶&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id="4.-Bayesian-Learning"&gt;4. Bayesian Learning&lt;a class="anchor-link" href="https://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#4.-Bayesian-Learning"&gt;¶&lt;/a&gt;&lt;/h4&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -605,14 +605,14 @@
 &lt;p&gt;$ p(w|t) $ - Posterior distribution
    $ p(t|w) $ - Likelihood of data given parameters
    $ p(w) $ - Prior distribution over paramters (w)&lt;/p&gt;
-&lt;h5 id="a.-Pior-on-w-:"&gt;a. Pior on w :&lt;a class="anchor-link" href="http://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#a.-Pior-on-w-:"&gt;¶&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id="a.-Pior-on-w-:"&gt;a. Pior on w :&lt;a class="anchor-link" href="https://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#a.-Pior-on-w-:"&gt;¶&lt;/a&gt;&lt;/h5&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="http://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/"&gt;Read more…&lt;/a&gt; (39 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>bayesian-learning</category><category>linear-regression</category><category>maximum-likelihood-estimation</category><guid>http://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/</guid><pubDate>Sat, 14 Mar 2020 16:07:38 GMT</pubDate></item><item><title>Understanding Regularization for Support Vector Machines (SVMs)</title><link>http://sijanb.com.np/posts/understanding-regularization-for-support-vector-machines-svms/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/"&gt;Read more…&lt;/a&gt; (39 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>bayesian-learning</category><category>linear-regression</category><category>maximum-likelihood-estimation</category><guid>https://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/</guid><pubDate>Sat, 14 Mar 2020 16:07:38 GMT</pubDate></item><item><title>Understanding Regularization for Support Vector Machines (SVMs)</title><link>https://sijanb.com.np/posts/understanding-regularization-for-support-vector-machines-svms/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;I would like you to go through  &lt;a href="http://sijanb.com.np/posts/why-we-need-support-vector-machine-svm/"&gt;&lt;code&gt;Intuition Behind SVM&lt;/code&gt;&lt;/a&gt; before exploring about &lt;code&gt;Regularization&lt;/code&gt;.&lt;/p&gt;
@@ -661,7 +661,7 @@ What if our data is not perfectly separable? We have two options for non-separab
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="http://sijanb.com.np/posts/understanding-regularization-for-support-vector-machines-svms/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>http://sijanb.com.np/posts/understanding-regularization-for-support-vector-machines-svms/</guid><pubDate>Sun, 27 Oct 2019 10:19:33 GMT</pubDate></item><item><title>Implementation of K means clustering algorithm in Python</title><link>http://sijanb.com.np/posts/implementation-of-k-means-clustering-algorithm-in-python/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/understanding-regularization-for-support-vector-machines-svms/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/understanding-regularization-for-support-vector-machines-svms/</guid><pubDate>Sun, 27 Oct 2019 10:19:33 GMT</pubDate></item><item><title>Implementation of K means clustering algorithm in Python</title><link>https://sijanb.com.np/posts/implementation-of-k-means-clustering-algorithm-in-python/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;For K means clustering algorithm, I will be using &lt;a href="https://www.kaggle.com/arjunbhasin2013/ccdata"&gt;&lt;code&gt;Credit Cards Dataset for Clustering&lt;/code&gt;&lt;/a&gt; from Kaggle.&lt;/p&gt;
@@ -690,7 +690,7 @@ What if our data is not perfectly separable? We have two options for non-separab
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="Data-preprocessing"&gt;Data preprocessing&lt;a class="anchor-link" href="http://sijanb.com.np/posts/implementation-of-k-means-clustering-algorithm-in-python/#Data-preprocessing"&gt;¶&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id="Data-preprocessing"&gt;Data preprocessing&lt;a class="anchor-link" href="https://sijanb.com.np/posts/implementation-of-k-means-clustering-algorithm-in-python/#Data-preprocessing"&gt;¶&lt;/a&gt;&lt;/h4&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -888,7 +888,7 @@ What if our data is not perfectly separable? We have two options for non-separab
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="A.-Check-for-missing-data"&gt;A. Check for missing data&lt;a class="anchor-link" href="http://sijanb.com.np/posts/implementation-of-k-means-clustering-algorithm-in-python/#A.-Check-for-missing-data"&gt;¶&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id="A.-Check-for-missing-data"&gt;A. Check for missing data&lt;a class="anchor-link" href="https://sijanb.com.np/posts/implementation-of-k-means-clustering-algorithm-in-python/#A.-Check-for-missing-data"&gt;¶&lt;/a&gt;&lt;/h5&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -954,7 +954,7 @@ dtype: int64&lt;/pre&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="B.-Remove-'NaN'-entries"&gt;B. Remove 'NaN' entries&lt;a class="anchor-link" href="http://sijanb.com.np/posts/implementation-of-k-means-clustering-algorithm-in-python/#B.-Remove-'NaN'-entries"&gt;¶&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id="B.-Remove-'NaN'-entries"&gt;B. Remove 'NaN' entries&lt;a class="anchor-link" href="https://sijanb.com.np/posts/implementation-of-k-means-clustering-algorithm-in-python/#B.-Remove-'NaN'-entries"&gt;¶&lt;/a&gt;&lt;/h5&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -974,7 +974,7 @@ dtype: int64&lt;/pre&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="C.-Remove-nonrelevant-column/feature"&gt;C. Remove nonrelevant column/feature&lt;a class="anchor-link" href="http://sijanb.com.np/posts/implementation-of-k-means-clustering-algorithm-in-python/#C.-Remove-nonrelevant-column/feature"&gt;¶&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id="C.-Remove-nonrelevant-column/feature"&gt;C. Remove nonrelevant column/feature&lt;a class="anchor-link" href="https://sijanb.com.np/posts/implementation-of-k-means-clustering-algorithm-in-python/#C.-Remove-nonrelevant-column/feature"&gt;¶&lt;/a&gt;&lt;/h5&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -995,10 +995,10 @@ dtype: int64&lt;/pre&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="http://sijanb.com.np/posts/implementation-of-k-means-clustering-algorithm-in-python/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>http://sijanb.com.np/posts/implementation-of-k-means-clustering-algorithm-in-python/</guid><pubDate>Sun, 11 Aug 2019 10:23:29 GMT</pubDate></item><item><title>Graphical illustration of K Means algorithm</title><link>http://sijanb.com.np/posts/graphical-illustration-of-k-means-algorithm/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/implementation-of-k-means-clustering-algorithm-in-python/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/implementation-of-k-means-clustering-algorithm-in-python/</guid><pubDate>Sun, 11 Aug 2019 10:23:29 GMT</pubDate></item><item><title>Graphical illustration of K Means algorithm</title><link>https://sijanb.com.np/posts/graphical-illustration-of-k-means-algorithm/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;img src="http://sijanb.com.np/images/k-means_algorithm_1.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://sijanb.com.np/images/k-means_algorithm_1.png"&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1006,13 +1006,13 @@ dtype: int64&lt;/pre&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="http://sijanb.com.np/posts/graphical-illustration-of-k-means-algorithm/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>http://sijanb.com.np/posts/graphical-illustration-of-k-means-algorithm/</guid><pubDate>Tue, 06 Aug 2019 16:12:00 GMT</pubDate></item><item><title>Intuition behind Gradient Descent for Machine Learning Algorithms</title><link>http://sijanb.com.np/posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/graphical-illustration-of-k-means-algorithm/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/graphical-illustration-of-k-means-algorithm/</guid><pubDate>Tue, 06 Aug 2019 16:12:00 GMT</pubDate></item><item><title>Intuition behind Gradient Descent for Machine Learning Algorithms</title><link>https://sijanb.com.np/posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;img src="http://sijanb.com.np/images/gradient_descent.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://sijanb.com.np/images/gradient_descent.png"&gt;&lt;/p&gt;
 &lt;p&gt;Before jumping to Gradient Descent, let's be clear about difference between backpropagation and gradient descent. Comparing things make it easier to learn !&lt;/p&gt;
-&lt;h5 id="Backpropagation-:"&gt;Backpropagation :&lt;a class="anchor-link" href="http://sijanb.com.np/posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/#Backpropagation-:"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Backpropagation is an efficient way of calculating gradients using chain rule.&lt;/p&gt;
-&lt;h5 id="Gradient-Descent:"&gt;Gradient Descent:&lt;a class="anchor-link" href="http://sijanb.com.np/posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/#Gradient-Descent:"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Gradient Descent is an optimization algorithm which is used in different machine learning algorithms to find parameters/combination of parameters which mimimizes the loss function.&lt;/p&gt;
+&lt;h5 id="Backpropagation-:"&gt;Backpropagation :&lt;a class="anchor-link" href="https://sijanb.com.np/posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/#Backpropagation-:"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Backpropagation is an efficient way of calculating gradients using chain rule.&lt;/p&gt;
+&lt;h5 id="Gradient-Descent:"&gt;Gradient Descent:&lt;a class="anchor-link" href="https://sijanb.com.np/posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/#Gradient-Descent:"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Gradient Descent is an optimization algorithm which is used in different machine learning algorithms to find parameters/combination of parameters which mimimizes the loss function.&lt;/p&gt;
 &lt;p&gt;** In case of neural network, we use backpropagation to calculate the gradient of loss function w.r.t to weights. Weights are the parameters of neural network.&lt;/p&gt;
 &lt;p&gt;** In case of linear regression, coefficients are the parameters!.&lt;/p&gt;
 &lt;p&gt;** Many machine learning algorithms are convex problems, so using gradient descent to get extrema makes more sense. For example, if you remember the solution of linear regression :&lt;/p&gt;
@@ -1025,7 +1025,7 @@ dtype: int64&lt;/pre&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="http://sijanb.com.np/posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>http://sijanb.com.np/posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/</guid><pubDate>Mon, 05 Aug 2019 16:52:30 GMT</pubDate></item><item><title>Interpreting Centrality Measures for Network Analysis</title><link>http://sijanb.com.np/posts/interpreting-centrality-measures-for-network-analysis/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/</guid><pubDate>Mon, 05 Aug 2019 16:52:30 GMT</pubDate></item><item><title>Interpreting Centrality Measures for Network Analysis</title><link>https://sijanb.com.np/posts/interpreting-centrality-measures-for-network-analysis/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Network has been taken as a tool for describing complex systems or interactions around us. Few prominent complex systems are:&lt;/p&gt;
@@ -1062,7 +1062,7 @@ dtype: int64&lt;/pre&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="http://sijanb.com.np/posts/interpreting-centrality-measures-for-network-analysis/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>http://sijanb.com.np/posts/interpreting-centrality-measures-for-network-analysis/</guid><pubDate>Wed, 31 Jul 2019 17:41:36 GMT</pubDate></item><item><title>Understanding Term Frequencey and Inverse Document Frequency</title><link>http://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/interpreting-centrality-measures-for-network-analysis/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/interpreting-centrality-measures-for-network-analysis/</guid><pubDate>Wed, 31 Jul 2019 17:41:36 GMT</pubDate></item><item><title>Understanding Term Frequencey and Inverse Document Frequency</title><link>https://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;In any document, the frequency of occurrence of terms is taken as an important measure of score for that document (Term Frequency). For example : a document has total 100 words, and 30 words are 'mountains', we ,without hesitation, say that this document is talking about 'Mountains'.&lt;/p&gt;
@@ -1081,7 +1081,7 @@ dtype: int64&lt;/pre&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="Term-Frequency-(TF)-/-Normalized-Term-Frequency-(nTF):"&gt;Term Frequency (TF) / Normalized Term Frequency (nTF):&lt;a class="anchor-link" href="http://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/#Term-Frequency-(TF)-/-Normalized-Term-Frequency-(nTF):"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;It simply measures the frequency/occurent of a term in a document. So, it gives equal important to all terms. Longer document could have large number of terms than smaller documents, so better to normalize this metric by dividing with total number of terms in the document. We also&lt;/p&gt;
+&lt;h4 id="Term-Frequency-(TF)-/-Normalized-Term-Frequency-(nTF):"&gt;Term Frequency (TF) / Normalized Term Frequency (nTF):&lt;a class="anchor-link" href="https://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/#Term-Frequency-(TF)-/-Normalized-Term-Frequency-(nTF):"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;It simply measures the frequency/occurent of a term in a document. So, it gives equal important to all terms. Longer document could have large number of terms than smaller documents, so better to normalize this metric by dividing with total number of terms in the document. We also&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1089,7 +1089,7 @@ dtype: int64&lt;/pre&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="Applications:"&gt;Applications:&lt;a class="anchor-link" href="http://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/#Applications:"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;ol&gt;
+&lt;h4 id="Applications:"&gt;Applications:&lt;a class="anchor-link" href="https://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/#Applications:"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;ol&gt;
 &lt;li&gt;Summarizing a document by extracting keywords.&lt;/li&gt;
 &lt;li&gt;Comparing two documents (similary/ relevancy check)&lt;/li&gt;
 &lt;li&gt;Search query to documents matching for building query results for search engine&lt;/li&gt;
@@ -1102,7 +1102,7 @@ dtype: int64&lt;/pre&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="Inverse-Document-Frequency-(IDF):"&gt;Inverse Document Frequency (IDF):&lt;a class="anchor-link" href="http://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/#Inverse-Document-Frequency-(IDF):"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;It gives the importance to more relevant/significant term in the document. It tries to lower the weights to terms having less importance. And, rare terms will get significant weights.&lt;/p&gt;
+&lt;h4 id="Inverse-Document-Frequency-(IDF):"&gt;Inverse Document Frequency (IDF):&lt;a class="anchor-link" href="https://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/#Inverse-Document-Frequency-(IDF):"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;It gives the importance to more relevant/significant term in the document. It tries to lower the weights to terms having less importance. And, rare terms will get significant weights.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1110,7 +1110,7 @@ dtype: int64&lt;/pre&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="TF-IDF:"&gt;TF-IDF:&lt;a class="anchor-link" href="http://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/#TF-IDF:"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;It tries to prioritize the terms based on their occurrence and uniqueness.&lt;/p&gt;
+&lt;h4 id="TF-IDF:"&gt;TF-IDF:&lt;a class="anchor-link" href="https://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/#TF-IDF:"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;It tries to prioritize the terms based on their occurrence and uniqueness.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1119,16 +1119,16 @@ dtype: int64&lt;/pre&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Suppose, I have two documents in my corpus and I want to give tf-idf weighting to the terms.&lt;/p&gt;
-&lt;h5 id="Document-I-:-'Nepal-is-a-Country'"&gt;Document I : 'Nepal is a Country'&lt;a class="anchor-link" href="http://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/#Document-I-:-'Nepal-is-a-Country'"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;h5 id="Document-II-:-'Nepal-is-a-landlocked-Country'"&gt;Document II : 'Nepal is a landlocked Country'&lt;a class="anchor-link" href="http://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/#Document-II-:-'Nepal-is-a-landlocked-Country'"&gt;¶&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id="Document-I-:-'Nepal-is-a-Country'"&gt;Document I : 'Nepal is a Country'&lt;a class="anchor-link" href="https://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/#Document-I-:-'Nepal-is-a-Country'"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;h5 id="Document-II-:-'Nepal-is-a-landlocked-Country'"&gt;Document II : 'Nepal is a landlocked Country'&lt;a class="anchor-link" href="https://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/#Document-II-:-'Nepal-is-a-landlocked-Country'"&gt;¶&lt;/a&gt;&lt;/h5&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;img src="http://sijanb.com.np/images/tf_1.png"&gt;
-&lt;img src="http://sijanb.com.np/images/tf_2.png"&gt;
-&lt;img src="http://sijanb.com.np/images/tf_3.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://sijanb.com.np/images/tf_1.png"&gt;
+&lt;img src="https://sijanb.com.np/images/tf_2.png"&gt;
+&lt;img src="https://sijanb.com.np/images/tf_3.png"&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1137,8 +1137,8 @@ dtype: int64&lt;/pre&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;We can see that, although, term 'country' has prominent occurrence, 'tf-idf' gives priority to word 'landlocked' and it carries more information about the document.&lt;/p&gt;
-&lt;h4 id="NOTE-1-:"&gt;NOTE 1 :&lt;a class="anchor-link" href="http://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/#NOTE-1-:"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;These weights are eventually used for vector-space model, where each term represents the axes, and document are the vectors on that space. Since 'tf-idf' value is zero (as shown above)' this representation is very sparse.&lt;/p&gt;
-&lt;h4 id="NOTE-2-:"&gt;NOTE 2 :&lt;a class="anchor-link" href="http://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/#NOTE-2-:"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Suppose, we are building a search engine system. The query is also converted into vector in vector-space model and compare with documents
+&lt;h4 id="NOTE-1-:"&gt;NOTE 1 :&lt;a class="anchor-link" href="https://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/#NOTE-1-:"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;These weights are eventually used for vector-space model, where each term represents the axes, and document are the vectors on that space. Since 'tf-idf' value is zero (as shown above)' this representation is very sparse.&lt;/p&gt;
+&lt;h4 id="NOTE-2-:"&gt;NOTE 2 :&lt;a class="anchor-link" href="https://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/#NOTE-2-:"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Suppose, we are building a search engine system. The query is also converted into vector in vector-space model and compare with documents
 (NOTE 1) to get the similarity between them.&lt;/p&gt;
 
 &lt;/div&gt;
@@ -1156,4 +1156,4 @@ dtype: int64&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><guid>http://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/</guid><pubDate>Mon, 29 Jul 2019 17:45:08 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/</guid><pubDate>Mon, 29 Jul 2019 17:45:08 GMT</pubDate></item></channel></rss>

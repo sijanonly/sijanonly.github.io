@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CODEBUG (Posts about perceptron)</title><link>http://sijanb.com.np/</link><description></description><atom:link rel="self" type="application/rss+xml" href="http://sijanb.com.np/categories/perceptron.xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Sun, 22 Mar 2020 21:18:46 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Using perceptron model for classification : an illustrative approach</title><link>http://sijanb.com.np/posts/using-perceptron-model-for-classification-an-illustrative-approach/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>CODEBUG (Posts about perceptron)</title><link>https://sijanb.com.np/</link><description></description><atom:link href="https://sijanb.com.np/categories/perceptron.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Sat, 02 May 2020 17:57:57 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Using perceptron model for classification : an illustrative approach</title><link>https://sijanb.com.np/posts/using-perceptron-model-for-classification-an-illustrative-approach/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;In this post, we are going to devise a measurement tool (perceptron model) in order to classify : whether a person is infected by a diseases or not.&lt;/p&gt;
@@ -59,7 +59,7 @@ i.e (body temperator &amp;gt; 99'F, heart rate = 60 to 100, heart rate &amp;gt; 
                     0 otherwise
                   }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h5 id="STEP-1"&gt;STEP 1&lt;a class="anchor-link" href="http://sijanb.com.np/posts/using-perceptron-model-for-classification-an-illustrative-approach/#STEP-1"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Feed &lt;code&gt;x1 = (1, 1, 1)&lt;/code&gt; into the network.&lt;/p&gt;
+&lt;h5 id="STEP-1"&gt;STEP 1&lt;a class="anchor-link" href="https://sijanb.com.np/posts/using-perceptron-model-for-classification-an-illustrative-approach/#STEP-1"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Feed &lt;code&gt;x1 = (1, 1, 1)&lt;/code&gt; into the network.&lt;/p&gt;
 &lt;p&gt;weighted_sum:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;S = (-1, 0.5, 0) * (1, 1, 1)^T + 0
@@ -87,7 +87,7 @@ Let's calculate the error term:&lt;/p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="STEP-2"&gt;STEP 2&lt;a class="anchor-link" href="http://sijanb.com.np/posts/using-perceptron-model-for-classification-an-illustrative-approach/#STEP-2"&gt;¶&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id="STEP-2"&gt;STEP 2&lt;a class="anchor-link" href="https://sijanb.com.np/posts/using-perceptron-model-for-classification-an-illustrative-approach/#STEP-2"&gt;¶&lt;/a&gt;&lt;/h5&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -111,7 +111,7 @@ Let's calculate the error term:&lt;/p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="STEP-3"&gt;STEP 3&lt;a class="anchor-link" href="http://sijanb.com.np/posts/using-perceptron-model-for-classification-an-illustrative-approach/#STEP-3"&gt;¶&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id="STEP-3"&gt;STEP 3&lt;a class="anchor-link" href="https://sijanb.com.np/posts/using-perceptron-model-for-classification-an-illustrative-approach/#STEP-3"&gt;¶&lt;/a&gt;&lt;/h5&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -145,7 +145,7 @@ Let's calculate the error term:&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><category>perceptron</category><guid>http://sijanb.com.np/posts/using-perceptron-model-for-classification-an-illustrative-approach/</guid><pubDate>Tue, 23 Oct 2018 20:42:54 GMT</pubDate></item><item><title>What is perceptron and how it works?</title><link>http://sijanb.com.np/posts/what-is-perceptron-and-how-it-works/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>perceptron</category><guid>https://sijanb.com.np/posts/using-perceptron-model-for-classification-an-illustrative-approach/</guid><pubDate>Tue, 23 Oct 2018 20:42:54 GMT</pubDate></item><item><title>What is perceptron and how it works?</title><link>https://sijanb.com.np/posts/what-is-perceptron-and-how-it-works/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Perceptron is simply an artificial neuron capable of solving linear classification problems. It is made up of single layer feed-forward neural network.&lt;/p&gt;
@@ -159,7 +159,7 @@ The output decision (either0 or 1), is based on the value of weighted sum of inp
              &lt;br&gt;
                                           } &lt;br&gt;&lt;/p&gt;
 &lt;p&gt;$\theta$ = threshold / bias&lt;/p&gt;
-&lt;p&gt;&lt;img src="http://sijanb.com.np/images/perceptron.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://sijanb.com.np/images/perceptron.png"&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -167,4 +167,4 @@ The output decision (either0 or 1), is based on the value of weighted sum of inp
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="http://sijanb.com.np/posts/what-is-perceptron-and-how-it-works/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>perceptron</category><guid>http://sijanb.com.np/posts/what-is-perceptron-and-how-it-works/</guid><pubDate>Tue, 23 Oct 2018 20:36:47 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/what-is-perceptron-and-how-it-works/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>perceptron</category><guid>https://sijanb.com.np/posts/what-is-perceptron-and-how-it-works/</guid><pubDate>Tue, 23 Oct 2018 20:36:47 GMT</pubDate></item></channel></rss>
