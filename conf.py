@@ -20,12 +20,12 @@ BLOG_AUTHOR = "Sijan Bhandari"  # (translatable)
 BLOG_TITLE = "CODEBUG"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
-SITE_URL = "http://sijanb.com.np/"
+SITE_URL = "https://sijanb.com.np/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "http://sijanb.com.np/"
 BLOG_EMAIL = "sijanonly@gmail.com"
-BLOG_DESCRIPTION = "Random exploring...."  # (translatable)
+BLOG_DESCRIPTION = "Data Exploration..."  # (translatable)
 
 # Nikola is multilingual!
 #
@@ -107,7 +107,7 @@ TRANSLATIONS = {
 # this pattern is also used for metadata:
 #     something.meta -> something.pl.meta
 
-TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
+TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 
 # Links for the sidebar / navigation bar.  (translatable)
 # This is a dict.  The keys are languages, and values are tuples.
@@ -139,29 +139,27 @@ NAVIGATION_LINKS = {
         ("/blog/", "Blog"),
         ("/categories/", "Tags"),
         ("/rss.xml", "RSS feed"),
-    ),
+    )
 }
 
 # Alternative navigation links. Works the same way NAVIGATION_LINKS does,
 # although themes may not always support them. (translatable)
 # (Bootstrap 4: right-side of navbar, Bootblog 4: right side of title)
-NAVIGATION_ALT_LINKS = {
-    DEFAULT_LANG: {}
-}
+NAVIGATION_ALT_LINKS = {DEFAULT_LANG: {}}
 
 # Name of the theme to use.
-THEME = 'canterville'
-LOGO_URL = '/images/logo.png'
+THEME = "canterville"
+LOGO_URL = "/images/logo.png"
 GLOBAL_CONTEXT = {
-        'TWITTER_URL': 'https://twitter.com/getnikola',
-        'GITHUB_URL': 'https://github.com/getnikola',
-        'BANNER_URL': '/assets/img/silk-road.jpg'
+    "TWITTER_URL": "https://twitter.com/getnikola",
+    "GITHUB_URL": "https://github.com/getnikola",
+    "BANNER_URL": "/assets/img/silk-road.jpg",
 }
 
 
 # Primary color of your theme. This will be used to customize your theme.
 # Must be a HEX value.
-THEME_COLOR = '#5670d4'
+THEME_COLOR = "#5670d4"
 
 # Theme configuration. Fully theme-dependent. (translatable)
 # Examples below are for bootblog4.
@@ -171,18 +169,18 @@ THEME_COLOR = '#5670d4'
 THEME_CONFIG = {
     DEFAULT_LANG: {
         # Show the latest featured post in a large box, with the previewimage as its background.
-        'featured_large': False,
+        "featured_large": False,
         # Show the first (remaining) two featured posts in small boxes.
-        'featured_small': True,
+        "featured_small": True,
         # Show featured posts on mobile.
-        'featured_on_mobile': True,
+        "featured_on_mobile": True,
         # Show image in `featured_large` on mobile.
         # `featured_small` displays them only on desktop.
-        'featured_large_image_on_mobile': True,
+        "featured_large_image_on_mobile": True,
         # Strip HTML from featured post text.
-        'featured_strip_html': False,
+        "featured_strip_html": False,
         # Contents of the sidebar, If empty, the sidebar is not displayed.
-        'sidebar': ''
+        "sidebar": "",
     }
 }
 
@@ -302,18 +300,18 @@ TIMEZONE = "Asia/Kathmandu"
 # 'markdown' is Markdown
 # 'html' assumes the file is HTML and just copies it
 COMPILERS = {
-    "rest": ('.rst', '.txt'),
-    "markdown": ('.md', '.mdown', '.markdown'),
-    "textile": ('.textile',),
-    "txt2tags": ('.t2t',),
-    "bbcode": ('.bb',),
-    "wiki": ('.wiki',),
-    "ipynb": ('.ipynb',),
-    "html": ('.html', '.htm'),
+    "rest": (".rst", ".txt"),
+    "markdown": (".md", ".mdown", ".markdown"),
+    "textile": (".textile",),
+    "txt2tags": (".t2t",),
+    "bbcode": (".bb",),
+    "wiki": (".wiki",),
+    "ipynb": (".ipynb",),
+    "html": (".html", ".htm"),
     # PHP files are rendered the usual way (i.e. with the full templates).
     # The resulting files have .php extensions, making it possible to run
     # them without reconfiguring your server to recognize them.
-    "php": ('.php',),
+    "php": (".php",),
     # Pandoc detects the input from the source filename
     # but is disabled by default as it would conflict
     # with many of the others.
@@ -398,7 +396,7 @@ COMPILERS = {
 # If you do not want to display a tag publicly, you can mark it as hidden.
 # The tag will not be displayed on the tag list page and posts.
 # Tag pages will still be generated.
-HIDDEN_TAGS = ['mathjax']
+HIDDEN_TAGS = ["mathjax"]
 
 # Only include tags on the tag list/overview page if there are at least
 # TAGLIST_MINIMUM_POSTS number of posts or more with every tag. Every tag
@@ -543,7 +541,7 @@ HIDDEN_CATEGORIES = []
 # If you do not want to display an author publicly, you can mark it as hidden.
 # The author will not be displayed on the author list page and posts.
 # Tag pages will still be generated.
-HIDDEN_AUTHORS = ['Guest']
+HIDDEN_AUTHORS = ["Guest"]
 
 # Final location for the main blog page and sibling paginated pages is
 # output / TRANSLATION[lang] / INDEX_PATH / index-*.html
@@ -552,9 +550,7 @@ INDEX_PATH = "blog"
 
 # Optional HTML that displayed on “main” blog index.html files.
 # May be used for a greeting. (translatable)
-FRONT_INDEX_HEADER = {
-    DEFAULT_LANG: ''
-}
+FRONT_INDEX_HEADER = {DEFAULT_LANG: ""}
 
 # Create per-month archives instead of per-year
 # CREATE_MONTHLY_ARCHIVE = False
@@ -647,11 +643,11 @@ REDIRECTIONS = []
 # For more details, read the manual:
 # https://getnikola.com/handbook.html#deploying-to-github
 # You will need to configure the deployment branch on GitHub.
-GITHUB_SOURCE_BRANCH = 'src'
-GITHUB_DEPLOY_BRANCH = 'master'
+GITHUB_SOURCE_BRANCH = "src"
+GITHUB_DEPLOY_BRANCH = "master"
 
 # The name of the remote where you wish to push to, using github_deploy.
-GITHUB_REMOTE_NAME = 'origin'
+GITHUB_REMOTE_NAME = "origin"
 
 # Whether or not github_deploy should commit to the source branch automatically
 # before deploying.
@@ -816,7 +812,7 @@ GITHUB_COMMIT_SOURCE = True
 # (the thumbnail has ``.thumbnail`` added before the file extension by default,
 # but a different naming template can be configured with IMAGE_THUMBNAIL_FORMAT).
 
-IMAGE_FOLDERS = {'images': 'images'}
+IMAGE_FOLDERS = {"images": "images"}
 # IMAGE_THUMBNAIL_SIZE = 400
 # IMAGE_THUMBNAIL_FORMAT = '{name}.thumbnail{ext}'
 
@@ -894,9 +890,7 @@ INDEXES_PAGES_MAIN = True
 #     ("icon", "/favicon.ico", "16x16"),
 #     ("icon", "/icon_128x128.png", "128x128"),
 # )
-FAVICONS = (
-    ("icon", "/favicon.ico", "16x16"),
-)
+FAVICONS = (("icon", "/favicon.ico", "16x16"),)
 
 
 # Show teasers (instead of full posts) in indexes? Defaults to False.
@@ -965,15 +959,15 @@ CONTENT_FOOTER_FORMATS = {
             "email": BLOG_EMAIL,
             "author": BLOG_AUTHOR,
             "date": time.gmtime().tm_year,
-            "license": LICENSE
-        }
+            "license": LICENSE,
+        },
     )
 }
 
 # A simple copyright tag for inclusion in RSS feeds that works just
 # like CONTENT_FOOTER and CONTENT_FOOTER_FORMATS
 RSS_COPYRIGHT = 'Contents © {date} <a href="mailto:{email}">{author}</a> {license}'
-RSS_COPYRIGHT_PLAIN = 'Contents © {date} {author} {license}'
+RSS_COPYRIGHT_PLAIN = "Contents © {date} {author} {license}"
 RSS_COPYRIGHT_FORMATS = CONTENT_FOOTER_FORMATS
 
 # To use comments, you can choose between different third party comment
@@ -1087,7 +1081,11 @@ MathJax.Hub.Config({
 # Note: most Nikola-specific extensions are done via the Nikola plugin system,
 #       with the MarkdownExtension class and should not be added here.
 # The default is ['fenced_code', 'codehilite']
-MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.codehilite', 'markdown.extensions.extra']
+MARKDOWN_EXTENSIONS = [
+    "markdown.extensions.fenced_code",
+    "markdown.extensions.codehilite",
+    "markdown.extensions.extra",
+]
 
 # Options to be passed to markdown extensions (See https://python-markdown.github.io/reference/)
 # Default is {} (no config at all)
@@ -1218,7 +1216,18 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.c
 # Google Analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
 # (translatable)
-# BODY_END = ""
+BODY_END = """
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116715433-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-116715433-2');
+</script>
+
+"""
 
 # The possibility to extract metadata from the filename by using a
 # regular expression.
