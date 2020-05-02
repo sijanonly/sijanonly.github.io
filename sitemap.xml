@@ -23,7 +23,7 @@
  </url>
  <url>
   <loc>http://sijanb.com.np/archive.html</loc>
-  <lastmod>2020-03-29T14:27:00Z</lastmod>
+  <lastmod>2020-05-02T14:56:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/blog/</loc>
@@ -31,11 +31,11 @@
  </url>
  <url>
   <loc>http://sijanb.com.np/blog/index-1.html</loc>
-  <lastmod>2020-03-29T14:27:00Z</lastmod>
+  <lastmod>2020-05-02T14:56:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/categories/</loc>
-  <lastmod>2020-03-29T10:55:00Z</lastmod>
+  <lastmod>2020-05-02T14:56:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/categories/bayesian-learning/</loc>
@@ -50,8 +50,16 @@
   <lastmod>2018-10-23T21:13:00Z</lastmod>
  </url>
  <url>
+  <loc>http://sijanb.com.np/categories/knn/</loc>
+  <lastmod>2020-05-02T14:56:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://sijanb.com.np/categories/linear-regression/</loc>
   <lastmod>2020-03-18T21:05:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://sijanb.com.np/categories/machine-learning/</loc>
+  <lastmod>2020-05-02T14:56:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/categories/maximum-likelihood-estimation/</loc>
@@ -116,6 +124,10 @@
  <url>
   <loc>http://sijanb.com.np/posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/</loc>
   <lastmod>2019-08-05T18:27:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://sijanb.com.np/posts/k-nearest-neighbors-algorithm-using-python-and-scikit-learn/</loc>
+  <lastmod>2020-05-02T14:56:00Z</lastmod>
  </url>
  <url>
   <loc>http://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/</loc>
