@@ -23,7 +23,7 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/archive.html</loc>
-  <lastmod>2020-05-10T08:56:00Z</lastmod>
+  <lastmod>2020-05-16T13:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/</loc>
@@ -31,19 +31,23 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/index-1.html</loc>
-  <lastmod>2020-05-10T08:56:00Z</lastmod>
+  <lastmod>2020-05-16T13:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/index-2.html</loc>
-  <lastmod>2020-05-10T08:56:00Z</lastmod>
+  <lastmod>2020-05-16T13:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/</loc>
-  <lastmod>2020-05-09T09:56:00Z</lastmod>
+  <lastmod>2020-05-16T13:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/bayesian-learning/</loc>
   <lastmod>2020-03-18T21:05:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/categories/cat_supervised-learning/</loc>
+  <lastmod>2020-05-16T13:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/cross-validation/</loc>
@@ -112,6 +116,10 @@
  <url>
   <loc>https://sijanb.com.np/posts/how-nearest-centroid-classifier-works/</loc>
   <lastmod>2019-05-19T15:09:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/posts/how-to-tune-hyperparameter-in-k-nearest-neighbors-classifier/</loc>
+  <lastmod>2020-05-16T13:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/implementation-of-k-means-clustering-algorithm-in-python/</loc>
