@@ -23,7 +23,7 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/archive.html</loc>
-  <lastmod>2020-05-23T17:14:00Z</lastmod>
+  <lastmod>2020-05-23T17:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/</loc>
@@ -31,23 +31,31 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/index-1.html</loc>
-  <lastmod>2020-05-23T17:14:00Z</lastmod>
+  <lastmod>2020-05-23T17:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/index-2.html</loc>
-  <lastmod>2020-05-23T17:14:00Z</lastmod>
+  <lastmod>2020-05-23T17:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/</loc>
-  <lastmod>2020-05-16T13:59:00Z</lastmod>
+  <lastmod>2020-05-23T17:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/bayesian-learning/</loc>
   <lastmod>2020-03-18T21:05:00Z</lastmod>
  </url>
  <url>
+  <loc>https://sijanb.com.np/categories/cat_knn/</loc>
+  <lastmod>2020-05-23T17:19:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://sijanb.com.np/categories/cat_supervised-learning/</loc>
   <lastmod>2020-05-16T13:59:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/categories/code-profiling/</loc>
+  <lastmod>2020-05-23T17:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/cross-validation/</loc>
@@ -80,6 +88,14 @@
  <url>
   <loc>https://sijanb.com.np/categories/neural-network/</loc>
   <lastmod>2018-10-23T21:13:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/categories/numba/</loc>
+  <lastmod>2020-05-23T17:19:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/categories/numpy/</loc>
+  <lastmod>2020-05-23T17:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/perceptron/</loc>

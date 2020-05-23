@@ -10,8 +10,16 @@
   <lastmod>2020-05-02T17:57:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://sijanb.com.np/categories/cat_knn.xml</loc>
+  <lastmod>2020-05-23T17:19:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://sijanb.com.np/categories/cat_supervised-learning.xml</loc>
   <lastmod>2020-05-16T14:03:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://sijanb.com.np/categories/code-profiling.xml</loc>
+  <lastmod>2020-05-23T17:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://sijanb.com.np/categories/cross-validation.xml</loc>
@@ -27,7 +35,7 @@
  </sitemap>
  <sitemap>
   <loc>https://sijanb.com.np/categories/knn.xml</loc>
-  <lastmod>2020-05-16T14:03:00Z</lastmod>
+  <lastmod>2020-05-23T17:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://sijanb.com.np/categories/linear-regression.xml</loc>
@@ -46,6 +54,14 @@
   <lastmod>2020-05-02T17:57:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://sijanb.com.np/categories/numba.xml</loc>
+  <lastmod>2020-05-23T17:19:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://sijanb.com.np/categories/numpy.xml</loc>
+  <lastmod>2020-05-23T17:19:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://sijanb.com.np/categories/perceptron.xml</loc>
   <lastmod>2020-05-02T17:57:00Z</lastmod>
  </sitemap>
@@ -59,14 +75,14 @@
  </sitemap>
  <sitemap>
   <loc>https://sijanb.com.np/galleries/rss.xml</loc>
-  <lastmod>2020-05-23T17:14:00Z</lastmod>
+  <lastmod>2020-05-23T17:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://sijanb.com.np/rss.xml</loc>
-  <lastmod>2020-05-23T17:14:00Z</lastmod>
+  <lastmod>2020-05-23T17:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://sijanb.com.np/sitemap.xml</loc>
-  <lastmod>2020-05-23T17:14:00Z</lastmod>
+  <lastmod>2020-05-23T17:19:00Z</lastmod>
  </sitemap>
 </sitemapindex>

@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CODEBUG</title><link>https://sijanb.com.np/</link><description>Data Exploration...</description><atom:link href="https://sijanb.com.np/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Sat, 23 May 2020 17:14:19 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Optimizing k-Nearest Neighbors (kNN) algorithm in Python</title><link>https://sijanb.com.np/posts/optimizing-k-nearest-neighbors-knn-algorithm-in-python/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>CODEBUG</title><link>https://sijanb.com.np/</link><description>Data Exploration...</description><atom:link href="https://sijanb.com.np/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Sat, 23 May 2020 17:19:55 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Optimizing k-Nearest Neighbors (kNN) algorithm in Python</title><link>https://sijanb.com.np/posts/optimizing-k-nearest-neighbors-knn-algorithm-in-python/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;In this post, we will optimize our kNN implementation from previous post using Numpy and Numba.&lt;/p&gt;
+&lt;p&gt;For previous post, you can follow:&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/how-k-nearest-neighbors-works/"&gt;How kNN works ?&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://sijanb.com.np/posts/k-nearest-neighbors-algorithm-using-python-and-scikit-learn/"&gt;K-Nearest Neighbors Algorithm using Python and Scikit-Learn?&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/out-of-sample-accuracy-estimation-using-cross-validation-in-python-and-scikit-learn/"&gt;Out of sample accuracy estimation using cv in knn&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://sijanb.com.np/posts/how-to-tune-hyperparameter-in-k-nearest-neighbors-classifier/"&gt;Tuning Hyperparameter in kNN&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
@@ -879,7 +893,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/optimizing-k-nearest-neighbors-knn-algorithm-in-python/</guid><pubDate>Sat, 23 May 2020 08:10:45 GMT</pubDate></item><item><title>How to tune hyperparameter in K Nearest Neighbors Classifier?</title><link>https://sijanb.com.np/posts/how-to-tune-hyperparameter-in-k-nearest-neighbors-classifier/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>code-profiling</category><category>kNN</category><category>numba</category><category>numpy</category><guid>https://sijanb.com.np/posts/optimizing-k-nearest-neighbors-knn-algorithm-in-python/</guid><pubDate>Sat, 23 May 2020 08:10:45 GMT</pubDate></item><item><title>How to tune hyperparameter in K Nearest Neighbors Classifier?</title><link>https://sijanb.com.np/posts/how-to-tune-hyperparameter-in-k-nearest-neighbors-classifier/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;In this post, we will go through an approach to get optimal/tuned model for the final prediction. First, we will see how to select best 'k' in kNN using simple python example. We will then jump to using &lt;code&gt;sklearn&lt;/code&gt; apis to explore different options for hyperparameter tuning.&lt;/p&gt;
