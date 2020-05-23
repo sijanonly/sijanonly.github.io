@@ -58,7 +58,947 @@
     </header><main id="content" class="content" role="main"><div class="postindex">
 
 
-<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/how-to-tune-hyperparameter-in-k-nearest-neighbors-classifier/">How to tune hyperparameter in K Nearest Neighbors Classifier?</a></h2>
+<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/optimizing-k-nearest-neighbors-knn-algorithm-in-python/">Optimizing k-Nearest Neighbors (kNN) algorithm in Python</a></h2>
+    </header><section class="post-excerpt"><div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">Counter</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">'ignore'</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">numba</span>
+
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="c1"># making results reproducible</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Teaser">Teaser<a class="anchor-link" href="../posts/optimizing-k-nearest-neighbors-knn-algorithm-in-python/#Teaser">¶</a>
+</h4>
+<p>Let us first see a small example. We will calculate the sum of inverse square root between 1 to 10000, using basic pure python method and using Numpy.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">10000</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> -n 100 sum([1./math.sqrt(i) for i in range(1,n)])
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1.87 ms ± 48.2 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> -n 100 np.sum(1./np.sqrt(np.arange(1,n)))
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>52.7 µs ± 8.09 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [85]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">'Numpy vectorized calculation is </span><span class="si">{:.0f}</span><span class="s1"> times faster than pure python in this example'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">1.87</span><span class="o">*</span><span class="mi">1000</span><span class="o">/</span><span class="mf">52.7</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[85]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'Numpy vectorized calculation is 35 times faster than pure python in this example'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Using-wine-dataset-for-kNN">Using wine dataset for kNN<a class="anchor-link" href="../posts/optimizing-k-nearest-neighbors-knn-algorithm-in-python/#Using-wine-dataset-for-kNN">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="s1">'https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data'</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">','</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'CLASS'</span><span class="p">,</span> <span class="s1">'ALCOHOL_LEVEL'</span><span class="p">,</span> <span class="s1">'MALIC_ACID'</span><span class="p">,</span> <span class="s1">'ASH'</span><span class="p">,</span> <span class="s1">'ALCALINITY'</span><span class="p">,</span><span class="s1">'MAGNESIUM'</span><span class="p">,</span> <span class="s1">'PHENOLS'</span><span class="p">,</span> 
+              <span class="s1">'FLAVANOIDS'</span><span class="p">,</span> <span class="s1">'NON_FLAVANOID_PHENOL'</span><span class="p">,</span> <span class="s1">'PROANTHOCYANINS'</span><span class="p">,</span> <span class="s1">'COLOR_INTENSITY'</span><span class="p">,</span> 
+              <span class="s1">'HUE'</span><span class="p">,</span> <span class="s1">'OD280/OD315_DILUTED'</span><span class="p">,</span><span class="s1">'PROLINE'</span><span class="p">]</span>
+
+<span class="c1"># Let us use only two features : 'ALCOHOL_LEVEL', 'MALIC_ACID' for this problem</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">'CLASS'</span><span class="p">,</span> <span class="s1">'ALCOHOL_LEVEL'</span><span class="p">,</span> <span class="s1">'MALIC_ACID'</span><span class="p">]]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>CLASS</th>
+      <th>ALCOHOL_LEVEL</th>
+      <th>MALIC_ACID</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>1</td>
+      <td>14.23</td>
+      <td>1.71</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>1</td>
+      <td>13.20</td>
+      <td>1.78</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>1</td>
+      <td>13.16</td>
+      <td>2.36</td>
+    </tr>
+<tr>
+<th>3</th>
+      <td>1</td>
+      <td>14.37</td>
+      <td>1.95</td>
+    </tr>
+<tr>
+<th>4</th>
+      <td>1</td>
+      <td>13.24</td>
+      <td>2.59</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># we are using 10% of the data for the testing purpose</span>
+
+<span class="n">train_sample_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mf">0.9</span><span class="p">),</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">train_data</span><span class="p">,</span> <span class="n">test_data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">train_sample_idx</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">train_sample_idx</span><span class="p">)</span>
+
+<span class="c1"># get features and label from train/test data</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">train_data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">'CLASS'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">train_data</span><span class="p">[</span><span class="s1">'CLASS'</span><span class="p">]</span>
+<span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">test_data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">'CLASS'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">test_data</span><span class="p">[</span><span class="s1">'CLASS'</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="1.-kNN-using-Python-from-scratch">1. kNN using Python from scratch<a class="anchor-link" href="../posts/optimizing-k-nearest-neighbors-knn-algorithm-in-python/#1.-kNN-using-Python-from-scratch">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">euclidean_distance</span><span class="p">(</span><span class="n">vector1</span><span class="p">,</span> <span class="n">vector2</span><span class="p">):</span>
+    <span class="sd">'''calculate the euclidean distance, core python method</span>
+<span class="sd">    input: numpy.arrays or lists</span>
+<span class="sd">    return: euclidean distance</span>
+<span class="sd">    '''</span>
+    <span class="n">dist</span> <span class="o">=</span> <span class="p">[(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">vector1</span><span class="p">,</span> <span class="n">vector2</span><span class="p">)]</span>
+    <span class="n">dist</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">dist</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">dist</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">predict_instance</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">test_instance</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="n">inputs</span><span class="p">[</span><span class="s1">'distance'</span><span class="p">]</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">euclidean_distance</span><span class="p">,</span> <span class="n">vector2</span><span class="o">=</span><span class="n">test_instance</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c1"># concatenate inputs and labels before sorting the distances</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">inputs</span><span class="p">,</span> <span class="n">labels</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># sort based on distance</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'distance'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># pick k neighbors</span>
+    <span class="n">neighbors</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+
+    <span class="c1"># get list from dataframe column</span>
+    <span class="n">classes</span> <span class="o">=</span> <span class="n">neighbors</span><span class="p">[</span><span class="s1">'CLASS'</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+    <span class="c1"># create counter of labels</span>
+    <span class="n">majority_count</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">classes</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">majority_count</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">pop</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">knn</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Calculate k-nn for given k.</span>
+<span class="sd">    </span>
+<span class="sd">    """</span>
+    <span class="n">predictions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">X_test</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">X_test</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="n">predictions</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">predict_instance</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">y_train</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">row</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">predictions</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># knn = KNN(3)</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">knn</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">true_values</span> <span class="o">=</span> <span class="n">y_test</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">predictions</span> <span class="o">==</span> <span class="n">true_values</span><span class="p">)</span>
+<span class="n">accuracy</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[12]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.7222222222222222</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="a.--%timeit-magic-command-to-observe-execution-time-for-core-python-functions">a.  %timeit magic command to observe execution time for core python functions<a class="anchor-link" href="../posts/optimizing-k-nearest-neighbors-knn-algorithm-in-python/#a.--%timeit-magic-command-to-observe-execution-time-for-core-python-functions">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># %%timeit</span>
+<span class="c1"># -n execute the function 10 times in a loop</span>
+<span class="o">%</span><span class="k">timeit</span> -n 10 knn(X_train, y_train, X_test, 3)
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>144 ms ± 11.3 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="b.-Line-profiling-to-see-which-functions/call-has-higher-contribution-on-execution-time">b. Line profiling to see which functions/call has higher contribution on execution time<a class="anchor-link" href="../posts/optimizing-k-nearest-neighbors-knn-algorithm-in-python/#b.-Line-profiling-to-see-which-functions/call-has-higher-contribution-on-execution-time">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> line_profiler
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># We are profiling function knn, we supply the name using -f</span>
+<span class="o">%</span><span class="k">lprun</span> -f knn knn(X_train, y_train, X_test, 3)
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>Timer unit: 1e-06 s
+
+Total time: 0.312758 s
+File: &lt;ipython-input-115-bd6cbd244598&gt;
+Function: knn at line 18
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    18                                           def knn(X_train, y_train, X_test, k):
+    19                                               """
+    20                                               Calculate k-nn for given k.
+    21                                               
+    22                                               """
+    23         1         55.0     55.0      0.0      predictions = np.zeros(X_test.shape[0])
+    24         1        586.0    586.0      0.2      X_test.reset_index(drop=True, inplace=True)
+    25        19       3188.0    167.8      1.0      for index, row in X_test.iterrows():
+    26        18     308928.0  17162.7     98.8          predictions[index] = predict_instance(X_train.copy(), y_train.copy(), row, k)
+    27         1          1.0      1.0      0.0      return predictions</code></pre>
+<p>NOTE:</p>
+<ol>
+<li>Time is in microseconds at mentioned at the top of the cell.</li>
+<li>(Hits) shows number of times that particular line in code executed.</li>
+<li>(Time) total microseconds for executing that line. (total amount of time)</li>
+<li>(per Hit) = (Time)/(Hits),  average time for a single execution. </li>
+<li>(% Time) fraction of time spent on that line relative to total amount of time.</li>
+</ol>
+<p>We can see the line number 26 is expensive one. We will improve it using numpy below.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="2.-Improving-kNN-with-numpy">2. Improving kNN with numpy<a class="anchor-link" href="../posts/optimizing-k-nearest-neighbors-knn-algorithm-in-python/#2.-Improving-kNN-with-numpy">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [54]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">predict_instance_numpy</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">test_instance</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="c1"># calculate L2 norm between all training points and given test_point</span>
+    <span class="n">inputs</span><span class="p">[</span><span class="s1">'distance'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">inputs</span><span class="o">.</span><span class="n">values</span><span class="o">-</span><span class="n">test_instance</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># concatenate inputs and labels before sorting the distances</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">inputs</span><span class="p">,</span> <span class="n">labels</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># sort based on distance</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'distance'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># pick k neighbors</span>
+    <span class="n">neighbors</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+
+    <span class="c1"># get list from dataframe column</span>
+    <span class="n">classes</span> <span class="o">=</span> <span class="n">neighbors</span><span class="p">[</span><span class="s1">'CLASS'</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+    <span class="c1"># create counter of labels</span>
+    <span class="n">majority_count</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">classes</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">majority_count</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">pop</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">knn_numpy</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Calculate k-nn for given k.</span>
+<span class="sd">    </span>
+<span class="sd">    """</span>
+    <span class="n">predictions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">X_test</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">X_test</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="n">predictions</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">predict_instance_numpy</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">y_train</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">row</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">predictions</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [55]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># knn improved with distance calculation using np.linalg.norm</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">knn_numpy</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">true_values</span> <span class="o">=</span> <span class="n">y_test</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">predictions</span> <span class="o">==</span> <span class="n">true_values</span><span class="p">)</span>
+<span class="n">accuracy</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[55]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.7222222222222222</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Observing-execution-time-and-line-profiling-after-optimizing-with-numpy">Observing execution time and line profiling after optimizing with numpy<a class="anchor-link" href="../posts/optimizing-k-nearest-neighbors-knn-algorithm-in-python/#Observing-execution-time-and-line-profiling-after-optimizing-with-numpy">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [56]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># %%timeit</span>
+<span class="c1"># -n execute the function 10 times in a loop</span>
+<span class="o">%</span><span class="k">timeit</span> -n 10 knn_numpy(X_train, y_train, X_test, 3)
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>40.6 ms ± 2.41 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="-The-total-execution-has-reduced-from-135-ms-to-41.2-ms-">
+<span style="color:green"> The total execution has reduced from 135 ms to 41.2 ms </span><a class="anchor-link" href="../posts/optimizing-k-nearest-neighbors-knn-algorithm-in-python/#-The-total-execution-has-reduced-from-135-ms-to-41.2-ms-">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [57]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># We are profiling function knn, we supply the name using -f</span>
+<span class="o">%</span><span class="k">lprun</span> -f knn_numpy knn_numpy(X_train, y_train, X_test, 3)
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>Timer unit: 1e-06 s
+
+Total time: 0.094862 s
+File: &lt;ipython-input-121-a0da67624daf&gt;
+Function: knn_numpy at line 22
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    22                                           def knn_numpy(X_train, y_train, X_test, k):
+    23                                               """
+    24                                               Calculate k-nn for given k.
+    25                                               
+    26                                               """
+    27         1         65.0     65.0      0.1      predictions = np.zeros(X_test.shape[0])
+    28         1        258.0    258.0      0.3      X_test.reset_index(drop=True, inplace=True)
+    29        19       3696.0    194.5      3.9      for index, row in X_test.iterrows():
+    30        18      90843.0   5046.8     95.8          predictions[index] = predict_instance_numpy(X_train.copy(), y_train.copy(), row, k)
+    31         1          0.0      0.0      0.0      return predictions</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="-The-per-Hit-time-has-reduced-from-17162.7-µs-to-5046.8-µs-">
+<span style="color:green"> The per Hit time has reduced from 17162.7 µs to 5046.8 µs </span><a class="anchor-link" href="../posts/optimizing-k-nearest-neighbors-knn-algorithm-in-python/#-The-per-Hit-time-has-reduced-from-17162.7-%C2%B5s-to-5046.8-%C2%B5s-">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="3.-Improving-kNN-with-numba">3. Improving kNN with numba<a class="anchor-link" href="../posts/optimizing-k-nearest-neighbors-knn-algorithm-in-python/#3.-Improving-kNN-with-numba">¶</a>
+</h4>
+<p>Numba does it's best work when we do operations over numpy arrays. For the implemention below, I have converted pandas dataframe to numpy array and perform relevant operations.</p>
+<p>For more information about <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/enhancingperf.html#using-numba">numba</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [79]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">operator</span>
+<span class="kn">import</span> <span class="nn">numba</span>
+
+<span class="nd">@numba</span><span class="o">.</span><span class="n">jit</span><span class="p">(</span><span class="n">nopython</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">euclidean_distance_numba</span><span class="p">(</span><span class="n">vector1</span><span class="p">,</span> <span class="n">vector2</span><span class="p">):</span>
+    <span class="sd">'''calculate the euclidean distance,</span>
+<span class="sd">    '''</span>
+    <span class="n">dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">vector1</span><span class="o">-</span><span class="n">vector2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dist</span>
+
+<span class="nd">@numba</span><span class="o">.</span><span class="n">jit</span><span class="p">(</span><span class="n">nopython</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">predict_instance_numba</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">test_instance</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="n">distances</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">inputs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="c1"># calculate distance between test point and training points</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">inputs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="n">distances</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">euclidean_distance_numba</span><span class="p">(</span><span class="n">inputs</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">test_instance</span><span class="p">)</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="n">labels</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">labels</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">1</span><span class="p">))</span>
+    
+    <span class="c1"># add labels column</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">inputs</span><span class="p">,</span> <span class="n">labels</span><span class="p">))</span>
+    
+    <span class="c1"># add distance column</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">inputs</span><span class="p">,</span> <span class="n">distances</span><span class="p">))</span>
+    
+    <span class="c1"># sort based on distance column</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[</span><span class="n">inputs</span><span class="p">[:,</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">argsort</span><span class="p">()]</span>
+    <span class="c1"># 2nd columns contains classes, select first k values</span>
+    <span class="n">neighbor_classes</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">][:</span><span class="n">k</span><span class="p">]</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">neighbor_classes</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">counter</span><span class="p">:</span>
+            <span class="n">counter</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="o">=</span> <span class="n">counter</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">counter</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">counter_sorted</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">counter_sorted</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># @numba.jit(nopython=True)</span>
+<span class="k">def</span> <span class="nf">knn_numba</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Calculate k-nn for given k.</span>
+<span class="sd">    </span>
+<span class="sd">    """</span>
+    <span class="n">predictions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="n">predictions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">predict_instance_numba</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">y_train</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">X_test</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">k</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">predictions</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [80]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># knn improved with distance calculation using np.linalg.norm</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">knn_numba</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y_train</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">X_test</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">true_values</span> <span class="o">=</span> <span class="n">y_test</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">predictions</span> <span class="o">==</span> <span class="n">true_values</span><span class="p">)</span>
+<span class="n">accuracy</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[80]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.7222222222222222</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Observing-execution-time-and-line-profiling-after-optimizing-with-numba">Observing execution time and line profiling after optimizing with numba<a class="anchor-link" href="../posts/optimizing-k-nearest-neighbors-knn-algorithm-in-python/#Observing-execution-time-and-line-profiling-after-optimizing-with-numba">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [81]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># %%timeit</span>
+<span class="c1"># -n execute the function 10 times in a loop</span>
+<span class="o">%</span><span class="k">timeit</span> -n 10 knn_numba(X_train.values, y_train.values, X_test.values, 3)
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1.65 ms ± 362 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="-The-total-execution-has-reduced-from-41.2-ms-to-1.65-ms-">
+<span style="color:green"> The total execution has reduced from 41.2 ms to 1.65 ms </span><a class="anchor-link" href="../posts/optimizing-k-nearest-neighbors-knn-algorithm-in-python/#-The-total-execution-has-reduced-from-41.2-ms-to-1.65-ms-">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [84]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># We are profiling function knn_numba, we supply the name using -f</span>
+<span class="o">%</span><span class="k">lprun</span> -f knn_numba knn_numba(X_train.values, y_train.values, X_test.values, 3)
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>Timer unit: 1e-06 s
+
+Total time: 0.002649 s
+File: &lt;ipython-input-79-89228ad76421&gt;
+Function: knn_numba at line 36
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    36                                           def knn_numba(X_train, y_train, X_test, k):
+    37                                               """
+    38                                               Calculate k-nn for given k.
+    39                                               
+    40                                               """
+    41         1         11.0     11.0      0.4      predictions = np.zeros(X_test.shape[0])
+    42        19         44.0      2.3      1.7      for i in np.arange(X_test.shape[0]):
+    43        18       2593.0    144.1     97.9          predictions[i] = predict_instance_numba(X_train.copy(), y_train.copy(), X_test[i], k)
+    44         1          1.0      1.0      0.0      return predictions</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="-The-per-Hit-time-has-reduced-from-5046.8-µs-144.1-µs">
+<span style="color:green"> The per Hit time has reduced from 5046.8 µs 144.1 µs</span><a class="anchor-link" href="../posts/optimizing-k-nearest-neighbors-knn-algorithm-in-python/#-The-per-Hit-time-has-reduced-from-5046.8-%C2%B5s-144.1-%C2%B5s">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+    </section><footer class="post-meta">
+                Sijan Bhandari
+
+        on
+
+        <time class="post-date" datetime="2020-05-23T13:55:45+05:45">
+            2020-05-23 13:55
+        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/how-to-tune-hyperparameter-in-k-nearest-neighbors-classifier/">How to tune hyperparameter in K Nearest Neighbors Classifier?</a></h2>
     </header><section class="post-excerpt"><div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1812,47 +2752,6 @@ dtype: int64</pre>
 
         <time class="post-date" datetime="2019-08-06T21:57:00+05:45">
             2019-08-06 21:57
-        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/">Intuition behind Gradient Descent for Machine Learning Algorithms</a></h2>
-    </header><section class="post-excerpt"><div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../images/gradient_descent.png"></p>
-<p>Before jumping to Gradient Descent, let's be clear about difference between backpropagation and gradient descent. Comparing things make it easier to learn !</p>
-<h5 id="Backpropagation-:">Backpropagation :<a class="anchor-link" href="../posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/#Backpropagation-:">¶</a>
-</h5>
-<p>Backpropagation is an efficient way of calculating gradients using chain rule.</p>
-<h5 id="Gradient-Descent:">Gradient Descent:<a class="anchor-link" href="../posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/#Gradient-Descent:">¶</a>
-</h5>
-<p>Gradient Descent is an optimization algorithm which is used in different machine learning algorithms to find parameters/combination of parameters which mimimizes the loss function.</p>
-<p>** In case of neural network, we use backpropagation to calculate the gradient of loss function w.r.t to weights. Weights are the parameters of neural network.</p>
-<p>** In case of linear regression, coefficients are the parameters!.</p>
-<p>** Many machine learning algorithms are convex problems, so using gradient descent to get extrema makes more sense. For example, if you remember the solution of linear regression :</p>
-<p>$ \beta = (X^T X)^{-1} X^T y  $</p>
-<p>Here, we can get the analytical solution by simply solving above equations. But, inverse calculation has $ O(N^3) $ complexity. It will be worst if our data size increases.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="../posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/">Read more…</a></p>
-</div>
-</div>
-</div>
-</div>
-    </section><footer class="post-meta">
-                Sijan Bhandari
-
-        on
-
-        <time class="post-date" datetime="2019-08-05T22:37:30+05:45">
-            2019-08-05 22:37
         </time></footer></article>
 </div>
 

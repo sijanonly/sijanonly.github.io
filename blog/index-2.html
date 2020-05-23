@@ -59,7 +59,48 @@
     </header><main id="content" class="content" role="main"><div class="postindex">
 
 
-<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/interpreting-centrality-measures-for-network-analysis/">Interpreting Centrality Measures for Network Analysis</a></h2>
+<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/">Intuition behind Gradient Descent for Machine Learning Algorithms</a></h2>
+    </header><section class="post-excerpt"><div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../images/gradient_descent.png"></p>
+<p>Before jumping to Gradient Descent, let's be clear about difference between backpropagation and gradient descent. Comparing things make it easier to learn !</p>
+<h5 id="Backpropagation-:">Backpropagation :<a class="anchor-link" href="../posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/#Backpropagation-:">¶</a>
+</h5>
+<p>Backpropagation is an efficient way of calculating gradients using chain rule.</p>
+<h5 id="Gradient-Descent:">Gradient Descent:<a class="anchor-link" href="../posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/#Gradient-Descent:">¶</a>
+</h5>
+<p>Gradient Descent is an optimization algorithm which is used in different machine learning algorithms to find parameters/combination of parameters which mimimizes the loss function.</p>
+<p>** In case of neural network, we use backpropagation to calculate the gradient of loss function w.r.t to weights. Weights are the parameters of neural network.</p>
+<p>** In case of linear regression, coefficients are the parameters!.</p>
+<p>** Many machine learning algorithms are convex problems, so using gradient descent to get extrema makes more sense. For example, if you remember the solution of linear regression :</p>
+<p>$ \beta = (X^T X)^{-1} X^T y  $</p>
+<p>Here, we can get the analytical solution by simply solving above equations. But, inverse calculation has $ O(N^3) $ complexity. It will be worst if our data size increases.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="../posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/">Read more…</a></p>
+</div>
+</div>
+</div>
+</div>
+    </section><footer class="post-meta">
+                Sijan Bhandari
+
+        on
+
+        <time class="post-date" datetime="2019-08-05T22:37:30+05:45">
+            2019-08-05 22:37
+        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/interpreting-centrality-measures-for-network-analysis/">Interpreting Centrality Measures for Network Analysis</a></h2>
     </header><section class="post-excerpt"><div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
