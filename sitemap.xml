@@ -23,7 +23,7 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/archive.html</loc>
-  <lastmod>2020-10-31T15:32:00Z</lastmod>
+  <lastmod>2020-10-31T16:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/</loc>
@@ -31,11 +31,11 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/index-1.html</loc>
-  <lastmod>2020-10-31T15:32:00Z</lastmod>
+  <lastmod>2020-10-31T16:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/index-2.html</loc>
-  <lastmod>2020-10-31T15:32:00Z</lastmod>
+  <lastmod>2020-10-31T16:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/</loc>
@@ -184,6 +184,10 @@
  <url>
   <loc>https://sijanb.com.np/posts/paper-summary-curiosity-driven-exploration-by-self-supervised-prediction/</loc>
   <lastmod>2020-10-31T15:26:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/posts/paper-summary-learning-what-data-to-learn/</loc>
+  <lastmod>2020-10-31T16:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/paper-summary-visual-reinforcement-learning-imagined-goals/</loc>

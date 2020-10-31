@@ -59,7 +59,85 @@
     </header><main id="content" class="content" role="main"><div class="postindex">
 
 
-<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/">Linear Regression with Maximum Likelihood (MSE) and Bayesian Learning Approach from scratch</a></h2>
+<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/principal-component-analysis-pca-for-visualization-using-python/">Principal Component Analysis (PCA) for Visualization using Python</a></h2>
+    </header><section class="post-excerpt"><div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="1.-Basic-Setup">1. Basic Setup<a class="anchor-link" href="../posts/principal-component-analysis-pca-for-visualization-using-python/#1.-Basic-Setup">¶</a>
+</h4>
+<p>Principal Component Analysis (PCA) is being used to reduce the dimensionality of data whilst retaining as much of information as possible. The general idea of PCA works as follows:</p>
+
+<pre><code> a. Find the principal components from your original data
+ b. Project your original data into the space spanned by principal components from (a)
+
+
+</code></pre>
+<p>Let's use $ \textbf{X} $ as our data matrix and $ \sum $ as our covariance matrix of $ \textbf{X} $. We will get eigenvectors ( $ \bf{v_1}, {v_2}, .....{v_k} $) and eigenvalues (${\lambda_1},{\lambda_2},....,{\lambda_k}$) from the covariance matrix $ \sum $, such that:</p>
+<p>$ \lambda_1 \geq \lambda_2 \geq ...... \lambda_k $</p>
+<p><span style="color:red"> NOTE* </span> : Elements of the vector ($ \bf{v_1} $ ) represents the coefficients of principal components.</p>
+<p>Our goal is to maximize the variance of projection along each of principal components. This can be written as:</p>
+<p>$ \bf{var(y_i)} = \bf{var}(v_{i1} * X_1 + v_{i2} * X_2 + ...... + v_{ik} * X_k ) $</p>
+<p>You can see that, we are projecting the original data into our new vector space given by PCs.</p>
+<p><span style="color:red"> NOTE* </span> : $ \bf{var(y_i)} = \lambda_i $ and principal components are uncorrelated i.e $ cov(y_i, y_j) $ = 0</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="2.-Principal-Component-Analysis-Algorithm-(Pseudocode)">2. Principal Component Analysis Algorithm (Pseudocode)<a class="anchor-link" href="../posts/principal-component-analysis-pca-for-visualization-using-python/#2.-Principal-Component-Analysis-Algorithm-(Pseudocode)">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>a. $ \textbf{X} \gets $ design data matrix with dimension ( N*k )</p>
+<p>b. $ \textbf{X} \gets $ subtract mean from each column vector of $ \bf{X} $</p>
+<p>c. $ \sum  \gets $ compute covariance matrix of $ \bf{X} $</p>
+<p>d. Calculate eigenvectors and eigenvalues from $ \sum $</p>
+<p>e. Principal Components (PCs) $ \gets $ the first M eigenvectors with largest eigenvalues.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="3.-Basic-Data-Analysis">3. Basic Data Analysis<a class="anchor-link" href="../posts/principal-component-analysis-pca-for-visualization-using-python/#3.-Basic-Data-Analysis">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="../posts/principal-component-analysis-pca-for-visualization-using-python/">Read more…</a></p>
+</div>
+</div>
+</div>
+</div>
+    </section><footer class="post-meta">
+                Sijan Bhandari
+
+        on
+
+        <time class="post-date" datetime="2020-03-19T17:19:26+05:45">
+            2020-03-19 17:19
+        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/">Linear Regression with Maximum Likelihood (MSE) and Bayesian Learning Approach from scratch</a></h2>
     </header><section class="post-excerpt"><div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">

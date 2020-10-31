@@ -1,5 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CODEBUG</title><link>https://sijanb.com.np/</link><description>Data Exploration...</description><atom:link type="application/rss+xml" href="https://sijanb.com.np/rss.xml" rel="self"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Sat, 31 Oct 2020 15:31:30 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Paper Summary : Curiosity-driven Exploration by Self-supervised Prediction</title><link>https://sijanb.com.np/posts/paper-summary-curiosity-driven-exploration-by-self-supervised-prediction/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>CODEBUG</title><link>https://sijanb.com.np/</link><description>Data Exploration...</description><atom:link type="application/rss+xml" rel="self" href="https://sijanb.com.np/rss.xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Sat, 31 Oct 2020 16:36:18 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Paper Summary : Learning What Data to Learn</title><link>https://sijanb.com.np/posts/paper-summary-learning-what-data-to-learn/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Summary of the paper &lt;a href="https://arxiv.org/pdf/1702.08635.pdf"&gt;"Learning What Data to Learn"&lt;/a&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h5 id="Motivation"&gt;Motivation&lt;a class="anchor-link" href="https://sijanb.com.np/posts/paper-summary-learning-what-data-to-learn/#Motivation"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;The performance of learning algorithms based on Machine Learning or Deep Learning rely on amount of training data. Having more data points also has benefit of learning more generalized models and avoiding overfitting. However, collecting data is a painstalking work. Instead, we can learn automatic and adaptive data selection in the training process and make learning faster with minimal data points.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h5 id="Contribution"&gt;Contribution&lt;a class="anchor-link" href="https://sijanb.com.np/posts/paper-summary-learning-what-data-to-learn/#Contribution"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;In this paper, authors have introduced  Neural Data Filter (NDF) as an adaptive framework which can learn data selection policy using deep reinforcement learning(DRL) algorithm 'Policy Gradient'.
+Two important aspects of this framework:&lt;/p&gt;
+&lt;p&gt;a. NDF filter the data instances from randomly fetched mini-batches of data during training process.
+b. Training loop provides feedback to NDF policy based on reward signal (e.g. calculated in validation set) and NDF policy is trained using DRL.&lt;/p&gt;
+&lt;h6 id="NDF-in-detail"&gt;NDF in detail&lt;a class="anchor-link" href="https://sijanb.com.np/posts/paper-summary-learning-what-data-to-learn/#NDF-in-detail"&gt;¶&lt;/a&gt;&lt;/h6&gt;&lt;p&gt;NDF is designed to filter out some portion of training data based on some quality measure. The filtered high-quality data points speed up the convergence of the model.&lt;/p&gt;
+&lt;p&gt;In order to formulate Markov Decision Process (MDP) in NDF, authors used 'SGD-MDP' with following tuple:
+&amp;lt;s, a, P, r, $ \gamma $&amp;gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;s : representing mini-batch data and current state of training model (weights/biases) as a state&lt;/li&gt;
+&lt;li&gt;a : binary filtering actions;  $ a = {\{a_m\}}_{m=1}^M \in (0, 1)^M $, M-batch size and $ a_m \in \{0,1\} $
+indicating whether a particular data instance in minibatch will be selected or not.&lt;/li&gt;
+&lt;li&gt;P : P(s`| s, a) is a transition probability&lt;/li&gt;
+&lt;li&gt;r = r(s,a), reward signal based on performance of the current model under consideration (e.g. validation accuracy), &lt;/li&gt;
+&lt;li&gt;$ \gamma \in [0,1] $, discounting factor&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The  NDF policy A(s,a, $ \Theta $) can be represented by a binary classification algorithm such as logistic regression or deep NN, where $ \Theta $ is policy parameter and it is updated as:&lt;/p&gt;
+&lt;p&gt;$ \Theta \gets \Theta + \alpha V_t \sum_m \frac{\partial log P_{\Theta} (a_m|s_m)}{\partial \Theta} $&lt;/p&gt;
+&lt;p&gt;and, V_t is the sampled estimation of reward R(s_t, a_t) from one episode.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/paper-summary-learning-what-data-to-learn/</guid><pubDate>Sat, 31 Oct 2020 15:33:59 GMT</pubDate></item><item><title>Paper Summary : Curiosity-driven Exploration by Self-supervised Prediction</title><link>https://sijanb.com.np/posts/paper-summary-curiosity-driven-exploration-by-self-supervised-prediction/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Summary of the paper &lt;a href="https://arxiv.org/abs/1705.05363"&gt;"Curiosity-driven Exploration by Self-supervised Prediction"&lt;/a&gt;&lt;/p&gt;
@@ -3491,54 +3544,4 @@ combinations from given data features.&lt;/li&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>decision-tree</category><category>principal-component-analysis</category><category>random-forest</category><guid>https://sijanb.com.np/posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/</guid><pubDate>Sat, 28 Mar 2020 17:17:59 GMT</pubDate></item><item><title>Principal Component Analysis (PCA) for Visualization using Python</title><link>https://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="1.-Basic-Setup"&gt;1. Basic Setup&lt;a class="anchor-link" href="https://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/#1.-Basic-Setup"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Principal Component Analysis (PCA) is being used to reduce the dimensionality of data whilst retaining as much of information as possible. The general idea of PCA works as follows:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt; a. Find the principal components from your original data
- b. Project your original data into the space spanned by principal components from (a)
-
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Let's use $ \textbf{X} $ as our data matrix and $ \sum $ as our covariance matrix of $ \textbf{X} $. We will get eigenvectors ( $ \bf{v_1}, {v_2}, .....{v_k} $) and eigenvalues (${\lambda_1},{\lambda_2},....,{\lambda_k}$) from the covariance matrix $ \sum $, such that:&lt;/p&gt;
-&lt;p&gt;$ \lambda_1 \geq \lambda_2 \geq ...... \lambda_k $&lt;/p&gt;
-&lt;p&gt;&lt;span style="color:red"&gt; NOTE* &lt;/span&gt; : Elements of the vector ($ \bf{v_1} $ ) represents the coefficients of principal components.&lt;/p&gt;
-&lt;p&gt;Our goal is to maximize the variance of projection along each of principal components. This can be written as:&lt;/p&gt;
-&lt;p&gt;$ \bf{var(y_i)} = \bf{var}(v_{i1} * X_1 + v_{i2} * X_2 + ...... + v_{ik} * X_k ) $&lt;/p&gt;
-&lt;p&gt;You can see that, we are projecting the original data into our new vector space given by PCs.&lt;/p&gt;
-&lt;p&gt;&lt;span style="color:red"&gt; NOTE* &lt;/span&gt; : $ \bf{var(y_i)} = \lambda_i $ and principal components are uncorrelated i.e $ cov(y_i, y_j) $ = 0&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="2.-Principal-Component-Analysis-Algorithm-(Pseudocode)"&gt;2. Principal Component Analysis Algorithm (Pseudocode)&lt;a class="anchor-link" href="https://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/#2.-Principal-Component-Analysis-Algorithm-(Pseudocode)"&gt;¶&lt;/a&gt;&lt;/h4&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;a. $ \textbf{X} \gets $ design data matrix with dimension ( N*k )&lt;/p&gt;
-&lt;p&gt;b. $ \textbf{X} \gets $ subtract mean from each column vector of $ \bf{X} $&lt;/p&gt;
-&lt;p&gt;c. $ \sum  \gets $ compute covariance matrix of $ \bf{X} $&lt;/p&gt;
-&lt;p&gt;d. Calculate eigenvectors and eigenvalues from $ \sum $&lt;/p&gt;
-&lt;p&gt;e. Principal Components (PCs) $ \gets $ the first M eigenvectors with largest eigenvalues.&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="3.-Basic-Data-Analysis"&gt;3. Basic Data Analysis&lt;a class="anchor-link" href="https://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/#3.-Basic-Data-Analysis"&gt;¶&lt;/a&gt;&lt;/h4&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/"&gt;Read more…&lt;/a&gt; (4 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/</guid><pubDate>Thu, 19 Mar 2020 11:34:26 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>decision-tree</category><category>principal-component-analysis</category><category>random-forest</category><guid>https://sijanb.com.np/posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/</guid><pubDate>Sat, 28 Mar 2020 17:17:59 GMT</pubDate></item></channel></rss>

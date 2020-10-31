@@ -58,7 +58,83 @@
     </header><main id="content" class="content" role="main"><div class="postindex">
 
 
-<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/paper-summary-curiosity-driven-exploration-by-self-supervised-prediction/">Paper Summary : Curiosity-driven Exploration by Self-supervised Prediction</a></h2>
+<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/paper-summary-learning-what-data-to-learn/">Paper Summary : Learning What Data to Learn</a></h2>
+    </header><section class="post-excerpt"><div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Summary of the paper <a href="https://arxiv.org/pdf/1702.08635.pdf">"Learning What Data to Learn"</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Motivation">Motivation<a class="anchor-link" href="../posts/paper-summary-learning-what-data-to-learn/#Motivation">¶</a>
+</h5>
+<p>The performance of learning algorithms based on Machine Learning or Deep Learning rely on amount of training data. Having more data points also has benefit of learning more generalized models and avoiding overfitting. However, collecting data is a painstalking work. Instead, we can learn automatic and adaptive data selection in the training process and make learning faster with minimal data points.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Contribution">Contribution<a class="anchor-link" href="../posts/paper-summary-learning-what-data-to-learn/#Contribution">¶</a>
+</h5>
+<p>In this paper, authors have introduced  Neural Data Filter (NDF) as an adaptive framework which can learn data selection policy using deep reinforcement learning(DRL) algorithm 'Policy Gradient'.
+Two important aspects of this framework:</p>
+<p>a. NDF filter the data instances from randomly fetched mini-batches of data during training process.
+b. Training loop provides feedback to NDF policy based on reward signal (e.g. calculated in validation set) and NDF policy is trained using DRL.</p>
+<h6 id="NDF-in-detail">NDF in detail<a class="anchor-link" href="../posts/paper-summary-learning-what-data-to-learn/#NDF-in-detail">¶</a>
+</h6>
+<p>NDF is designed to filter out some portion of training data based on some quality measure. The filtered high-quality data points speed up the convergence of the model.</p>
+<p>In order to formulate Markov Decision Process (MDP) in NDF, authors used 'SGD-MDP' with following tuple:
+&lt;s, a, P, r, $ \gamma $&gt;</p>
+<ul>
+<li>s : representing mini-batch data and current state of training model (weights/biases) as a state</li>
+<li>a : binary filtering actions;  $ a = {\{a_m\}}_{m=1}^M \in (0, 1)^M $, M-batch size and $ a_m \in \{0,1\} $
+indicating whether a particular data instance in minibatch will be selected or not.</li>
+<li>P : P(s`| s, a) is a transition probability</li>
+<li>r = r(s,a), reward signal based on performance of the current model under consideration (e.g. validation accuracy), </li>
+<li>$ \gamma \in [0,1] $, discounting factor</li>
+</ul>
+<p>The  NDF policy A(s,a, $ \Theta $) can be represented by a binary classification algorithm such as logistic regression or deep NN, where $ \Theta $ is policy parameter and it is updated as:</p>
+<p>$ \Theta \gets \Theta + \alpha V_t \sum_m \frac{\partial log P_{\Theta} (a_m|s_m)}{\partial \Theta} $</p>
+<p>and, V_t is the sampled estimation of reward R(s_t, a_t) from one episode.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+    </section><footer class="post-meta">
+                Sijan Bhandari
+
+        on
+
+        <time class="post-date" datetime="2020-10-31T21:18:59+05:45">
+            2020-10-31 21:18
+        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/paper-summary-curiosity-driven-exploration-by-self-supervised-prediction/">Paper Summary : Curiosity-driven Exploration by Self-supervised Prediction</a></h2>
     </header><section class="post-excerpt"><div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -3785,84 +3861,6 @@ combinations from given data features.</li>
 
         <time class="post-date" datetime="2020-03-28T23:02:59+05:45">
             2020-03-28 23:02
-        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/principal-component-analysis-pca-for-visualization-using-python/">Principal Component Analysis (PCA) for Visualization using Python</a></h2>
-    </header><section class="post-excerpt"><div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="1.-Basic-Setup">1. Basic Setup<a class="anchor-link" href="../posts/principal-component-analysis-pca-for-visualization-using-python/#1.-Basic-Setup">¶</a>
-</h4>
-<p>Principal Component Analysis (PCA) is being used to reduce the dimensionality of data whilst retaining as much of information as possible. The general idea of PCA works as follows:</p>
-
-<pre><code> a. Find the principal components from your original data
- b. Project your original data into the space spanned by principal components from (a)
-
-
-</code></pre>
-<p>Let's use $ \textbf{X} $ as our data matrix and $ \sum $ as our covariance matrix of $ \textbf{X} $. We will get eigenvectors ( $ \bf{v_1}, {v_2}, .....{v_k} $) and eigenvalues (${\lambda_1},{\lambda_2},....,{\lambda_k}$) from the covariance matrix $ \sum $, such that:</p>
-<p>$ \lambda_1 \geq \lambda_2 \geq ...... \lambda_k $</p>
-<p><span style="color:red"> NOTE* </span> : Elements of the vector ($ \bf{v_1} $ ) represents the coefficients of principal components.</p>
-<p>Our goal is to maximize the variance of projection along each of principal components. This can be written as:</p>
-<p>$ \bf{var(y_i)} = \bf{var}(v_{i1} * X_1 + v_{i2} * X_2 + ...... + v_{ik} * X_k ) $</p>
-<p>You can see that, we are projecting the original data into our new vector space given by PCs.</p>
-<p><span style="color:red"> NOTE* </span> : $ \bf{var(y_i)} = \lambda_i $ and principal components are uncorrelated i.e $ cov(y_i, y_j) $ = 0</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="2.-Principal-Component-Analysis-Algorithm-(Pseudocode)">2. Principal Component Analysis Algorithm (Pseudocode)<a class="anchor-link" href="../posts/principal-component-analysis-pca-for-visualization-using-python/#2.-Principal-Component-Analysis-Algorithm-(Pseudocode)">¶</a>
-</h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>a. $ \textbf{X} \gets $ design data matrix with dimension ( N*k )</p>
-<p>b. $ \textbf{X} \gets $ subtract mean from each column vector of $ \bf{X} $</p>
-<p>c. $ \sum  \gets $ compute covariance matrix of $ \bf{X} $</p>
-<p>d. Calculate eigenvectors and eigenvalues from $ \sum $</p>
-<p>e. Principal Components (PCs) $ \gets $ the first M eigenvectors with largest eigenvalues.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="3.-Basic-Data-Analysis">3. Basic Data Analysis<a class="anchor-link" href="../posts/principal-component-analysis-pca-for-visualization-using-python/#3.-Basic-Data-Analysis">¶</a>
-</h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="../posts/principal-component-analysis-pca-for-visualization-using-python/">Read more…</a></p>
-</div>
-</div>
-</div>
-</div>
-    </section><footer class="post-meta">
-                Sijan Bhandari
-
-        on
-
-        <time class="post-date" datetime="2020-03-19T17:19:26+05:45">
-            2020-03-19 17:19
         </time></footer></article>
 </div>
 
