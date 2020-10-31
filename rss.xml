@@ -1,5 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>CODEBUG</title><link>https://sijanb.com.np/</link><description>Data Exploration...</description><atom:link rel="self" type="application/rss+xml" href="https://sijanb.com.np/rss.xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Sat, 31 Oct 2020 14:07:12 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Paper Summary : Asynchronous Methods for Deep Reinforcement Learning</title><link>https://sijanb.com.np/posts/paper-summary-asynchronous-methods-for-deep-reinforcement-learning/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CODEBUG</title><link>https://sijanb.com.np/</link><description>Data Exploration...</description><atom:link rel="self" href="https://sijanb.com.np/rss.xml" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Sat, 31 Oct 2020 15:26:19 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Paper Summary : Curiosity-driven Exploration by Self-supervised Prediction</title><link>https://sijanb.com.np/posts/paper-summary-curiosity-driven-exploration-by-self-supervised-prediction/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Summary of the paper &lt;a href="https://arxiv.org/abs/1705.05363"&gt;"Curiosity-driven Exploration by Self-supervised Prediction"&lt;/a&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h5 id="Motivation"&gt;Motivation&lt;a class="anchor-link" href="https://sijanb.com.np/posts/paper-summary-curiosity-driven-exploration-by-self-supervised-prediction/#Motivation"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;The policy learning process in Reinforcement Learning (RL) is usually suffered due to delayed/sparse rewards. Reward is a direct signal for an agent to evaluate 'how good the current action selection is'. Since reward collection takes time, learning optimal policy also takes longer time to derive. Another factor that influence the learning process is human-designed reward function. These reward functions might not represent the optimal guidance for learning of the agent or won't be scalable to real world problems. We need a way to overcome reward sparsity and also improves exploration of the agent to make learning more robust.
+Human learning process is not only guided by the final goal or achievement, but also driven by motivation or curiosity of the being. Curiosity adds exploratory behaviour to the agent, allowing it to acquire new skills and gain new knowledge about the environment. It also makes agent robust to perform actions which ultimately reduces uncertaintly on it's behaviours to capture the consequences of it's own action.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h5 id="Contribution"&gt;Contribution&lt;a class="anchor-link" href="https://sijanb.com.np/posts/paper-summary-curiosity-driven-exploration-by-self-supervised-prediction/#Contribution"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;The authors, in this paper, proposed curiosity-driven learning by uing agent-intrinsic reward (.i.e a reward which is learnt by agent itself by understanding the current environment or possible changes in the states while navigation). In order to quantify curiosity, they have introduced "Intrinsic Curiosity Module".&lt;/p&gt;
+&lt;h6 id="Intrinsic-Curiosity-Module-(ICM)"&gt;Intrinsic Curiosity Module (ICM)&lt;a class="anchor-link" href="https://sijanb.com.np/posts/paper-summary-curiosity-driven-exploration-by-self-supervised-prediction/#Intrinsic-Curiosity-Module-(ICM)"&gt;¶&lt;/a&gt;&lt;/h6&gt;&lt;p&gt;The output of ICM is the state prediction error, which serves as reward for curiosity. This module has two sub-components, each represented by neural networks.&lt;/p&gt;
+&lt;p&gt;a. Inverse Model :&lt;/p&gt;
+&lt;p&gt;This model learns feature space using self-supervision. This new feature space is learnt in order to avoid features/information which are irrelevant to the agent while nagivation. Learning feature space is completed within two sub-modules:&lt;/p&gt;
+&lt;p&gt;i) First module encodes the raw input state ($s_t$) into a feature vector ($ \phi(s_t) $)
+  ii) Second module takes $ \phi(s_t) $ and $ \phi(s_{t+1}) $) as encoded feature inputs and predicts action $ \hat{a_t} $ that agent might take to go to $ s_{t+1} $ from $ s_t $&lt;/p&gt;
+&lt;p&gt;$ \hat{a_t} = g(  \phi(s_t), \phi(s_{t+1}), \theta_i ) $&lt;/p&gt;
+&lt;p&gt;Here function g represents NN and  $ \hat{a_t} $ is estimated action. The learnable parameters $ \theta_i $ are trained with loss function representing difference between predicted action and actual action. i.e $ L_I( \hat{a_t}, a_t) $&lt;/p&gt;
+&lt;p&gt;b. Forward Model :&lt;/p&gt;
+&lt;p&gt;This is a NN which predicts the next state ($ s_{t+1} $) with inputs $  \phi(s_t) $ and action executed at $ s_t $.&lt;/p&gt;
+&lt;p&gt;$ \hat{\phi(s_{t+1})} = f( \phi(s_t), a_t, \theta_F) $&lt;/p&gt;
+&lt;p&gt;$ \hat{\phi(s_{t+1})}$ is the predicted estimation of $ \phi(s_{t+1})$ and $ \theta_F $ represents trainable parameters, with loss function as:&lt;/p&gt;
+&lt;p&gt;$ L_F ( \phi(s_{t+1}),  \hat{\phi(s_{t+1})}) = \frac{1}{2} ||  \hat{\phi(s_{t+1})} - \phi(s_{t+1})  ||^2 = \eta L_F $&lt;/p&gt;
+&lt;p&gt;Both losses can be jointly expressed as :&lt;/p&gt;
+&lt;p&gt;$ \underset{\theta_i, \theta_F} {max} [ (1-\beta) L_I  + \beta L_F ] $&lt;/p&gt;
+&lt;p&gt;NOTE:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; ICM worked with two connected modules - inverse model (which learnt the feature representation of state and next state) and forward model ( which predicts the feature representation of the next state)&lt;/strong&gt; Curiosity can be calculated by the difference between output of forward model i.e $ \hat{\phi(s_{t+1})} $ and output of the inverse model $  \phi(s_{t+1}) $.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/paper-summary-curiosity-driven-exploration-by-self-supervised-prediction/</guid><pubDate>Sat, 31 Oct 2020 14:40:29 GMT</pubDate></item><item><title>Paper Summary : Asynchronous Methods for Deep Reinforcement Learning</title><link>https://sijanb.com.np/posts/paper-summary-asynchronous-methods-for-deep-reinforcement-learning/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Summary of the paper &lt;a href="https://arxiv.org/abs/1602.01783"&gt;"Asynchronous Methods for Deep Reinforcement Learning"&lt;/a&gt;&lt;/p&gt;
@@ -3488,85 +3541,4 @@ combinations from given data features.&lt;/li&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/"&gt;Read more…&lt;/a&gt; (4 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/</guid><pubDate>Thu, 19 Mar 2020 11:34:26 GMT</pubDate></item><item><title>Linear Regression with Maximum Likelihood (MSE) and Bayesian Learning Approach from scratch</title><link>https://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="1.-Setup"&gt;1. Setup&lt;a class="anchor-link" href="https://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#1.-Setup"&gt;¶&lt;/a&gt;&lt;/h4&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Given the input dataset $ \textbf{D} = \{(x_i, t_i)\}_{i=1}^{N}  $, our goal is to learn the parameters that model this data and use those parameters (w) for the prediction new data point.&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;We often define the features (basis functions) as : $ \{ \phi_1(x),......,\phi_m(x) \} $ and the linear regression model is defined as :&lt;/p&gt;
-&lt;p&gt;$ y(x,w)  = \sum_{i=1}^m w_i \phi_i (x) + \varepsilon_i $&lt;/p&gt;
-&lt;p&gt;$ \varepsilon_i $ suggesting that we can not perfectly model the data generation process and there will be certain noise in our designed model(paramters). Usually, we assume that the noise is Gaussian. 
-  $ \varepsilon_i \sim Normal(0, \beta^{-1} )$&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="2.-Objective-Functions"&gt;2. Objective Functions&lt;a class="anchor-link" href="https://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#2.-Objective-Functions"&gt;¶&lt;/a&gt;&lt;/h4&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="a.-Maximum-Likelihood-objective-(MLE)-.i.e-.-(-Mean-Squared-Error-)"&gt;a. Maximum Likelihood objective (MLE) .i.e . ( Mean Squared Error )&lt;a class="anchor-link" href="https://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#a.-Maximum-Likelihood-objective-(MLE)-.i.e-.-(-Mean-Squared-Error-)"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;J(w) =  $ \frac{1}{2} \sum_i^N \{t_i - w^T \phi(x_i) \}^2 $&lt;/p&gt;
-&lt;h5 id="b.-Regularized-Linear-Regression"&gt;b. Regularized Linear Regression&lt;a class="anchor-link" href="https://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#b.-Regularized-Linear-Regression"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;J(w) =  $ \frac{1}{2} \sum_i^N \{t_i - w^T \phi(x_i) \}^2 $ + $ \frac{\lambda}{2} w^T w $&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="3.-Closed-Form-Solutions"&gt;3. Closed Form Solutions&lt;a class="anchor-link" href="https://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#3.-Closed-Form-Solutions"&gt;¶&lt;/a&gt;&lt;/h4&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="a.-For-MSE"&gt;a. For MSE&lt;a class="anchor-link" href="https://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#a.-For-MSE"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;$ w_{MLE} = ( \phi^T \phi )^{-1} \phi^T t $&lt;/p&gt;
-&lt;p&gt;$ ( \phi^T \phi )^{-1} $ is called Moore-Penrose inverse.&lt;/p&gt;
-&lt;h5 id="b.-For-Regularized-MSE"&gt;b. For Regularized MSE&lt;a class="anchor-link" href="https://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#b.-For-Regularized-MSE"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;$ w_{MLE} = ( \lambda I + \phi^T \phi )^{-1} \phi^T t $&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="4.-Bayesian-Learning"&gt;4. Bayesian Learning&lt;a class="anchor-link" href="https://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#4.-Bayesian-Learning"&gt;¶&lt;/a&gt;&lt;/h4&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;By using Bayes rule, we have :&lt;/p&gt;
-&lt;p&gt;$ p(w | t) = \frac{p(t|w)p(w)}{p(t)} $&lt;/p&gt;
-&lt;p&gt;$ p(w|t) $ - Posterior distribution
-   $ p(t|w) $ - Likelihood of data given parameters
-   $ p(w) $ - Prior distribution over paramters (w)&lt;/p&gt;
-&lt;h5 id="a.-Pior-on-w-:"&gt;a. Pior on w :&lt;a class="anchor-link" href="https://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#a.-Pior-on-w-:"&gt;¶&lt;/a&gt;&lt;/h5&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/"&gt;Read more…&lt;/a&gt; (39 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>bayesian-learning</category><category>linear-regression</category><category>maximum-likelihood-estimation</category><guid>https://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/</guid><pubDate>Sat, 14 Mar 2020 16:07:38 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/"&gt;Read more…&lt;/a&gt; (4 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/</guid><pubDate>Thu, 19 Mar 2020 11:34:26 GMT</pubDate></item></channel></rss>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Paper Summary : Asynchronous Methods for Deep Reinforcement Learning | CODEBUG</title>
+<title>Paper Summary : Curiosity-driven Exploration by Self-supervised Prediction | CODEBUG</title>
 <link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
@@ -16,15 +16,14 @@
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
-<link rel="canonical" href="https://sijanb.com.np/posts/paper-summary-asynchronous-methods-for-deep-reinforcement-learning/">
+<link rel="canonical" href="https://sijanb.com.np/posts/paper-summary-curiosity-driven-exploration-by-self-supervised-prediction/">
 <link rel="icon" href="../../favicon.ico" sizes="16x16">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Sijan Bhandari">
-<link rel="prev" href="../paper-summary-visual-reinforcement-learning-imagined-goals/" title="Paper Summary : Visual Reinforcement Learning Imagined Goals" type="text/html">
-<link rel="next" href="../paper-summary-curiosity-driven-exploration-by-self-supervised-prediction/" title="Paper Summary : Curiosity-driven Exploration by Self-supervised Prediction" type="text/html">
+<link rel="prev" href="../paper-summary-asynchronous-methods-for-deep-reinforcement-learning/" title="Paper Summary : Asynchronous Methods for Deep Reinforcement Learning" type="text/html">
 <meta property="og:site_name" content="CODEBUG">
-<meta property="og:title" content="Paper Summary : Asynchronous Methods for Deep Reinforcement Learning">
-<meta property="og:url" content="https://sijanb.com.np/posts/paper-summary-asynchronous-methods-for-deep-reinforcement-learning/">
-<meta property="og:description" content='Summary of the paper "Asynchronous Methods for Deep Reinforcement Learning"
+<meta property="og:title" content="Paper Summary : Curiosity-driven Exploration by Self-supervised Predic">
+<meta property="og:url" content="https://sijanb.com.np/posts/paper-summary-curiosity-driven-exploration-by-self-supervised-prediction/">
+<meta property="og:description" content='Summary of the paper "Curiosity-driven Exploration by Self-supervised Prediction"
 
 
 
@@ -32,9 +31,9 @@
 
 
 
-Motivation¶Deep Neural Network (DNN) is introduced to Reinforcement Learning (RL) framework in order to make function'>
+Motivation¶The policy learning process in Reinforcement Learning (RL) is usually suffered due to delayed/sparse'>
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2020-10-31T17:26:55+05:45">
+<meta property="article:published_time" content="2020-10-31T20:25:29+05:45">
 </head>
 <body class="nav-closed">
 
@@ -62,19 +61,19 @@ Motivation¶Deep Neural Network (DNN) is introduced to Reinforcement Learning (R
 <div class="site-wrapper">
     <header class="main-header post-head no-cover"><nav class="main-nav overlay clearfix"><a class="blog-logo" href="https://sijanb.com.np/"><img src="../../images/logo.png" alt="Blog Logo"></a>
             <a class="menu-button" href="#"><span class="burger">☰</span><span class="word">Menu</span></a>
-        </nav></header><main id="content" class="content" role="main"><article class="post post"><header class="post-header"><h1 class="post-title">Paper Summary : Asynchronous Methods for Deep Reinforcement Learning</h1>
+        </nav></header><main id="content" class="content" role="main"><article class="post post"><header class="post-header"><h1 class="post-title">Paper Summary : Curiosity-driven Exploration by Self-supervised Prediction</h1>
         <section class="post-meta"> by
             Sijan Bhandari
             on
-            <time class="post-date" datetime="2020-10-31T17:26:55+05:45">
-                2020-10-31 17:26
+            <time class="post-date" datetime="2020-10-31T20:25:29+05:45">
+                2020-10-31 20:25
             </time></section></header><section class="post-content"><div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Summary of the paper <a href="https://arxiv.org/abs/1602.01783">"Asynchronous Methods for Deep Reinforcement Learning"</a></p>
+<p>Summary of the paper <a href="https://arxiv.org/abs/1705.05363">"Curiosity-driven Exploration by Self-supervised Prediction"</a></p>
 
 </div>
 </div>
@@ -86,13 +85,9 @@ Motivation¶Deep Neural Network (DNN) is introduced to Reinforcement Learning (R
 <div class="text_cell_render border-box-sizing rendered_html">
 <h5 id="Motivation">Motivation<a class="anchor-link" href="#Motivation">¶</a>
 </h5>
-<p>Deep Neural Network (DNN) is introduced to Reinforcement Learning (RL) framework in order to make function approximation easier/scable for large state-space problems. DNN itself suffers from overfitting because of the correlated data while nagivating through the environments (e.g. when we play a game, each consecutive moves of a player withing smaller timeframes looks similar, which won't contribute much for learning). In order to avoid it, people started using experience replay, where we have to store navigation experience (e.g. screenshots in games) as a buffer and we can use them later while training/updating policy/model parameters.</p>
-<p>This works well, but only for off-policy algorithms like Q-learning. How to use on-policy algorithms like SARSA and make it stable learning using DNN ? Also, using experience replay introduces extra memory requirements/ computatonal delay for each update and real interaction with environment.</p>
-<p>**NOTE :</p>
-<ul>
-<li>On-policy : The training data is generated by the same policy being trained. e.g : Reinforce</li>
-<li>Off-Policy : The training data generated from another policy can be used to train the current policy. e.g : Q-learning</li>
-</ul>
+<p>The policy learning process in Reinforcement Learning (RL) is usually suffered due to delayed/sparse rewards. Reward is a direct signal for an agent to evaluate 'how good the current action selection is'. Since reward collection takes time, learning optimal policy also takes longer time to derive. Another factor that influence the learning process is human-designed reward function. These reward functions might not represent the optimal guidance for learning of the agent or won't be scalable to real world problems. We need a way to overcome reward sparsity and also improves exploration of the agent to make learning more robust.
+Human learning process is not only guided by the final goal or achievement, but also driven by motivation or curiosity of the being. Curiosity adds exploratory behaviour to the agent, allowing it to acquire new skills and gain new knowledge about the environment. It also makes agent robust to perform actions which ultimately reduces uncertaintly on it's behaviours to capture the consequences of it's own action.</p>
+
 </div>
 </div>
 </div>
@@ -103,29 +98,26 @@ Motivation¶Deep Neural Network (DNN) is introduced to Reinforcement Learning (R
 <div class="text_cell_render border-box-sizing rendered_html">
 <h5 id="Contribution">Contribution<a class="anchor-link" href="#Contribution">¶</a>
 </h5>
-<p>In this paper, authors introduced an asynchronous training process by executing multiple agents in parallel in different instances of the same environment using multiple CPU cores. It uses multithreading to run those agents and update the global model parameters asynchronously in online fashion. It is reported that this approach enables stable learning and faster convergence speed.</p>
-<p>They have introduced asynchronous variants of SARSA, 1-step/n-step Q learning and advantage actor-critic algorithm. Let's discuss some details on Asynchronous Q-learning and Async. Advantage Actor critic (A3C) algorithms.</p>
-<h6 id="Asynchronous-Q-Learning">Asynchronous Q-Learning<a class="anchor-link" href="#Asynchronous-Q-Learning">¶</a>
+<p>The authors, in this paper, proposed curiosity-driven learning by uing agent-intrinsic reward (.i.e a reward which is learnt by agent itself by understanding the current environment or possible changes in the states while navigation). In order to quantify curiosity, they have introduced "Intrinsic Curiosity Module".</p>
+<h6 id="Intrinsic-Curiosity-Module-(ICM)">Intrinsic Curiosity Module (ICM)<a class="anchor-link" href="#Intrinsic-Curiosity-Module-(ICM)">¶</a>
 </h6>
-<p>In Deep Q-Learning (DQN), the neural network (NN) approximates the Q-value function Q(s,a, $\theta$) with loss formulated as:
-$
-\begin{equation}
- L_{i} (\theta_i)  = \mathbb{E} [ r + \gamma Q (s^`, a^`, \theta_{i-1}) - Q(s, a, \theta_i) ]^2 ..........(i)
- \end{equation}
- $</p>
-<p>In Async 1-step Q learning, each thread maintains it's own copy of environment and agent traverse through the environment with the help of $  \epsilon $ - greedy policy. At each step, we compute teh gradient of the loss (i) and collect gradients over multiple timesteps before updating the parameters.</p>
-<h6 id="Asynchronous-Advantage-Actor-Critic-(A3C)">Asynchronous Advantage Actor-Critic (A3C)<a class="anchor-link" href="#Asynchronous-Advantage-Actor-Critic-(A3C)">¶</a>
-</h6>
-<p>Actor-critic method combines both value-pased and policy based methods.</p>
-<p>It has a policy $ \pi(a_t | s_t; \theta) $ and value function $ V (s_t; \theta_t)$ to be learnt. It uses "forward-view", i.e. selecting actions based on its exploration strategy $ \pi (a_t | s_t; \theta) $ up to some $  t_{max} $  steps in the future, to collect up to $ t_{max} $ rewards since last update.</p>
-<p>Now, policy and value functions are updated after every $ t_max $ actions as:</p>
-<ul>
-<li>Policy Network : $ \bigtriangledown_{\theta} log \pi(a_t | s_t; \theta) (R_t - V(s_t, \theta_v)) $</li>
-<li>
-<p>Value Network : $ \bigtriangledown_{v} (R - V(s_t; \theta_v))^2 $</p>
-<p>In this learning framework, parallel actor-learners updates a shared model and make learning process more robust and stable</p>
-</li>
-</ul>
+<p>The output of ICM is the state prediction error, which serves as reward for curiosity. This module has two sub-components, each represented by neural networks.</p>
+<p>a. Inverse Model :</p>
+<p>This model learns feature space using self-supervision. This new feature space is learnt in order to avoid features/information which are irrelevant to the agent while nagivation. Learning feature space is completed within two sub-modules:</p>
+<p>i) First module encodes the raw input state ($s_t$) into a feature vector ($ \phi(s_t) $)
+  ii) Second module takes $ \phi(s_t) $ and $ \phi(s_{t+1}) $) as encoded feature inputs and predicts action $ \hat{a_t} $ that agent might take to go to $ s_{t+1} $ from $ s_t $</p>
+<p>$ \hat{a_t} = g(  \phi(s_t), \phi(s_{t+1}), \theta_i ) $</p>
+<p>Here function g represents NN and  $ \hat{a_t} $ is estimated action. The learnable parameters $ \theta_i $ are trained with loss function representing difference between predicted action and actual action. i.e $ L_I( \hat{a_t}, a_t) $</p>
+<p>b. Forward Model :</p>
+<p>This is a NN which predicts the next state ($ s_{t+1} $) with inputs $  \phi(s_t) $ and action executed at $ s_t $.</p>
+<p>$ \hat{\phi(s_{t+1})} = f( \phi(s_t), a_t, \theta_F) $</p>
+<p>$ \hat{\phi(s_{t+1})}$ is the predicted estimation of $ \phi(s_{t+1})$ and $ \theta_F $ represents trainable parameters, with loss function as:</p>
+<p>$ L_F ( \phi(s_{t+1}),  \hat{\phi(s_{t+1})}) = \frac{1}{2} ||  \hat{\phi(s_{t+1})} - \phi(s_{t+1})  ||^2 = \eta L_F $</p>
+<p>Both losses can be jointly expressed as :</p>
+<p>$ \underset{\theta_i, \theta_F} {max} [ (1-\beta) L_I  + \beta L_F ] $</p>
+<p>NOTE:</p>
+<p><strong> ICM worked with two connected modules - inverse model (which learnt the feature representation of state and next state) and forward model ( which predicts the feature representation of the next state)</strong> Curiosity can be calculated by the difference between output of forward model i.e $ \hat{\phi(s_{t+1})} $ and output of the inverse model $  \phi(s_{t+1}) $.</p>
+
 </div>
 </div>
 </div>
@@ -149,9 +141,9 @@ $
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="blog-sijanb-com-np",
-            disqus_url="https://sijanb.com.np/posts/paper-summary-asynchronous-methods-for-deep-reinforcement-learning/",
-        disqus_title="Paper Summary : Asynchronous Methods for Deep Reinforcement Learning",
-        disqus_identifier="cache/posts/paper-summary-asynchronous-methods-for-deep-reinforcement-learning.html",
+            disqus_url="https://sijanb.com.np/posts/paper-summary-curiosity-driven-exploration-by-self-supervised-prediction/",
+        disqus_title="Paper Summary : Curiosity-driven Exploration by Self-supervised Prediction",
+        disqus_identifier="cache/posts/paper-summary-curiosity-driven-exploration-by-self-supervised-prediction.html",
         disqus_config = function () {
             this.language = "en";
         };

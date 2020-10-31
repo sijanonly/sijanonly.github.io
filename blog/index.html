@@ -58,7 +58,83 @@
     </header><main id="content" class="content" role="main"><div class="postindex">
 
 
-<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/paper-summary-asynchronous-methods-for-deep-reinforcement-learning/">Paper Summary : Asynchronous Methods for Deep Reinforcement Learning</a></h2>
+<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/paper-summary-curiosity-driven-exploration-by-self-supervised-prediction/">Paper Summary : Curiosity-driven Exploration by Self-supervised Prediction</a></h2>
+    </header><section class="post-excerpt"><div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Summary of the paper <a href="https://arxiv.org/abs/1705.05363">"Curiosity-driven Exploration by Self-supervised Prediction"</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Motivation">Motivation<a class="anchor-link" href="../posts/paper-summary-curiosity-driven-exploration-by-self-supervised-prediction/#Motivation">¶</a>
+</h5>
+<p>The policy learning process in Reinforcement Learning (RL) is usually suffered due to delayed/sparse rewards. Reward is a direct signal for an agent to evaluate 'how good the current action selection is'. Since reward collection takes time, learning optimal policy also takes longer time to derive. Another factor that influence the learning process is human-designed reward function. These reward functions might not represent the optimal guidance for learning of the agent or won't be scalable to real world problems. We need a way to overcome reward sparsity and also improves exploration of the agent to make learning more robust.
+Human learning process is not only guided by the final goal or achievement, but also driven by motivation or curiosity of the being. Curiosity adds exploratory behaviour to the agent, allowing it to acquire new skills and gain new knowledge about the environment. It also makes agent robust to perform actions which ultimately reduces uncertaintly on it's behaviours to capture the consequences of it's own action.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Contribution">Contribution<a class="anchor-link" href="../posts/paper-summary-curiosity-driven-exploration-by-self-supervised-prediction/#Contribution">¶</a>
+</h5>
+<p>The authors, in this paper, proposed curiosity-driven learning by uing agent-intrinsic reward (.i.e a reward which is learnt by agent itself by understanding the current environment or possible changes in the states while navigation). In order to quantify curiosity, they have introduced "Intrinsic Curiosity Module".</p>
+<h6 id="Intrinsic-Curiosity-Module-(ICM)">Intrinsic Curiosity Module (ICM)<a class="anchor-link" href="../posts/paper-summary-curiosity-driven-exploration-by-self-supervised-prediction/#Intrinsic-Curiosity-Module-(ICM)">¶</a>
+</h6>
+<p>The output of ICM is the state prediction error, which serves as reward for curiosity. This module has two sub-components, each represented by neural networks.</p>
+<p>a. Inverse Model :</p>
+<p>This model learns feature space using self-supervision. This new feature space is learnt in order to avoid features/information which are irrelevant to the agent while nagivation. Learning feature space is completed within two sub-modules:</p>
+<p>i) First module encodes the raw input state ($s_t$) into a feature vector ($ \phi(s_t) $)
+  ii) Second module takes $ \phi(s_t) $ and $ \phi(s_{t+1}) $) as encoded feature inputs and predicts action $ \hat{a_t} $ that agent might take to go to $ s_{t+1} $ from $ s_t $</p>
+<p>$ \hat{a_t} = g(  \phi(s_t), \phi(s_{t+1}), \theta_i ) $</p>
+<p>Here function g represents NN and  $ \hat{a_t} $ is estimated action. The learnable parameters $ \theta_i $ are trained with loss function representing difference between predicted action and actual action. i.e $ L_I( \hat{a_t}, a_t) $</p>
+<p>b. Forward Model :</p>
+<p>This is a NN which predicts the next state ($ s_{t+1} $) with inputs $  \phi(s_t) $ and action executed at $ s_t $.</p>
+<p>$ \hat{\phi(s_{t+1})} = f( \phi(s_t), a_t, \theta_F) $</p>
+<p>$ \hat{\phi(s_{t+1})}$ is the predicted estimation of $ \phi(s_{t+1})$ and $ \theta_F $ represents trainable parameters, with loss function as:</p>
+<p>$ L_F ( \phi(s_{t+1}),  \hat{\phi(s_{t+1})}) = \frac{1}{2} ||  \hat{\phi(s_{t+1})} - \phi(s_{t+1})  ||^2 = \eta L_F $</p>
+<p>Both losses can be jointly expressed as :</p>
+<p>$ \underset{\theta_i, \theta_F} {max} [ (1-\beta) L_I  + \beta L_F ] $</p>
+<p>NOTE:</p>
+<p><strong> ICM worked with two connected modules - inverse model (which learnt the feature representation of state and next state) and forward model ( which predicts the feature representation of the next state)</strong> Curiosity can be calculated by the difference between output of forward model i.e $ \hat{\phi(s_{t+1})} $ and output of the inverse model $  \phi(s_{t+1}) $.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+    </section><footer class="post-meta">
+                Sijan Bhandari
+
+        on
+
+        <time class="post-date" datetime="2020-10-31T20:25:29+05:45">
+            2020-10-31 20:25
+        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/paper-summary-asynchronous-methods-for-deep-reinforcement-learning/">Paper Summary : Asynchronous Methods for Deep Reinforcement Learning</a></h2>
     </header><section class="post-excerpt"><div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -3787,137 +3863,6 @@ combinations from given data features.</li>
 
         <time class="post-date" datetime="2020-03-19T17:19:26+05:45">
             2020-03-19 17:19
-        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/">Linear Regression with Maximum Likelihood (MSE) and Bayesian Learning Approach from scratch</a></h2>
-    </header><section class="post-excerpt"><div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="1.-Setup">1. Setup<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#1.-Setup">¶</a>
-</h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Given the input dataset $ \textbf{D} = \{(x_i, t_i)\}_{i=1}^{N}  $, our goal is to learn the parameters that model this data and use those parameters (w) for the prediction new data point.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We often define the features (basis functions) as : $ \{ \phi_1(x),......,\phi_m(x) \} $ and the linear regression model is defined as :</p>
-<p>$ y(x,w)  = \sum_{i=1}^m w_i \phi_i (x) + \varepsilon_i $</p>
-<p>$ \varepsilon_i $ suggesting that we can not perfectly model the data generation process and there will be certain noise in our designed model(paramters). Usually, we assume that the noise is Gaussian. 
-  $ \varepsilon_i \sim Normal(0, \beta^{-1} )$</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="2.-Objective-Functions">2. Objective Functions<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#2.-Objective-Functions">¶</a>
-</h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="a.-Maximum-Likelihood-objective-(MLE)-.i.e-.-(-Mean-Squared-Error-)">a. Maximum Likelihood objective (MLE) .i.e . ( Mean Squared Error )<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#a.-Maximum-Likelihood-objective-(MLE)-.i.e-.-(-Mean-Squared-Error-)">¶</a>
-</h5>
-<p>J(w) =  $ \frac{1}{2} \sum_i^N \{t_i - w^T \phi(x_i) \}^2 $</p>
-<h5 id="b.-Regularized-Linear-Regression">b. Regularized Linear Regression<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#b.-Regularized-Linear-Regression">¶</a>
-</h5>
-<p>J(w) =  $ \frac{1}{2} \sum_i^N \{t_i - w^T \phi(x_i) \}^2 $ + $ \frac{\lambda}{2} w^T w $</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="3.-Closed-Form-Solutions">3. Closed Form Solutions<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#3.-Closed-Form-Solutions">¶</a>
-</h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="a.-For-MSE">a. For MSE<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#a.-For-MSE">¶</a>
-</h5>
-<p>$ w_{MLE} = ( \phi^T \phi )^{-1} \phi^T t $</p>
-<p>$ ( \phi^T \phi )^{-1} $ is called Moore-Penrose inverse.</p>
-<h5 id="b.-For-Regularized-MSE">b. For Regularized MSE<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#b.-For-Regularized-MSE">¶</a>
-</h5>
-<p>$ w_{MLE} = ( \lambda I + \phi^T \phi )^{-1} \phi^T t $</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="4.-Bayesian-Learning">4. Bayesian Learning<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#4.-Bayesian-Learning">¶</a>
-</h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>By using Bayes rule, we have :</p>
-<p>$ p(w | t) = \frac{p(t|w)p(w)}{p(t)} $</p>
-<p>$ p(w|t) $ - Posterior distribution
-   $ p(t|w) $ - Likelihood of data given parameters
-   $ p(w) $ - Prior distribution over paramters (w)</p>
-<h5 id="a.-Pior-on-w-:">a. Pior on w :<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#a.-Pior-on-w-:">¶</a>
-</h5>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/">Read more…</a></p>
-</div>
-</div>
-</div>
-</div>
-    </section><footer class="post-meta">
-                Sijan Bhandari
-
-        on
-                <a href="../categories/bayesian-learning/">#bayesian-learning</a>,
-                <a href="../categories/linear-regression/">#linear-regression</a>,
-                <a href="../categories/maximum-likelihood-estimation/">#maximum-likelihood-estimation</a>,
-
-        <time class="post-date" datetime="2020-03-14T21:52:38+05:45">
-            2020-03-14 21:52
         </time></footer></article>
 </div>
 

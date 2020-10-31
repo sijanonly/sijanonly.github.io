@@ -59,7 +59,138 @@
     </header><main id="content" class="content" role="main"><div class="postindex">
 
 
-<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/understanding-regularization-for-support-vector-machines-svms/">Understanding Regularization for Support Vector Machines (SVMs)</a></h2>
+<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/">Linear Regression with Maximum Likelihood (MSE) and Bayesian Learning Approach from scratch</a></h2>
+    </header><section class="post-excerpt"><div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="1.-Setup">1. Setup<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#1.-Setup">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Given the input dataset $ \textbf{D} = \{(x_i, t_i)\}_{i=1}^{N}  $, our goal is to learn the parameters that model this data and use those parameters (w) for the prediction new data point.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We often define the features (basis functions) as : $ \{ \phi_1(x),......,\phi_m(x) \} $ and the linear regression model is defined as :</p>
+<p>$ y(x,w)  = \sum_{i=1}^m w_i \phi_i (x) + \varepsilon_i $</p>
+<p>$ \varepsilon_i $ suggesting that we can not perfectly model the data generation process and there will be certain noise in our designed model(paramters). Usually, we assume that the noise is Gaussian. 
+  $ \varepsilon_i \sim Normal(0, \beta^{-1} )$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="2.-Objective-Functions">2. Objective Functions<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#2.-Objective-Functions">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="a.-Maximum-Likelihood-objective-(MLE)-.i.e-.-(-Mean-Squared-Error-)">a. Maximum Likelihood objective (MLE) .i.e . ( Mean Squared Error )<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#a.-Maximum-Likelihood-objective-(MLE)-.i.e-.-(-Mean-Squared-Error-)">¶</a>
+</h5>
+<p>J(w) =  $ \frac{1}{2} \sum_i^N \{t_i - w^T \phi(x_i) \}^2 $</p>
+<h5 id="b.-Regularized-Linear-Regression">b. Regularized Linear Regression<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#b.-Regularized-Linear-Regression">¶</a>
+</h5>
+<p>J(w) =  $ \frac{1}{2} \sum_i^N \{t_i - w^T \phi(x_i) \}^2 $ + $ \frac{\lambda}{2} w^T w $</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="3.-Closed-Form-Solutions">3. Closed Form Solutions<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#3.-Closed-Form-Solutions">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="a.-For-MSE">a. For MSE<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#a.-For-MSE">¶</a>
+</h5>
+<p>$ w_{MLE} = ( \phi^T \phi )^{-1} \phi^T t $</p>
+<p>$ ( \phi^T \phi )^{-1} $ is called Moore-Penrose inverse.</p>
+<h5 id="b.-For-Regularized-MSE">b. For Regularized MSE<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#b.-For-Regularized-MSE">¶</a>
+</h5>
+<p>$ w_{MLE} = ( \lambda I + \phi^T \phi )^{-1} \phi^T t $</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="4.-Bayesian-Learning">4. Bayesian Learning<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#4.-Bayesian-Learning">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>By using Bayes rule, we have :</p>
+<p>$ p(w | t) = \frac{p(t|w)p(w)}{p(t)} $</p>
+<p>$ p(w|t) $ - Posterior distribution
+   $ p(t|w) $ - Likelihood of data given parameters
+   $ p(w) $ - Prior distribution over paramters (w)</p>
+<h5 id="a.-Pior-on-w-:">a. Pior on w :<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#a.-Pior-on-w-:">¶</a>
+</h5>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/">Read more…</a></p>
+</div>
+</div>
+</div>
+</div>
+    </section><footer class="post-meta">
+                Sijan Bhandari
+
+        on
+                <a href="../categories/bayesian-learning/">#bayesian-learning</a>,
+                <a href="../categories/linear-regression/">#linear-regression</a>,
+                <a href="../categories/maximum-likelihood-estimation/">#maximum-likelihood-estimation</a>,
+
+        <time class="post-date" datetime="2020-03-14T21:52:38+05:45">
+            2020-03-14 21:52
+        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/understanding-regularization-for-support-vector-machines-svms/">Understanding Regularization for Support Vector Machines (SVMs)</a></h2>
     </header><section class="post-excerpt"><div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
