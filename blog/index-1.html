@@ -568,7 +568,13 @@ The ultimate goal is, our SVM tries to maximize the soft margin.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>K-Nearest Neighbors (k-NN) is one of the classification algorithms in Machine learing. Since, K-NN simply memories or stores the rules in memory, we can also say that it does not follow actual machine learning paradigm.</p>
+<p>K-Nearest Neighbors (k-NN) is one of the classification algorithms in Machine learing. Since, K-NN simply memories or stores the rules in memory, we can also say that it does not learn the mapping function(f) between inputs and labels.</p>
+<p>The kNN algorithm can be summarized in following four steps:</p>
+
+<pre><code>1. Compute distance between the test point and each of the training points
+2. Sort the distances in descending order
+3. Pick 'k' nearest neighbors from the sorted items
+4. Apply majority vote of labels for classification or averaging of label values for regression problem.</code></pre>
 
 </div>
 </div>

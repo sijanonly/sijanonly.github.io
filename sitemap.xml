@@ -23,7 +23,7 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/archive.html</loc>
-  <lastmod>2020-05-23T17:19:00Z</lastmod>
+  <lastmod>2020-10-31T09:47:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/</loc>
@@ -31,11 +31,11 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/index-1.html</loc>
-  <lastmod>2020-05-23T17:19:00Z</lastmod>
+  <lastmod>2020-10-31T09:47:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/index-2.html</loc>
-  <lastmod>2020-05-23T17:19:00Z</lastmod>
+  <lastmod>2020-10-31T09:47:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/</loc>
@@ -116,6 +116,10 @@
  <url>
   <loc>https://sijanb.com.np/listings/</loc>
   <lastmod>2018-09-27T06:26:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/posts/designing-recommendation-system-using-k-nearest-neighbor-knn/</loc>
+  <lastmod>2020-10-31T09:47:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/graphical-illustration-of-k-means-algorithm/</loc>
