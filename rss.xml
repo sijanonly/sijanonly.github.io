@@ -1,5 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>CODEBUG</title><link>https://sijanb.com.np/</link><description>Data Exploration...</description><atom:link type="application/rss+xml" rel="self" href="https://sijanb.com.np/rss.xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Sat, 31 Oct 2020 09:47:21 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Designing recommendation system using K Nearest Neighbor (kNN)</title><link>https://sijanb.com.np/posts/designing-recommendation-system-using-k-nearest-neighbor-knn/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>CODEBUG</title><link>https://sijanb.com.np/</link><description>Data Exploration...</description><atom:link href="https://sijanb.com.np/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Sat, 31 Oct 2020 10:57:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Paper Summary : Visual Reinforcement Learning Imagined Goals</title><link>https://sijanb.com.np/posts/paper-summary-visual-reinforcement-learning-imagined-goals/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Summary of the paper &lt;a href="https://arxiv.org/abs/1807.04742"&gt;"Visual Reinforcement Learning with Imagined Goals"&lt;/a&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h5 id="Motivation"&gt;Motivation&lt;a class="anchor-link" href="https://sijanb.com.np/posts/paper-summary-visual-reinforcement-learning-imagined-goals/#Motivation"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Humans can easily adjust themselves or adopt to new environments and learn new tasks by setting their own goals. In case of Reinforcement Learning framework, we have to manually design the reward function which gives an orientation towards the goal of a given task. For example, if we have to train a robot to pick a package and deliver to a destination, we have to set reward based on its distance-covered. Along with delivery task, there might be other tasks like adjusting robot-arm to pick the package based on it's shape/size or placing the package at the destination without throwing it on the ground. For each of these tasks, we can design specific-reward functions.But, it won't be practical or scalable for real-world problems where an agent has to solve many tasks synchronously.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h5 id="Contribution"&gt;Contribution&lt;a class="anchor-link" href="https://sijanb.com.np/posts/paper-summary-visual-reinforcement-learning-imagined-goals/#Contribution"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Authors proposed a reinforcement learning framework where an agent can learn general-purpose goal-conditioned polices by setting it's own synthetic goals and learning tasks to achieve those goals, without human intervention.&lt;/p&gt;
+&lt;p&gt;They referred this framework as "reinforcement with imagined goals" (RIG).&lt;/p&gt;
+&lt;h6 id="Synthetic-Goals"&gt;Synthetic Goals&lt;a class="anchor-link" href="https://sijanb.com.np/posts/paper-summary-visual-reinforcement-learning-imagined-goals/#Synthetic-Goals"&gt;¶&lt;/a&gt;&lt;/h6&gt;&lt;p&gt;Initially, the agent itself generate a set of synthetic goals by exploration through a random policy. Both state observations and goals are the image data (for example in case of robot navigation). By random policy, agent executes some random actions in the environment and the trajectories consisting of state observations are stored for later use.&lt;/p&gt;
+&lt;p&gt;During policy training phase, agent can randomly fetch those stored observations as a set of initial states or set of goals.&lt;/p&gt;
+&lt;p&gt;Now, we have all the information to train a goal-conditioned agent. Authors used Q-learning agent - Q(s,a,g), where
+s - states, a- actions and g-goals to be achieved by executing action 'a'.
+And, the optimal policy can be derived as : $  \pi (s,g) = \underset{a} max Q(s,a, g) $&lt;/p&gt;
+&lt;p&gt;In order to train this policy, two main issues need to be addressed:&lt;/p&gt;
+&lt;p&gt;a. How to design reward function ? Distance between images while nagivation is one possible reward. But, pixel-wise distance won't carry semantic meaning of actual distance between states and this will be also computationally involved.
+b. How to represent the goal as a distribution so that we sample goals for the training?&lt;/p&gt;
+&lt;p&gt;Authorse resolved these issues by using Variational Autoencoders (VAE), to learn encoded representation of images. The VAE takes raw images (x) as input and generate low-dimensional latent representation (z). Using these latent representation, we have now latent states (z)  and latent goals ($ z_g $).&lt;/p&gt;
+&lt;p&gt;The working algorithm can be summarized as :&lt;/p&gt;
+&lt;p&gt;a. Initially, agent explores environment using random policy and the state observations will be stored.&lt;/p&gt;
+&lt;p&gt;b. VAE will be trained using raw images from (a) to learn latent representation of all state observations.&lt;/p&gt;
+&lt;p&gt;c. Initial states (z) and goals ($ z_g $) are sampled from  (b)&lt;/p&gt;
+&lt;p&gt;d. Goal-conditioned Q-function Q(z,a, $ z_g $) is trained using data from (c) and policy $ \pi_{\theta} (z, z_g) $ will be learnt in the latent space.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/paper-summary-visual-reinforcement-learning-imagined-goals/</guid><pubDate>Sat, 31 Oct 2020 09:56:42 GMT</pubDate></item><item><title>Designing recommendation system using K Nearest Neighbor (kNN)</title><link>https://sijanb.com.np/posts/designing-recommendation-system-using-k-nearest-neighbor-knn/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;In [30]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
@@ -3495,338 +3559,4 @@ What if our data is not perfectly separable? We have two options for non-separab
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/understanding-regularization-for-support-vector-machines-svms/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/understanding-regularization-for-support-vector-machines-svms/</guid><pubDate>Sun, 27 Oct 2019 10:19:33 GMT</pubDate></item><item><title>Implementation of K means clustering algorithm in Python</title><link>https://sijanb.com.np/posts/implementation-of-k-means-clustering-algorithm-in-python/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;For K means clustering algorithm, I will be using &lt;a href="https://www.kaggle.com/arjunbhasin2013/ccdata"&gt;&lt;code&gt;Credit Cards Dataset for Clustering&lt;/code&gt;&lt;/a&gt; from Kaggle.&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [135]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
-
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
-
-&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="Data-preprocessing"&gt;Data preprocessing&lt;a class="anchor-link" href="https://sijanb.com.np/posts/implementation-of-k-means-clustering-algorithm-in-python/#Data-preprocessing"&gt;¶&lt;/a&gt;&lt;/h4&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [136]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;credit_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'../data/CC GENERAL.csv'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [137]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;credit_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;
-
-    &lt;div class="prompt output_prompt"&gt;Out[137]:&lt;/div&gt;
-
-
-
-&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
-&lt;div&gt;
-&lt;style scoped&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border="1" class="dataframe"&gt;
-  &lt;thead&gt;
-    &lt;tr style="text-align: right;"&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;CUST_ID&lt;/th&gt;
-      &lt;th&gt;BALANCE&lt;/th&gt;
-      &lt;th&gt;BALANCE_FREQUENCY&lt;/th&gt;
-      &lt;th&gt;PURCHASES&lt;/th&gt;
-      &lt;th&gt;ONEOFF_PURCHASES&lt;/th&gt;
-      &lt;th&gt;INSTALLMENTS_PURCHASES&lt;/th&gt;
-      &lt;th&gt;CASH_ADVANCE&lt;/th&gt;
-      &lt;th&gt;PURCHASES_FREQUENCY&lt;/th&gt;
-      &lt;th&gt;ONEOFF_PURCHASES_FREQUENCY&lt;/th&gt;
-      &lt;th&gt;PURCHASES_INSTALLMENTS_FREQUENCY&lt;/th&gt;
-      &lt;th&gt;CASH_ADVANCE_FREQUENCY&lt;/th&gt;
-      &lt;th&gt;CASH_ADVANCE_TRX&lt;/th&gt;
-      &lt;th&gt;PURCHASES_TRX&lt;/th&gt;
-      &lt;th&gt;CREDIT_LIMIT&lt;/th&gt;
-      &lt;th&gt;PAYMENTS&lt;/th&gt;
-      &lt;th&gt;MINIMUM_PAYMENTS&lt;/th&gt;
-      &lt;th&gt;PRC_FULL_PAYMENT&lt;/th&gt;
-      &lt;th&gt;TENURE&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;0&lt;/th&gt;
-      &lt;td&gt;C10001&lt;/td&gt;
-      &lt;td&gt;40.900749&lt;/td&gt;
-      &lt;td&gt;0.818182&lt;/td&gt;
-      &lt;td&gt;95.40&lt;/td&gt;
-      &lt;td&gt;0.00&lt;/td&gt;
-      &lt;td&gt;95.4&lt;/td&gt;
-      &lt;td&gt;0.000000&lt;/td&gt;
-      &lt;td&gt;0.166667&lt;/td&gt;
-      &lt;td&gt;0.000000&lt;/td&gt;
-      &lt;td&gt;0.083333&lt;/td&gt;
-      &lt;td&gt;0.000000&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;1000.0&lt;/td&gt;
-      &lt;td&gt;201.802084&lt;/td&gt;
-      &lt;td&gt;139.509787&lt;/td&gt;
-      &lt;td&gt;0.000000&lt;/td&gt;
-      &lt;td&gt;12&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;1&lt;/th&gt;
-      &lt;td&gt;C10002&lt;/td&gt;
-      &lt;td&gt;3202.467416&lt;/td&gt;
-      &lt;td&gt;0.909091&lt;/td&gt;
-      &lt;td&gt;0.00&lt;/td&gt;
-      &lt;td&gt;0.00&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;6442.945483&lt;/td&gt;
-      &lt;td&gt;0.000000&lt;/td&gt;
-      &lt;td&gt;0.000000&lt;/td&gt;
-      &lt;td&gt;0.000000&lt;/td&gt;
-      &lt;td&gt;0.250000&lt;/td&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;7000.0&lt;/td&gt;
-      &lt;td&gt;4103.032597&lt;/td&gt;
-      &lt;td&gt;1072.340217&lt;/td&gt;
-      &lt;td&gt;0.222222&lt;/td&gt;
-      &lt;td&gt;12&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;2&lt;/th&gt;
-      &lt;td&gt;C10003&lt;/td&gt;
-      &lt;td&gt;2495.148862&lt;/td&gt;
-      &lt;td&gt;1.000000&lt;/td&gt;
-      &lt;td&gt;773.17&lt;/td&gt;
-      &lt;td&gt;773.17&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.000000&lt;/td&gt;
-      &lt;td&gt;1.000000&lt;/td&gt;
-      &lt;td&gt;1.000000&lt;/td&gt;
-      &lt;td&gt;0.000000&lt;/td&gt;
-      &lt;td&gt;0.000000&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;12&lt;/td&gt;
-      &lt;td&gt;7500.0&lt;/td&gt;
-      &lt;td&gt;622.066742&lt;/td&gt;
-      &lt;td&gt;627.284787&lt;/td&gt;
-      &lt;td&gt;0.000000&lt;/td&gt;
-      &lt;td&gt;12&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;3&lt;/th&gt;
-      &lt;td&gt;C10004&lt;/td&gt;
-      &lt;td&gt;1666.670542&lt;/td&gt;
-      &lt;td&gt;0.636364&lt;/td&gt;
-      &lt;td&gt;1499.00&lt;/td&gt;
-      &lt;td&gt;1499.00&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;205.788017&lt;/td&gt;
-      &lt;td&gt;0.083333&lt;/td&gt;
-      &lt;td&gt;0.083333&lt;/td&gt;
-      &lt;td&gt;0.000000&lt;/td&gt;
-      &lt;td&gt;0.083333&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;7500.0&lt;/td&gt;
-      &lt;td&gt;0.000000&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;0.000000&lt;/td&gt;
-      &lt;td&gt;12&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;4&lt;/th&gt;
-      &lt;td&gt;C10005&lt;/td&gt;
-      &lt;td&gt;817.714335&lt;/td&gt;
-      &lt;td&gt;1.000000&lt;/td&gt;
-      &lt;td&gt;16.00&lt;/td&gt;
-      &lt;td&gt;16.00&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.000000&lt;/td&gt;
-      &lt;td&gt;0.083333&lt;/td&gt;
-      &lt;td&gt;0.083333&lt;/td&gt;
-      &lt;td&gt;0.000000&lt;/td&gt;
-      &lt;td&gt;0.000000&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;1200.0&lt;/td&gt;
-      &lt;td&gt;678.334763&lt;/td&gt;
-      &lt;td&gt;244.791237&lt;/td&gt;
-      &lt;td&gt;0.000000&lt;/td&gt;
-      &lt;td&gt;12&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="A.-Check-for-missing-data"&gt;A. Check for missing data&lt;a class="anchor-link" href="https://sijanb.com.np/posts/implementation-of-k-means-clustering-algorithm-in-python/#A.-Check-for-missing-data"&gt;¶&lt;/a&gt;&lt;/h5&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [138]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;credit_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;isna&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;
-
-    &lt;div class="prompt output_prompt"&gt;Out[138]:&lt;/div&gt;
-
-
-
-
-&lt;div class="output_text output_subarea output_execute_result"&gt;
-&lt;pre&gt;CUST_ID                               0
-BALANCE                               0
-BALANCE_FREQUENCY                     0
-PURCHASES                             0
-ONEOFF_PURCHASES                      0
-INSTALLMENTS_PURCHASES                0
-CASH_ADVANCE                          0
-PURCHASES_FREQUENCY                   0
-ONEOFF_PURCHASES_FREQUENCY            0
-PURCHASES_INSTALLMENTS_FREQUENCY      0
-CASH_ADVANCE_FREQUENCY                0
-CASH_ADVANCE_TRX                      0
-PURCHASES_TRX                         0
-CREDIT_LIMIT                          1
-PAYMENTS                              0
-MINIMUM_PAYMENTS                    313
-PRC_FULL_PAYMENT                      0
-TENURE                                0
-dtype: int64&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;We can see that some missing values in column &lt;code&gt;MINIMUM_PAYMENTS&lt;/code&gt; column. Since we are focusing on algorithm aspect in this tutorial, I will simply remove entries having 'NaN' value.&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="B.-Remove-'NaN'-entries"&gt;B. Remove 'NaN' entries&lt;a class="anchor-link" href="https://sijanb.com.np/posts/implementation-of-k-means-clustering-algorithm-in-python/#B.-Remove-'NaN'-entries"&gt;¶&lt;/a&gt;&lt;/h5&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [139]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;credit_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;credit_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dropna&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;how&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'any'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="C.-Remove-nonrelevant-column/feature"&gt;C. Remove nonrelevant column/feature&lt;a class="anchor-link" href="https://sijanb.com.np/posts/implementation-of-k-means-clustering-algorithm-in-python/#C.-Remove-nonrelevant-column/feature"&gt;¶&lt;/a&gt;&lt;/h5&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [140]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Customer ID does not bear any meaning to build cluster. So, let's remove it.&lt;/span&gt;
-&lt;span class="n"&gt;credit_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;drop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"CUST_ID"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;axis&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;inplace&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/implementation-of-k-means-clustering-algorithm-in-python/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/implementation-of-k-means-clustering-algorithm-in-python/</guid><pubDate>Sun, 11 Aug 2019 10:23:29 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/understanding-regularization-for-support-vector-machines-svms/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/understanding-regularization-for-support-vector-machines-svms/</guid><pubDate>Sun, 27 Oct 2019 10:19:33 GMT</pubDate></item></channel></rss>

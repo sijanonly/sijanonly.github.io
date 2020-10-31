@@ -58,7 +58,94 @@
     </header><main id="content" class="content" role="main"><div class="postindex">
 
 
-<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/designing-recommendation-system-using-k-nearest-neighbor-knn/">Designing recommendation system using K Nearest Neighbor (kNN)</a></h2>
+<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/paper-summary-visual-reinforcement-learning-imagined-goals/">Paper Summary : Visual Reinforcement Learning Imagined Goals</a></h2>
+    </header><section class="post-excerpt"><div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Summary of the paper <a href="https://arxiv.org/abs/1807.04742">"Visual Reinforcement Learning with Imagined Goals"</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Motivation">Motivation<a class="anchor-link" href="../posts/paper-summary-visual-reinforcement-learning-imagined-goals/#Motivation">¶</a>
+</h5>
+<p>Humans can easily adjust themselves or adopt to new environments and learn new tasks by setting their own goals. In case of Reinforcement Learning framework, we have to manually design the reward function which gives an orientation towards the goal of a given task. For example, if we have to train a robot to pick a package and deliver to a destination, we have to set reward based on its distance-covered. Along with delivery task, there might be other tasks like adjusting robot-arm to pick the package based on it's shape/size or placing the package at the destination without throwing it on the ground. For each of these tasks, we can design specific-reward functions.But, it won't be practical or scalable for real-world problems where an agent has to solve many tasks synchronously.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Contribution">Contribution<a class="anchor-link" href="../posts/paper-summary-visual-reinforcement-learning-imagined-goals/#Contribution">¶</a>
+</h5>
+<p>Authors proposed a reinforcement learning framework where an agent can learn general-purpose goal-conditioned polices by setting it's own synthetic goals and learning tasks to achieve those goals, without human intervention.</p>
+<p>They referred this framework as "reinforcement with imagined goals" (RIG).</p>
+<h6 id="Synthetic-Goals">Synthetic Goals<a class="anchor-link" href="../posts/paper-summary-visual-reinforcement-learning-imagined-goals/#Synthetic-Goals">¶</a>
+</h6>
+<p>Initially, the agent itself generate a set of synthetic goals by exploration through a random policy. Both state observations and goals are the image data (for example in case of robot navigation). By random policy, agent executes some random actions in the environment and the trajectories consisting of state observations are stored for later use.</p>
+<p>During policy training phase, agent can randomly fetch those stored observations as a set of initial states or set of goals.</p>
+<p>Now, we have all the information to train a goal-conditioned agent. Authors used Q-learning agent - Q(s,a,g), where
+s - states, a- actions and g-goals to be achieved by executing action 'a'.
+And, the optimal policy can be derived as : $  \pi (s,g) = \underset{a} max Q(s,a, g) $</p>
+<p>In order to train this policy, two main issues need to be addressed:</p>
+<p>a. How to design reward function ? Distance between images while nagivation is one possible reward. But, pixel-wise distance won't carry semantic meaning of actual distance between states and this will be also computationally involved.
+b. How to represent the goal as a distribution so that we sample goals for the training?</p>
+<p>Authorse resolved these issues by using Variational Autoencoders (VAE), to learn encoded representation of images. The VAE takes raw images (x) as input and generate low-dimensional latent representation (z). Using these latent representation, we have now latent states (z)  and latent goals ($ z_g $).</p>
+<p>The working algorithm can be summarized as :</p>
+<p>a. Initially, agent explores environment using random policy and the state observations will be stored.</p>
+<p>b. VAE will be trained using raw images from (a) to learn latent representation of all state observations.</p>
+<p>c. Initial states (z) and goals ($ z_g $) are sampled from  (b)</p>
+<p>d. Goal-conditioned Q-function Q(z,a, $ z_g $) is trained using data from (c) and policy $ \pi_{\theta} (z, z_g) $ will be learnt in the latent space.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+    </section><footer class="post-meta">
+                Sijan Bhandari
+
+        on
+
+        <time class="post-date" datetime="2020-10-31T15:41:42+05:45">
+            2020-10-31 15:41
+        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/designing-recommendation-system-using-k-nearest-neighbor-knn/">Designing recommendation system using K Nearest Neighbor (kNN)</a></h2>
     </header><section class="post-excerpt"><div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -3823,370 +3910,6 @@ What if our data is not perfectly separable? We have two options for non-separab
 
         <time class="post-date" datetime="2019-10-27T16:04:33+05:45">
             2019-10-27 16:04
-        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/implementation-of-k-means-clustering-algorithm-in-python/">Implementation of K means clustering algorithm in Python</a></h2>
-    </header><section class="post-excerpt"><div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>For K means clustering algorithm, I will be using <a href="https://www.kaggle.com/arjunbhasin2013/ccdata"><code>Credit Cards Dataset for Clustering</code></a> from Kaggle.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [135]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="o">%</span><span class="k">matplotlib</span> inline
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Data-preprocessing">Data preprocessing<a class="anchor-link" href="../posts/implementation-of-k-means-clustering-algorithm-in-python/#Data-preprocessing">¶</a>
-</h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [136]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">credit_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'../data/CC GENERAL.csv'</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [137]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">credit_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[137]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead><tr style="text-align: right;">
-<th></th>
-      <th>CUST_ID</th>
-      <th>BALANCE</th>
-      <th>BALANCE_FREQUENCY</th>
-      <th>PURCHASES</th>
-      <th>ONEOFF_PURCHASES</th>
-      <th>INSTALLMENTS_PURCHASES</th>
-      <th>CASH_ADVANCE</th>
-      <th>PURCHASES_FREQUENCY</th>
-      <th>ONEOFF_PURCHASES_FREQUENCY</th>
-      <th>PURCHASES_INSTALLMENTS_FREQUENCY</th>
-      <th>CASH_ADVANCE_FREQUENCY</th>
-      <th>CASH_ADVANCE_TRX</th>
-      <th>PURCHASES_TRX</th>
-      <th>CREDIT_LIMIT</th>
-      <th>PAYMENTS</th>
-      <th>MINIMUM_PAYMENTS</th>
-      <th>PRC_FULL_PAYMENT</th>
-      <th>TENURE</th>
-    </tr></thead>
-<tbody>
-<tr>
-<th>0</th>
-      <td>C10001</td>
-      <td>40.900749</td>
-      <td>0.818182</td>
-      <td>95.40</td>
-      <td>0.00</td>
-      <td>95.4</td>
-      <td>0.000000</td>
-      <td>0.166667</td>
-      <td>0.000000</td>
-      <td>0.083333</td>
-      <td>0.000000</td>
-      <td>0</td>
-      <td>2</td>
-      <td>1000.0</td>
-      <td>201.802084</td>
-      <td>139.509787</td>
-      <td>0.000000</td>
-      <td>12</td>
-    </tr>
-<tr>
-<th>1</th>
-      <td>C10002</td>
-      <td>3202.467416</td>
-      <td>0.909091</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>6442.945483</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.250000</td>
-      <td>4</td>
-      <td>0</td>
-      <td>7000.0</td>
-      <td>4103.032597</td>
-      <td>1072.340217</td>
-      <td>0.222222</td>
-      <td>12</td>
-    </tr>
-<tr>
-<th>2</th>
-      <td>C10003</td>
-      <td>2495.148862</td>
-      <td>1.000000</td>
-      <td>773.17</td>
-      <td>773.17</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-      <td>1.000000</td>
-      <td>1.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0</td>
-      <td>12</td>
-      <td>7500.0</td>
-      <td>622.066742</td>
-      <td>627.284787</td>
-      <td>0.000000</td>
-      <td>12</td>
-    </tr>
-<tr>
-<th>3</th>
-      <td>C10004</td>
-      <td>1666.670542</td>
-      <td>0.636364</td>
-      <td>1499.00</td>
-      <td>1499.00</td>
-      <td>0.0</td>
-      <td>205.788017</td>
-      <td>0.083333</td>
-      <td>0.083333</td>
-      <td>0.000000</td>
-      <td>0.083333</td>
-      <td>1</td>
-      <td>1</td>
-      <td>7500.0</td>
-      <td>0.000000</td>
-      <td>NaN</td>
-      <td>0.000000</td>
-      <td>12</td>
-    </tr>
-<tr>
-<th>4</th>
-      <td>C10005</td>
-      <td>817.714335</td>
-      <td>1.000000</td>
-      <td>16.00</td>
-      <td>16.00</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-      <td>0.083333</td>
-      <td>0.083333</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1200.0</td>
-      <td>678.334763</td>
-      <td>244.791237</td>
-      <td>0.000000</td>
-      <td>12</td>
-    </tr>
-</tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="A.-Check-for-missing-data">A. Check for missing data<a class="anchor-link" href="../posts/implementation-of-k-means-clustering-algorithm-in-python/#A.-Check-for-missing-data">¶</a>
-</h5>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [138]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">credit_data</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[138]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>CUST_ID                               0
-BALANCE                               0
-BALANCE_FREQUENCY                     0
-PURCHASES                             0
-ONEOFF_PURCHASES                      0
-INSTALLMENTS_PURCHASES                0
-CASH_ADVANCE                          0
-PURCHASES_FREQUENCY                   0
-ONEOFF_PURCHASES_FREQUENCY            0
-PURCHASES_INSTALLMENTS_FREQUENCY      0
-CASH_ADVANCE_FREQUENCY                0
-CASH_ADVANCE_TRX                      0
-PURCHASES_TRX                         0
-CREDIT_LIMIT                          1
-PAYMENTS                              0
-MINIMUM_PAYMENTS                    313
-PRC_FULL_PAYMENT                      0
-TENURE                                0
-dtype: int64</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We can see that some missing values in column <code>MINIMUM_PAYMENTS</code> column. Since we are focusing on algorithm aspect in this tutorial, I will simply remove entries having 'NaN' value.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="B.-Remove-'NaN'-entries">B. Remove 'NaN' entries<a class="anchor-link" href="../posts/implementation-of-k-means-clustering-algorithm-in-python/#B.-Remove-'NaN'-entries">¶</a>
-</h5>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [139]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">credit_data</span> <span class="o">=</span> <span class="n">credit_data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">'any'</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="C.-Remove-nonrelevant-column/feature">C. Remove nonrelevant column/feature<a class="anchor-link" href="../posts/implementation-of-k-means-clustering-algorithm-in-python/#C.-Remove-nonrelevant-column/feature">¶</a>
-</h5>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [140]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Customer ID does not bear any meaning to build cluster. So, let's remove it.</span>
-<span class="n">credit_data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">"CUST_ID"</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="../posts/implementation-of-k-means-clustering-algorithm-in-python/">Read more…</a></p>
-</div>
-</div>
-</div>
-</div>
-    </section><footer class="post-meta">
-                Sijan Bhandari
-
-        on
-
-        <time class="post-date" datetime="2019-08-11T16:08:29+05:45">
-            2019-08-11 16:08
         </time></footer></article>
 </div>
 

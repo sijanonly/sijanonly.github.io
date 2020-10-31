@@ -23,7 +23,7 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/archive.html</loc>
-  <lastmod>2020-10-31T09:47:00Z</lastmod>
+  <lastmod>2020-10-31T10:57:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/</loc>
@@ -31,11 +31,11 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/index-1.html</loc>
-  <lastmod>2020-10-31T09:47:00Z</lastmod>
+  <lastmod>2020-10-31T10:57:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/index-2.html</loc>
-  <lastmod>2020-10-31T09:47:00Z</lastmod>
+  <lastmod>2020-10-31T10:57:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/</loc>
@@ -176,6 +176,10 @@
  <url>
   <loc>https://sijanb.com.np/posts/out-of-sample-accuracy-estimation-using-cross-validation-in-python-and-scikit-learn/</loc>
   <lastmod>2020-05-09T09:56:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/posts/paper-summary-visual-reinforcement-learning-imagined-goals/</loc>
+  <lastmod>2020-10-31T10:57:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/</loc>
