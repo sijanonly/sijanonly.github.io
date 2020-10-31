@@ -59,7 +59,82 @@
     </header><main id="content" class="content" role="main"><div class="postindex">
 
 
-<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/implementation-of-k-means-clustering-algorithm-in-python/">Implementation of K means clustering algorithm in Python</a></h2>
+<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/understanding-regularization-for-support-vector-machines-svms/">Understanding Regularization for Support Vector Machines (SVMs)</a></h2>
+    </header><section class="post-excerpt"><div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I would like you to go through  <a href="http://sijanb.com.np/posts/why-we-need-support-vector-machine-svm/"><code>Intuition Behind SVM</code></a> before exploring about <code>Regularization</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>SVM has an objective <code>To find the optimal linearly speparating hyperplane which maximizes the margin</code>. But, we know that Hard-Margin SVM can work well when data is completely lineary separable (without any noise or outliers).
+What if our data is not perfectly separable? We have two options for non-separable data:</p>
+
+<pre><code> a. Using Hard-Margin SVM with feature transformations
+ b. Using Soft-Margin SVM</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you want a good generalization on your result, we should tolerate some errors. If we force our model to be perfect, it will be just an attempt to overfit the data!.</p>
+<p>Let's talk about <code>Soft-Margin SVM</code> and it helps us to understand <code>Regularization</code>. If the training data is not linearly separable, we allow our hyperplane to make few mistakes on outliers or say noisy data. Mistakes means those outliers/noise data can be inside the margin or on the wrong side of the margin.</p>
+<p>But, we will have a mechanism to pay a cost for each of those misclassified example. That cost will depend on how far the data point is from the margin. This cost is represented by slack variables ($ξ_i$)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>objective function : $ \frac{1}{2} ||w||^2   + C \sum_{i=1}^{n}  ξ_i  $</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the above equation, the parameter <code>C</code> defines the strength of regularization. We can discuss three different cases based on values of <code>C</code>:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="../posts/understanding-regularization-for-support-vector-machines-svms/">Read more…</a></p>
+</div>
+</div>
+</div>
+</div>
+    </section><footer class="post-meta">
+                Sijan Bhandari
+
+        on
+
+        <time class="post-date" datetime="2019-10-27T16:04:33+05:45">
+            2019-10-27 16:04
+        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/implementation-of-k-means-clustering-algorithm-in-python/">Implementation of K means clustering algorithm in Python</a></h2>
     </header><section class="post-excerpt"><div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">

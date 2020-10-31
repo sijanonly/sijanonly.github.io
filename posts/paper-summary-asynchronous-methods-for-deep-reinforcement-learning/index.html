@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Paper Summary : Visual Reinforcement Learning Imagined Goals | CODEBUG</title>
+<title>Paper Summary : Asynchronous Methods for Deep Reinforcement Learning | CODEBUG</title>
 <link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
@@ -16,15 +16,14 @@
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
-<link rel="canonical" href="https://sijanb.com.np/posts/paper-summary-visual-reinforcement-learning-imagined-goals/">
+<link rel="canonical" href="https://sijanb.com.np/posts/paper-summary-asynchronous-methods-for-deep-reinforcement-learning/">
 <link rel="icon" href="../../favicon.ico" sizes="16x16">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Sijan Bhandari">
-<link rel="prev" href="../designing-recommendation-system-using-k-nearest-neighbor-knn/" title="Designing recommendation system using K Nearest Neighbor (kNN)" type="text/html">
-<link rel="next" href="../paper-summary-asynchronous-methods-for-deep-reinforcement-learning/" title="Paper Summary : Asynchronous Methods for Deep Reinforcement Learning" type="text/html">
+<link rel="prev" href="../paper-summary-visual-reinforcement-learning-imagined-goals/" title="Paper Summary : Visual Reinforcement Learning Imagined Goals" type="text/html">
 <meta property="og:site_name" content="CODEBUG">
-<meta property="og:title" content="Paper Summary : Visual Reinforcement Learning Imagined Goals">
-<meta property="og:url" content="https://sijanb.com.np/posts/paper-summary-visual-reinforcement-learning-imagined-goals/">
-<meta property="og:description" content='Summary of the paper "Visual Reinforcement Learning with Imagined Goals"
+<meta property="og:title" content="Paper Summary : Asynchronous Methods for Deep Reinforcement Learning">
+<meta property="og:url" content="https://sijanb.com.np/posts/paper-summary-asynchronous-methods-for-deep-reinforcement-learning/">
+<meta property="og:description" content='Summary of the paper "Asynchronous Methods for Deep Reinforcement Learning"
 
 
 
@@ -32,9 +31,9 @@
 
 
 
-Motivation¶Humans can easily adjust themselves or adopt to new environments and learn new tasks by setting their own goa'>
+Motivation¶Deep Neural Network (DNN) is introduced to Reinforcement Learning (RL) framework in order to make function'>
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2020-10-31T15:41:42+05:45">
+<meta property="article:published_time" content="2020-10-31T17:26:55+05:45">
 </head>
 <body class="nav-closed">
 
@@ -62,19 +61,19 @@ Motivation¶Humans can easily adjust themselves or adopt to new environments and
 <div class="site-wrapper">
     <header class="main-header post-head no-cover"><nav class="main-nav overlay clearfix"><a class="blog-logo" href="https://sijanb.com.np/"><img src="../../images/logo.png" alt="Blog Logo"></a>
             <a class="menu-button" href="#"><span class="burger">☰</span><span class="word">Menu</span></a>
-        </nav></header><main id="content" class="content" role="main"><article class="post post"><header class="post-header"><h1 class="post-title">Paper Summary : Visual Reinforcement Learning Imagined Goals</h1>
+        </nav></header><main id="content" class="content" role="main"><article class="post post"><header class="post-header"><h1 class="post-title">Paper Summary : Asynchronous Methods for Deep Reinforcement Learning</h1>
         <section class="post-meta"> by
             Sijan Bhandari
             on
-            <time class="post-date" datetime="2020-10-31T15:41:42+05:45">
-                2020-10-31 15:41
+            <time class="post-date" datetime="2020-10-31T17:26:55+05:45">
+                2020-10-31 17:26
             </time></section></header><section class="post-content"><div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Summary of the paper <a href="https://arxiv.org/abs/1807.04742">"Visual Reinforcement Learning with Imagined Goals"</a></p>
+<p>Summary of the paper <a href="https://arxiv.org/abs/1602.01783">"Asynchronous Methods for Deep Reinforcement Learning"</a></p>
 
 </div>
 </div>
@@ -86,8 +85,13 @@ Motivation¶Humans can easily adjust themselves or adopt to new environments and
 <div class="text_cell_render border-box-sizing rendered_html">
 <h5 id="Motivation">Motivation<a class="anchor-link" href="#Motivation">¶</a>
 </h5>
-<p>Humans can easily adjust themselves or adopt to new environments and learn new tasks by setting their own goals. In case of Reinforcement Learning framework, we have to manually design the reward function which gives an orientation towards the goal of a given task. For example, if we have to train a robot to pick a package and deliver to a destination, we have to set reward based on its distance-covered. Along with delivery task, there might be other tasks like adjusting robot-arm to pick the package based on it's shape/size or placing the package at the destination without throwing it on the ground. For each of these tasks, we can design specific-reward functions.But, it won't be practical or scalable for real-world problems where an agent has to solve many tasks synchronously.</p>
-
+<p>Deep Neural Network (DNN) is introduced to Reinforcement Learning (RL) framework in order to make function approximation easier/scable for large state-space problems. DNN itself suffers from overfitting because of the correlated data while nagivating through the environments (e.g. when we play a game, each consecutive moves of a player withing smaller timeframes looks similar, which won't contribute much for learning). In order to avoid it, people started using experience replay, where we have to store navigation experience (e.g. screenshots in games) as a buffer and we can use them later while training/updating policy/model parameters.</p>
+<p>This works well, but only for off-policy algorithms like Q-learning. How to use on-policy algorithms like SARSA and make it stable learning using DNN ? Also, using experience replay introduces extra memory requirements/ computatonal delay for each update and real interaction with environment.</p>
+<p>**NOTE :</p>
+<ul>
+<li>On-policy : The training data is generated by the same policy being trained. e.g : Reinforce</li>
+<li>Off-Policy : The training data generated from another policy can be used to train the current policy. e.g : Q-learning</li>
+</ul>
 </div>
 </div>
 </div>
@@ -98,40 +102,28 @@ Motivation¶Humans can easily adjust themselves or adopt to new environments and
 <div class="text_cell_render border-box-sizing rendered_html">
 <h5 id="Contribution">Contribution<a class="anchor-link" href="#Contribution">¶</a>
 </h5>
-<p>Authors proposed a reinforcement learning framework where an agent can learn general-purpose goal-conditioned polices by setting it's own synthetic goals and learning tasks to achieve those goals, without human intervention.</p>
-<p>They referred this framework as "reinforcement with imagined goals" (RIG).</p>
-<h6 id="Synthetic-Goals">Synthetic Goals<a class="anchor-link" href="#Synthetic-Goals">¶</a>
+<p>In this paper, authors introduced an asynchronous training process by executing multiple agents in parallel in different instances of the same environment using multiple CPU cores. It uses multithreading to run those agents and update the global model parameters asynchronously in online fashion. It is reported that this approach enables stable learning and faster convergence speed.</p>
+<p>They have introduced asynchronous variants of SARSA, 1-step/n-step Q learning and advantage actor-critic algorithm. Let's discuss some details on Asynchronous Q-learning and Async. Advantage Actor critic (A3C) algorithms.</p>
+<h6 id="Asynchronous-Q-Learning">Asynchronous Q-Learning<a class="anchor-link" href="#Asynchronous-Q-Learning">¶</a>
 </h6>
-<p>Initially, the agent itself generate a set of synthetic goals by exploration through a random policy. Both state observations and goals are the image data (for example in case of robot navigation). By random policy, agent executes some random actions in the environment and the trajectories consisting of state observations are stored for later use.</p>
-<p>During policy training phase, agent can randomly fetch those stored observations as a set of initial states or set of goals.</p>
-<p>Now, we have all the information to train a goal-conditioned agent. Authors used Q-learning agent - Q(s,a,g), where
-s - states, a- actions and g-goals to be achieved by executing action 'a'.
-And, the optimal policy can be derived as : $  \pi (s,g) = \underset{a} max Q(s,a, g) $</p>
-<p>In order to train this policy, two main issues need to be addressed:</p>
-<p>a. How to design reward function ? Distance between images while nagivation is one possible reward. But, pixel-wise distance won't carry semantic meaning of actual distance between states and this will be also computationally involved.
-b. How to represent the goal as a distribution so that we sample goals for the training?</p>
-<p>Authorse resolved these issues by using Variational Autoencoders (VAE), to learn encoded representation of images. The VAE takes raw images (x) as input and generate low-dimensional latent representation (z). Using these latent representation, we have now latent states (z)  and latent goals ($ z_g $).</p>
-<p>The working algorithm can be summarized as :</p>
-<p>a. Initially, agent explores environment using random policy and the state observations will be stored.</p>
-<p>b. VAE will be trained using raw images from (a) to learn latent representation of all state observations.</p>
-<p>c. Initial states (z) and goals ($ z_g $) are sampled from  (b)</p>
-<p>d. Goal-conditioned Q-function Q(z,a, $ z_g $) is trained using data from (c) and policy $ \pi_{\theta} (z, z_g) $ will be learnt in the latent space.</p>
-
+<p>In Deep Q-Learning (DQN), the neural network (NN) approximates the Q-value function Q(s,a, $\theta$) with loss formulated as:
+$
+\begin{equation}
+ L_{i} (\theta_i)  = \mathbb{E} [ r + \gamma Q (s^`, a^`, \theta_{i-1}) - Q(s, a, \theta_i) ]^2 ..........(i)
+ \end{equation}
+ $</p>
+<p>In Async 1-step Q learning, each thread maintains it's own copy of environment and agent traverse through the environment with the help of $  \epsilon $ - greedy policy. At each step, we compute teh gradient of the loss (i) and collect gradients over multiple timesteps before updating the parameters.</p>
+<h6 id="Asynchronous-Advantage-Actor-Critic-(A3C)">Asynchronous Advantage Actor-Critic (A3C)<a class="anchor-link" href="#Asynchronous-Advantage-Actor-Critic-(A3C)">¶</a>
+</h6>
+<p>Actor-critic method combines both value-pased and policy based methods. In Async. setup, it uses a 'forward-view' and n-step updates for both policy and value function.</p>
+<p>It has a policy $ \pi(a_t | s_t; \theta) $ and value function $ V (s_t; \theta_t)$ to be learnt. It uses "forward-view", i.e. selecting actions based on its exploration strategy $ \pi (a_t | s_t; \theta) $ up to some $  t_{max} $  steps in the future, to collect up to $ t_{max} $ rewards since last update.</p>
+<p>Now, policy and value functions are updated after every $ t_max $ actions as:</p>
+<p>*Policy Network : $ \bigtriangledown_{\theta} log \pi(a_t | s_t; \theta) (R_t - V(s_t, \theta_v)) $</p>
+<ul>
+<li>Value Network : $ \bigtriangledown_{v} (R - V(s_t) $</li>
+</ul>
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -153,9 +145,9 @@ b. How to represent the goal as a distribution so that we sample goals for the t
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="blog-sijanb-com-np",
-            disqus_url="https://sijanb.com.np/posts/paper-summary-visual-reinforcement-learning-imagined-goals/",
-        disqus_title="Paper Summary : Visual Reinforcement Learning Imagined Goals",
-        disqus_identifier="cache/posts/paper-summary-visual-reinforcement-learning-imagined-goals.html",
+            disqus_url="https://sijanb.com.np/posts/paper-summary-asynchronous-methods-for-deep-reinforcement-learning/",
+        disqus_title="Paper Summary : Asynchronous Methods for Deep Reinforcement Learning",
+        disqus_identifier="cache/posts/paper-summary-asynchronous-methods-for-deep-reinforcement-learning.html",
         disqus_config = function () {
             this.language = "en";
         };
