@@ -107,12 +107,15 @@ $
 <p>In Async 1-step Q learning, each thread maintains it's own copy of environment and agent traverse through the environment with the help of $  \epsilon $ - greedy policy. At each step, we compute teh gradient of the loss (i) and collect gradients over multiple timesteps before updating the parameters.</p>
 <h6 id="Asynchronous-Advantage-Actor-Critic-(A3C)">Asynchronous Advantage Actor-Critic (A3C)<a class="anchor-link" href="../posts/paper-summary-asynchronous-methods-for-deep-reinforcement-learning/#Asynchronous-Advantage-Actor-Critic-(A3C)">¶</a>
 </h6>
-<p>Actor-critic method combines both value-pased and policy based methods. In Async. setup, it uses a 'forward-view' and n-step updates for both policy and value function.</p>
+<p>Actor-critic method combines both value-pased and policy based methods.</p>
 <p>It has a policy $ \pi(a_t | s_t; \theta) $ and value function $ V (s_t; \theta_t)$ to be learnt. It uses "forward-view", i.e. selecting actions based on its exploration strategy $ \pi (a_t | s_t; \theta) $ up to some $  t_{max} $  steps in the future, to collect up to $ t_{max} $ rewards since last update.</p>
 <p>Now, policy and value functions are updated after every $ t_max $ actions as:</p>
-<p>*Policy Network : $ \bigtriangledown_{\theta} log \pi(a_t | s_t; \theta) (R_t - V(s_t, \theta_v)) $</p>
 <ul>
-<li>Value Network : $ \bigtriangledown_{v} (R - V(s_t) $</li>
+<li>Policy Network : $ \bigtriangledown_{\theta} log \pi(a_t | s_t; \theta) (R_t - V(s_t, \theta_v)) $</li>
+<li>
+<p>Value Network : $ \bigtriangledown_{v} (R - V(s_t; \theta_v))^2 $</p>
+<p>In this learning framework, parallel actor-learners updates a shared model and make learning process more robust and stable</p>
+</li>
 </ul>
 </div>
 </div>

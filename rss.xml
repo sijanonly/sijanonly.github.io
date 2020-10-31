@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>CODEBUG</title><link>https://sijanb.com.np/</link><description>Data Exploration...</description><atom:link rel="self" href="https://sijanb.com.np/rss.xml" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Sat, 31 Oct 2020 14:06:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Paper Summary : Asynchronous Methods for Deep Reinforcement Learning</title><link>https://sijanb.com.np/posts/paper-summary-asynchronous-methods-for-deep-reinforcement-learning/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>CODEBUG</title><link>https://sijanb.com.np/</link><description>Data Exploration...</description><atom:link rel="self" type="application/rss+xml" href="https://sijanb.com.np/rss.xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Sat, 31 Oct 2020 14:07:12 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Paper Summary : Asynchronous Methods for Deep Reinforcement Learning</title><link>https://sijanb.com.np/posts/paper-summary-asynchronous-methods-for-deep-reinforcement-learning/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Summary of the paper &lt;a href="https://arxiv.org/abs/1602.01783"&gt;"Asynchronous Methods for Deep Reinforcement Learning"&lt;/a&gt;&lt;/p&gt;
@@ -33,12 +33,14 @@ $
  \end{equation}
  $&lt;/p&gt;
 &lt;p&gt;In Async 1-step Q learning, each thread maintains it's own copy of environment and agent traverse through the environment with the help of $  \epsilon $ - greedy policy. At each step, we compute teh gradient of the loss (i) and collect gradients over multiple timesteps before updating the parameters.&lt;/p&gt;
-&lt;h6 id="Asynchronous-Advantage-Actor-Critic-(A3C)"&gt;Asynchronous Advantage Actor-Critic (A3C)&lt;a class="anchor-link" href="https://sijanb.com.np/posts/paper-summary-asynchronous-methods-for-deep-reinforcement-learning/#Asynchronous-Advantage-Actor-Critic-(A3C)"&gt;¶&lt;/a&gt;&lt;/h6&gt;&lt;p&gt;Actor-critic method combines both value-pased and policy based methods. In Async. setup, it uses a 'forward-view' and n-step updates for both policy and value function.&lt;/p&gt;
+&lt;h6 id="Asynchronous-Advantage-Actor-Critic-(A3C)"&gt;Asynchronous Advantage Actor-Critic (A3C)&lt;a class="anchor-link" href="https://sijanb.com.np/posts/paper-summary-asynchronous-methods-for-deep-reinforcement-learning/#Asynchronous-Advantage-Actor-Critic-(A3C)"&gt;¶&lt;/a&gt;&lt;/h6&gt;&lt;p&gt;Actor-critic method combines both value-pased and policy based methods.&lt;/p&gt;
 &lt;p&gt;It has a policy $ \pi(a_t | s_t; \theta) $ and value function $ V (s_t; \theta_t)$ to be learnt. It uses "forward-view", i.e. selecting actions based on its exploration strategy $ \pi (a_t | s_t; \theta) $ up to some $  t_{max} $  steps in the future, to collect up to $ t_{max} $ rewards since last update.&lt;/p&gt;
 &lt;p&gt;Now, policy and value functions are updated after every $ t_max $ actions as:&lt;/p&gt;
-&lt;p&gt;*Policy Network : $ \bigtriangledown_{\theta} log \pi(a_t | s_t; \theta) (R_t - V(s_t, \theta_v)) $&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Value Network : $ \bigtriangledown_{v} (R - V(s_t) $&lt;/li&gt;
+&lt;li&gt;Policy Network : $ \bigtriangledown_{\theta} log \pi(a_t | s_t; \theta) (R_t - V(s_t, \theta_v)) $&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Value Network : $ \bigtriangledown_{v} (R - V(s_t; \theta_v))^2 $&lt;/p&gt;
+&lt;p&gt;In this learning framework, parallel actor-learners updates a shared model and make learning process more robust and stable&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
