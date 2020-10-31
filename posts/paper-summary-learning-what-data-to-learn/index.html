@@ -20,6 +20,7 @@
 <link rel="icon" href="../../favicon.ico" sizes="16x16">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Sijan Bhandari">
 <link rel="prev" href="../paper-summary-curiosity-driven-exploration-by-self-supervised-prediction/" title="Paper Summary : Curiosity-driven Exploration by Self-supervised Prediction" type="text/html">
+<link rel="next" href="../paper-summary-proximal-policy-optimization-algorithms/" title="Paper Summary : Proximal Policy Optimization Algorithms" type="text/html">
 <meta property="og:site_name" content="CODEBUG">
 <meta property="og:title" content="Paper Summary : Learning What Data to Learn">
 <meta property="og:url" content="https://sijanb.com.np/posts/paper-summary-learning-what-data-to-learn/">
@@ -116,7 +117,7 @@ indicating whether a particular data instance in minibatch will be selected or n
 </ul>
 <p>The  NDF policy A(s,a, $ \Theta $) can be represented by a binary classification algorithm such as logistic regression or deep NN, where $ \Theta $ is policy parameter and it is updated as:</p>
 <p>$ \Theta \gets \Theta + \alpha V_t \sum_m \frac{\partial log P_{\Theta} (a_m|s_m)}{\partial \Theta} $</p>
-<p>and, V_t is the sampled estimation of reward R(s_t, a_t) from one episode.</p>
+<p>and, $ V_t $ is the sampled estimation of reward $ R(s_t, a_t) $ from one episode.</p>
 
 </div>
 </div>

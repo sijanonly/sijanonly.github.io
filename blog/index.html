@@ -58,7 +58,91 @@
     </header><main id="content" class="content" role="main"><div class="postindex">
 
 
-<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/paper-summary-learning-what-data-to-learn/">Paper Summary : Learning What Data to Learn</a></h2>
+<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/paper-summary-proximal-policy-optimization-algorithms/">Paper Summary : Proximal Policy Optimization Algorithms</a></h2>
+    </header><section class="post-excerpt"><div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Summary of the paper <a href="https://arxiv.org/abs/1707.06347">"Proximal Policy Optimization Algorithms"</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Motivation">Motivation<a class="anchor-link" href="../posts/paper-summary-proximal-policy-optimization-algorithms/#Motivation">¶</a>
+</h5>
+<p>Deep Q learning, 'Vanilla' Policy Gradient, REINFORCE are the examples of approaches for function approximation in RL. When it comes to RL, robustness and sample efficiency are the measures that defines effectivenss of the applied algorithm.</p>
+<p>In RL formulation, the agent needs to solve a task/problem in an envronment. Agent countinously interacts with the environment, which provides rewards to the agent, and thereafter agent learns a policy to navigate and tackle the problem. In every time step, RL agent has to make a decision by selecting preferrable action. To do so, agent fully relies on the information of current state and accumulated knowledge (history of rewards) up to current time step. Once the action is performed, the next state/observation is defined by some (stochastic) transition probability model. Also, reward will be signaled to the agent based on this new state information and performed action to get there. In overall, the goal of the agent is to maximize expected cumulative rewards.</p>
+<p>In terms of RL, this goal can be formulated as finding a policy $ \pi (a_t | s_t) $ such that expected reward $ \mathbb{E_{\pi_{\theta, \tau}}} [G_t] $ is maximized.</p>
+<p>In high dimensional/ countinous action space, policy gradient method can be used to solve this problem. In "vanilla" policy gradient method, the policy is parameterized by some parameter $ \theta $ .i.e parametric policy  $ \pi_{\theta} (a_t | s_t) $ and we directly optimize the policy by finding the optimal parameter $ \theta $.</p>
+<p>Even though 'Vanilla' policy gradient/ REINFORCE are simple/easier to implement, they come with some learning issues:</p>
+<p>PROBLEM : Usually give rise to high variance while estimating gradient. This is because, the objective function</p>
+<p>$ J(\theta) =  \mathbb{E_{\pi_{\theta, \tau}}} (G_t) $</p>
+<p>contains expectation; so we can't directly compute the exact gradient. We use stochatic gradient estimates such as REINFORCE based on some batch of trajectories. This sampling approximation adds some variance. That means, we need large number of trajectories to get the best estimation.
+In addition, we can see that collecting trajectories could be a problem in complex environments-might take long time to run.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Contribution">Contribution<a class="anchor-link" href="../posts/paper-summary-proximal-policy-optimization-algorithms/#Contribution">¶</a>
+</h5>
+<p>Authors have introduced a family of policy optimization methods which is build up on the basis of work of Trust-Region Policy optimization. Two main ideas:</p>
+<p>a. Clipped Surrogate Objective Function : It avoids large deviations of learned policy $ \pi_{\theta} $ from old policy $ \pi_{\theta old} $; which is formulated as:</p>
+<p>$ L^{clip}(\theta) = \mathbb{E}_t [ min (r_t (\theta) \hat{A_t}, clip(r_t(\theta), 1 - \epsilon, 1 + \epsilon) \hat{A_t}) ] $</p>
+<p>Here $ r_t(\theta) = \frac{\pi_{\theta}(a_t | s_t)}{\pi_{\theta old}(a_t | s_t)} $</p>
+<p>$ \epsilon $ is hyperparameter, which restricts the new policy from being too far from old policy. 
+ $ \hat{A_t} $ can be discounted return or advantage function.</p>
+<p>The clipping ensures the updates take place in "trust-region". Also, introduces less variance than vanilla gradient methods</p>
+<p>b. Multiple Epochs for policy update:</p>
+<p>PPO allows to run multiple epochs on the same trajectories and optimize the objective $ L^{clip}(\theta) $. This also reduces the sample inefficieny while learning. In order to collect data, PPO runs policy with parallel actors and then samples mini-batches of the data for training k-epochs using the objective function above.</p>
+<p>Let's observe the behaviour of the objective function based on changes in advantage function.</p>
+<p>CASE I : When $ \hat{A_t} $ is +ve :</p>
+<p>The objective function can be written as :</p>
+<p>$ L^{clip} (\theta) = min ( r_t(\theta), 1 + \epsilon ) \hat{A_t} $</p>
+<p>Since $\hat{A_t} $ is +ve, when the action occurrence likelihood increases (i.e. $ \pi_{\theta}(a_t | s_t) $), the whole objective value will also increase.
+ The min operator limits the increasing objective value. So, when  $ \pi_{\theta}(a_t | s_t) ) &gt; (1 + \epsilon) \pi_{\theta old}(a_t | s_t)  $, ceiling occurs at $ (1 + \epsilon) \hat{A_t} $</p>
+<p>CASE II : When $ \hat{A_t} $ is -ve :</p>
+<p>The objective function can be written as :</p>
+<p>$ L^{clip} (\theta) = max ( r_t(\theta), 1 - \epsilon ) \hat{A_t} $</p>
+<p>Now, the objective function value only increases when the likelihood of the action is less likely (i.e. $ if \pi_{\theta}(a_t | s_t) $ decreases, $ L^{clip} (\theta) $ increases )
+In this case, when $  (1 - \epsilon) \pi_{\theta old}(a_t | s_t) &gt; \pi_{\theta}(a_t | s_t) )   $, max operator limits the value at $ (1 - \epsilon) \pi_{\theta old}(a_t | s_t) \hat{A_t} $</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+    </section><footer class="post-meta">
+                Sijan Bhandari
+
+        on
+
+        <time class="post-date" datetime="2020-10-31T22:22:42+05:45">
+            2020-10-31 22:22
+        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/paper-summary-learning-what-data-to-learn/">Paper Summary : Learning What Data to Learn</a></h2>
     </header><section class="post-excerpt"><div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -108,7 +192,7 @@ indicating whether a particular data instance in minibatch will be selected or n
 </ul>
 <p>The  NDF policy A(s,a, $ \Theta $) can be represented by a binary classification algorithm such as logistic regression or deep NN, where $ \Theta $ is policy parameter and it is updated as:</p>
 <p>$ \Theta \gets \Theta + \alpha V_t \sum_m \frac{\partial log P_{\Theta} (a_m|s_m)}{\partial \Theta} $</p>
-<p>and, V_t is the sampled estimation of reward R(s_t, a_t) from one episode.</p>
+<p>and, $ V_t $ is the sampled estimation of reward $ R(s_t, a_t) $ from one episode.</p>
 
 </div>
 </div>
@@ -3519,348 +3603,6 @@ combinations from given data features.</li>
 
         <time class="post-date" datetime="2020-05-02T15:23:27+05:45">
             2020-05-02 15:23
-        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/">How do I know Principal Component Analysis (PCA) is preserving information from my data ?</a></h2>
-    </header><section class="post-excerpt"><div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Principal Component Analysis is used for dimension reduction of high-dimensional data. We also refer PCA as feature extraction technique, where new features take the linear combinations from original features.</p>
-<p>More on PCA : <a href="https://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/">principal-component-analysis-pca-for-visualization-using-python</a></p>
-<p>In this post, we will investigate 'how reliable the information is as preserved by PCA'. In order to do that, we will use labelled data and evaluate the trained model to see the final performance. (In side note, PCA is unsupervised learning algorithm. But, in our case, we are using in supervised fashion to assess the model performance)</p>
-<p>To make it more interesting, we will also see Random Forests as 'feature selection' and compare the result with PCA.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="1.-PCA-as-Feature-Extraction">1. PCA as Feature Extraction<a class="anchor-link" href="../posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/#1.-PCA-as-Feature-Extraction">¶</a>
-</h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [13]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
-
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="k">import</span> <span class="n">StandardScaler</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">accuracy_score</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">RandomForestClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="k">import</span> <span class="n">DecisionTreeClassifier</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
-    <span class="s1">'https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data'</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">','</span><span class="p">)</span>
-
-<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'CLASS'</span><span class="p">,</span> <span class="s1">'ALCOHOL_LEVEL'</span><span class="p">,</span> <span class="s1">'MALIC_ACID'</span><span class="p">,</span> <span class="s1">'ASH'</span><span class="p">,</span> <span class="s1">'ALCALINITY'</span><span class="p">,</span><span class="s1">'MAGNESIUM'</span><span class="p">,</span> <span class="s1">'PHENOLS'</span><span class="p">,</span> 
-              <span class="s1">'FLAVANOIDS'</span><span class="p">,</span> <span class="s1">'NON_FLAVANOID_PHENOL'</span><span class="p">,</span> <span class="s1">'PROANTHOCYANINS'</span><span class="p">,</span> <span class="s1">'COLOR_INTENSITY'</span><span class="p">,</span> 
-              <span class="s1">'HUE'</span><span class="p">,</span> <span class="s1">'OD280/OD315_DILUTED'</span><span class="p">,</span><span class="s1">'PROLINE'</span><span class="p">]</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[14]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead><tr style="text-align: right;">
-<th></th>
-      <th>CLASS</th>
-      <th>ALCOHOL_LEVEL</th>
-      <th>MALIC_ACID</th>
-      <th>ASH</th>
-      <th>ALCALINITY</th>
-      <th>MAGNESIUM</th>
-      <th>PHENOLS</th>
-      <th>FLAVANOIDS</th>
-      <th>NON_FLAVANOID_PHENOL</th>
-      <th>PROANTHOCYANINS</th>
-      <th>COLOR_INTENSITY</th>
-      <th>HUE</th>
-      <th>OD280/OD315_DILUTED</th>
-      <th>PROLINE</th>
-    </tr></thead>
-<tbody>
-<tr>
-<th>0</th>
-      <td>1</td>
-      <td>14.23</td>
-      <td>1.71</td>
-      <td>2.43</td>
-      <td>15.6</td>
-      <td>127</td>
-      <td>2.80</td>
-      <td>3.06</td>
-      <td>0.28</td>
-      <td>2.29</td>
-      <td>5.64</td>
-      <td>1.04</td>
-      <td>3.92</td>
-      <td>1065</td>
-    </tr>
-<tr>
-<th>1</th>
-      <td>1</td>
-      <td>13.20</td>
-      <td>1.78</td>
-      <td>2.14</td>
-      <td>11.2</td>
-      <td>100</td>
-      <td>2.65</td>
-      <td>2.76</td>
-      <td>0.26</td>
-      <td>1.28</td>
-      <td>4.38</td>
-      <td>1.05</td>
-      <td>3.40</td>
-      <td>1050</td>
-    </tr>
-<tr>
-<th>2</th>
-      <td>1</td>
-      <td>13.16</td>
-      <td>2.36</td>
-      <td>2.67</td>
-      <td>18.6</td>
-      <td>101</td>
-      <td>2.80</td>
-      <td>3.24</td>
-      <td>0.30</td>
-      <td>2.81</td>
-      <td>5.68</td>
-      <td>1.03</td>
-      <td>3.17</td>
-      <td>1185</td>
-    </tr>
-<tr>
-<th>3</th>
-      <td>1</td>
-      <td>14.37</td>
-      <td>1.95</td>
-      <td>2.50</td>
-      <td>16.8</td>
-      <td>113</td>
-      <td>3.85</td>
-      <td>3.49</td>
-      <td>0.24</td>
-      <td>2.18</td>
-      <td>7.80</td>
-      <td>0.86</td>
-      <td>3.45</td>
-      <td>1480</td>
-    </tr>
-<tr>
-<th>4</th>
-      <td>1</td>
-      <td>13.24</td>
-      <td>2.59</td>
-      <td>2.87</td>
-      <td>21.0</td>
-      <td>118</td>
-      <td>2.80</td>
-      <td>2.69</td>
-      <td>0.39</td>
-      <td>1.82</td>
-      <td>4.32</td>
-      <td>1.04</td>
-      <td>2.93</td>
-      <td>735</td>
-    </tr>
-</tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [15]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'ALCOHOL_LEVEL'</span><span class="p">,</span> <span class="s1">'MALIC_ACID'</span><span class="p">,</span> <span class="s1">'ASH'</span><span class="p">,</span> <span class="s1">'ALCALINITY'</span><span class="p">,</span><span class="s1">'MAGNESIUM'</span><span class="p">,</span> <span class="s1">'PHENOLS'</span><span class="p">,</span> 
-              <span class="s1">'FLAVANOIDS'</span><span class="p">,</span> <span class="s1">'NON_FLAVANOID_PHENOL'</span><span class="p">,</span> <span class="s1">'PROANTHOCYANINS'</span><span class="p">,</span> <span class="s1">'COLOR_INTENSITY'</span><span class="p">,</span> 
-              <span class="s1">'HUE'</span><span class="p">,</span> <span class="s1">'OD280/OD315_DILUTED'</span><span class="p">,</span><span class="s1">'PROLINE'</span><span class="p">]</span>
-<span class="n">label</span> <span class="o">=</span> <span class="s1">'CLASS'</span>
-
-<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">features</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">label</span><span class="p">]</span>
-
-<span class="c1"># train test split with 70% for training</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="a.-Preparing-Projected-data-using-PCA">a. Preparing Projected data using PCA<a class="anchor-link" href="../posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/#a.-Preparing-Projected-data-using-PCA">¶</a>
-</h5>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [16]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># prepare correlation matrix</span>
-<span class="c1"># standar scaler for normalization</span>
-<span class="n">N</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span>
-<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
-<span class="n">Z</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<span class="c1"># Correlation estimation</span>
-<span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Z</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span> <span class="o">/</span> <span class="n">N</span>
-
-<span class="c1"># eigendecomposition</span>
-<span class="n">eigen_values</span><span class="p">,</span> <span class="n">eigen_vectors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
-
-<span class="c1"># prepare projection matrix</span>
-<span class="n">value_idx</span> <span class="o">=</span> <span class="n">eigen_values</span><span class="o">.</span><span class="n">argsort</span><span class="p">()[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">eigen_vectors_sorted</span> <span class="o">=</span> <span class="n">eigen_vectors</span><span class="p">[:,</span> <span class="n">value_idx</span><span class="p">]</span>
-
-<span class="c1"># Projection matrix with 3 PCs ( 3 PCs cover 65% variance in the data)</span>
-<span class="c1"># more on : https://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/</span>
-<span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">eigen_vectors_sorted</span><span class="p">[</span><span class="mi">0</span><span class="p">][:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span>
-               <span class="n">eigen_vectors_sorted</span><span class="p">[</span><span class="mi">1</span><span class="p">][:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span>
-               <span class="n">eigen_vectors_sorted</span><span class="p">[</span><span class="mi">2</span><span class="p">][:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]))</span>
-
-<span class="c1"># projected data</span>
-<span class="n">projected_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asmatrix</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">asmatrix</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="b.-Using-Projected-data-for-the-training-and-prediction-using-Decision-Tree">b. Using Projected data for the training and prediction using Decision Tree<a class="anchor-link" href="../posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/#b.-Using-Projected-data-for-the-training-and-prediction-using-Decision-Tree">¶</a>
-</h5>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [17]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># train test split for training</span>
-<span class="n">Xpc_train</span><span class="p">,</span> <span class="n">Xpc_test</span><span class="p">,</span> <span class="n">ypc_train</span><span class="p">,</span> <span class="n">ypc_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span> <span class="n">projected_data</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-
-<span class="n">tree_pca</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">tree_pca</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xpc_train</span><span class="p">,</span> <span class="n">ypc_train</span><span class="p">)</span>
-
-<span class="n">ypca_pred</span> <span class="o">=</span> <span class="n">tree_pca</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xpc_test</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Test accuracy using Decision tree on PCA projected data: </span><span class="si">%.2f</span><span class="s1">'</span> <span class="o">%</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">ypc_test</span><span class="p">,</span> <span class="n">ypca_pred</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Test accuracy using Decision tree on PCA projected data: 0.76
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="../posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/">Read more…</a></p>
-</div>
-</div>
-</div>
-</div>
-    </section><footer class="post-meta">
-                Sijan Bhandari
-
-        on
-                <a href="../categories/decision-tree/">#decision-tree</a>,
-                <a href="../categories/principal-component-analysis/">#principal-component-analysis</a>,
-                <a href="../categories/random-forest/">#random-forest</a>,
-
-        <time class="post-date" datetime="2020-03-28T23:02:59+05:45">
-            2020-03-28 23:02
         </time></footer></article>
 </div>
 

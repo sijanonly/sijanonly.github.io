@@ -1,5 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>CODEBUG</title><link>https://sijanb.com.np/</link><description>Data Exploration...</description><atom:link type="application/rss+xml" rel="self" href="https://sijanb.com.np/rss.xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Sat, 31 Oct 2020 16:36:18 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Paper Summary : Learning What Data to Learn</title><link>https://sijanb.com.np/posts/paper-summary-learning-what-data-to-learn/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>CODEBUG</title><link>https://sijanb.com.np/</link><description>Data Exploration...</description><atom:link type="application/rss+xml" href="https://sijanb.com.np/rss.xml" rel="self"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Sat, 31 Oct 2020 20:17:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Paper Summary : Proximal Policy Optimization Algorithms</title><link>https://sijanb.com.np/posts/paper-summary-proximal-policy-optimization-algorithms/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Summary of the paper &lt;a href="https://arxiv.org/abs/1707.06347"&gt;"Proximal Policy Optimization Algorithms"&lt;/a&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h5 id="Motivation"&gt;Motivation&lt;a class="anchor-link" href="https://sijanb.com.np/posts/paper-summary-proximal-policy-optimization-algorithms/#Motivation"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Deep Q learning, 'Vanilla' Policy Gradient, REINFORCE are the examples of approaches for function approximation in RL. When it comes to RL, robustness and sample efficiency are the measures that defines effectivenss of the applied algorithm.&lt;/p&gt;
+&lt;p&gt;In RL formulation, the agent needs to solve a task/problem in an envronment. Agent countinously interacts with the environment, which provides rewards to the agent, and thereafter agent learns a policy to navigate and tackle the problem. In every time step, RL agent has to make a decision by selecting preferrable action. To do so, agent fully relies on the information of current state and accumulated knowledge (history of rewards) up to current time step. Once the action is performed, the next state/observation is defined by some (stochastic) transition probability model. Also, reward will be signaled to the agent based on this new state information and performed action to get there. In overall, the goal of the agent is to maximize expected cumulative rewards.&lt;/p&gt;
+&lt;p&gt;In terms of RL, this goal can be formulated as finding a policy $ \pi (a_t | s_t) $ such that expected reward $ \mathbb{E_{\pi_{\theta, \tau}}} [G_t] $ is maximized.&lt;/p&gt;
+&lt;p&gt;In high dimensional/ countinous action space, policy gradient method can be used to solve this problem. In "vanilla" policy gradient method, the policy is parameterized by some parameter $ \theta $ .i.e parametric policy  $ \pi_{\theta} (a_t | s_t) $ and we directly optimize the policy by finding the optimal parameter $ \theta $.&lt;/p&gt;
+&lt;p&gt;Even though 'Vanilla' policy gradient/ REINFORCE are simple/easier to implement, they come with some learning issues:&lt;/p&gt;
+&lt;p&gt;PROBLEM : Usually give rise to high variance while estimating gradient. This is because, the objective function&lt;/p&gt;
+&lt;p&gt;$ J(\theta) =  \mathbb{E_{\pi_{\theta, \tau}}} (G_t) $&lt;/p&gt;
+&lt;p&gt;contains expectation; so we can't directly compute the exact gradient. We use stochatic gradient estimates such as REINFORCE based on some batch of trajectories. This sampling approximation adds some variance. That means, we need large number of trajectories to get the best estimation.
+In addition, we can see that collecting trajectories could be a problem in complex environments-might take long time to run.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h5 id="Contribution"&gt;Contribution&lt;a class="anchor-link" href="https://sijanb.com.np/posts/paper-summary-proximal-policy-optimization-algorithms/#Contribution"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Authors have introduced a family of policy optimization methods which is build up on the basis of work of Trust-Region Policy optimization. Two main ideas:&lt;/p&gt;
+&lt;p&gt;a. Clipped Surrogate Objective Function : It avoids large deviations of learned policy $ \pi_{\theta} $ from old policy $ \pi_{\theta old} $; which is formulated as:&lt;/p&gt;
+&lt;p&gt;$ L^{clip}(\theta) = \mathbb{E}_t [ min (r_t (\theta) \hat{A_t}, clip(r_t(\theta), 1 - \epsilon, 1 + \epsilon) \hat{A_t}) ] $&lt;/p&gt;
+&lt;p&gt;Here $ r_t(\theta) = \frac{\pi_{\theta}(a_t | s_t)}{\pi_{\theta old}(a_t | s_t)} $&lt;/p&gt;
+&lt;p&gt;$ \epsilon $ is hyperparameter, which restricts the new policy from being too far from old policy. 
+ $ \hat{A_t} $ can be discounted return or advantage function.&lt;/p&gt;
+&lt;p&gt;The clipping ensures the updates take place in "trust-region". Also, introduces less variance than vanilla gradient methods&lt;/p&gt;
+&lt;p&gt;b. Multiple Epochs for policy update:&lt;/p&gt;
+&lt;p&gt;PPO allows to run multiple epochs on the same trajectories and optimize the objective $ L^{clip}(\theta) $. This also reduces the sample inefficieny while learning. In order to collect data, PPO runs policy with parallel actors and then samples mini-batches of the data for training k-epochs using the objective function above.&lt;/p&gt;
+&lt;p&gt;Let's observe the behaviour of the objective function based on changes in advantage function.&lt;/p&gt;
+&lt;p&gt;CASE I : When $ \hat{A_t} $ is +ve :&lt;/p&gt;
+&lt;p&gt;The objective function can be written as :&lt;/p&gt;
+&lt;p&gt;$ L^{clip} (\theta) = min ( r_t(\theta), 1 + \epsilon ) \hat{A_t} $&lt;/p&gt;
+&lt;p&gt;Since $\hat{A_t} $ is +ve, when the action occurrence likelihood increases (i.e. $ \pi_{\theta}(a_t | s_t) $), the whole objective value will also increase.
+ The min operator limits the increasing objective value. So, when  $ \pi_{\theta}(a_t | s_t) ) &amp;gt; (1 + \epsilon) \pi_{\theta old}(a_t | s_t)  $, ceiling occurs at $ (1 + \epsilon) \hat{A_t} $&lt;/p&gt;
+&lt;p&gt;CASE II : When $ \hat{A_t} $ is -ve :&lt;/p&gt;
+&lt;p&gt;The objective function can be written as :&lt;/p&gt;
+&lt;p&gt;$ L^{clip} (\theta) = max ( r_t(\theta), 1 - \epsilon ) \hat{A_t} $&lt;/p&gt;
+&lt;p&gt;Now, the objective function value only increases when the likelihood of the action is less likely (i.e. $ if \pi_{\theta}(a_t | s_t) $ decreases, $ L^{clip} (\theta) $ increases )
+In this case, when $  (1 - \epsilon) \pi_{\theta old}(a_t | s_t) &amp;gt; \pi_{\theta}(a_t | s_t) )   $, max operator limits the value at $ (1 - \epsilon) \pi_{\theta old}(a_t | s_t) \hat{A_t} $&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/paper-summary-proximal-policy-optimization-algorithms/</guid><pubDate>Sat, 31 Oct 2020 16:37:42 GMT</pubDate></item><item><title>Paper Summary : Learning What Data to Learn</title><link>https://sijanb.com.np/posts/paper-summary-learning-what-data-to-learn/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Summary of the paper &lt;a href="https://arxiv.org/pdf/1702.08635.pdf"&gt;"Learning What Data to Learn"&lt;/a&gt;&lt;/p&gt;
@@ -35,7 +98,7 @@ indicating whether a particular data instance in minibatch will be selected or n
 &lt;/ul&gt;
 &lt;p&gt;The  NDF policy A(s,a, $ \Theta $) can be represented by a binary classification algorithm such as logistic regression or deep NN, where $ \Theta $ is policy parameter and it is updated as:&lt;/p&gt;
 &lt;p&gt;$ \Theta \gets \Theta + \alpha V_t \sum_m \frac{\partial log P_{\Theta} (a_m|s_m)}{\partial \Theta} $&lt;/p&gt;
-&lt;p&gt;and, V_t is the sampled estimation of reward R(s_t, a_t) from one episode.&lt;/p&gt;
+&lt;p&gt;and, $ V_t $ is the sampled estimation of reward $ R(s_t, a_t) $ from one episode.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -3230,318 +3293,4 @@ combinations from given data features.&lt;/li&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/k-nearest-neighbors-algorithm-using-python-and-scikit-learn/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>kNN</category><category>machine-learning</category><guid>https://sijanb.com.np/posts/k-nearest-neighbors-algorithm-using-python-and-scikit-learn/</guid><pubDate>Sat, 02 May 2020 09:38:27 GMT</pubDate></item><item><title>How do I know Principal Component Analysis (PCA) is preserving information from my data ?</title><link>https://sijanb.com.np/posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Principal Component Analysis is used for dimension reduction of high-dimensional data. We also refer PCA as feature extraction technique, where new features take the linear combinations from original features.&lt;/p&gt;
-&lt;p&gt;More on PCA : &lt;a href="https://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/"&gt;principal-component-analysis-pca-for-visualization-using-python&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;In this post, we will investigate 'how reliable the information is as preserved by PCA'. In order to do that, we will use labelled data and evaluate the trained model to see the final performance. (In side note, PCA is unsupervised learning algorithm. But, in our case, we are using in supervised fashion to assess the model performance)&lt;/p&gt;
-&lt;p&gt;To make it more interesting, we will also see Random Forests as 'feature selection' and compare the result with PCA.&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="1.-PCA-as-Feature-Extraction"&gt;1. PCA as Feature Extraction&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/#1.-PCA-as-Feature-Extraction"&gt;¶&lt;/a&gt;&lt;/h4&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [13]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
-
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;seaborn&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sns&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt; 
-
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.preprocessing&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;StandardScaler&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.model_selection&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;train_test_split&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.metrics&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;accuracy_score&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.ensemble&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;RandomForestClassifier&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.tree&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;DecisionTreeClassifier&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [14]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="s1"&gt;'https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;header&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sep&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;','&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'CLASS'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'ALCOHOL_LEVEL'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'MALIC_ACID'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'ASH'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'ALCALINITY'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'MAGNESIUM'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'PHENOLS'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
-              &lt;span class="s1"&gt;'FLAVANOIDS'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'NON_FLAVANOID_PHENOL'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'PROANTHOCYANINS'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'COLOR_INTENSITY'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
-              &lt;span class="s1"&gt;'HUE'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'OD280/OD315_DILUTED'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'PROLINE'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;
-
-    &lt;div class="prompt output_prompt"&gt;Out[14]:&lt;/div&gt;
-
-
-
-&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
-&lt;div&gt;
-&lt;style scoped&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border="1" class="dataframe"&gt;
-  &lt;thead&gt;
-    &lt;tr style="text-align: right;"&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;CLASS&lt;/th&gt;
-      &lt;th&gt;ALCOHOL_LEVEL&lt;/th&gt;
-      &lt;th&gt;MALIC_ACID&lt;/th&gt;
-      &lt;th&gt;ASH&lt;/th&gt;
-      &lt;th&gt;ALCALINITY&lt;/th&gt;
-      &lt;th&gt;MAGNESIUM&lt;/th&gt;
-      &lt;th&gt;PHENOLS&lt;/th&gt;
-      &lt;th&gt;FLAVANOIDS&lt;/th&gt;
-      &lt;th&gt;NON_FLAVANOID_PHENOL&lt;/th&gt;
-      &lt;th&gt;PROANTHOCYANINS&lt;/th&gt;
-      &lt;th&gt;COLOR_INTENSITY&lt;/th&gt;
-      &lt;th&gt;HUE&lt;/th&gt;
-      &lt;th&gt;OD280/OD315_DILUTED&lt;/th&gt;
-      &lt;th&gt;PROLINE&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;0&lt;/th&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;14.23&lt;/td&gt;
-      &lt;td&gt;1.71&lt;/td&gt;
-      &lt;td&gt;2.43&lt;/td&gt;
-      &lt;td&gt;15.6&lt;/td&gt;
-      &lt;td&gt;127&lt;/td&gt;
-      &lt;td&gt;2.80&lt;/td&gt;
-      &lt;td&gt;3.06&lt;/td&gt;
-      &lt;td&gt;0.28&lt;/td&gt;
-      &lt;td&gt;2.29&lt;/td&gt;
-      &lt;td&gt;5.64&lt;/td&gt;
-      &lt;td&gt;1.04&lt;/td&gt;
-      &lt;td&gt;3.92&lt;/td&gt;
-      &lt;td&gt;1065&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;1&lt;/th&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;13.20&lt;/td&gt;
-      &lt;td&gt;1.78&lt;/td&gt;
-      &lt;td&gt;2.14&lt;/td&gt;
-      &lt;td&gt;11.2&lt;/td&gt;
-      &lt;td&gt;100&lt;/td&gt;
-      &lt;td&gt;2.65&lt;/td&gt;
-      &lt;td&gt;2.76&lt;/td&gt;
-      &lt;td&gt;0.26&lt;/td&gt;
-      &lt;td&gt;1.28&lt;/td&gt;
-      &lt;td&gt;4.38&lt;/td&gt;
-      &lt;td&gt;1.05&lt;/td&gt;
-      &lt;td&gt;3.40&lt;/td&gt;
-      &lt;td&gt;1050&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;2&lt;/th&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;13.16&lt;/td&gt;
-      &lt;td&gt;2.36&lt;/td&gt;
-      &lt;td&gt;2.67&lt;/td&gt;
-      &lt;td&gt;18.6&lt;/td&gt;
-      &lt;td&gt;101&lt;/td&gt;
-      &lt;td&gt;2.80&lt;/td&gt;
-      &lt;td&gt;3.24&lt;/td&gt;
-      &lt;td&gt;0.30&lt;/td&gt;
-      &lt;td&gt;2.81&lt;/td&gt;
-      &lt;td&gt;5.68&lt;/td&gt;
-      &lt;td&gt;1.03&lt;/td&gt;
-      &lt;td&gt;3.17&lt;/td&gt;
-      &lt;td&gt;1185&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;3&lt;/th&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;14.37&lt;/td&gt;
-      &lt;td&gt;1.95&lt;/td&gt;
-      &lt;td&gt;2.50&lt;/td&gt;
-      &lt;td&gt;16.8&lt;/td&gt;
-      &lt;td&gt;113&lt;/td&gt;
-      &lt;td&gt;3.85&lt;/td&gt;
-      &lt;td&gt;3.49&lt;/td&gt;
-      &lt;td&gt;0.24&lt;/td&gt;
-      &lt;td&gt;2.18&lt;/td&gt;
-      &lt;td&gt;7.80&lt;/td&gt;
-      &lt;td&gt;0.86&lt;/td&gt;
-      &lt;td&gt;3.45&lt;/td&gt;
-      &lt;td&gt;1480&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;4&lt;/th&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;13.24&lt;/td&gt;
-      &lt;td&gt;2.59&lt;/td&gt;
-      &lt;td&gt;2.87&lt;/td&gt;
-      &lt;td&gt;21.0&lt;/td&gt;
-      &lt;td&gt;118&lt;/td&gt;
-      &lt;td&gt;2.80&lt;/td&gt;
-      &lt;td&gt;2.69&lt;/td&gt;
-      &lt;td&gt;0.39&lt;/td&gt;
-      &lt;td&gt;1.82&lt;/td&gt;
-      &lt;td&gt;4.32&lt;/td&gt;
-      &lt;td&gt;1.04&lt;/td&gt;
-      &lt;td&gt;2.93&lt;/td&gt;
-      &lt;td&gt;735&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [15]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;features&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'ALCOHOL_LEVEL'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'MALIC_ACID'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'ASH'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'ALCALINITY'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'MAGNESIUM'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'PHENOLS'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
-              &lt;span class="s1"&gt;'FLAVANOIDS'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'NON_FLAVANOID_PHENOL'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'PROANTHOCYANINS'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'COLOR_INTENSITY'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
-              &lt;span class="s1"&gt;'HUE'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'OD280/OD315_DILUTED'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'PROLINE'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="n"&gt;label&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'CLASS'&lt;/span&gt;
-
-&lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;features&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;label&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-
-&lt;span class="c1"&gt;# train test split with 70% for training&lt;/span&gt;
-&lt;span class="n"&gt;X_train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;X_test&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_test&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;train_test_split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;test_size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;0.3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;random_state&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="a.-Preparing-Projected-data-using-PCA"&gt;a. Preparing Projected data using PCA&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/#a.-Preparing-Projected-data-using-PCA"&gt;¶&lt;/a&gt;&lt;/h5&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [16]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# prepare correlation matrix&lt;/span&gt;
-&lt;span class="c1"&gt;# standar scaler for normalization&lt;/span&gt;
-&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;_&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt;
-&lt;span class="n"&gt;scaler&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;StandardScaler&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;Z&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;scaler&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit_transform&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="c1"&gt;# Correlation estimation&lt;/span&gt;
-&lt;span class="n"&gt;R&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Z&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;T&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Z&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;N&lt;/span&gt;
-
-&lt;span class="c1"&gt;# eigendecomposition&lt;/span&gt;
-&lt;span class="n"&gt;eigen_values&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;eigen_vectors&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;linalg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;eig&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;R&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="c1"&gt;# prepare projection matrix&lt;/span&gt;
-&lt;span class="n"&gt;value_idx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;eigen_values&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argsort&lt;/span&gt;&lt;span class="p"&gt;()[::&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="n"&gt;eigen_vectors_sorted&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;eigen_vectors&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt; &lt;span class="n"&gt;value_idx&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-
-&lt;span class="c1"&gt;# Projection matrix with 3 PCs ( 3 PCs cover 65% variance in the data)&lt;/span&gt;
-&lt;span class="c1"&gt;# more on : https://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/&lt;/span&gt;
-&lt;span class="n"&gt;M&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;hstack&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;eigen_vectors_sorted&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;][:,&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;newaxis&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-               &lt;span class="n"&gt;eigen_vectors_sorted&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;][:,&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;newaxis&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-               &lt;span class="n"&gt;eigen_vectors_sorted&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;][:,&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;newaxis&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
-
-&lt;span class="c1"&gt;# projected data&lt;/span&gt;
-&lt;span class="n"&gt;projected_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;asmatrix&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Z&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;asmatrix&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;M&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="b.-Using-Projected-data-for-the-training-and-prediction-using-Decision-Tree"&gt;b. Using Projected data for the training and prediction using Decision Tree&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/#b.-Using-Projected-data-for-the-training-and-prediction-using-Decision-Tree"&gt;¶&lt;/a&gt;&lt;/h5&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [17]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# train test split for training&lt;/span&gt;
-&lt;span class="n"&gt;Xpc_train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Xpc_test&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ypc_train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ypc_test&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;train_test_split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;projected_data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;test_size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;0.3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;random_state&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="n"&gt;tree_pca&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;DecisionTreeClassifier&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;max_depth&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;random_state&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;tree_pca&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Xpc_train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ypc_train&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="n"&gt;ypca_pred&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tree_pca&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;predict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Xpc_test&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'Test accuracy using Decision tree on PCA projected data: &lt;/span&gt;&lt;span class="si"&gt;%.2f&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;accuracy_score&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ypc_test&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ypca_pred&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;
-
-    &lt;div class="prompt"&gt;&lt;/div&gt;
-
-
-&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
-&lt;pre&gt;Test accuracy using Decision tree on PCA projected data: 0.76
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>decision-tree</category><category>principal-component-analysis</category><category>random-forest</category><guid>https://sijanb.com.np/posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/</guid><pubDate>Sat, 28 Mar 2020 17:17:59 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/k-nearest-neighbors-algorithm-using-python-and-scikit-learn/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>kNN</category><category>machine-learning</category><guid>https://sijanb.com.np/posts/k-nearest-neighbors-algorithm-using-python-and-scikit-learn/</guid><pubDate>Sat, 02 May 2020 09:38:27 GMT</pubDate></item></channel></rss>
