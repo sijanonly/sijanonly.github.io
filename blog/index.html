@@ -58,7 +58,7 @@
     </header><main id="content" class="content" role="main"><div class="postindex">
 
 
-<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/paper-summary-policy-gradient-methods-for/">Paper Summary : Policy Gradient Methods for</a></h2>
+<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/paper-summary-policy-gradient-methods-for-rl-with-function-approximation/">Paper Summary : Policy Gradient Methods for Reinforcement Learning with Function Approximation</a></h2>
     </header><section class="post-excerpt"><div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -75,7 +75,7 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="Motivation">Motivation<a class="anchor-link" href="../posts/paper-summary-policy-gradient-methods-for/#Motivation">¶</a>
+<h5 id="Motivation">Motivation<a class="anchor-link" href="../posts/paper-summary-policy-gradient-methods-for-rl-with-function-approximation/#Motivation">¶</a>
 </h5>
 <p>Reinforcement Learning (RL) solves the problem of learning through experiments in the (dynamic) environments. The learner objective is to find an optimal policy which can guide the agent for the nagivation. This optimal policy is formulated in terms of maximizing future reward of the agent. Value-function $ V_{\pi} (s) $ and action-value function $ Q_{\pi}(s,a) $ are the measure of potential future rewards.</p>
 <ul>
@@ -90,11 +90,11 @@
 <p>In a large scale RL problem, maintaining lookup table will lead to the the problem of 'curse of dimensionality'. Currently, this problem is solved using function approximation. The function approximation tries to generalize the estimation of value of state or state-action value based on a set of features in a given state/observations. Most of the existing approaches follow the idea of approximating the value function and then deriving policy out of it. Authors have pointed out two major limitations of this approach:</p>
 <p>a. This approach focused towards finding deterministic policy, which might not be the case for complex problems/environments.
  b. Small variation in the value estimation might cause different action selection; derived policy is sensitive.</p>
-<h5 id="Contribution">Contribution<a class="anchor-link" href="../posts/paper-summary-policy-gradient-methods-for/#Contribution">¶</a>
+<h5 id="Contribution">Contribution<a class="anchor-link" href="../posts/paper-summary-policy-gradient-methods-for-rl-with-function-approximation/#Contribution">¶</a>
 </h5>
 <p>Authors proposed an alternative way to approximate policy directly using parameterized function. So, we won't be storing any Q-values in a table, but, learnt using a function approximator. For an example, the policy can be represented by a Neural Network (NN) where we can feed state as input and get probability distribution for action selection as output. Considering $ \theta $ as parameters of the NN, representing the policy and $ \rho $ as its performance measure (which can be a loss function), then the parameter $ \theta $ will be updated as:</p>
 <p>$ \theta_{t+1} \gets \theta_t + \alpha \frac{\partial {\rho}}{ \partial{\theta}} $</p>
-<h6 id="Policy-Gradient-Theorem:">Policy Gradient Theorem:<a class="anchor-link" href="../posts/paper-summary-policy-gradient-methods-for/#Policy-Gradient-Theorem:">¶</a>
+<h6 id="Policy-Gradient-Theorem:">Policy Gradient Theorem:<a class="anchor-link" href="../posts/paper-summary-policy-gradient-methods-for-rl-with-function-approximation/#Policy-Gradient-Theorem:">¶</a>
 </h6>
 <p>For any Markov Decision Process (MDP),</p>
 <p>$ \nabla_{\theta} J(\theta) = \frac{\partial {\rho(\pi)}}{ \partial{\theta}} = \underset{s} \sum d^{\pi} (s)  \underset{a} \sum \frac{\partial{\pi(s,a)}}{\partial(\theta)} Q^{\pi}(s,a) $ ----------(a)</p>

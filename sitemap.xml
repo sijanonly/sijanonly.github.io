@@ -23,7 +23,7 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/archive.html</loc>
-  <lastmod>2020-10-31T21:14:00Z</lastmod>
+  <lastmod>2020-10-31T21:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/</loc>
@@ -31,11 +31,11 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/index-1.html</loc>
-  <lastmod>2020-10-31T21:14:00Z</lastmod>
+  <lastmod>2020-10-31T21:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/index-2.html</loc>
-  <lastmod>2020-10-31T21:14:00Z</lastmod>
+  <lastmod>2020-10-31T21:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/</loc>
@@ -188,6 +188,10 @@
  <url>
   <loc>https://sijanb.com.np/posts/paper-summary-learning-what-data-to-learn/</loc>
   <lastmod>2020-10-31T16:36:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/posts/paper-summary-policy-gradient-methods-for-rl-with-function-approximation/</loc>
+  <lastmod>2020-10-31T21:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/paper-summary-policy-gradient-methods-for/</loc>
