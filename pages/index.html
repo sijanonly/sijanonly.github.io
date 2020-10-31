@@ -1,5 +1,5 @@
 <!--
-.. title: index
+.. title: Sijan Bhandari
 .. slug: index
 .. date: 2018-09-27 13:46:56 UTC+05:45
 .. tags: 
@@ -29,23 +29,24 @@
     <meta name="copyright" content="sijanb.com.np 2017" />
     <meta name="application-name" content="Personal website for Sijan Bhandari" />
 
-    <!-- for Facebook -->          
+    <!-- for Facebook -->
     <meta property="og:title" content="Sijan Bhandari - Compute Engineer" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="http://sijanb.com.np/static/img/profile2.jpg" />
     <meta property="og:url" content="sijanb.com.np" />
     <meta property="og:description" content="Personal website" />
 
-    <!-- for Twitter -->          
+    <!-- for Twitter -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Personal website for Sijan Bhandari" />
     <meta name="twitter:description" content="Personal website" />
-    <meta name="twitter:image" content="http://sijanb.com.np/static/img/profile2.jpg" />
+    <meta name="twitter:image" content="https://sijanb.com.np/static/img/profile2.jpg" />
 
-    <title>Sijan Bhandari - Computer Engineer</title>
+    <title>Sijan Bhandari</title>
 
     <!-- Bootstrap Core CSS -->
-     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous"> 
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous">
 
     <!-- Theme CSS -->
     <link href="/assets/css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -54,7 +55,8 @@
     <!-- Custom Fonts -->
     <link href="/assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -63,63 +65,86 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style type="text/css">
+        .bg-overlay {
+            background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)),
+            url('{% static 'img/profile2.jpg' %}');
+            background-repeat: no-repeat;
+            background-size: cover;
+            /*background-position: center center;*/
+            color: #fff;
+            height: 450px;
+            padding-top: 50px;
+            width: 100%;
+        }
 
-.bg-overlay {
-    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('{% static 'img/profile2.jpg' %}');
-    background-repeat: no-repeat;
-    background-size: cover;
-    /*background-position: center center;*/
-    color: #fff;
-    height: 450px;
-    padding-top: 50px;
-    width:100%;
-}
+        #about p {
+            font-size: 15px;
+        }
 
-#about p{
-    font-size: 15px;
-}
+        #blog a {
 
-#blog a {
+            font-size: 16px;
+        }
 
-    font-size: 16px;
-}
+        h1 {
+            text-align: center;
+        }
 
-h1 {
-  text-align:center;
-}
-.row {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
+        .row {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
 
-.photo {
-  border-radius: 45px;
-  margin-right: 20px;
-  width: 90px;
-  height:90px
-}
-.form-control { 
-  width:30%;
-  display: inline-block;
-  margin-right:10px;
-}
-.name {
-  font-weight: 700;
-}
-.expertise-label {
-  display:block;
-  font-weight: 700;
-  margin-top:10px;
-}
-.btn-more {
-  margin-top:10px;
-  width: 100%
-}
-.label {
-  font-weight: normal;
-}
+        .photo {
+            border-radius: 45px;
+            margin-right: 20px;
+            width: 90px;
+            height: 90px
+        }
 
+        .form-control {
+            width: 30%;
+            display: inline-block;
+            margin-right: 10px;
+        }
 
+        .name {
+            font-weight: 700;
+        }
+
+        .expertise-label {
+            display: block;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        .btn-more {
+            margin-top: 10px;
+            width: 100%
+        }
+
+        .label {
+            font-weight: normal;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        hr {
+            margin: 1em 0;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            width: 40%;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
     </style>
 
 
@@ -128,107 +153,411 @@ h1 {
 
 <body id="page-top" class="index">
 
-  
+
+    <!-- About Section -->
+    <section class="success" id="about" style="">
+        <div class="container">
 
 
-    <!-- Portfolio Grid Section -->
-    <section id="portfolio">
+            <div class="row" style="">
+
+                <div class="" style="">
+                    <a href="#AboutMeModal1" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img style="height:auto"
+                            src="https://pbs.twimg.com/profile_images/1121357368204328960/_G91rjPS_400x400.png"
+                            class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="" style="">
+                    <div class="modal-body">
+
+                        <p style=""> I am doing my Master in Computer Science at <a href="https://www.uni-kl.de/en/"
+                                target="__blank">Technical University of Kaiserslautern</a>,Germany with specialization
+                            in Artificial Intelligence and Data Vizualization.</p>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="success" id="recentposts" style="">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Portfolio</h2>
-                    <hr class="star-primary">
+                    <h2>Recent Posts</h2>
+                    <hr class="star-light" style="margin:1em 0;">
                 </div>
             </div>
+
+          <div class="row">
+
+            <div class="card-container" style="margin-left: 10px;
+            margin-right: 10px;
+            display: flex;">
+                <div class="card" style=" height: auto;
+                width: 300px;
+                background-color:#e8dede17;
+                margin-left: 10px;
+                margin-right: 10px;
+                margin-top: 20px;">
+                  
+                    <div class="container" style="padding: 2px 16px;">
+                        <h6><b><a target="_blank" href="https://sijanb.com.np/posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data">Illustrating 'Principal Component Analysis (PCA) preserves information from data'
+                        </a></b></h6> 
+                        <p>...</p> 
+
+                        <ul class="tags">
+                            <li><a href="#" class="tag">PCA</a></li>
+                            <li><a href="#" class="tag">Random Forest</a></li>
+                            <li><a href="#" class="tag">Decision Tree</a></li>
+                          </ul>
+                      </div>
+                </div>
+                <div class="card" style=" height: auto;
+                width: 300px;
+                background-color:#e8dede17;
+                margin-left: 10px;
+                margin-right: 10px;
+                margin-top: 20px;">
+                  
+                    <div class="container" style="padding: 2px 16px;">
+                        <h6><b><a target="_blank" href="https://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/">Principal Component Analysis (PCA) for Visualization using Python
+                        </a></b></h6> 
+                        <p>...</p> 
+
+                        <ul class="tags">
+                            <li><a href="#" class="tag">PCA</a></li>
+                          </ul>
+                      </div>
+                </div>
+                <div class="card" style=" height: auto;
+                width: 300px;
+                background-color: #e8dede17;
+                margin-left: 10px;
+                margin-right: 10px;
+                margin-top: 20px;">
+                   <div class="container" style="padding: 2px 16px;">
+                    <h6><b><a target="_blank" href="https://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/">Linear Regression with Maximum Likelihood (MSE) and Bayesian Learning Approach from scratch
+                    </a></b></h6> 
+                    <p>...</p> 
+                    <ul class="tags">
+                        <li><a href="#" class="tag">Linear Regression</a></li>
+                        <li><a href="#" class="tag">Maximum Likelihood</a></li>
+                        <li><a href="#" class="tag">Bayesian Learning</a></li>
+                      </ul>
+                  </div>
+                </div>
+               
+              </div>
+          </div>
+        </div>
+    </section>
+   
+
+    <section class="success" id="tutorials" style="margin-top: 60px;">
+        <div class="container">
             <div class="row">
-                <div class="col-sm-4 portfolio-item">
+                <div class="col-lg-12 text-center">
+                    <h2>Tutorials</h2>
+                    <hr class="star-light" style="margin:1em 0;">
+                </div>
+            </div>
+
+          <div class="row">
+
+              </div>
+
+              <ul>
+
+                <li><a target="_blank" href="https://github.com/sijanonly/python-tutorial">Python Tutorial with exercises </a>  </li>
+                <li><a target="_blank" href="https://github.com/sijanonly/pandas-and-scikit-handson">Pandas and sklearn handson </a>  </li>
+              </ul>
+          </div>
+        </div>
+    </section>
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio" style="margin-top: 60px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Startups</h2>
+                    <hr class="star-light" style="margin:1em 0;">
+                </div>
+            </div>
+            <div class="row" style=" width:100%;
+            height: 100%;">
+                <h4>FlipKarma - project profile for students.</h4>
+                <div class="" style=" float:left;
+                display:inline-block;
+                width: 50%;
+                height: 100%;">
                     <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="images/flipkarma.png" class="img-responsive" alt="">
+                        <img style="width:100%; height:auto" src="images/flipkarma.png" class="img-responsive" alt="">
                     </a>
                 </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="images/meroanswer.png" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="images/erp.png" class="img-responsive" alt="">
-                    </a>
+                <div class="" style="float:left;
+                display:inline-block;
+                width: -moz-calc(100% - 50%);
+                width: -webkit-calc(100% - 50%);
+                width: calc(100% - 50%);
+                height: 100%;">
+                    <div class="modal-body">
+
+                        <p style="margin:20px;"><a target="_blank" href="http://flipkarma.com">FlipKarma</a> is an
+                            initiative to improve the quality of student projects. It has been designed for maintaining
+                            an online repository of college projects and helps colleges as well as students build their
+                            reputation and exposure to the outside community. Ultimately, FlipKarma aims to be a
+                            platform where students can get new, exciting project ideas, validate their project ideas
+                            before scratching them and share their creativity.
+                            <br><br>
+                            The core value of FlipKarma lies on connecting students and the universities with outside
+                            communities having similar ideology.
+                        </p>
+                        <ul class="list-inline item-details">
+                            <li>Date:
+                                <strong><a href="http://flipkarma.com/">April 2013</a>
+                                </strong>
+                            </li>
+                            <li>Skills:
+                                <strong><a href="http://flipkarma.com/">Django web framework, MySQL database, Python
+                                        backend,​ ​ HTML​ ​ / ​ ​ Bootstrap​ ​ CSS​ ​ / ​ ​ JavaScript​ </a>
+                                </strong>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+            </div>
+
+
+            <div class="row" style=" width:100%;
+            height: 100%;">
+                <h4>Meroanswer - Online Entrance Preparation</h4>
+                <div class="" style=" float:left;
+                display:inline-block;
+                width: 50%;
+                height: 100%;">
+                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="images/major.jpg" class="img-responsive" alt="">
+                        <img style="width:100%; height:auto" src="images/meroanswer.png" class="img-responsive" alt="">
                     </a>
                 </div>
-               
+                <div class="" style="float:left;
+                display:inline-block;
+                width: -moz-calc(100% - 50%);
+                width: -webkit-calc(100% - 50%);
+                width: calc(100% - 50%);
+                height: 100%;">
+                    <div class="modal-body">
+                        <p style="margin:20px;">
+                            <a target="_blank" href="http://meroanswer.com/">Meroanswer</a> is a web and android app for
+                            students to prepare for Engineering and Medical entrance examination. It helps students to
+                            practice model exam of engineering and medical universities in Nepal.<br>
+
+                            There is a tough competition to get scholarship in Medical and Engineering. Each year 20,000
+                            students appear for Medical entrance from which only 300 get scholarship. In engineering,
+                            around 300 get scholarship among 10,000 applicants.
+                            If students can practice objective questions that are asked in entrance exam from the start
+                            of their +2, they can be well prepared for the examination. By using Meroanswer, students
+                            will be prepared for both entrance and +2 exams at the same time.
+
+                        </p>
+                        <ul class="list-inline item-details">
+                            <li>Date:
+                                <strong><a href="http://meroanswer.com/">April 2014</a>
+                                </strong>
+                            </li>
+                            <li>Skills:
+                                <strong><a href="http://meroanswer.com/">Django web framework, MySQL + MongoDB database,
+                                        Python
+                                        backend,​ ​ HTML​ ​ / ​ ​ Bootstrap​ ​ CSS​ ​ / ​ ​ AngularJS </a>
+                                </strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
+
+
+            <div class="row" style=" width:100%;
+            height: 100%;">
+                <h4>Ace ERP : College Management System</h4>
+                <div class="" style=" float:left;
+                display:inline-block;
+                width: 50%;
+                height: 100%;">
+                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img style="width:100%; height:auto" src="images/erp.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="" style="float:left;
+                display:inline-block;
+                width: -moz-calc(100% - 50%);
+                width: -webkit-calc(100% - 50%);
+                width: calc(100% - 50%);
+                height: 100%;">
+                    <div class="modal-body">
+                        <p style="margin:20px"> <a target="_blank" href="http://mis.ahs.edu.np">Ace ERP </a>- Enterprise
+                            application to handle activities like applicant interview, student admission, HR and
+                            inventory, financial and academic information management of students and teachers.
+                        </p>
+                        <ul class="list-inline item-details">
+                            <li>Date:
+                                <strong><a href="http://mis.ahs.edu.np">April 2016</a>
+                                </strong>
+                            </li>
+                            <li>Skills:
+                                <strong><a href="http://mis.ahs.edu.np">Django web framework, MySQL + MongoDB database,
+                                        Python
+                                        backend,​ ​ HTML​ ​ / ​ ​ Bootstrap​ ​ CSS​ ​ / ​ ​ AngularJS ​ frontend,
+                                        Celery</a>
+                                </strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+
+
+    <section id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Bachelor Degree Thesis</h2>
+                    <hr class="star-light" style="margin:1em 0;">
+                </div>
+            </div>
+
+            <div class="row" style=" width:100%;
+            height: 100%;">
+                <h4>Educational Data Mining in Relation to Educational Statistics in Nepal <br></h4>
+                <div class="" style=" float:left;
+                display:inline-block;
+                width: 50%;
+                height: 100%;">
+                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img style="width:100%; height:auto" src="images/major.jpg" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="" style="float:left;
+                display:inline-block;
+                width: -moz-calc(100% - 50%);
+                width: -webkit-calc(100% - 50%);
+                width: calc(100% - 50%);
+                height: 100%;">
+                    <div class="modal-body">
+                        <p style="margin:20px"> We researched and mined educational data of 33K schools in collaboration
+                            with Department of Education, Nepal. We developed an
+                            Educational Index Analyzer : effective tool to calculate the Educational Development Index
+                            of every districts of Nepal.
+                            We worked on regression Analysis and developing student performance model based on student
+                            participation and enrollment, school facilities and teacher availability.
+                        </p>
+                        <ul class="list-inline item-details">
+                            <li>Date:
+                                <strong><a
+                                        href="http://flipkarma.com/project/educational-data-mining-in-relation-to-educational/">2013</a>
+                                </strong>
+                            </li>
+                            <li>Skills:
+                                <strong><a
+                                        href="http://flipkarma.com/project/educational-data-mining-in-relation-to-educational/">Django
+                                        web framework, MySQL database, Python
+                                        backend, Numpy,​ ​ HTML​ / ​​ Bootstrap​ ​ CSS​ ​ / ​Jquery ​ frontend, Celery,
+                                        OSM, D3.js, Leaflet.js</a>
+                                </strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
     </section>
 
     <!-- Blog Grid Section -->
 
 
-    <!-- About Section -->
-    <section class="success" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>About Me</h2>
-                    <hr class="star-light">
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+
+                    <div class="footer-col col-md-4">
+                        <h3>Around the Web</h3>
+                        <ul class="list-inline">
+
+                            <li>
+                                <a href="https://twitter.com/sijanonly" class="btn-social btn-outline">Twitter<i
+                                        class="fa fa-fw fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/sijanonly"
+                                    class="btn-social btn-outline">LinkedIn<i class="fa fa-fw fa-linkedin"></i></a>
+                            </li>
+
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-lg-offset-2">
-
-                  <p>I'm truly passionate about my work and always look forward to solve challenges around me. While I enjoy all aspects of product development, my favorite part is bit different. I love to focus about the end impact and figuring out 'Are we adding something to make our world a better place?"
-
-                  <br><br>
-
-I have gathered extensive knowledge on Python, Django and front-end development with Anglarjs. I am working to learn more about software practices and usage of cloud computing resources for better development and management. I also practice data science and machine learning algorithms to solve small problems using Pandas and Scikit-learn.
-</p>
-                  
-                </div>
-                <div class="col-lg-4">
-
-                  <p>
-
-                  I CoFounded an education based startup 'Phunka Technologies', worked primarily on system architecture/database module design and implementation. I was also a part of social media/offline marketing for the product promotion and advertisements.
-                  <br><br>
-                  I worked as a Data Engineer for a London based startup, OnBoardMe, focused on designing pipelines to feed unstructured data from different sources to the database and providing an API for a recommendation system.
-                  <br><br>
-                  Currently, I am at one of the innovative companies of Nepal - Leapfrog Technologies. My responsibilities are designing​ ​ standalone​ ​ python​ ​ module​ ​ for​ ​ data​ ​ extraction,​ ​ parsing,​ ​ and​ ​ storage, providing​ ​ Data-Access-Object​ ​ (DAO)​ ​ interface​ ​ for​ ​ Oracle and developing​ ​ test​-automation​ ​ module​ ​ using​ ​ selenium​ ​ and​ ​ python.
-
-</p>
-                 
-                </div>
-               
             </div>
         </div>
-    </section>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; sijanb.com.np 2020
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-     <!-- jQuery -->
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <!-- jQuery -->
     <script src="/assets/js/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
@@ -237,9 +566,9 @@ I have gathered extensive knowledge on Python, Django and front-end development 
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
-   
+
     <!-- Theme JavaScript -->
     <script src="/assets/js/freelancer.min.js"></script>
 </body>
-</html>
 
+</html>

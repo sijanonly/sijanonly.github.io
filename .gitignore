@@ -1,0 +1,12 @@
+_site/
+*.pyc
+.DS_Store
+cache/
+output/
+**/.ipynb_checkpoints/.DS_Store
+.ipynb_checkpoints
+.DS_Store
+.ipynb_checkpoints
+
+.doit.db
+*.py[cod]
