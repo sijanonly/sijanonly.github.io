@@ -1,5 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>CODEBUG</title><link>https://sijanb.com.np/</link><description>Data Exploration...</description><atom:link href="https://sijanb.com.np/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Sat, 31 Oct 2020 21:17:01 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Paper Summary : Policy Gradient Methods for Reinforcement Learning with Function Approximation</title><link>https://sijanb.com.np/posts/paper-summary-policy-gradient-methods-for-rl-with-function-approximation/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>CODEBUG</title><link>https://sijanb.com.np/</link><description>Data Exploration...</description><atom:link rel="self" type="application/rss+xml" href="https://sijanb.com.np/rss.xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Sun, 08 Nov 2020 14:13:31 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Paper Summary : Playing Atari With Deep Reinforcement Learning</title><link>https://sijanb.com.np/posts/paper-summary-playing-atari-with-deep-reinforcement-learning/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Summary of the paper &lt;a href="https://www.cs.toronto.edu/~vmnih/docs/dqn.pdf"&gt;"Playing Atari with Deep Reinforcement Learning"&lt;/a&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h5 id="Motivation"&gt;Motivation&lt;a class="anchor-link" href="https://sijanb.com.np/posts/paper-summary-playing-atari-with-deep-reinforcement-learning/#Motivation"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Deep Learning (DL) has proven to work well when we have large amount of data. Unline supervised DL algorithm setup, Reinforcement Learning (RL) doesn't have direct access to the targets/labels. RL agent usually get "delayed and sparsed" rewards as a signal to understand about the environment and learn policy for a given environment.
+Another challenge is about the distribution of the inputs. In supervised learning, each batch in training loop is drawn randomly which make sure each inputs/samples are independent and the parameter updates won't overfit to some specific direction/class in the data. In case of RL, inputs are usually correlated. For example, when you collect image inputs/frames of video of games, their pixel positions won't change much. Therefore, many samples will look alike and this might lead to poor learning and local optimal solution. Another problem is the non-stationarity of the target. The target will be changing throughout the episodes when the agent learns new behaviour from the environment, or adopting well.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h5 id="Contribution"&gt;Contribution&lt;a class="anchor-link" href="https://sijanb.com.np/posts/paper-summary-playing-atari-with-deep-reinforcement-learning/#Contribution"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Authors proposed 'Deep Q Network' (DQN) learning algorithm with experience replay. This approach solves both the correlated inputs and non-stationarity problems.&lt;/p&gt;
+&lt;p&gt;They uses CNN with a variant of Q-learning algorithm, and uses stochastic gradient descent (SGD) for the training. They maintained a buffer named - 'Experience Replay' of the transitions while the agent nagivates through the environment. While SGD training process, samples from this stored buffer is used to create mini-batches and used for the training of the NN. This refer this NN as Q-network with parameter, $ \theta $, which minimizes the sequences of loss functions $ L_i (\theta_i) $ :&lt;/p&gt;
+&lt;p&gt;$ L_i(\theta_i) $ = $ \mathbb{E_{s,a \sim \rho(.)}} [ (y_i - Q(s, a; \theta_i)^2 ] $&lt;/p&gt;
+&lt;p&gt;Where $ y_i = \mathbb{E_{s' \sim  \varepsilon}} [ r + \gamma \underset{a'} max (s', a', \theta_{i-}) | s,a] $&lt;/p&gt;
+&lt;p&gt;is the target for iteration i.&lt;/p&gt;
+&lt;p&gt;They used the previous iteration parameter value ($ \theta_{i-1} $) in order to calculate the target ($y_i$). The parameter ($ \theta_{i-1} $) from previous iteration won't change for some long future iterations, which makes it stationary and training will be smooth. They also  feed concatenation of four video frames as an input to the CNN in order to avoid the partial observation contraints in the learning. Using four frames, CNN will be able locate the movement direction, speed of the objects in the frames.&lt;/p&gt;
+&lt;p&gt;DQN is used to train on Atari 2600 games. The video frames from emulator are the observations based on discrete actions (up, down, left, rigth..) of the agent in the environment. The network consists of two convolutional layers and two fully connected layers. The last layer outputs the distribution over possible a&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/paper-summary-playing-atari-with-deep-reinforcement-learning/</guid><pubDate>Sun, 08 Nov 2020 13:40:42 GMT</pubDate></item><item><title>Paper Summary : Policy Gradient Methods for Reinforcement Learning with Function Approximation</title><link>https://sijanb.com.np/posts/paper-summary-policy-gradient-methods-for-rl-with-function-approximation/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Summary of the paper &lt;a href="https://homes.cs.washington.edu/~todorov/courses/amath579/reading/PolicyGradient.pdf"&gt;"Policy Gradient Methods for Reinforcement Learning with Function Approximation"&lt;/a&gt;&lt;/p&gt;
@@ -3030,158 +3073,4 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/how-to-tune-hyperparameter-in-k-nearest-neighbors-classifier/"&gt;Read more…&lt;/a&gt; (5 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>kNN</category><guid>https://sijanb.com.np/posts/how-to-tune-hyperparameter-in-k-nearest-neighbors-classifier/</guid><pubDate>Sat, 16 May 2020 08:42:41 GMT</pubDate></item><item><title>Out-of-sample accuracy estimation using Cross validation in python and scikit-learn</title><link>https://sijanb.com.np/posts/out-of-sample-accuracy-estimation-using-cross-validation-in-python-and-scikit-learn/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;In this post, we will be continuing from our previous post:&lt;/p&gt;
-&lt;blockquote&gt;&lt;p&gt;&lt;a href="http://sijanb.com.np/posts/k-nearest-neighbors-algorithm-using-python-and-scikit-learn/"&gt;K-Nearest Neighbors Algorithm using Python and Scikit-Learn?&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Before starting with the implementation, let's discuss few important points in cross validation.&lt;/p&gt;
-&lt;blockquote&gt;&lt;ol&gt;
-&lt;li&gt;Using Cross validation (CV), we splits our dataset into k folds (k generally setup by developer)&lt;/li&gt;
-&lt;li&gt;Once you created k folds, you use each of the folds as test set during run and all remaining folds as train set.&lt;/li&gt;
-&lt;li&gt;With cross validation, one can assess the average model performance (this post) or also for the hyperparameters selection (for example : selecting optimal neighbors size(k) in kNN) or selecting good feature
-combinations from given data features.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;math&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;collections&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Counter&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
-
-&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
-
-&lt;span class="c1"&gt;# making results reproducible&lt;/span&gt;
-&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;seed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;42&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [2]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="s1"&gt;'https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;header&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sep&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;','&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'CLASS'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'ALCOHOL_LEVEL'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'MALIC_ACID'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'ASH'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'ALCALINITY'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'MAGNESIUM'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'PHENOLS'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
-              &lt;span class="s1"&gt;'FLAVANOIDS'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'NON_FLAVANOID_PHENOL'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'PROANTHOCYANINS'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'COLOR_INTENSITY'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
-              &lt;span class="s1"&gt;'HUE'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'OD280/OD315_DILUTED'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'PROLINE'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-
-&lt;span class="c1"&gt;# Let us use only two features : 'ALCOHOL_LEVEL', 'MALIC_ACID' for this problem&lt;/span&gt;
-&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="s1"&gt;'CLASS'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'ALCOHOL_LEVEL'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'MALIC_ACID'&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
-&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;
-
-    &lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
-
-
-
-&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
-&lt;div&gt;
-&lt;style scoped&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border="1" class="dataframe"&gt;
-  &lt;thead&gt;
-    &lt;tr style="text-align: right;"&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;CLASS&lt;/th&gt;
-      &lt;th&gt;ALCOHOL_LEVEL&lt;/th&gt;
-      &lt;th&gt;MALIC_ACID&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;0&lt;/th&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;14.23&lt;/td&gt;
-      &lt;td&gt;1.71&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;1&lt;/th&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;13.20&lt;/td&gt;
-      &lt;td&gt;1.78&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;2&lt;/th&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;13.16&lt;/td&gt;
-      &lt;td&gt;2.36&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;3&lt;/th&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;14.37&lt;/td&gt;
-      &lt;td&gt;1.95&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;4&lt;/th&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;13.24&lt;/td&gt;
-      &lt;td&gt;2.59&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="1.-Cross--validation-using-Python-from-Scratch"&gt;1. Cross  validation using Python from Scratch&lt;a class="anchor-link" href="https://sijanb.com.np/posts/out-of-sample-accuracy-estimation-using-cross-validation-in-python-and-scikit-learn/#1.-Cross--validation-using-Python-from-Scratch"&gt;¶&lt;/a&gt;&lt;/h4&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/out-of-sample-accuracy-estimation-using-cross-validation-in-python-and-scikit-learn/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>cross-validation</category><category>kNN</category><category>machine-learning</category><guid>https://sijanb.com.np/posts/out-of-sample-accuracy-estimation-using-cross-validation-in-python-and-scikit-learn/</guid><pubDate>Sat, 09 May 2020 08:49:17 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/how-to-tune-hyperparameter-in-k-nearest-neighbors-classifier/"&gt;Read more…&lt;/a&gt; (5 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>kNN</category><guid>https://sijanb.com.np/posts/how-to-tune-hyperparameter-in-k-nearest-neighbors-classifier/</guid><pubDate>Sat, 16 May 2020 08:42:41 GMT</pubDate></item></channel></rss>
