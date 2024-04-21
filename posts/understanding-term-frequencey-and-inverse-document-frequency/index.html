@@ -10,7 +10,7 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="../../assets/css/screen.css">
 <link rel="stylesheet" type="text/css" href="../../assets/css/nav.css">
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400%7CInconsolata">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
@@ -18,7 +18,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/">
 <link rel="icon" href="../../favicon.ico" sizes="16x16">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Sijan Bhandari">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Font Awesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<meta name="author" content="Sijan Bhandari">
 <link rel="prev" href="../implementation-of-stochastic-subgradient-descent-for-support-vector-machine-using-python/" title="Implementation of stochastic subgradient descent for support vector machine using Python" type="text/html">
 <link rel="next" href="../interpreting-centrality-measures-for-network-analysis/" title="Interpreting Centrality Measures for Network Analysis" type="text/html">
 <meta property="og:site_name" content="CODEBUG">
@@ -59,15 +60,13 @@
             Sijan Bhandari
             on
             <time class="post-date" datetime="2019-07-29T23:30:08+05:45">
-                2019-07-29 23:30
-            </time></section></header><section class="post-content"><div>
-<div class="cell border-box-sizing text_cell rendered">
+                2019-07-29
+            </time></section></header><section class="post-content"><div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In any document, the frequency of occurrence of terms is taken as an important measure of score for that document (Term Frequency). For example : a document has total 100 words, and 30 words are 'mountains', we ,without hesitation, say that this document is talking about 'Mountains'.</p>
-
 </div>
 </div>
 </div>
@@ -77,7 +76,6 @@
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>But, if we only include most frequent word as our score metric, we will eventually loose the actual relevancy score of the document. Since same word could exist in number of documents and it's just frequent occurrence without adding much meaning to current context. In the above example : Suppose, there are two documents talking about 'Mt. Everest'. We obviously know that there will be higher occurrence of word 'Mountains'. But, if we use 'Term Frequecy (tf)' alone, term 'Mountains' will get highest weight rather than term 'Everest'. It's not fair. And, Inverse-Document-Frequency will tackle it.</p>
-
 </div>
 </div>
 </div>
@@ -89,7 +87,6 @@
 <h4 id="Term-Frequency-(TF)-/-Normalized-Term-Frequency-(nTF):">Term Frequency (TF) / Normalized Term Frequency (nTF):<a class="anchor-link" href="#Term-Frequency-(TF)-/-Normalized-Term-Frequency-(nTF):">¶</a>
 </h4>
 <p>It simply measures the frequency/occurent of a term in a document. So, it gives equal important to all terms. Longer document could have large number of terms than smaller documents, so better to normalize this metric by dividing with total number of terms in the document. We also</p>
-
 </div>
 </div>
 </div>
@@ -117,7 +114,6 @@
 <h4 id="Inverse-Document-Frequency-(IDF):">Inverse Document Frequency (IDF):<a class="anchor-link" href="#Inverse-Document-Frequency-(IDF):">¶</a>
 </h4>
 <p>It gives the importance to more relevant/significant term in the document. It tries to lower the weights to terms having less importance. And, rare terms will get significant weights.</p>
-
 </div>
 </div>
 </div>
@@ -129,7 +125,6 @@
 <h4 id="TF-IDF:">TF-IDF:<a class="anchor-link" href="#TF-IDF:">¶</a>
 </h4>
 <p>It tries to prioritize the terms based on their occurrence and uniqueness.</p>
-
 </div>
 </div>
 </div>
@@ -151,8 +146,7 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../../images/tf_1.png"><img src="../../images/tf_2.png"><img src="../../images/tf_3.png"></p>
-
+<img alt="No description has been provided for this image" src="../../images/tf_1.png"><img alt="No description has been provided for this image" src="../../images/tf_2.png"><img alt="No description has been provided for this image" src="../../images/tf_3.png">
 </div>
 </div>
 </div>
@@ -169,7 +163,6 @@
 </h4>
 <p>Suppose, we are building a search engine system. The query is also converted into vector in vector-space model and compare with documents
 (NOTE 1) to get the similarity between them.</p>
-
 </div>
 </div>
 </div>
@@ -177,19 +170,16 @@
 <div class="input">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span> 
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
 </div>
     </section><footer class="post-footer"><section class="comments hidden-print"><h2>Comments</h2>
         
-        
+    
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="blog-sijanb-com-np",
@@ -209,7 +199,7 @@
     <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -221,7 +211,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script></footer></article><script>var disqus_shortname="blog-sijanb-com-np";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer class="site-footer clearfix"><section class="poweredby">Contents © 2020         <a href="mailto:sijanonly@gmail.com">Sijan Bhandari</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </section></footer>
+</script></footer></article><script>var disqus_shortname="blog-sijanb-com-np";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer class="site-footer clearfix"><section class="poweredby">Contents © 2024         <a href="mailto:sijanonly@gmail.com">Sijan Bhandari</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </section></footer>
 </div>
 
     <script type="text/javascript" src="../../assets/js/jquery.js"></script><script type="text/javascript" src="../../assets/js/jquery.fitvids.js"></script><script type="text/javascript" src="../../assets/js/index.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-116715433-2"></script><script>

@@ -10,7 +10,7 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="../../assets/css/screen.css">
 <link rel="stylesheet" type="text/css" href="../../assets/css/nav.css">
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400%7CInconsolata">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
@@ -18,7 +18,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://sijanb.com.np/posts/why-you-need-to-understand-bias-and-variance-in-machine-learning/">
 <link rel="icon" href="../../favicon.ico" sizes="16x16">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Sijan Bhandari">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Font Awesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<meta name="author" content="Sijan Bhandari">
 <link rel="prev" href="../implementation-of-perceptron-in-python/" title="implementation of perceptron in python" type="text/html">
 <link rel="next" href="../how-k-nearest-neighbors-works/" title="How k-Nearest Neighbors works?" type="text/html">
 <meta property="og:site_name" content="CODEBUG">
@@ -59,16 +60,14 @@
             Sijan Bhandari
             on
             <time class="post-date" datetime="2019-04-11T00:40:44+05:45">
-                2019-04-11 00:40
-            </time></section></header><section class="post-content"><div>
-<div class="cell border-box-sizing text_cell rendered">
+                2019-04-11
+            </time></section></header><section class="post-content"><div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Let me start with an example. Suppose you have built a ML model under supervised learning which can detect faces from your family members. You simply feed all the family photos to your model. And, at the end, you would like to know how much your model learnt from your training process.</p>
-<p><img src="../../images/bias_variance.png"></p>
-
+<img alt="No description has been provided for this image" src="../../images/bias_variance.png">
 </div>
 </div>
 </div>
@@ -79,17 +78,12 @@
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>After training your model, you will find a function that maps input (image) to output labels(family members).
 If we represent your ML model with a function 'f',we can write this process as:</p>
-
 <pre><code>  y = f(x),
    where  x = input  (your family photos)
-          y = output (model prediction) (predictiong whether the photo is your father, mother or sister)
-
-
-</code></pre>
-<p>Suppose, you use <code>50</code> images for your training process and use the same images to see whether the model can predict the label correctly or not. If you found that <code>10</code> out of <code>50</code> images are not predicted well, you can say : <code>20%</code> training error. 
+          y = output (model prediction) (predictiong whether the photo is your father, mother or sister)</code></pre>
+<p>Suppose, you use <code>50</code> images for your training process and use the same images to see whether the model can predict the label correctly or not. If you found that <code>10</code> out of <code>50</code> images are not predicted well, you can say : <code>20%</code> training error.
 If you think about the intuition behind this calculation, it is saying that 'the model is not doing well with the training data itself'. That means it underfits the data. It does not want to carry all the information available in your data.</p>
 <p>*NOTE: If your model 'f' is a linear model than it will be really hard for your model to classify the photos using linear function.</p>
-
 </div>
 </div>
 </div>
@@ -109,7 +103,6 @@ If you think about the intuition behind this calculation, it is saying that 'the
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Let us consider the different scenario. You found that there is only <code>2%</code> training error after training your model. And, you are happy that only <code>1</code> image out of <code>50</code> is being wrongly predicted. But, you are still suspicious about your model and apply different strategy this time. You captured new <code>10</code> photos of your family and gave it to the model. And, at this time all the <code>10</code> photos are wrongly predicted by your model.
 What we can see is that 'your model learn everything from the training data without considering the generalization of data' (increased variance). We can also say that model overfits your training data. Obviously, learning everything from training data will reduce the biasness but it increases the variance in your data.</p>
-
 </div>
 </div>
 </div>
@@ -117,19 +110,16 @@ What we can see is that 'your model learn everything from the training data with
 <div class="input">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span> 
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
 </div>
     </section><footer class="post-footer"><section class="comments hidden-print"><h2>Comments</h2>
         
-        
+    
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="blog-sijanb-com-np",
@@ -149,7 +139,7 @@ What we can see is that 'your model learn everything from the training data with
     <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -161,7 +151,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script></footer></article><script>var disqus_shortname="blog-sijanb-com-np";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer class="site-footer clearfix"><section class="poweredby">Contents © 2020         <a href="mailto:sijanonly@gmail.com">Sijan Bhandari</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </section></footer>
+</script></footer></article><script>var disqus_shortname="blog-sijanb-com-np";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer class="site-footer clearfix"><section class="poweredby">Contents © 2024         <a href="mailto:sijanonly@gmail.com">Sijan Bhandari</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </section></footer>
 </div>
 
     <script type="text/javascript" src="../../assets/js/jquery.js"></script><script type="text/javascript" src="../../assets/js/jquery.fitvids.js"></script><script type="text/javascript" src="../../assets/js/index.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-116715433-2"></script><script>

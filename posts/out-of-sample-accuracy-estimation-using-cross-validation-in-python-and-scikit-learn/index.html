@@ -11,7 +11,7 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="../../assets/css/screen.css">
 <link rel="stylesheet" type="text/css" href="../../assets/css/nav.css">
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400%7CInconsolata">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
@@ -19,7 +19,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://sijanb.com.np/posts/out-of-sample-accuracy-estimation-using-cross-validation-in-python-and-scikit-learn/">
 <link rel="icon" href="../../favicon.ico" sizes="16x16">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Sijan Bhandari">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Font Awesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<meta name="author" content="Sijan Bhandari">
 <link rel="prev" href="../k-nearest-neighbors-algorithm-using-python-and-scikit-learn/" title="K-Nearest Neighbors Algorithm using Python and Scikit-Learn" type="text/html">
 <link rel="next" href="../how-to-tune-hyperparameter-in-k-nearest-neighbors-classifier/" title="How to tune hyperparameter in K Nearest Neighbors Classifier?" type="text/html">
 <meta property="og:site_name" content="CODEBUG">
@@ -66,9 +67,8 @@
                 <a href="../../categories/knn/">#kNN</a>,
                 <a href="../../categories/machine-learning/">#machine-learning</a>,
             <time class="post-date" datetime="2020-05-09T14:34:17+05:45">
-                2020-05-09 14:34
-            </time></section></header><section class="post-content"><div>
-<div class="cell border-box-sizing text_cell rendered">
+                2020-05-09
+            </time></section></header><section class="post-content"><div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -77,7 +77,6 @@
 <blockquote>
 <p><a href="http://sijanb.com.np/posts/k-nearest-neighbors-algorithm-using-python-and-scikit-learn/">K-Nearest Neighbors Algorithm using Python and Scikit-Learn?</a></p>
 </blockquote>
-
 </div>
 </div>
 </div>
@@ -87,13 +86,14 @@
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Before starting with the implementation, let's discuss few important points in cross validation.</p>
-<blockquote><ol>
+<blockquote>
+<ol>
 <li>Using Cross validation (CV), we splits our dataset into k folds (k generally setup by developer)</li>
 <li>Once you created k folds, you use each of the folds as test set during run and all remaining folds as train set.</li>
 <li>With cross validation, one can assess the average model performance (this post) or also for the hyperparameters selection (for example : selecting optimal neighbors size(k) in kNN) or selecting good feature
 combinations from given data features.</li>
-</ol></blockquote>
-
+</ol>
+</blockquote>
 </div>
 </div>
 </div>
@@ -101,9 +101,9 @@ combinations from given data features.</li>
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">Counter</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -113,18 +113,16 @@ combinations from given data features.</li>
 <span class="c1"># making results reproducible</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
     <span class="s1">'https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data'</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">','</span><span class="p">)</span>
 
 <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'CLASS'</span><span class="p">,</span> <span class="s1">'ALCOHOL_LEVEL'</span><span class="p">,</span> <span class="s1">'MALIC_ACID'</span><span class="p">,</span> <span class="s1">'ASH'</span><span class="p">,</span> <span class="s1">'ALCALINITY'</span><span class="p">,</span><span class="s1">'MAGNESIUM'</span><span class="p">,</span> <span class="s1">'PHENOLS'</span><span class="p">,</span> 
@@ -135,24 +133,15 @@ combinations from given data features.</li>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">'CLASS'</span><span class="p">,</span> <span class="s1">'ALCOHOL_LEVEL'</span><span class="p">,</span> <span class="s1">'MALIC_ACID'</span><span class="p">]]</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[2]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
+<div class="prompt output_prompt">Out[2]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -168,51 +157,47 @@ combinations from given data features.</li>
 <table border="1" class="dataframe">
 <thead><tr style="text-align: right;">
 <th></th>
-      <th>CLASS</th>
-      <th>ALCOHOL_LEVEL</th>
-      <th>MALIC_ACID</th>
-    </tr></thead>
+<th>CLASS</th>
+<th>ALCOHOL_LEVEL</th>
+<th>MALIC_ACID</th>
+</tr></thead>
 <tbody>
 <tr>
 <th>0</th>
-      <td>1</td>
-      <td>14.23</td>
-      <td>1.71</td>
-    </tr>
+<td>1</td>
+<td>14.23</td>
+<td>1.71</td>
+</tr>
 <tr>
 <th>1</th>
-      <td>1</td>
-      <td>13.20</td>
-      <td>1.78</td>
-    </tr>
+<td>1</td>
+<td>13.20</td>
+<td>1.78</td>
+</tr>
 <tr>
 <th>2</th>
-      <td>1</td>
-      <td>13.16</td>
-      <td>2.36</td>
-    </tr>
+<td>1</td>
+<td>13.16</td>
+<td>2.36</td>
+</tr>
 <tr>
 <th>3</th>
-      <td>1</td>
-      <td>14.37</td>
-      <td>1.95</td>
-    </tr>
+<td>1</td>
+<td>14.37</td>
+<td>1.95</td>
+</tr>
 <tr>
 <th>4</th>
-      <td>1</td>
-      <td>13.24</td>
-      <td>2.59</td>
-    </tr>
+<td>1</td>
+<td>13.24</td>
+<td>2.59</td>
+</tr>
 </tbody>
 </table>
+</div></div>
 </div>
 </div>
-
 </div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -237,9 +222,9 @@ combinations from given data features.</li>
 <div class="input">
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">KNN</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">K</span><span class="p">):</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">KNN</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">K</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">K</span> <span class="o">=</span> <span class="n">K</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">X_train</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y_train</span> <span class="o">=</span> <span class="kc">None</span>
@@ -280,7 +265,7 @@ combinations from given data features.</li>
         <span class="k">return</span> <span class="n">predictions</span>
 
 <span class="k">def</span> <span class="nf">cross_validation</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="p">):</span>
-    <span class="sd">"""</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    n : # iterations</span>
 <span class="sd">    k : k-fold size</span>
 <span class="sd">    data: training data</span>
@@ -310,44 +295,30 @@ combinations from given data features.</li>
             <span class="n">accuracies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accuracy</span><span class="p">)</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">accuracies</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">accuracies</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cross_validation</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">cross_validation</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[4]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[4]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>0.7588235294117647</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -363,88 +334,62 @@ combinations from given data features.</li>
 <div class="input">
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="k">import</span> <span class="n">KNeighborsClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">cross_val_score</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">knn_sklearn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">knn_sklearn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">'CLASS'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">df</span><span class="p">[</span><span class="s1">'CLASS'</span><span class="p">]</span>
 
 <span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">knn_sklearn</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">'accuracy'</span><span class="p">)</span>
 <span class="n">scores</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[15]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[15]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>array([0.73684211, 0.72222222, 0.88888889, 0.72222222, 0.88888889,
        0.88888889, 0.77777778, 0.77777778, 0.70588235, 0.75      ])</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># We use average accuracy as an estimate of out-of-sample accuracy</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># We use average accuracy as an estimate of out-of-sample accuracy</span>
 <span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[17]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[17]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>0.7859391124871001</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -460,22 +405,20 @@ combinations from given data features.</li>
 <div class="input">
 <div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">KFold</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">accuracy_score</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">KFold</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [20]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">kf</span> <span class="o">=</span> <span class="n">KFold</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">kf</span> <span class="o">=</span> <span class="n">KFold</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">'CLASS'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">df</span><span class="p">[</span><span class="s1">'CLASS'</span><span class="p">]</span>
 <span class="n">accuracies</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">train_idx</span><span class="p">,</span> <span class="n">test_idx</span> <span class="ow">in</span> <span class="n">kf</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
@@ -490,49 +433,34 @@ combinations from given data features.</li>
     <span class="n">accuracies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">true_values</span><span class="p">,</span> <span class="n">predictions</span><span class="p">))</span>
 <span class="nb">sum</span><span class="p">(</span><span class="n">accuracies</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">accuracies</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[20]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[20]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>0.7983660130718955</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span> 
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
 </div>
     </section><footer class="post-footer"><section class="comments hidden-print"><h2>Comments</h2>
         
-        
+    
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="blog-sijanb-com-np",
@@ -552,7 +480,7 @@ combinations from given data features.</li>
     <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -564,7 +492,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script></footer></article><script>var disqus_shortname="blog-sijanb-com-np";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer class="site-footer clearfix"><section class="poweredby">Contents © 2020         <a href="mailto:sijanonly@gmail.com">Sijan Bhandari</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </section></footer>
+</script></footer></article><script>var disqus_shortname="blog-sijanb-com-np";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer class="site-footer clearfix"><section class="poweredby">Contents © 2024         <a href="mailto:sijanonly@gmail.com">Sijan Bhandari</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </section></footer>
 </div>
 
     <script type="text/javascript" src="../../assets/js/jquery.js"></script><script type="text/javascript" src="../../assets/js/jquery.fitvids.js"></script><script type="text/javascript" src="../../assets/js/index.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-116715433-2"></script><script>

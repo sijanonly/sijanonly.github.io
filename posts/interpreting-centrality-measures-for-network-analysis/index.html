@@ -10,7 +10,7 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="../../assets/css/screen.css">
 <link rel="stylesheet" type="text/css" href="../../assets/css/nav.css">
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400%7CInconsolata">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
@@ -18,7 +18,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://sijanb.com.np/posts/interpreting-centrality-measures-for-network-analysis/">
 <link rel="icon" href="../../favicon.ico" sizes="16x16">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Sijan Bhandari">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Font Awesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<meta name="author" content="Sijan Bhandari">
 <link rel="prev" href="../understanding-term-frequencey-and-inverse-document-frequency/" title="Understanding Term Frequencey and Inverse Document Frequency" type="text/html">
 <link rel="next" href="../intuition-behind-gradient-descent-for-machine-learning-algorithms/" title="Intuition behind Gradient Descent for Machine Learning Algorithms" type="text/html">
 <meta property="og:site_name" content="CODEBUG">
@@ -61,9 +62,8 @@ Our society where almost 7 billions individuals exist/ and the interactio">
             Sijan Bhandari
             on
             <time class="post-date" datetime="2019-07-31T23:26:36+05:45">
-                2019-07-31 23:26
-            </time></section></header><section class="post-content"><div>
-<div class="cell border-box-sizing text_cell rendered">
+                2019-07-31
+            </time></section></header><section class="post-content"><div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -86,7 +86,6 @@ Our society where almost 7 billions individuals exist/ and the interactio">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Peoply usually visualize the network to see cluter/ densely linked clusters and try to analyze, predict relation between nodes, figure out similarity between nodes in the network.</p>
-
 </div>
 </div>
 </div>
@@ -96,11 +95,9 @@ Our society where almost 7 billions individuals exist/ and the interactio">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Figuring out the central nodes/vertices is also an important network analysis process because centrality measures :</p>
-
 <pre><code>        a. Existing influence of a node on other nodes
         b. Information flow in and out from a node or towards it
         c. Finding node/s which is/are acting as bridge between two different/big groups</code></pre>
-
 </div>
 </div>
 </div>
@@ -122,42 +119,33 @@ Our society where almost 7 billions individuals exist/ and the interactio">
 <p>A. Degree Centrality :</p>
 <p>Degree centrality is considered as a local measure which captures the direct influence of a node and its access to first hand information in the network.</p>
 <p>Algorithm for calculationg degree centrality:</p>
-
 <pre><code>          i. Rank all vertices based on their degree values
           ii. Highest degree vertex will be considered as central one.
-
-
-
-</code></pre>
+          
+          </code></pre>
 <p>For a directed graph, we can divide this measure into two:</p>
-
 <pre><code>      a) Indegree centrality : It can measured by counting number of edges going into a vertex. A node having highest indegree cenrality can be seen as 'popular node .i.e having many followers.
-
+      
       b) Outdegree centrality : It can measured by counting number of edges leaving a vertex. And a node with highest outdegree centrality can be seen as more social node i.e having good reach.
-
-
-</code></pre>
+      
+      </code></pre>
 <p>B. Closeness Centrality :</p>
 <p>Closeness centrality says that important nodes are always stay close to other nodes. It can been as a measure of time to spread a message/information from a node to other nodes sequentially. It is calculated based on sum of the length of the shortest paths from a node to all other nodes.</p>
 <p>Algorithm for calculating closeness centrality:</p>
-
 <pre><code>           i. Calculate the shortest paths between a node to other nodes.
            ii. Sum those distance values and take the reciprocal
            iii. Repeat (i), (ii) for all nodes.
-
-</code></pre>
-<p>Since the sum of shortest paths between nodes u and v will be low if these two nodes are more central and will be high if those are less central, which is opposite to other centrality measures ( for Degree centrality: higher value signify higher centrality). Therefore, it is taken as inverse measure.</p>
-<p>so, closeness centrality of a node 'v', closeness(v) =   $  \frac{n-1}{\sum_{u=1}^{n-1}d(u,v)} $</p>
+           </code></pre>
+<p>Since the sum of shortest paths between nodes u and v will be low if these two nodes are more central and will be high if those are less central, which is opposite to other centrality measures ( for Degree centrality: higher value signify higher centrality). Therefore, it is taken as inverse measure.
+so, closeness centrality of a node 'v', closeness(v) =   $  \frac{n-1}{\sum_{u=1}^{n-1}d(u,v)} $</p>
 <p>where d(u,v) is the geodesic path = shortest path through a network between two vertices u and v.</p>
 <p>NOTE : path from v to u is the number of edges along that path.</p>
-<p><img src="../../images/closeness.png"></p>
-<p>C. Betweenness Centrality</p>
+<img alt="No description has been provided for this image" src="../../images/closeness.png"><p>C. Betweenness Centrality</p>
 <p>Betweenness centrality measures the bridgeness of node. It says that 'central nodes are those which act as bridge nodes'. We can calculate the number of times a node acts as bridge along the shortest path between two nodes.</p>
 <p>Betweenness centrality of a node 'v' is betw(v) = $ \sum_{s,t \ne v}  \frac{\delta_{st}(v)}{del_{st}}   $</p>
 <p>Where :</p>
 <p>$ \delta_{st}(v) $ : The number of shortest paths between s and t via v.</p>
 <p>and $ \delta_{st} $ : The number of shortest paths between s ant t.</p>
-
 </div>
 </div>
 </div>
@@ -165,19 +153,16 @@ Our society where almost 7 billions individuals exist/ and the interactio">
 <div class="input">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span> 
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
 </div>
     </section><footer class="post-footer"><section class="comments hidden-print"><h2>Comments</h2>
         
-        
+    
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="blog-sijanb-com-np",
@@ -197,7 +182,7 @@ Our society where almost 7 billions individuals exist/ and the interactio">
     <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -209,7 +194,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script></footer></article><script>var disqus_shortname="blog-sijanb-com-np";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer class="site-footer clearfix"><section class="poweredby">Contents © 2020         <a href="mailto:sijanonly@gmail.com">Sijan Bhandari</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </section></footer>
+</script></footer></article><script>var disqus_shortname="blog-sijanb-com-np";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer class="site-footer clearfix"><section class="poweredby">Contents © 2024         <a href="mailto:sijanonly@gmail.com">Sijan Bhandari</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </section></footer>
 </div>
 
     <script type="text/javascript" src="../../assets/js/jquery.js"></script><script type="text/javascript" src="../../assets/js/jquery.fitvids.js"></script><script type="text/javascript" src="../../assets/js/index.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-116715433-2"></script><script>

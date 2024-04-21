@@ -10,7 +10,7 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="../../assets/css/screen.css">
 <link rel="stylesheet" type="text/css" href="../../assets/css/nav.css">
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400%7CInconsolata">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
@@ -18,7 +18,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://sijanb.com.np/posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/">
 <link rel="icon" href="../../favicon.ico" sizes="16x16">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Sijan Bhandari">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Font Awesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<meta name="author" content="Sijan Bhandari">
 <link rel="prev" href="../interpreting-centrality-measures-for-network-analysis/" title="Interpreting Centrality Measures for Network Analysis" type="text/html">
 <link rel="next" href="../graphical-illustration-of-k-means-algorithm/" title="Graphical illustration of K Means algorithm" type="text/html">
 <meta property="og:site_name" content="CODEBUG">
@@ -60,15 +61,13 @@ Backpropagation :¶Backpropagation is an eff">
             Sijan Bhandari
             on
             <time class="post-date" datetime="2019-08-05T22:37:30+05:45">
-                2019-08-05 22:37
-            </time></section></header><section class="post-content"><div>
-<div class="cell border-box-sizing text_cell rendered">
+                2019-08-05
+            </time></section></header><section class="post-content"><div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../../images/gradient_descent.png"></p>
-<p>Before jumping to Gradient Descent, let's be clear about difference between backpropagation and gradient descent. Comparing things make it easier to learn !</p>
+<img alt="No description has been provided for this image" src="../../images/gradient_descent.png"><p>Before jumping to Gradient Descent, let's be clear about difference between backpropagation and gradient descent. Comparing things make it easier to learn !</p>
 <h5 id="Backpropagation-:">Backpropagation :<a class="anchor-link" href="#Backpropagation-:">¶</a>
 </h5>
 <p>Backpropagation is an efficient way of calculating gradients using chain rule.</p>
@@ -80,7 +79,6 @@ Backpropagation :¶Backpropagation is an eff">
 <p>** Many machine learning algorithms are convex problems, so using gradient descent to get extrema makes more sense. For example, if you remember the solution of linear regression :</p>
 <p>$ \beta = (X^T X)^{-1} X^T y  $</p>
 <p>Here, we can get the analytical solution by simply solving above equations. But, inverse calculation has $ O(N^3) $ complexity. It will be worst if our data size increases.</p>
-
 </div>
 </div>
 </div>
@@ -101,15 +99,13 @@ Backpropagation :¶Backpropagation is an eff">
 <p>The algorithm has major three steps:</p>
 <ol>
 <li>Randomly select initial position (x) (e.g : setting initial weights/baises in neural network)</li>
-<li>Calculate derivative of the cost function (f) at that position, figuring out which direction we should move. </li>
-<li>
-<p>Follow the direction, where the function is descending fastest, with small step of $ \alpha $ (learning rate)</p>
+<li>Calculate derivative of the cost function (f) at that position, figuring out which direction we should move.</li>
+<li>Follow the direction, where the function is descending fastest, with small step of $ \alpha $ (learning rate)</li>
+</ol>
 <p>if $ f^{'}(x) $ &gt; 0 . f is increasing. so we have to move x to little left.</p>
 <p>if $ f^{'}(x) $ &lt; 0 . f is decreasing. so we have to move x to little right.</p>
 <p>NOTE : If the derivative is +ve, it means the slope is going up when you move right so you have to descent to left.
 and if the derivative is -ve, it means the slope goes down when you move left so you need to descent to right.</p>
-</li>
-</ol>
 </div>
 </div>
 </div>
@@ -147,19 +143,16 @@ and if the derivative is -ve, it means the slope goes down when you move left so
 <div class="input">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span> 
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
 </div>
     </section><footer class="post-footer"><section class="comments hidden-print"><h2>Comments</h2>
         
-        
+    
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="blog-sijanb-com-np",
@@ -179,7 +172,7 @@ and if the derivative is -ve, it means the slope goes down when you move left so
     <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -191,7 +184,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script></footer></article><script>var disqus_shortname="blog-sijanb-com-np";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer class="site-footer clearfix"><section class="poweredby">Contents © 2020         <a href="mailto:sijanonly@gmail.com">Sijan Bhandari</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </section></footer>
+</script></footer></article><script>var disqus_shortname="blog-sijanb-com-np";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer class="site-footer clearfix"><section class="poweredby">Contents © 2024         <a href="mailto:sijanonly@gmail.com">Sijan Bhandari</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </section></footer>
 </div>
 
     <script type="text/javascript" src="../../assets/js/jquery.js"></script><script type="text/javascript" src="../../assets/js/jquery.fitvids.js"></script><script type="text/javascript" src="../../assets/js/index.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-116715433-2"></script><script>

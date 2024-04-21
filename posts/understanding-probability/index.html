@@ -10,7 +10,7 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="../../assets/css/screen.css">
 <link rel="stylesheet" type="text/css" href="../../assets/css/nav.css">
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400%7CInconsolata">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
@@ -18,7 +18,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://sijanb.com.np/posts/understanding-probability/">
 <link rel="icon" href="../../favicon.ico" sizes="16x16">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Sijan Bhandari">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Font Awesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<meta name="author" content="Sijan Bhandari">
 <link rel="prev" href="../using-perceptron-model-for-classification-an-illustrative-approach/" title="Using perceptron model for classification : an illustrative approach" type="text/html">
 <link rel="next" href="../implementation-of-perceptron-in-python/" title="implementation of perceptron in python" type="text/html">
 <meta property="og:site_name" content="CODEBUG">
@@ -59,9 +60,8 @@
             Sijan Bhandari
             on
             <time class="post-date" datetime="2018-11-04T21:23:45+05:45">
-                2018-11-04 21:23
-            </time></section></header><section class="post-content"><div>
-<div class="cell border-box-sizing text_cell rendered">
+                2018-11-04
+            </time></section></header><section class="post-content"><div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -70,7 +70,6 @@
 <p>In the field of Mathematics and probability, we assign some numerical value for identifying each of this random outcome. i.e. we use probability to quantify randomness. And, probability of certain event is calculated by the relative frequency of that event in the experiment.</p>
 <p>In probability, the current occurrence / selection you do for your experiment is an event. For example,fliping a coin is an event.And, the act of tossing the coin is called independent trail. If you do number of trails, it is called an experiment. And, all the possible outcomes of an experiment is called sample space. So, we can say that an event is also a subset of sample space.</p>
 <p>Another example : Suppose you need to choose a point from an interval (10, 100). Your selection E = (12, 34) is an event.</p>
-
 </div>
 </div>
 </div>
@@ -101,12 +100,10 @@
 <p>Disjoint event means if an event occurs than other events can't occur simultaneously. That means joint probabilit will be zero P(A and B) = 0.
 We can say that disjoint events are very dependent. That is : when an event occurs with certain probability, then other event will have zero chance of occurrence.
 For example: when tossing a coin, the result can either be heads or tails but cannot be both.</p>
-<p>On the other hand, independent events are those where occurrence of one does not affect the occurence of another event. For example: when tossing two coins, the result of one flip does not affect the result of the other.</p>
-
-<pre><code>       conditions for independence
-          P(A and B) = P(A)×P(B)
-          P(A, given that B occurs) = P(A)</code></pre>
-
+<p>On the other hand, independent events are those where occurrence of one does not affect the occurence of another event. For example: when tossing two coins, the result of one flip does not affect the result of the other.
+conditions for independence
+P(A and B) = P(A)×P(B)
+P(A, given that B occurs) = P(A)</p>
 </div>
 </div>
 </div>
@@ -126,8 +123,7 @@ For example: when tossing a coin, the result can either be heads or tails but ca
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Joint probability measure the probability that two events will occur simultaneously and marginal probability is the probability of single event.</p>
-<p><img src="../../images/joint_marginal_prob.png"></p>
-
+<img alt="No description has been provided for this image" src="../../images/joint_marginal_prob.png">
 </div>
 </div>
 </div>
@@ -139,7 +135,6 @@ For example: when tossing a coin, the result can either be heads or tails but ca
 <p>Joint probability is expressed as :P(A1,A2 ...,An) ; where A1, A2...An are the events.</p>
 <p>Let us take an example:</p>
 <p>P(life expectancy=70, nationality=Nepal) = 0.5 means there is 0.5 chances of a person, picked from a population, is a Nepali and has the life expectancy of 70 years.</p>
-
 </div>
 </div>
 </div>
@@ -160,9 +155,7 @@ For example: when tossing a coin, the result can either be heads or tails but ca
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Formally, conditional probability can be defined as the probability of an event (A); given the probability of another event (B).</p>
 <p>Mathematically, it is denoted as P(A | B).</p>
-
 <pre><code>   P(A | B) = P(A and B) / P(B)   ; P(A and B) - joint probability of A and B.</code></pre>
-
 </div>
 </div>
 </div>
@@ -172,12 +165,10 @@ For example: when tossing a coin, the result can either be heads or tails but ca
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Let us take an example :</p>
-<p>Consider that a student has an 70% chance of being accepted in a university, only 40% of all of the accepted students will get the student residence offer. 
+<p>Consider that a student has an 70% chance of being accepted in a university, only 40% of all of the accepted students will get the student residence offer.
 Then the chance of student getting accepted and receiving student residence offer is defined by</p>
-
 <pre><code>P(Accepted and Student resi.) = P(Student resi.|Accepted)P(Accepted)
                                = (0.40)*(0.70) = 0.28 </code></pre>
-
 </div>
 </div>
 </div>
@@ -197,23 +188,19 @@ Then the chance of student getting accepted and receiving student residence offe
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Let us suppose that we have a prior knowledge of a probability for a disease D to occurs when there is a symptom S P(S|D); and the probability of having disease D P(D); the probability of having symptom S P(S). If we have all these three information; we can calculate the probability of occurrence of disease D; given that the person has symptom S i.e P(D|S).</p>
-<p>By using joint probability,</p>
-
-<pre><code>     P(A and B) = P(A|B) * P(A) = P(B|A) * P(B)
-
-     Which leads to
-
-      P(A|B) =  P(A)   *   P(B|A) / P(B)
+<p>By using joint probability,
+P(A and B) = P(A|B) * P(A) = P(B|A) * P(B)
+Which leads to</p>
+<pre><code>      P(A|B) =  P(A)   *   P(B|A) / P(B)
             (prior prob.)   (Posterior prob.)
-
-
+            
+            
        or
-
-
+       
+       
        P(B|A) =P(A|B)P(B) / [P(A|B)P(B) + P(A|B′)P(B′)]
-
+       
        P(B′) is the probability of B not occurring.</code></pre>
-
 </div>
 </div>
 </div>
@@ -224,22 +211,18 @@ Then the chance of student getting accepted and receiving student residence offe
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Example:</p>
 <p>Suppose it has been observed empirically that the word “Congratulations” occurs in 1 out of 10 spam emails, but that “Congratulations” only occurs in 1 out of 1000 non-spam emails. Suppose it has also been observed empirically that about 4 out of 10 emails are spam. Suppose we get a new email that contains “Congratulations”.Then, what is the probability of this email being a spam?</p>
-<p>Ans : 
+<p>Ans :
 Let C be the event representing emails having word 'Congratulations' and S be the event saying the email is spam.</p>
 <p>Now, we need to calculate : P ( S | C ) ?</p>
 <p>Here</p>
-
 <pre><code> P(C|S) ~= 1/10
  P(C|S') ~= 1/1000
  P(S) ~= 4/10
  P(S') ~= 6/10
-
-</code></pre>
-<p>By Bayes’ Theorem: P(S|C) = P(C|S )P(S) / [P(C|S )P(S) + P(C|S')P(S')]</p>
-
-<pre><code>                      = (1/10) (4/10) / [ 1/10 * 4/10 + 1/1000 * 6/10]
-                      = 0.985</code></pre>
-
+ </code></pre>
+<p>By Bayes’ Theorem: P(S|C) = P(C|S )P(S) / [P(C|S )P(S) + P(C|S')P(S')]
+= (1/10) (4/10) / [ 1/10 * 4/10 + 1/1000 * 6/10]
+= 0.985</p>
 </div>
 </div>
 </div>
@@ -247,19 +230,16 @@ Let C be the event representing emails having word 'Congratulations' and S be th
 <div class="input">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span> 
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
 </div>
     </section><footer class="post-footer"><section class="comments hidden-print"><h2>Comments</h2>
         
-        
+    
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="blog-sijanb-com-np",
@@ -279,7 +259,7 @@ Let C be the event representing emails having word 'Congratulations' and S be th
     <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -291,7 +271,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script></footer></article><script>var disqus_shortname="blog-sijanb-com-np";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer class="site-footer clearfix"><section class="poweredby">Contents © 2020         <a href="mailto:sijanonly@gmail.com">Sijan Bhandari</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </section></footer>
+</script></footer></article><script>var disqus_shortname="blog-sijanb-com-np";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer class="site-footer clearfix"><section class="poweredby">Contents © 2024         <a href="mailto:sijanonly@gmail.com">Sijan Bhandari</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </section></footer>
 </div>
 
     <script type="text/javascript" src="../../assets/js/jquery.js"></script><script type="text/javascript" src="../../assets/js/jquery.fitvids.js"></script><script type="text/javascript" src="../../assets/js/index.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-116715433-2"></script><script>

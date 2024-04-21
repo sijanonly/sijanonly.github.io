@@ -11,7 +11,7 @@
 <link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="../assets/css/screen.css">
 <link rel="stylesheet" type="text/css" href="../assets/css/nav.css">
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400%7CInconsolata">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
@@ -19,9 +19,9 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="https://sijanb.com.np/blog/index-2.html">
 <link rel="icon" href="../favicon.ico" sizes="16x16">
-<link rel="prev" href="index-3.html" type="text/html">
+<link rel="prev" href="." type="text/html">
 <link rel="next" href="index-1.html" type="text/html">
-<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><!-- Font Awesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 </head>
 <body class="nav-closed">
 
@@ -59,820 +59,7 @@
     </header><main id="content" class="content" role="main"><div class="postindex">
 
 
-<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/k-nearest-neighbors-algorithm-using-python-and-scikit-learn/">K-Nearest Neighbors Algorithm using Python and Scikit-Learn</a></h2>
-    </header><section class="post-excerpt"><div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>K nearest Neighbors (kNN) works based on calculating distance between given test data point and all the training samples. We, then, collect first K closest points from training set and the majority vote gives you the predicted class for a given test data point.</p>
-<p>For more intuitive explanation, please follow previous post :</p>
-<blockquote>
-<p><a href="https://sijanb.com.np/posts/how-k-nearest-neighbors-works/">How kNN works ?</a></p>
-</blockquote>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">Counter</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="o">%</span><span class="k">matplotlib</span> inline
-
-<span class="c1"># making results reproducible</span>
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
-    <span class="s1">'https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data'</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">','</span><span class="p">)</span>
-
-<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'CLASS'</span><span class="p">,</span> <span class="s1">'ALCOHOL_LEVEL'</span><span class="p">,</span> <span class="s1">'MALIC_ACID'</span><span class="p">,</span> <span class="s1">'ASH'</span><span class="p">,</span> <span class="s1">'ALCALINITY'</span><span class="p">,</span><span class="s1">'MAGNESIUM'</span><span class="p">,</span> <span class="s1">'PHENOLS'</span><span class="p">,</span> 
-              <span class="s1">'FLAVANOIDS'</span><span class="p">,</span> <span class="s1">'NON_FLAVANOID_PHENOL'</span><span class="p">,</span> <span class="s1">'PROANTHOCYANINS'</span><span class="p">,</span> <span class="s1">'COLOR_INTENSITY'</span><span class="p">,</span> 
-              <span class="s1">'HUE'</span><span class="p">,</span> <span class="s1">'OD280/OD315_DILUTED'</span><span class="p">,</span><span class="s1">'PROLINE'</span><span class="p">]</span>
-
-<span class="c1"># Let us use only two features : 'ALCOHOL_LEVEL', 'MALIC_ACID' for this problem</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">'CLASS'</span><span class="p">,</span> <span class="s1">'ALCOHOL_LEVEL'</span><span class="p">,</span> <span class="s1">'MALIC_ACID'</span><span class="p">]]</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[2]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead><tr style="text-align: right;">
-<th></th>
-      <th>CLASS</th>
-      <th>ALCOHOL_LEVEL</th>
-      <th>MALIC_ACID</th>
-    </tr></thead>
-<tbody>
-<tr>
-<th>0</th>
-      <td>1</td>
-      <td>14.23</td>
-      <td>1.71</td>
-    </tr>
-<tr>
-<th>1</th>
-      <td>1</td>
-      <td>13.20</td>
-      <td>1.78</td>
-    </tr>
-<tr>
-<th>2</th>
-      <td>1</td>
-      <td>13.16</td>
-      <td>2.36</td>
-    </tr>
-<tr>
-<th>3</th>
-      <td>1</td>
-      <td>14.37</td>
-      <td>1.95</td>
-    </tr>
-<tr>
-<th>4</th>
-      <td>1</td>
-      <td>13.24</td>
-      <td>2.59</td>
-    </tr>
-</tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># class distribution looks okay; not so imbalanced.</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">'CLASS'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">"bar"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,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">
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="../posts/k-nearest-neighbors-algorithm-using-python-and-scikit-learn/">Read more…</a></p>
-</div>
-</div>
-</div>
-</div>
-    </section><footer class="post-meta">
-                Sijan Bhandari
-
-        on
-                <a href="../categories/knn/">#kNN</a>,
-                <a href="../categories/machine-learning/">#machine-learning</a>,
-
-        <time class="post-date" datetime="2020-05-02T15:23:27+05:45">
-            2020-05-02 15:23
-        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/">How do I know Principal Component Analysis (PCA) is preserving information from my data ?</a></h2>
-    </header><section class="post-excerpt"><div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Principal Component Analysis is used for dimension reduction of high-dimensional data. We also refer PCA as feature extraction technique, where new features take the linear combinations from original features.</p>
-<p>More on PCA : <a href="https://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/">principal-component-analysis-pca-for-visualization-using-python</a></p>
-<p>In this post, we will investigate 'how reliable the information is as preserved by PCA'. In order to do that, we will use labelled data and evaluate the trained model to see the final performance. (In side note, PCA is unsupervised learning algorithm. But, in our case, we are using in supervised fashion to assess the model performance)</p>
-<p>To make it more interesting, we will also see Random Forests as 'feature selection' and compare the result with PCA.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="1.-PCA-as-Feature-Extraction">1. PCA as Feature Extraction<a class="anchor-link" href="../posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/#1.-PCA-as-Feature-Extraction">¶</a>
-</h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [13]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
-
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="k">import</span> <span class="n">StandardScaler</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">accuracy_score</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">RandomForestClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="k">import</span> <span class="n">DecisionTreeClassifier</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
-    <span class="s1">'https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data'</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">','</span><span class="p">)</span>
-
-<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'CLASS'</span><span class="p">,</span> <span class="s1">'ALCOHOL_LEVEL'</span><span class="p">,</span> <span class="s1">'MALIC_ACID'</span><span class="p">,</span> <span class="s1">'ASH'</span><span class="p">,</span> <span class="s1">'ALCALINITY'</span><span class="p">,</span><span class="s1">'MAGNESIUM'</span><span class="p">,</span> <span class="s1">'PHENOLS'</span><span class="p">,</span> 
-              <span class="s1">'FLAVANOIDS'</span><span class="p">,</span> <span class="s1">'NON_FLAVANOID_PHENOL'</span><span class="p">,</span> <span class="s1">'PROANTHOCYANINS'</span><span class="p">,</span> <span class="s1">'COLOR_INTENSITY'</span><span class="p">,</span> 
-              <span class="s1">'HUE'</span><span class="p">,</span> <span class="s1">'OD280/OD315_DILUTED'</span><span class="p">,</span><span class="s1">'PROLINE'</span><span class="p">]</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[14]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead><tr style="text-align: right;">
-<th></th>
-      <th>CLASS</th>
-      <th>ALCOHOL_LEVEL</th>
-      <th>MALIC_ACID</th>
-      <th>ASH</th>
-      <th>ALCALINITY</th>
-      <th>MAGNESIUM</th>
-      <th>PHENOLS</th>
-      <th>FLAVANOIDS</th>
-      <th>NON_FLAVANOID_PHENOL</th>
-      <th>PROANTHOCYANINS</th>
-      <th>COLOR_INTENSITY</th>
-      <th>HUE</th>
-      <th>OD280/OD315_DILUTED</th>
-      <th>PROLINE</th>
-    </tr></thead>
-<tbody>
-<tr>
-<th>0</th>
-      <td>1</td>
-      <td>14.23</td>
-      <td>1.71</td>
-      <td>2.43</td>
-      <td>15.6</td>
-      <td>127</td>
-      <td>2.80</td>
-      <td>3.06</td>
-      <td>0.28</td>
-      <td>2.29</td>
-      <td>5.64</td>
-      <td>1.04</td>
-      <td>3.92</td>
-      <td>1065</td>
-    </tr>
-<tr>
-<th>1</th>
-      <td>1</td>
-      <td>13.20</td>
-      <td>1.78</td>
-      <td>2.14</td>
-      <td>11.2</td>
-      <td>100</td>
-      <td>2.65</td>
-      <td>2.76</td>
-      <td>0.26</td>
-      <td>1.28</td>
-      <td>4.38</td>
-      <td>1.05</td>
-      <td>3.40</td>
-      <td>1050</td>
-    </tr>
-<tr>
-<th>2</th>
-      <td>1</td>
-      <td>13.16</td>
-      <td>2.36</td>
-      <td>2.67</td>
-      <td>18.6</td>
-      <td>101</td>
-      <td>2.80</td>
-      <td>3.24</td>
-      <td>0.30</td>
-      <td>2.81</td>
-      <td>5.68</td>
-      <td>1.03</td>
-      <td>3.17</td>
-      <td>1185</td>
-    </tr>
-<tr>
-<th>3</th>
-      <td>1</td>
-      <td>14.37</td>
-      <td>1.95</td>
-      <td>2.50</td>
-      <td>16.8</td>
-      <td>113</td>
-      <td>3.85</td>
-      <td>3.49</td>
-      <td>0.24</td>
-      <td>2.18</td>
-      <td>7.80</td>
-      <td>0.86</td>
-      <td>3.45</td>
-      <td>1480</td>
-    </tr>
-<tr>
-<th>4</th>
-      <td>1</td>
-      <td>13.24</td>
-      <td>2.59</td>
-      <td>2.87</td>
-      <td>21.0</td>
-      <td>118</td>
-      <td>2.80</td>
-      <td>2.69</td>
-      <td>0.39</td>
-      <td>1.82</td>
-      <td>4.32</td>
-      <td>1.04</td>
-      <td>2.93</td>
-      <td>735</td>
-    </tr>
-</tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [15]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'ALCOHOL_LEVEL'</span><span class="p">,</span> <span class="s1">'MALIC_ACID'</span><span class="p">,</span> <span class="s1">'ASH'</span><span class="p">,</span> <span class="s1">'ALCALINITY'</span><span class="p">,</span><span class="s1">'MAGNESIUM'</span><span class="p">,</span> <span class="s1">'PHENOLS'</span><span class="p">,</span> 
-              <span class="s1">'FLAVANOIDS'</span><span class="p">,</span> <span class="s1">'NON_FLAVANOID_PHENOL'</span><span class="p">,</span> <span class="s1">'PROANTHOCYANINS'</span><span class="p">,</span> <span class="s1">'COLOR_INTENSITY'</span><span class="p">,</span> 
-              <span class="s1">'HUE'</span><span class="p">,</span> <span class="s1">'OD280/OD315_DILUTED'</span><span class="p">,</span><span class="s1">'PROLINE'</span><span class="p">]</span>
-<span class="n">label</span> <span class="o">=</span> <span class="s1">'CLASS'</span>
-
-<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">features</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">label</span><span class="p">]</span>
-
-<span class="c1"># train test split with 70% for training</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="a.-Preparing-Projected-data-using-PCA">a. Preparing Projected data using PCA<a class="anchor-link" href="../posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/#a.-Preparing-Projected-data-using-PCA">¶</a>
-</h5>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [16]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># prepare correlation matrix</span>
-<span class="c1"># standar scaler for normalization</span>
-<span class="n">N</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span>
-<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
-<span class="n">Z</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<span class="c1"># Correlation estimation</span>
-<span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Z</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span> <span class="o">/</span> <span class="n">N</span>
-
-<span class="c1"># eigendecomposition</span>
-<span class="n">eigen_values</span><span class="p">,</span> <span class="n">eigen_vectors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
-
-<span class="c1"># prepare projection matrix</span>
-<span class="n">value_idx</span> <span class="o">=</span> <span class="n">eigen_values</span><span class="o">.</span><span class="n">argsort</span><span class="p">()[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">eigen_vectors_sorted</span> <span class="o">=</span> <span class="n">eigen_vectors</span><span class="p">[:,</span> <span class="n">value_idx</span><span class="p">]</span>
-
-<span class="c1"># Projection matrix with 3 PCs ( 3 PCs cover 65% variance in the data)</span>
-<span class="c1"># more on : https://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/</span>
-<span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">eigen_vectors_sorted</span><span class="p">[</span><span class="mi">0</span><span class="p">][:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span>
-               <span class="n">eigen_vectors_sorted</span><span class="p">[</span><span class="mi">1</span><span class="p">][:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span>
-               <span class="n">eigen_vectors_sorted</span><span class="p">[</span><span class="mi">2</span><span class="p">][:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]))</span>
-
-<span class="c1"># projected data</span>
-<span class="n">projected_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asmatrix</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">asmatrix</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="b.-Using-Projected-data-for-the-training-and-prediction-using-Decision-Tree">b. Using Projected data for the training and prediction using Decision Tree<a class="anchor-link" href="../posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/#b.-Using-Projected-data-for-the-training-and-prediction-using-Decision-Tree">¶</a>
-</h5>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [17]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># train test split for training</span>
-<span class="n">Xpc_train</span><span class="p">,</span> <span class="n">Xpc_test</span><span class="p">,</span> <span class="n">ypc_train</span><span class="p">,</span> <span class="n">ypc_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span> <span class="n">projected_data</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-
-<span class="n">tree_pca</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">tree_pca</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xpc_train</span><span class="p">,</span> <span class="n">ypc_train</span><span class="p">)</span>
-
-<span class="n">ypca_pred</span> <span class="o">=</span> <span class="n">tree_pca</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xpc_test</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Test accuracy using Decision tree on PCA projected data: </span><span class="si">%.2f</span><span class="s1">'</span> <span class="o">%</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">ypc_test</span><span class="p">,</span> <span class="n">ypca_pred</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Test accuracy using Decision tree on PCA projected data: 0.76
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="../posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/">Read more…</a></p>
-</div>
-</div>
-</div>
-</div>
-    </section><footer class="post-meta">
-                Sijan Bhandari
-
-        on
-                <a href="../categories/decision-tree/">#decision-tree</a>,
-                <a href="../categories/principal-component-analysis/">#principal-component-analysis</a>,
-                <a href="../categories/random-forest/">#random-forest</a>,
-
-        <time class="post-date" datetime="2020-03-28T23:02:59+05:45">
-            2020-03-28 23:02
-        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/principal-component-analysis-pca-for-visualization-using-python/">Principal Component Analysis (PCA) for Visualization using Python</a></h2>
-    </header><section class="post-excerpt"><div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="1.-Basic-Setup">1. Basic Setup<a class="anchor-link" href="../posts/principal-component-analysis-pca-for-visualization-using-python/#1.-Basic-Setup">¶</a>
-</h4>
-<p>Principal Component Analysis (PCA) is being used to reduce the dimensionality of data whilst retaining as much of information as possible. The general idea of PCA works as follows:</p>
-
-<pre><code> a. Find the principal components from your original data
- b. Project your original data into the space spanned by principal components from (a)
-
-
-</code></pre>
-<p>Let's use $ \textbf{X} $ as our data matrix and $ \sum $ as our covariance matrix of $ \textbf{X} $. We will get eigenvectors ( $ \bf{v_1}, {v_2}, .....{v_k} $) and eigenvalues (${\lambda_1},{\lambda_2},....,{\lambda_k}$) from the covariance matrix $ \sum $, such that:</p>
-<p>$ \lambda_1 \geq \lambda_2 \geq ...... \lambda_k $</p>
-<p><span style="color:red"> NOTE* </span> : Elements of the vector ($ \bf{v_1} $ ) represents the coefficients of principal components.</p>
-<p>Our goal is to maximize the variance of projection along each of principal components. This can be written as:</p>
-<p>$ \bf{var(y_i)} = \bf{var}(v_{i1} * X_1 + v_{i2} * X_2 + ...... + v_{ik} * X_k ) $</p>
-<p>You can see that, we are projecting the original data into our new vector space given by PCs.</p>
-<p><span style="color:red"> NOTE* </span> : $ \bf{var(y_i)} = \lambda_i $ and principal components are uncorrelated i.e $ cov(y_i, y_j) $ = 0</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="2.-Principal-Component-Analysis-Algorithm-(Pseudocode)">2. Principal Component Analysis Algorithm (Pseudocode)<a class="anchor-link" href="../posts/principal-component-analysis-pca-for-visualization-using-python/#2.-Principal-Component-Analysis-Algorithm-(Pseudocode)">¶</a>
-</h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>a. $ \textbf{X} \gets $ design data matrix with dimension ( N*k )</p>
-<p>b. $ \textbf{X} \gets $ subtract mean from each column vector of $ \bf{X} $</p>
-<p>c. $ \sum  \gets $ compute covariance matrix of $ \bf{X} $</p>
-<p>d. Calculate eigenvectors and eigenvalues from $ \sum $</p>
-<p>e. Principal Components (PCs) $ \gets $ the first M eigenvectors with largest eigenvalues.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="3.-Basic-Data-Analysis">3. Basic Data Analysis<a class="anchor-link" href="../posts/principal-component-analysis-pca-for-visualization-using-python/#3.-Basic-Data-Analysis">¶</a>
-</h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="../posts/principal-component-analysis-pca-for-visualization-using-python/">Read more…</a></p>
-</div>
-</div>
-</div>
-</div>
-    </section><footer class="post-meta">
-                Sijan Bhandari
-
-        on
-
-        <time class="post-date" datetime="2020-03-19T17:19:26+05:45">
-            2020-03-19 17:19
-        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/">Linear Regression with Maximum Likelihood (MSE) and Bayesian Learning Approach from scratch</a></h2>
-    </header><section class="post-excerpt"><div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="1.-Setup">1. Setup<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#1.-Setup">¶</a>
-</h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Given the input dataset $ \textbf{D} = \{(x_i, t_i)\}_{i=1}^{N}  $, our goal is to learn the parameters that model this data and use those parameters (w) for the prediction new data point.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We often define the features (basis functions) as : $ \{ \phi_1(x),......,\phi_m(x) \} $ and the linear regression model is defined as :</p>
-<p>$ y(x,w)  = \sum_{i=1}^m w_i \phi_i (x) + \varepsilon_i $</p>
-<p>$ \varepsilon_i $ suggesting that we can not perfectly model the data generation process and there will be certain noise in our designed model(paramters). Usually, we assume that the noise is Gaussian. 
-  $ \varepsilon_i \sim Normal(0, \beta^{-1} )$</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="2.-Objective-Functions">2. Objective Functions<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#2.-Objective-Functions">¶</a>
-</h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="a.-Maximum-Likelihood-objective-(MLE)-.i.e-.-(-Mean-Squared-Error-)">a. Maximum Likelihood objective (MLE) .i.e . ( Mean Squared Error )<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#a.-Maximum-Likelihood-objective-(MLE)-.i.e-.-(-Mean-Squared-Error-)">¶</a>
-</h5>
-<p>J(w) =  $ \frac{1}{2} \sum_i^N \{t_i - w^T \phi(x_i) \}^2 $</p>
-<h5 id="b.-Regularized-Linear-Regression">b. Regularized Linear Regression<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#b.-Regularized-Linear-Regression">¶</a>
-</h5>
-<p>J(w) =  $ \frac{1}{2} \sum_i^N \{t_i - w^T \phi(x_i) \}^2 $ + $ \frac{\lambda}{2} w^T w $</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="3.-Closed-Form-Solutions">3. Closed Form Solutions<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#3.-Closed-Form-Solutions">¶</a>
-</h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="a.-For-MSE">a. For MSE<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#a.-For-MSE">¶</a>
-</h5>
-<p>$ w_{MLE} = ( \phi^T \phi )^{-1} \phi^T t $</p>
-<p>$ ( \phi^T \phi )^{-1} $ is called Moore-Penrose inverse.</p>
-<h5 id="b.-For-Regularized-MSE">b. For Regularized MSE<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#b.-For-Regularized-MSE">¶</a>
-</h5>
-<p>$ w_{MLE} = ( \lambda I + \phi^T \phi )^{-1} \phi^T t $</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="4.-Bayesian-Learning">4. Bayesian Learning<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#4.-Bayesian-Learning">¶</a>
-</h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>By using Bayes rule, we have :</p>
-<p>$ p(w | t) = \frac{p(t|w)p(w)}{p(t)} $</p>
-<p>$ p(w|t) $ - Posterior distribution
-   $ p(t|w) $ - Likelihood of data given parameters
-   $ p(w) $ - Prior distribution over paramters (w)</p>
-<h5 id="a.-Pior-on-w-:">a. Pior on w :<a class="anchor-link" href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/#a.-Pior-on-w-:">¶</a>
-</h5>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="../posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/">Read more…</a></p>
-</div>
-</div>
-</div>
-</div>
-    </section><footer class="post-meta">
-                Sijan Bhandari
-
-        on
-                <a href="../categories/bayesian-learning/">#bayesian-learning</a>,
-                <a href="../categories/linear-regression/">#linear-regression</a>,
-                <a href="../categories/maximum-likelihood-estimation/">#maximum-likelihood-estimation</a>,
-
-        <time class="post-date" datetime="2020-03-14T21:52:38+05:45">
-            2020-03-14 21:52
-        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/understanding-regularization-for-support-vector-machines-svms/">Understanding Regularization for Support Vector Machines (SVMs)</a></h2>
-    </header><section class="post-excerpt"><div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>I would like you to go through  <a href="http://sijanb.com.np/posts/why-we-need-support-vector-machine-svm/"><code>Intuition Behind SVM</code></a> before exploring about <code>Regularization</code>.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>SVM has an objective <code>To find the optimal linearly speparating hyperplane which maximizes the margin</code>. But, we know that Hard-Margin SVM can work well when data is completely lineary separable (without any noise or outliers).
-What if our data is not perfectly separable? We have two options for non-separable data:</p>
-
-<pre><code> a. Using Hard-Margin SVM with feature transformations
- b. Using Soft-Margin SVM</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>If you want a good generalization on your result, we should tolerate some errors. If we force our model to be perfect, it will be just an attempt to overfit the data!.</p>
-<p>Let's talk about <code>Soft-Margin SVM</code> and it helps us to understand <code>Regularization</code>. If the training data is not linearly separable, we allow our hyperplane to make few mistakes on outliers or say noisy data. Mistakes means those outliers/noise data can be inside the margin or on the wrong side of the margin.</p>
-<p>But, we will have a mechanism to pay a cost for each of those misclassified example. That cost will depend on how far the data point is from the margin. This cost is represented by slack variables ($ξ_i$)</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>objective function : $ \frac{1}{2} ||w||^2   + C \sum_{i=1}^{n}  ξ_i  $</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In the above equation, the parameter <code>C</code> defines the strength of regularization. We can discuss three different cases based on values of <code>C</code>:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="../posts/understanding-regularization-for-support-vector-machines-svms/">Read more…</a></p>
-</div>
-</div>
-</div>
-</div>
-    </section><footer class="post-meta">
-                Sijan Bhandari
-
-        on
-
-        <time class="post-date" datetime="2019-10-27T16:04:33+05:45">
-            2019-10-27 16:04
-        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/implementation-of-k-means-clustering-algorithm-in-python/">Implementation of K means clustering algorithm in Python</a></h2>
+<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/implementation-of-k-means-clustering-algorithm-in-python/">Implementation of K means clustering algorithm in Python</a></h2>
     </header><section class="post-excerpt"><div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -880,7 +67,6 @@ What if our data is not perfectly separable? We have two options for non-separab
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>For K means clustering algorithm, I will be using <a href="https://www.kaggle.com/arjunbhasin2013/ccdata"><code>Credit Cards Dataset for Clustering</code></a> from Kaggle.</p>
-
 </div>
 </div>
 </div>
@@ -888,19 +74,17 @@ What if our data is not perfectly separable? We have two options for non-separab
 <div class="input">
 <div class="prompt input_prompt">In [135]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -916,40 +100,29 @@ What if our data is not perfectly separable? We have two options for non-separab
 <div class="input">
 <div class="prompt input_prompt">In [136]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">credit_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'../data/CC GENERAL.csv'</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">credit_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'../data/CC GENERAL.csv'</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [137]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">credit_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">credit_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[137]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
+<div class="prompt output_prompt">Out[137]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -965,141 +138,137 @@ What if our data is not perfectly separable? We have two options for non-separab
 <table border="1" class="dataframe">
 <thead><tr style="text-align: right;">
 <th></th>
-      <th>CUST_ID</th>
-      <th>BALANCE</th>
-      <th>BALANCE_FREQUENCY</th>
-      <th>PURCHASES</th>
-      <th>ONEOFF_PURCHASES</th>
-      <th>INSTALLMENTS_PURCHASES</th>
-      <th>CASH_ADVANCE</th>
-      <th>PURCHASES_FREQUENCY</th>
-      <th>ONEOFF_PURCHASES_FREQUENCY</th>
-      <th>PURCHASES_INSTALLMENTS_FREQUENCY</th>
-      <th>CASH_ADVANCE_FREQUENCY</th>
-      <th>CASH_ADVANCE_TRX</th>
-      <th>PURCHASES_TRX</th>
-      <th>CREDIT_LIMIT</th>
-      <th>PAYMENTS</th>
-      <th>MINIMUM_PAYMENTS</th>
-      <th>PRC_FULL_PAYMENT</th>
-      <th>TENURE</th>
-    </tr></thead>
+<th>CUST_ID</th>
+<th>BALANCE</th>
+<th>BALANCE_FREQUENCY</th>
+<th>PURCHASES</th>
+<th>ONEOFF_PURCHASES</th>
+<th>INSTALLMENTS_PURCHASES</th>
+<th>CASH_ADVANCE</th>
+<th>PURCHASES_FREQUENCY</th>
+<th>ONEOFF_PURCHASES_FREQUENCY</th>
+<th>PURCHASES_INSTALLMENTS_FREQUENCY</th>
+<th>CASH_ADVANCE_FREQUENCY</th>
+<th>CASH_ADVANCE_TRX</th>
+<th>PURCHASES_TRX</th>
+<th>CREDIT_LIMIT</th>
+<th>PAYMENTS</th>
+<th>MINIMUM_PAYMENTS</th>
+<th>PRC_FULL_PAYMENT</th>
+<th>TENURE</th>
+</tr></thead>
 <tbody>
 <tr>
 <th>0</th>
-      <td>C10001</td>
-      <td>40.900749</td>
-      <td>0.818182</td>
-      <td>95.40</td>
-      <td>0.00</td>
-      <td>95.4</td>
-      <td>0.000000</td>
-      <td>0.166667</td>
-      <td>0.000000</td>
-      <td>0.083333</td>
-      <td>0.000000</td>
-      <td>0</td>
-      <td>2</td>
-      <td>1000.0</td>
-      <td>201.802084</td>
-      <td>139.509787</td>
-      <td>0.000000</td>
-      <td>12</td>
-    </tr>
+<td>C10001</td>
+<td>40.900749</td>
+<td>0.818182</td>
+<td>95.40</td>
+<td>0.00</td>
+<td>95.4</td>
+<td>0.000000</td>
+<td>0.166667</td>
+<td>0.000000</td>
+<td>0.083333</td>
+<td>0.000000</td>
+<td>0</td>
+<td>2</td>
+<td>1000.0</td>
+<td>201.802084</td>
+<td>139.509787</td>
+<td>0.000000</td>
+<td>12</td>
+</tr>
 <tr>
 <th>1</th>
-      <td>C10002</td>
-      <td>3202.467416</td>
-      <td>0.909091</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>6442.945483</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.250000</td>
-      <td>4</td>
-      <td>0</td>
-      <td>7000.0</td>
-      <td>4103.032597</td>
-      <td>1072.340217</td>
-      <td>0.222222</td>
-      <td>12</td>
-    </tr>
+<td>C10002</td>
+<td>3202.467416</td>
+<td>0.909091</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.0</td>
+<td>6442.945483</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.250000</td>
+<td>4</td>
+<td>0</td>
+<td>7000.0</td>
+<td>4103.032597</td>
+<td>1072.340217</td>
+<td>0.222222</td>
+<td>12</td>
+</tr>
 <tr>
 <th>2</th>
-      <td>C10003</td>
-      <td>2495.148862</td>
-      <td>1.000000</td>
-      <td>773.17</td>
-      <td>773.17</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-      <td>1.000000</td>
-      <td>1.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0</td>
-      <td>12</td>
-      <td>7500.0</td>
-      <td>622.066742</td>
-      <td>627.284787</td>
-      <td>0.000000</td>
-      <td>12</td>
-    </tr>
+<td>C10003</td>
+<td>2495.148862</td>
+<td>1.000000</td>
+<td>773.17</td>
+<td>773.17</td>
+<td>0.0</td>
+<td>0.000000</td>
+<td>1.000000</td>
+<td>1.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0</td>
+<td>12</td>
+<td>7500.0</td>
+<td>622.066742</td>
+<td>627.284787</td>
+<td>0.000000</td>
+<td>12</td>
+</tr>
 <tr>
 <th>3</th>
-      <td>C10004</td>
-      <td>1666.670542</td>
-      <td>0.636364</td>
-      <td>1499.00</td>
-      <td>1499.00</td>
-      <td>0.0</td>
-      <td>205.788017</td>
-      <td>0.083333</td>
-      <td>0.083333</td>
-      <td>0.000000</td>
-      <td>0.083333</td>
-      <td>1</td>
-      <td>1</td>
-      <td>7500.0</td>
-      <td>0.000000</td>
-      <td>NaN</td>
-      <td>0.000000</td>
-      <td>12</td>
-    </tr>
+<td>C10004</td>
+<td>1666.670542</td>
+<td>0.636364</td>
+<td>1499.00</td>
+<td>1499.00</td>
+<td>0.0</td>
+<td>205.788017</td>
+<td>0.083333</td>
+<td>0.083333</td>
+<td>0.000000</td>
+<td>0.083333</td>
+<td>1</td>
+<td>1</td>
+<td>7500.0</td>
+<td>0.000000</td>
+<td>NaN</td>
+<td>0.000000</td>
+<td>12</td>
+</tr>
 <tr>
 <th>4</th>
-      <td>C10005</td>
-      <td>817.714335</td>
-      <td>1.000000</td>
-      <td>16.00</td>
-      <td>16.00</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-      <td>0.083333</td>
-      <td>0.083333</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1200.0</td>
-      <td>678.334763</td>
-      <td>244.791237</td>
-      <td>0.000000</td>
-      <td>12</td>
-    </tr>
+<td>C10005</td>
+<td>817.714335</td>
+<td>1.000000</td>
+<td>16.00</td>
+<td>16.00</td>
+<td>0.0</td>
+<td>0.000000</td>
+<td>0.083333</td>
+<td>0.083333</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0</td>
+<td>1</td>
+<td>1200.0</td>
+<td>678.334763</td>
+<td>244.791237</td>
+<td>0.000000</td>
+<td>12</td>
+</tr>
 </tbody>
 </table>
+</div></div>
 </div>
 </div>
-
 </div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1115,25 +284,16 @@ What if our data is not perfectly separable? We have two options for non-separab
 <div class="input">
 <div class="prompt input_prompt">In [138]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">credit_data</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">credit_data</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[138]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[138]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>CUST_ID                               0
 BALANCE                               0
@@ -1155,12 +315,9 @@ PRC_FULL_PAYMENT                      0
 TENURE                                0
 dtype: int64</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1168,7 +325,6 @@ dtype: int64</pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can see that some missing values in column <code>MINIMUM_PAYMENTS</code> column. Since we are focusing on algorithm aspect in this tutorial, I will simply remove entries having 'NaN' value.</p>
-
 </div>
 </div>
 </div>
@@ -1186,14 +342,12 @@ dtype: int64</pre>
 <div class="input">
 <div class="prompt input_prompt">In [139]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">credit_data</span> <span class="o">=</span> <span class="n">credit_data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">'any'</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">credit_data</span> <span class="o">=</span> <span class="n">credit_data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">'any'</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1209,15 +363,13 @@ dtype: int64</pre>
 <div class="input">
 <div class="prompt input_prompt">In [140]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Customer ID does not bear any meaning to build cluster. So, let's remove it.</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Customer ID does not bear any meaning to build cluster. So, let's remove it.</span>
 <span class="n">credit_data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">"CUST_ID"</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1235,7 +387,7 @@ dtype: int64</pre>
         on
 
         <time class="post-date" datetime="2019-08-11T16:08:29+05:45">
-            2019-08-11 16:08
+            2019-08-11
         </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/graphical-illustration-of-k-means-algorithm/">Graphical illustration of K Means algorithm</a></h2>
     </header><section class="post-excerpt"><div>
 <div class="cell border-box-sizing text_cell rendered">
@@ -1243,8 +395,7 @@ dtype: int64</pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../images/k-means_algorithm_1.png"></p>
-
+<img alt="No description has been provided for this image" src="../images/k-means_algorithm_1.png">
 </div>
 </div>
 </div>
@@ -1264,7 +415,7 @@ dtype: int64</pre>
         on
 
         <time class="post-date" datetime="2019-08-06T21:57:00+05:45">
-            2019-08-06 21:57
+            2019-08-06
         </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/">Intuition behind Gradient Descent for Machine Learning Algorithms</a></h2>
     </header><section class="post-excerpt"><div>
 <div class="cell border-box-sizing text_cell rendered">
@@ -1272,8 +423,7 @@ dtype: int64</pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../images/gradient_descent.png"></p>
-<p>Before jumping to Gradient Descent, let's be clear about difference between backpropagation and gradient descent. Comparing things make it easier to learn !</p>
+<img alt="No description has been provided for this image" src="../images/gradient_descent.png"><p>Before jumping to Gradient Descent, let's be clear about difference between backpropagation and gradient descent. Comparing things make it easier to learn !</p>
 <h5 id="Backpropagation-:">Backpropagation :<a class="anchor-link" href="../posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/#Backpropagation-:">¶</a>
 </h5>
 <p>Backpropagation is an efficient way of calculating gradients using chain rule.</p>
@@ -1285,7 +435,6 @@ dtype: int64</pre>
 <p>** Many machine learning algorithms are convex problems, so using gradient descent to get extrema makes more sense. For example, if you remember the solution of linear regression :</p>
 <p>$ \beta = (X^T X)^{-1} X^T y  $</p>
 <p>Here, we can get the analytical solution by simply solving above equations. But, inverse calculation has $ O(N^3) $ complexity. It will be worst if our data size increases.</p>
-
 </div>
 </div>
 </div>
@@ -1305,7 +454,7 @@ dtype: int64</pre>
         on
 
         <time class="post-date" datetime="2019-08-05T22:37:30+05:45">
-            2019-08-05 22:37
+            2019-08-05
         </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/interpreting-centrality-measures-for-network-analysis/">Interpreting Centrality Measures for Network Analysis</a></h2>
     </header><section class="post-excerpt"><div>
 <div class="cell border-box-sizing text_cell rendered">
@@ -1331,7 +480,6 @@ dtype: int64</pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Peoply usually visualize the network to see cluter/ densely linked clusters and try to analyze, predict relation between nodes, figure out similarity between nodes in the network.</p>
-
 </div>
 </div>
 </div>
@@ -1341,11 +489,9 @@ dtype: int64</pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Figuring out the central nodes/vertices is also an important network analysis process because centrality measures :</p>
-
 <pre><code>        a. Existing influence of a node on other nodes
         b. Information flow in and out from a node or towards it
         c. Finding node/s which is/are acting as bridge between two different/big groups</code></pre>
-
 </div>
 </div>
 </div>
@@ -1365,16 +511,14 @@ dtype: int64</pre>
         on
 
         <time class="post-date" datetime="2019-07-31T23:26:36+05:45">
-            2019-07-31 23:26
+            2019-07-31
         </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/understanding-term-frequencey-and-inverse-document-frequency/">Understanding Term Frequencey and Inverse Document Frequency</a></h2>
-    </header><section class="post-excerpt"><div>
-<div class="cell border-box-sizing text_cell rendered">
+    </header><section class="post-excerpt"><div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In any document, the frequency of occurrence of terms is taken as an important measure of score for that document (Term Frequency). For example : a document has total 100 words, and 30 words are 'mountains', we ,without hesitation, say that this document is talking about 'Mountains'.</p>
-
 </div>
 </div>
 </div>
@@ -1384,7 +528,6 @@ dtype: int64</pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>But, if we only include most frequent word as our score metric, we will eventually loose the actual relevancy score of the document. Since same word could exist in number of documents and it's just frequent occurrence without adding much meaning to current context. In the above example : Suppose, there are two documents talking about 'Mt. Everest'. We obviously know that there will be higher occurrence of word 'Mountains'. But, if we use 'Term Frequecy (tf)' alone, term 'Mountains' will get highest weight rather than term 'Everest'. It's not fair. And, Inverse-Document-Frequency will tackle it.</p>
-
 </div>
 </div>
 </div>
@@ -1396,7 +539,6 @@ dtype: int64</pre>
 <h4 id="Term-Frequency-(TF)-/-Normalized-Term-Frequency-(nTF):">Term Frequency (TF) / Normalized Term Frequency (nTF):<a class="anchor-link" href="../posts/understanding-term-frequencey-and-inverse-document-frequency/#Term-Frequency-(TF)-/-Normalized-Term-Frequency-(nTF):">¶</a>
 </h4>
 <p>It simply measures the frequency/occurent of a term in a document. So, it gives equal important to all terms. Longer document could have large number of terms than smaller documents, so better to normalize this metric by dividing with total number of terms in the document. We also</p>
-
 </div>
 </div>
 </div>
@@ -1424,7 +566,6 @@ dtype: int64</pre>
 <h4 id="Inverse-Document-Frequency-(IDF):">Inverse Document Frequency (IDF):<a class="anchor-link" href="../posts/understanding-term-frequencey-and-inverse-document-frequency/#Inverse-Document-Frequency-(IDF):">¶</a>
 </h4>
 <p>It gives the importance to more relevant/significant term in the document. It tries to lower the weights to terms having less importance. And, rare terms will get significant weights.</p>
-
 </div>
 </div>
 </div>
@@ -1436,7 +577,6 @@ dtype: int64</pre>
 <h4 id="TF-IDF:">TF-IDF:<a class="anchor-link" href="../posts/understanding-term-frequencey-and-inverse-document-frequency/#TF-IDF:">¶</a>
 </h4>
 <p>It tries to prioritize the terms based on their occurrence and uniqueness.</p>
-
 </div>
 </div>
 </div>
@@ -1458,8 +598,7 @@ dtype: int64</pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../images/tf_1.png"><img src="../images/tf_2.png"><img src="../images/tf_3.png"></p>
-
+<img alt="No description has been provided for this image" src="../images/tf_1.png"><img alt="No description has been provided for this image" src="../images/tf_2.png"><img alt="No description has been provided for this image" src="../images/tf_3.png">
 </div>
 </div>
 </div>
@@ -1476,7 +615,6 @@ dtype: int64</pre>
 </h4>
 <p>Suppose, we are building a search engine system. The query is also converted into vector in vector-space model and compare with documents
 (NOTE 1) to get the similarity between them.</p>
-
 </div>
 </div>
 </div>
@@ -1484,14 +622,11 @@ dtype: int64</pre>
 <div class="input">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span> 
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
 </div>
     </section><footer class="post-meta">
@@ -1500,18 +635,18 @@ dtype: int64</pre>
         on
 
         <time class="post-date" datetime="2019-07-29T23:30:08+05:45">
-            2019-07-29 23:30
+            2019-07-29
         </time></footer></article>
 </div>
 
         <nav class="postindexpager"><ul class="pager">
 <li class="previous">
-                <a href="index-3.html" rel="prev">Newer posts</a>
+                <a href="." rel="prev">Newer posts</a>
             </li>
             <li class="next">
                 <a href="index-1.html" rel="next">Older posts</a>
             </li>
-        </ul></nav><script>var disqus_shortname="blog-sijanb-com-np";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        </ul></nav><script>var disqus_shortname="blog-sijanb-com-np";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -1523,7 +658,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script></main><footer class="site-footer clearfix"><section class="poweredby">Contents © 2020         <a href="mailto:sijanonly@gmail.com">Sijan Bhandari</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </section></footer>
+</script></main><footer class="site-footer clearfix"><section class="poweredby">Contents © 2024         <a href="mailto:sijanonly@gmail.com">Sijan Bhandari</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </section></footer>
 </div>
 
     <script type="text/javascript" src="../assets/js/jquery.js"></script><script type="text/javascript" src="../assets/js/jquery.fitvids.js"></script><script type="text/javascript" src="../assets/js/index.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-116715433-2"></script><script>

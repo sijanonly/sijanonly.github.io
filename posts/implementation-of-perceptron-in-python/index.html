@@ -10,7 +10,7 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="../../assets/css/screen.css">
 <link rel="stylesheet" type="text/css" href="../../assets/css/nav.css">
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400%7CInconsolata">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
@@ -18,7 +18,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://sijanb.com.np/posts/implementation-of-perceptron-in-python/">
 <link rel="icon" href="../../favicon.ico" sizes="16x16">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Sijan Bhandari">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Font Awesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<meta name="author" content="Sijan Bhandari">
 <link rel="prev" href="../understanding-probability/" title="Understanding Probability" type="text/html">
 <link rel="next" href="../why-you-need-to-understand-bias-and-variance-in-machine-learning/" title="Why you need to understand bias and variance in Machine Learning" type="text/html">
 <meta property="og:site_name" content="CODEBUG">
@@ -26,7 +27,7 @@
 <meta property="og:url" content="https://sijanb.com.np/posts/implementation-of-perceptron-in-python/">
 <meta property="og:description" content='In [2]:
 
-    
+
 # -*- coding: utf-8 -*-
 # @Author: Sijan
 # @Date:   2019-04-01
@@ -36,7 +37,7 @@ from random import randint
 
 def step_function(result):
     """
-    Simple linear function which will be activated if the '>
+    Simple linear function which will be activated if the valu'>
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2019-04-01T16:07:46+05:45">
 </head>
@@ -71,22 +72,21 @@ def step_function(result):
             Sijan Bhandari
             on
             <time class="post-date" datetime="2019-04-01T16:07:46+05:45">
-                2019-04-01 16:07
-            </time></section></header><section class="post-content"><div>
-<div class="cell border-box-sizing code_cell rendered">
+                2019-04-01
+            </time></section></header><section class="post-content"><div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="c1"># @Author: Sijan</span>
 <span class="c1"># @Date:   2019-04-01</span>
 
-<span class="kn">from</span> <span class="nn">random</span> <span class="k">import</span> <span class="n">randint</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
 
 
 <span class="k">def</span> <span class="nf">step_function</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
-    <span class="sd">"""</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Simple linear function which will be activated if the value is greater than 0.</span>
 <span class="sd">    """</span>
     <span class="k">if</span> <span class="n">result</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -95,18 +95,18 @@ def step_function(result):
 
 
 <span class="k">class</span> <span class="nc">Perceptron</span><span class="p">:</span>
-    <span class="sd">"""</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Perceptron class defines a neuron with attributes : weights, bias and learning rate.</span>
 <span class="sd">    """</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.5</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">input_size</span><span class="p">)]</span>
 
 
 <span class="k">def</span> <span class="nf">feedforward</span><span class="p">(</span><span class="n">perceptron</span><span class="p">,</span> <span class="n">node_input</span><span class="p">):</span>
-    <span class="sd">"""</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Implements product between input and weights</span>
 <span class="sd">    """</span>
     <span class="n">node_sum</span> <span class="o">=</span> <span class="mi">0</span>
@@ -120,7 +120,7 @@ def step_function(result):
 
 
 <span class="k">def</span> <span class="nf">adjust_weight</span><span class="p">(</span><span class="n">perceptron</span><span class="p">,</span> <span class="n">node_input</span><span class="p">,</span> <span class="n">error</span><span class="p">):</span>
-    <span class="sd">"""</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Adjust weightage based on error. It simply scales input values towards right direction.</span>
 
 <span class="sd">    """</span>
@@ -131,7 +131,7 @@ def step_function(result):
 
 
 <span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">perceptron</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">outputs</span><span class="p">):</span>
-    <span class="sd">"""</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Trains perceptron for given inputs.</span>
 <span class="sd">    """</span>
     <span class="k">for</span> <span class="n">training_input</span><span class="p">,</span> <span class="n">training_output</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">outputs</span><span class="p">):</span>
@@ -144,7 +144,7 @@ def step_function(result):
 
 
 <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">perceptron</span><span class="p">,</span> <span class="n">test_input</span><span class="p">,</span> <span class="n">test_output</span><span class="p">):</span>
-    <span class="sd">"""</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Predicts new inputs.</span>
 <span class="sd">    """</span>
     <span class="n">prediction</span> <span class="o">=</span> <span class="n">feedforward</span><span class="p">(</span><span class="n">perceptron</span><span class="p">,</span> <span class="n">test_input</span><span class="p">)</span>
@@ -173,20 +173,13 @@ def step_function(result):
     <span class="nb">print</span><span class="p">(</span><span class="s1">'...................................'</span><span class="p">)</span>
     <span class="n">predict</span><span class="p">(</span><span class="n">perceptron</span><span class="p">,</span> <span class="n">test_input</span><span class="p">,</span> <span class="n">test_output</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>weight after adjustment [0.0, 0.0]
 bias after adjustment 0.0
@@ -275,28 +268,23 @@ input :(1, 1) has true output :1
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span> 
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
 </div>
     </section><footer class="post-footer"><section class="comments hidden-print"><h2>Comments</h2>
         
-        
+    
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="blog-sijanb-com-np",
@@ -316,7 +304,7 @@ input :(1, 1) has true output :1
     <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -328,7 +316,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script></footer></article><script>var disqus_shortname="blog-sijanb-com-np";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer class="site-footer clearfix"><section class="poweredby">Contents © 2020         <a href="mailto:sijanonly@gmail.com">Sijan Bhandari</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </section></footer>
+</script></footer></article><script>var disqus_shortname="blog-sijanb-com-np";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer class="site-footer clearfix"><section class="poweredby">Contents © 2024         <a href="mailto:sijanonly@gmail.com">Sijan Bhandari</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </section></footer>
 </div>
 
     <script type="text/javascript" src="../../assets/js/jquery.js"></script><script type="text/javascript" src="../../assets/js/jquery.fitvids.js"></script><script type="text/javascript" src="../../assets/js/index.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-116715433-2"></script><script>

@@ -10,7 +10,7 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="../../assets/css/screen.css">
 <link rel="stylesheet" type="text/css" href="../../assets/css/nav.css">
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400%7CInconsolata">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
@@ -18,7 +18,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://sijanb.com.np/posts/what-is-perceptron-and-how-it-works/">
 <link rel="icon" href="../../favicon.ico" sizes="16x16">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Sijan Bhandari">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Font Awesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<meta name="author" content="Sijan Bhandari">
 <link rel="prev" href="../what-is-deep-learning-and-neural-network/" title="What is Deep Learning and Neural Network?" type="text/html">
 <link rel="next" href="../using-perceptron-model-for-classification-an-illustrative-approach/" title="Using perceptron model for classification : an illustrative approach" type="text/html">
 <meta property="og:site_name" content="CODEBUG">
@@ -62,9 +63,8 @@ A percentron can only takes binary input values ">
             on
                 <a href="../../categories/perceptron/">#perceptron</a>,
             <time class="post-date" datetime="2018-10-24T02:21:47+05:45">
-                2018-10-24 02:21
-            </time></section></header><section class="post-content"><div>
-<div class="cell border-box-sizing text_cell rendered">
+                2018-10-24
+            </time></section></header><section class="post-content"><div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -74,14 +74,13 @@ A percentron can only takes binary input values ">
 The output decision (either0 or 1), is based on the value of weighted sum of inputs and weights.</p>
 <p>Mathematically perceptron can be defined as :</p>
 <p>output O(n)=<br>
-                                {
-     0   if   ∑wixi + $\theta$ &lt;= 0 <br>
-                                                  1   if   ∑wixi + $\theta$ &gt; 0
-             <br>
-                                          } <br></p>
+                              {
+   0   if   ∑wixi + $\theta$ &lt;= 0 <br>
+                                                 1   if   ∑wixi + $\theta$ &gt; 0
+<br>
+                                     } <br></p>
 <p>$\theta$ = threshold / bias</p>
-<p><img src="../../images/perceptron.png"></p>
-
+<img alt="No description has been provided for this image" src="../../images/perceptron.png">
 </div>
 </div>
 </div>
@@ -102,7 +101,6 @@ The output decision (either0 or 1), is based on the value of weighted sum of inp
 <h5 id="Perceptron-Learning-Algorithm">Perceptron Learning Algorithm<a class="anchor-link" href="#Perceptron-Learning-Algorithm">¶</a>
 </h5>
 <p>Perceptron learning is basically done by adjusting the weights and bias in training process.</p>
-
 </div>
 </div>
 </div>
@@ -112,15 +110,9 @@ The output decision (either0 or 1), is based on the value of weighted sum of inp
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Initially, we will have <code>training set</code> of input vector</p>
-
-<pre><code>[x_1(n), x_2(n),....x_m(n) ]
-
-</code></pre>
+<pre><code>[x_1(n), x_2(n),....x_m(n) ]</code></pre>
 <p>And, weight vetor</p>
-
-<pre><code>[w_1(n), w_2(n),....w_m(n)]
-
-</code></pre>
+<pre><code>[w_1(n), w_2(n),....w_m(n)]</code></pre>
 <p>And, bias = b</p>
 <p>For convenience let w0=b(n) and x0(n) = 1</p>
 <p>i.e input vector = <code>[1, x_1(n),x_2(n),.....x_m(n)]</code> <br>
@@ -142,33 +134,23 @@ and -1 belongs N.</p>
 <h5 id="b.-Actual-Response">b. Actual Response<a class="anchor-link" href="#b.-Actual-Response">¶</a>
 </h5>
 <p>For each input vector, we will calculate the actual output based on</p>
-
 <pre><code>      y(n) = sgn[w(n)x(n)]
 
 Where sgn(.) represents signum function as following:
 
     sgn(x) = {  +1 if x&gt;=0
-                -1 if x&lt;0 }
-
-</code></pre>
+                -1 if x&lt;0 }</code></pre>
 <h5 id="c.-Weight-adjustment-:">c. Weight adjustment :<a class="anchor-link" href="#c.-Weight-adjustment-:">¶</a>
 </h5>
 <p>We will adjust the weight vector as follows:</p>
-<p>calculate error :</p>
-
-<pre><code>         e = d(n) - y(n) 
-</code></pre>
-<p><br></p>
-
-<pre><code>    w(n+1) = w(n) + eta * e * x(n)
-
-</code></pre>
+<p>calculate error :
+e = d(n) - y(n)
+<br></p>
+<pre><code>    w(n+1) = w(n) + eta * e * x(n)</code></pre>
 <p>where</p>
-
 <pre><code>      d(n) = { +1   if x(n) classified as M
              -1   if x(n) classified as N
              }</code></pre>
-
 </div>
 </div>
 </div>
@@ -176,19 +158,16 @@ Where sgn(.) represents signum function as following:
 <div class="input">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span> 
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
 </div>
     </section><footer class="post-footer"><section class="comments hidden-print"><h2>Comments</h2>
         
-        
+    
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="blog-sijanb-com-np",
@@ -208,7 +187,7 @@ Where sgn(.) represents signum function as following:
     <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -220,7 +199,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script></footer></article><script>var disqus_shortname="blog-sijanb-com-np";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer class="site-footer clearfix"><section class="poweredby">Contents © 2020         <a href="mailto:sijanonly@gmail.com">Sijan Bhandari</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </section></footer>
+</script></footer></article><script>var disqus_shortname="blog-sijanb-com-np";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer class="site-footer clearfix"><section class="poweredby">Contents © 2024         <a href="mailto:sijanonly@gmail.com">Sijan Bhandari</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </section></footer>
 </div>
 
     <script type="text/javascript" src="../../assets/js/jquery.js"></script><script type="text/javascript" src="../../assets/js/jquery.fitvids.js"></script><script type="text/javascript" src="../../assets/js/index.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-116715433-2"></script><script>
