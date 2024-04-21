@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Paper Summary : Visual Reinforcement Learning Imagined Goals | CODEBUG</title>
+<title>Paper Summary : Learning What Data to Learn | CODEBUG</title>
 <link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
@@ -16,25 +16,25 @@
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
-<link rel="canonical" href="https://sijanb.com.np/posts/paper-summary-visual-reinforcement-learning-imagined-goals/">
+<link rel="canonical" href="https://sijanb.com.np/posts/paper-summary-learning-what-data-to-learn/">
 <link rel="icon" href="../../favicon.ico" sizes="16x16">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Font Awesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 <meta name="author" content="Sijan Bhandari">
-<link rel="prev" href="../designing-recommendation-system-using-k-nearest-neighbor-knn/" title="Designing recommendation system using K Nearest Neighbor (kNN)" type="text/html">
-<link rel="next" href="../paper-summary-asynchronous-methods-for-deep-reinforcement-learning/" title="Paper Summary : Asynchronous Methods for Deep Reinforcement Learning" type="text/html">
+<link rel="prev" href="../paper-summary-curiosity-driven-exploration-by-self-supervised-prediction/" title="Paper Summary : Curiosity-driven Exploration by Self-supervised Prediction" type="text/html">
+<link rel="next" href="../paper-summary-proximal-policy-optimization-algorithms/" title="Paper Summary : Proximal Policy Optimization Algorithms" type="text/html">
 <meta property="og:site_name" content="CODEBUG">
-<meta property="og:title" content="Paper Summary : Visual Reinforcement Learning Imagined Goals">
-<meta property="og:url" content="https://sijanb.com.np/posts/paper-summary-visual-reinforcement-learning-imagined-goals/">
-<meta property="og:description" content='Summary of the paper "Visual Reinforcement Learning with Imagined Goals"
+<meta property="og:title" content="Paper Summary : Learning What Data to Learn">
+<meta property="og:url" content="https://sijanb.com.np/posts/paper-summary-learning-what-data-to-learn/">
+<meta property="og:description" content='Summary of the paper "Learning What Data to Learn"
 
 
 
 
 
 
-Motivation¶Humans can easily adjust themselves or adopt to new environments and learn new tasks by setting their own goal'>
+Motivation¶The performance of learning algorithms based on Machine Learning or Deep Learning rely on amount of training data. Having more data '>
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2020-10-31T15:41:42+05:45">
+<meta property="article:published_time" content="2020-10-31T21:18:59+05:45">
 </head>
 <body class="nav-closed">
 
@@ -62,18 +62,18 @@ Motivation¶Humans can easily adjust themselves or adopt to new environments and
 <div class="site-wrapper">
     <header class="main-header post-head no-cover"><nav class="main-nav overlay clearfix"><a class="blog-logo" href="https://sijanb.com.np/"><img src="../../images/logo.png" alt="Blog Logo"></a>
             <a class="menu-button" href="#"><span class="burger">☰</span><span class="word">Menu</span></a>
-        </nav></header><main id="content" class="content" role="main"><article class="post post"><header class="post-header"><h1 class="post-title">Paper Summary : Visual Reinforcement Learning Imagined Goals</h1>
+        </nav></header><main id="content" class="content" role="main"><article class="post post"><header class="post-header"><h1 class="post-title">Paper Summary : Learning What Data to Learn</h1>
         <section class="post-meta"> by
             Sijan Bhandari
             on
-            <time class="post-date" datetime="2020-10-31T15:41:42+05:45">
+            <time class="post-date" datetime="2020-10-31T21:18:59+05:45">
                 2020-10-31
             </time></section></header><section class="post-content"><div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Summary of the paper <a href="https://arxiv.org/abs/1807.04742">"Visual Reinforcement Learning with Imagined Goals"</a></p>
+<p>Summary of the paper <a href="https://arxiv.org/pdf/1702.08635.pdf">"Learning What Data to Learn"</a></p>
 </div>
 </div>
 </div>
@@ -84,7 +84,7 @@ Motivation¶Humans can easily adjust themselves or adopt to new environments and
 <div class="text_cell_render border-box-sizing rendered_html">
 <h5 id="Motivation">Motivation<a class="anchor-link" href="#Motivation">¶</a>
 </h5>
-<p>Humans can easily adjust themselves or adopt to new environments and learn new tasks by setting their own goals. In case of Reinforcement Learning framework, we have to manually design the reward function which gives an orientation towards the goal of a given task. For example, if we have to train a robot to pick a package and deliver to a destination, we have to set reward based on its distance-covered. Along with delivery task, there might be other tasks like adjusting robot-arm to pick the package based on it's shape/size or placing the package at the destination without throwing it on the ground. For each of these tasks, we can design specific-reward functions.But, it won't be practical or scalable for real-world problems where an agent has to solve many tasks synchronously.</p>
+<p>The performance of learning algorithms based on Machine Learning or Deep Learning rely on amount of training data. Having more data points also has benefit of learning more generalized models and avoiding overfitting. However, collecting data is a painstalking work. Instead, we can learn automatic and adaptive data selection in the training process and make learning faster with minimal data points.</p>
 </div>
 </div>
 </div>
@@ -95,35 +95,26 @@ Motivation¶Humans can easily adjust themselves or adopt to new environments and
 <div class="text_cell_render border-box-sizing rendered_html">
 <h5 id="Contribution">Contribution<a class="anchor-link" href="#Contribution">¶</a>
 </h5>
-<p>Authors proposed a reinforcement learning framework where an agent can learn general-purpose goal-conditioned polices by setting it's own synthetic goals and learning tasks to achieve those goals, without human intervention.</p>
-<p>They referred this framework as "reinforcement with imagined goals" (RIG).</p>
-<h6 id="Synthetic-Goals">Synthetic Goals<a class="anchor-link" href="#Synthetic-Goals">¶</a>
+<p>In this paper, authors have introduced  Neural Data Filter (NDF) as an adaptive framework which can learn data selection policy using deep reinforcement learning(DRL) algorithm 'Policy Gradient'.
+Two important aspects of this framework:</p>
+<p>a. NDF filter the data instances from randomly fetched mini-batches of data during training process.
+b. Training loop provides feedback to NDF policy based on reward signal (e.g. calculated in validation set) and NDF policy is trained using DRL.</p>
+<h6 id="NDF-in-detail">NDF in detail<a class="anchor-link" href="#NDF-in-detail">¶</a>
 </h6>
-<p>Initially, the agent itself generate a set of synthetic goals by exploration through a random policy. Both state observations and goals are the image data (for example in case of robot navigation). By random policy, agent executes some random actions in the environment and the trajectories consisting of state observations are stored for later use.</p>
-<p>During policy training phase, agent can randomly fetch those stored observations as a set of initial states or set of goals.</p>
-<p>Now, we have all the information to train a goal-conditioned agent. Authors used Q-learning agent - Q(s,a,g), where
-s - states, a- actions and g-goals to be achieved by executing action 'a'.
-And, the optimal policy can be derived as : $  \pi (s,g) = \underset{a} max Q(s,a, g) $</p>
-<p>In order to train this policy, two main issues need to be addressed:</p>
-<p>a. How to design reward function ? Distance between images while nagivation is one possible reward. But, pixel-wise distance won't carry semantic meaning of actual distance between states and this will be also computationally involved.
-b. How to represent the goal as a distribution so that we sample goals for the training?</p>
-<p>Authorse resolved these issues by using Variational Autoencoders (VAE), to learn encoded representation of images. The VAE takes raw images (x) as input and generate low-dimensional latent representation (z). Using these latent representation, we have now latent states (z)  and latent goals ($ z_g $).</p>
-<p>The working algorithm can be summarized as :</p>
-<p>a. Initially, agent explores environment using random policy and the state observations will be stored.</p>
-<p>b. VAE will be trained using raw images from (a) to learn latent representation of all state observations.</p>
-<p>c. Initial states (z) and goals ($ z_g $) are sampled from  (b)</p>
-<p>d. Goal-conditioned Q-function Q(z,a, $ z_g $) is trained using data from (c) and policy $ \pi_{\theta} (z, z_g) $ will be learnt in the latent space.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-</div>
+<p>NDF is designed to filter out some portion of training data based on some quality measure. The filtered high-quality data points speed up the convergence of the model.</p>
+<p>In order to formulate Markov Decision Process (MDP) in NDF, authors used 'SGD-MDP' with following tuple:
+&lt;s, a, P, r, $ \gamma $&gt;</p>
+<ul>
+<li>s : representing mini-batch data and current state of training model (weights/biases) as a state</li>
+<li>a : binary filtering actions;  $ a = {\{a_m\}}_{m=1}^M \in (0, 1)^M $, M-batch size and $ a_m \in \{0,1\} $
+indicating whether a particular data instance in minibatch will be selected or not.</li>
+<li>P : P(s`| s, a) is a transition probability</li>
+<li>r = r(s,a), reward signal based on performance of the current model under consideration (e.g. validation accuracy),</li>
+<li>$ \gamma \in [0,1] $, discounting factor</li>
+</ul>
+<p>The  NDF policy A(s,a, $ \Theta $) can be represented by a binary classification algorithm such as logistic regression or deep NN, where $ \Theta $ is policy parameter and it is updated as:</p>
+<p>$ \Theta \gets \Theta + \alpha V_t \sum_m \frac{\partial log P_{\Theta} (a_m|s_m)}{\partial \Theta} $</p>
+<p>and, $ V_t $ is the sampled estimation of reward $ R(s_t, a_t) $ from one episode.</p>
 </div>
 </div>
 </div>
@@ -144,9 +135,9 @@ b. How to represent the goal as a distribution so that we sample goals for the t
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="blog-sijanb-com-np",
-            disqus_url="https://sijanb.com.np/posts/paper-summary-visual-reinforcement-learning-imagined-goals/",
-        disqus_title="Paper Summary : Visual Reinforcement Learning Imagined Goals",
-        disqus_identifier="cache/posts/paper-summary-visual-reinforcement-learning-imagined-goals.html",
+            disqus_url="https://sijanb.com.np/posts/paper-summary-learning-what-data-to-learn/",
+        disqus_title="Paper Summary : Learning What Data to Learn",
+        disqus_identifier="cache/posts/paper-summary-learning-what-data-to-learn.html",
         disqus_config = function () {
             this.language = "en";
         };

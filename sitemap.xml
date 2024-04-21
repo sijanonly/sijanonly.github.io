@@ -7,206 +7,234 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://sijanb.com.np/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/2018/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/2019/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/2020/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/archive.html</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/index-1.html</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/index-2.html</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/blog/index-3.html</loc>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/bayesian-learning/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/cat_knn/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/cat_supervised-learning/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/code-profiling/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/cross-validation/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/decision-tree/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/deep-learning/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/knn/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/linear-regression/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/machine-learning/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/maximum-likelihood-estimation/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/neural-network/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/numba/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/numpy/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/perceptron/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/principal-component-analysis/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/random-forest/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/designing-recommendation-system-using-k-nearest-neighbor-knn/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/graphical-illustration-of-k-means-algorithm/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/how-do-i-know-principal-component-analysis-pca-is-preserving-information-from-my-data/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/how-k-nearest-neighbors-works/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/how-nearest-centroid-classifier-works/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/how-to-tune-hyperparameter-in-k-nearest-neighbors-classifier/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/implementation-of-k-means-clustering-algorithm-in-python/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/implementation-of-perceptron-in-python/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/implementation-of-stochastic-subgradient-descent-for-support-vector-machine-using-python/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/interpreting-centrality-measures-for-network-analysis/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/k-nearest-neighbors-algorithm-using-python-and-scikit-learn/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/optimizing-k-nearest-neighbors-knn-algorithm-in-python/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/out-of-sample-accuracy-estimation-using-cross-validation-in-python-and-scikit-learn/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/posts/paper-summary-asynchronous-methods-for-deep-reinforcement-learning/</loc>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/posts/paper-summary-curiosity-driven-exploration-by-self-supervised-prediction/</loc>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/posts/paper-summary-learning-what-data-to-learn/</loc>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/posts/paper-summary-playing-atari-with-deep-reinforcement-learning/</loc>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/posts/paper-summary-policy-gradient-methods-for-rl-with-function-approximation/</loc>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/posts/paper-summary-proximal-policy-optimization-algorithms/</loc>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/paper-summary-visual-reinforcement-learning-imagined-goals/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/understanding-probability/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/understanding-regularization-for-support-vector-machines-svms/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/understanding-term-frequencey-and-inverse-document-frequency/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/using-perceptron-model-for-classification-an-illustrative-approach/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/what-is-deep-learning-and-neural-network/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/what-is-perceptron-and-how-it-works/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/why-we-need-support-vector-machine-svm/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/why-you-need-to-understand-bias-and-variance-in-machine-learning/</loc>
-  <lastmod>2024-04-21T20:16:00Z</lastmod>
+  <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
 </urlset>
