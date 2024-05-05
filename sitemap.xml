@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://sijanb.com.np/</loc>
-  <lastmod>2024-04-21T20:33:00Z</lastmod>
+  <lastmod>2024-05-05T10:34:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/2018/</loc>
@@ -22,8 +22,12 @@
   <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
+  <loc>https://sijanb.com.np/2024/</loc>
+  <lastmod>2024-05-05T10:34:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://sijanb.com.np/archive.html</loc>
-  <lastmod>2024-04-21T20:33:00Z</lastmod>
+  <lastmod>2024-05-05T10:34:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/</loc>
@@ -39,7 +43,7 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/index-3.html</loc>
-  <lastmod>2024-04-21T20:33:00Z</lastmod>
+  <lastmod>2024-05-05T10:34:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/</loc>
@@ -164,6 +168,10 @@
  <url>
   <loc>https://sijanb.com.np/posts/linear-regression-with-maximum-likelihood-and-bayesian-learning-approach-from-scratch/</loc>
   <lastmod>2024-04-21T20:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/posts/machine-learning-glossary-what-is-machine-learning/</loc>
+  <lastmod>2024-05-05T10:34:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/optimizing-k-nearest-neighbors-knn-algorithm-in-python/</loc>
