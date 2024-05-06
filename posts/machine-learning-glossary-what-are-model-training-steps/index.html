@@ -25,7 +25,8 @@
 <meta property="og:title" content="Machine Learning Glossary: what are model training steps ?">
 <meta property="og:url" content="https://sijanb.com.np/posts/machine-learning-glossary-what-are-model-training-steps/">
 <meta property="og:description" content="There may exist many possible models to solve a given problem at hand. Based on your modeling decision there are usually two different ways to complete the machine learning lifecycle.
-* 1st scenario. ">
+
+1st scenario. T">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2024-05-07T00:36:31+05:45">
 <meta property="article:tag" content="machine-learning">
@@ -63,37 +64,27 @@
                 <a href="../../categories/machine-learning/">#machine-learning</a>,
             <time class="post-date" datetime="2024-05-07T00:36:31+05:45">
                 2024-05-07
-            </time></section></header><section class="post-content"><p>There may exist many possible models to solve a given problem at hand. Based on your modeling decision there are usually two different ways to complete the machine learning lifecycle.
-* 1st scenario. Training a single model with a training dataset and final evaluation with the test set.
-* 2nd scenario. Training multiple models with training/validation dataset and final evaluation with the test set.</p>
-<p>In case of (1st scenario), you will follow the following approach:
-* a. Divide the data into training and test sets. (Usually 70/30 splits)
-* b. Select your preferable model.
-* c. Train it with a training dataset.
-* d. Assess the trained model in the test set. (no need to perform validation in your trained model)</p>
+            </time></section></header><section class="post-content"><p>There may exist many possible models to solve a given problem at hand. Based on your modeling decision there are usually two different ways to complete the machine learning lifecycle.</p>
+<ul class="simple">
+<li><p>1st scenario. Training a single model with a training dataset and final evaluation with the test set.</p></li>
+<li><p>2nd scenario. Training multiple models with training/validation dataset and final evaluation with the test set.</p></li>
+</ul>
+<p>In case of (1st scenario), you will follow the following approach:</p>
+<ul class="simple">
+<li><p>Divide the data into training and test sets. (Usually 70/30 splits)</p></li>
+<li><p>Select your preferable model.</p></li>
+<li><p>Train it with a training dataset.</p></li>
+<li><p>Assess the trained model in the test set. (no need to perform validation in your trained model)</p></li>
+</ul>
 <p>In case of (2nd scenario), you will follow the following approach:</p>
 <ul class="simple">
-<li><ol class="loweralpha simple">
 <li><p>Divide the data into training, validation, and test sets. (Usually 50/25/25 splits)</p></li>
-</ol></li>
-<li><ol class="loweralpha simple" start="2">
 <li><p>Select the initial model/architecture.</p></li>
-</ol></li>
-<li><ol class="loweralpha simple" start="3">
 <li><p>Train the model with a training dataset.</p></li>
-</ol></li>
-<li><ol class="loweralpha simple" start="4">
 <li><p>Evaluate the model using the validation dataset.</p></li>
-</ol></li>
-<li><ol class="loweralpha simple" start="5">
 <li><p>Repeat steps (b) through (d) for different models or training parameters.</p></li>
-</ol></li>
-<li><ol class="loweralpha simple" start="6">
 <li><p>Select the best model based on evaluation and train the best model with combined (training + validation) datasets.</p></li>
-</ol></li>
-<li><ol class="loweralpha simple" start="7">
 <li><p>Assess the trained model in the test set.</p></li>
-</ol></li>
 </ul></section><footer class="post-footer"><section class="comments hidden-print"><h2>Comments</h2>
         
     
