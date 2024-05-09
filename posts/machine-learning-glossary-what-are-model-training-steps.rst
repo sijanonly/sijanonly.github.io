@@ -1,7 +1,7 @@
-.. title: Machine Learning Glossary: what are model training steps ?
+.. title: What are model training steps in machine learning ?
 .. slug: machine-learning-glossary-what-are-model-training-steps
 .. date: 2024-05-07 00:36:31 UTC+05:45
-.. tags: machine-learning
+.. tags: machine-learning, machine-learning-glossary
 .. category: 
 .. link: 
 .. description: 
