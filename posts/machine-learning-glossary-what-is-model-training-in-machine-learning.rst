@@ -1,4 +1,4 @@
-.. title: Machine Learning Glossary: what is model training in machine learning ?
+.. title: what is model training in machine learning ?
 .. slug: machine-learning-glossary-what-is-model-training-in-machine-learning
 .. date: 2024-05-06 23:44:07 UTC+05:45
 .. tags: machine-learning, machine-learning-glossary
