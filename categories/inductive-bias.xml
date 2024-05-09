@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CODEBUG (Posts about inductive-bias)</title><link>https://sijanb.com.np/</link><description></description><atom:link href="https://sijanb.com.np/categories/inductive-bias.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Thu, 09 May 2024 19:29:46 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>What is Inductive Bias in Machine Learning ?</title><link>https://sijanb.com.np/posts/what-is-inductive-bias-in-machine-learning/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;p&gt;An explicit or implicit assumption or prior information about the model that permits it to generalize
+outside of the training set of data is known as inductive bias.&lt;/p&gt;
+&lt;p&gt;Examples of inductive bias:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;When it comes to decision trees, shorter trees work better than longer ones.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The response variable (y) in linear regression is thought to vary linearly in predictors (X).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;In general, the belief that the most simplest hypothesis is more accurate than the more complicated one (Occam's razor) .&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;</description><category>inductive-bias</category><category>machine-learning</category><category>machine-learning-glossary</category><guid>https://sijanb.com.np/posts/what-is-inductive-bias-in-machine-learning/</guid><pubDate>Thu, 09 May 2024 19:21:31 GMT</pubDate></item></channel></rss>

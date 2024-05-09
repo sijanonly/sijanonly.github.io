@@ -27,7 +27,7 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/archive.html</loc>
-  <lastmod>2024-05-06T18:55:00Z</lastmod>
+  <lastmod>2024-05-09T19:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/</loc>
@@ -43,11 +43,11 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/index-3.html</loc>
-  <lastmod>2024-05-06T18:55:00Z</lastmod>
+  <lastmod>2024-05-09T19:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/</loc>
-  <lastmod>2024-04-21T20:33:00Z</lastmod>
+  <lastmod>2024-05-09T19:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/bayesian-learning/</loc>
@@ -78,12 +78,20 @@
   <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
+  <loc>https://sijanb.com.np/categories/inductive-bias/</loc>
+  <lastmod>2024-05-09T19:29:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://sijanb.com.np/categories/knn/</loc>
   <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/linear-regression/</loc>
   <lastmod>2024-04-21T20:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/categories/machine-learning-glossary/</loc>
+  <lastmod>2024-05-09T19:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/machine-learning/</loc>
@@ -240,6 +248,10 @@
  <url>
   <loc>https://sijanb.com.np/posts/what-is-deep-learning-and-neural-network/</loc>
   <lastmod>2024-04-21T20:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/posts/what-is-inductive-bias-in-machine-learning/</loc>
+  <lastmod>2024-05-09T19:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/what-is-perceptron-and-how-it-works/</loc>

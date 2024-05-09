@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CODEBUG (Posts about machine-learning-glossary)</title><link>https://sijanb.com.np/</link><description></description><atom:link href="https://sijanb.com.np/categories/machine-learning-glossary.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Thu, 09 May 2024 19:29:46 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>What is Inductive Bias in Machine Learning ?</title><link>https://sijanb.com.np/posts/what-is-inductive-bias-in-machine-learning/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;p&gt;An explicit or implicit assumption or prior information about the model that permits it to generalize
+outside of the training set of data is known as inductive bias.&lt;/p&gt;
+&lt;p&gt;Examples of inductive bias:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;When it comes to decision trees, shorter trees work better than longer ones.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The response variable (y) in linear regression is thought to vary linearly in predictors (X).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;In general, the belief that the most simplest hypothesis is more accurate than the more complicated one (Occam's razor) .&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;</description><category>inductive-bias</category><category>machine-learning</category><category>machine-learning-glossary</category><guid>https://sijanb.com.np/posts/what-is-inductive-bias-in-machine-learning/</guid><pubDate>Thu, 09 May 2024 19:21:31 GMT</pubDate></item><item><title>What are model training steps in machine learning ?</title><link>https://sijanb.com.np/posts/machine-learning-glossary-what-are-model-training-steps/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;p&gt;There may exist many possible models to solve a given problem at hand. Based on your modeling decision there are usually two different ways to complete the machine learning lifecycle.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;1st scenario. Training a single model with a training dataset and final evaluation with the test set.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;2nd scenario. Training multiple models with training/validation dataset and final evaluation with the test set.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In case of (1st scenario), you will follow the following approach:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;Divide the data into training and test sets. (Usually 70/30 splits)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Select your preferable model.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Train it with a training dataset.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Assess the trained model in the test set. (no need to perform validation in your trained model)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In case of (2nd scenario), you will follow the following approach:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;Divide the data into training, validation, and test sets. (Usually 50/25/25 splits)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Select the initial model/architecture.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Train the model with a training dataset.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Evaluate the model using the validation dataset.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Repeat steps (b) through (d) for different models or training parameters.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Select the best model based on evaluation and train the best model with combined (training + validation) datasets.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Assess the trained model in the test set.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><category>machine-learning</category><category>machine-learning-glossary</category><guid>https://sijanb.com.np/posts/machine-learning-glossary-what-are-model-training-steps/</guid><pubDate>Mon, 06 May 2024 18:51:31 GMT</pubDate></item><item><title>What is machine learning ?</title><link>https://sijanb.com.np/posts/machine-learning-glossary-what-is-machine-learning/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;p&gt;Understanding and extracting hidden patterns or features from the data is the learning process in machine learning. Instead of using explicit
+logic supplied by people, machine learning has the capacity to learn from experiences.
+Conventional systems are created with the use of well defined human-set rules. In order for machine learning algorithms
+to understand complicated patterns from inputs (x), they use outputs (y) as a feedback signal. Thus, an intelligent program is the ML system's
+final product.&lt;/p&gt;
+&lt;p&gt;We often use a logical method to solve any issue. We make an effort to break the task up into several smaller tasks and solve each smaller task
+using a distinct rationale. When dealing with extremely complicated jobs, like stock price prediction, the patterns are always changing,
+which has an impact on the results.
+That implies that, in order to answer this problem logically, we must adjust our handwritten logic for each new change in the outputs.
+Machine Learning (ML), on the other hand, creates the model using a vast amount of data. The data gives the model all of its historical experience,
+which helps it better understand the pattern. We just retrain the model with fresh instances whenever the data changes.&lt;/p&gt;</description><category>machine-learning</category><category>machine-learning-glossary</category><guid>https://sijanb.com.np/posts/machine-learning-glossary-what-is-machine-learning/</guid><pubDate>Sun, 05 May 2024 10:28:45 GMT</pubDate></item></channel></rss>

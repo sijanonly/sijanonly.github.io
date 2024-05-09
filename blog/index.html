@@ -58,7 +58,25 @@
     </header><main id="content" class="content" role="main"><div class="postindex">
 
 
-<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/machine-learning-glossary-what-are-model-training-steps/">Machine Learning Glossary: what are model training steps ?</a></h2>
+<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/what-is-inductive-bias-in-machine-learning/">What is Inductive Bias in Machine Learning ?</a></h2>
+    </header><section class="post-excerpt"><p>An explicit or implicit assumption or prior information about the model that permits it to generalize
+outside of the training set of data is known as inductive bias.</p>
+<p>Examples of inductive bias:</p>
+<ol class="arabic simple">
+<li><p>When it comes to decision trees, shorter trees work better than longer ones.</p></li>
+<li><p>The response variable (y) in linear regression is thought to vary linearly in predictors (X).</p></li>
+<li><p>In general, the belief that the most simplest hypothesis is more accurate than the more complicated one (Occam's razor) .</p></li>
+</ol></section><footer class="post-meta">
+                Sijan Bhandari
+
+        on
+                <a href="../categories/inductive-bias/">#inductive-bias</a>,
+                <a href="../categories/machine-learning/">#machine-learning</a>,
+                <a href="../categories/machine-learning-glossary/">#machine-learning-glossary</a>,
+
+        <time class="post-date" datetime="2024-05-10T01:06:31+05:45">
+            2024-05-10
+        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/machine-learning-glossary-what-are-model-training-steps/">What are model training steps in machine learning ?</a></h2>
     </header><section class="post-excerpt"><p>There may exist many possible models to solve a given problem at hand. Based on your modeling decision there are usually two different ways to complete the machine learning lifecycle.</p>
 <ul class="simple">
 <li><p>1st scenario. Training a single model with a training dataset and final evaluation with the test set.</p></li>
@@ -85,6 +103,7 @@
 
         on
                 <a href="../categories/machine-learning/">#machine-learning</a>,
+                <a href="../categories/machine-learning-glossary/">#machine-learning-glossary</a>,
 
         <time class="post-date" datetime="2024-05-07T00:36:31+05:45">
             2024-05-07
@@ -100,7 +119,7 @@ input, and lower the error between model prediction and actual output, we also c
 
         <time class="post-date" datetime="2024-05-06T23:44:07+05:45">
             2024-05-06
-        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/machine-learning-glossary-what-is-machine-learning/">Machine Learning Glossary: what is machine learning ?</a></h2>
+        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/machine-learning-glossary-what-is-machine-learning/">What is machine learning ?</a></h2>
     </header><section class="post-excerpt"><p>Understanding and extracting hidden patterns or features from the data is the learning process in machine learning. Instead of using explicit
 logic supplied by people, machine learning has the capacity to learn from experiences.
 Conventional systems are created with the use of well defined human-set rules. In order for machine learning algorithms
@@ -117,6 +136,7 @@ which helps it better understand the pattern. We just retrain the model with fre
 
         on
                 <a href="../categories/machine-learning/">#machine-learning</a>,
+                <a href="../categories/machine-learning-glossary/">#machine-learning-glossary</a>,
 
         <time class="post-date" datetime="2024-05-05T16:13:45+05:45">
             2024-05-05
@@ -542,84 +562,6 @@ $
         on
 
         <time class="post-date" datetime="2020-10-31T17:26:55+05:45">
-            2020-10-31
-        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/paper-summary-visual-reinforcement-learning-imagined-goals/">Paper Summary : Visual Reinforcement Learning Imagined Goals</a></h2>
-    </header><section class="post-excerpt"><div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Summary of the paper <a href="https://arxiv.org/abs/1807.04742">"Visual Reinforcement Learning with Imagined Goals"</a></p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="Motivation">Motivation<a class="anchor-link" href="../posts/paper-summary-visual-reinforcement-learning-imagined-goals/#Motivation">¶</a>
-</h5>
-<p>Humans can easily adjust themselves or adopt to new environments and learn new tasks by setting their own goals. In case of Reinforcement Learning framework, we have to manually design the reward function which gives an orientation towards the goal of a given task. For example, if we have to train a robot to pick a package and deliver to a destination, we have to set reward based on its distance-covered. Along with delivery task, there might be other tasks like adjusting robot-arm to pick the package based on it's shape/size or placing the package at the destination without throwing it on the ground. For each of these tasks, we can design specific-reward functions.But, it won't be practical or scalable for real-world problems where an agent has to solve many tasks synchronously.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="Contribution">Contribution<a class="anchor-link" href="../posts/paper-summary-visual-reinforcement-learning-imagined-goals/#Contribution">¶</a>
-</h5>
-<p>Authors proposed a reinforcement learning framework where an agent can learn general-purpose goal-conditioned polices by setting it's own synthetic goals and learning tasks to achieve those goals, without human intervention.</p>
-<p>They referred this framework as "reinforcement with imagined goals" (RIG).</p>
-<h6 id="Synthetic-Goals">Synthetic Goals<a class="anchor-link" href="../posts/paper-summary-visual-reinforcement-learning-imagined-goals/#Synthetic-Goals">¶</a>
-</h6>
-<p>Initially, the agent itself generate a set of synthetic goals by exploration through a random policy. Both state observations and goals are the image data (for example in case of robot navigation). By random policy, agent executes some random actions in the environment and the trajectories consisting of state observations are stored for later use.</p>
-<p>During policy training phase, agent can randomly fetch those stored observations as a set of initial states or set of goals.</p>
-<p>Now, we have all the information to train a goal-conditioned agent. Authors used Q-learning agent - Q(s,a,g), where
-s - states, a- actions and g-goals to be achieved by executing action 'a'.
-And, the optimal policy can be derived as : $  \pi (s,g) = \underset{a} max Q(s,a, g) $</p>
-<p>In order to train this policy, two main issues need to be addressed:</p>
-<p>a. How to design reward function ? Distance between images while nagivation is one possible reward. But, pixel-wise distance won't carry semantic meaning of actual distance between states and this will be also computationally involved.
-b. How to represent the goal as a distribution so that we sample goals for the training?</p>
-<p>Authorse resolved these issues by using Variational Autoencoders (VAE), to learn encoded representation of images. The VAE takes raw images (x) as input and generate low-dimensional latent representation (z). Using these latent representation, we have now latent states (z)  and latent goals ($ z_g $).</p>
-<p>The working algorithm can be summarized as :</p>
-<p>a. Initially, agent explores environment using random policy and the state observations will be stored.</p>
-<p>b. VAE will be trained using raw images from (a) to learn latent representation of all state observations.</p>
-<p>c. Initial states (z) and goals ($ z_g $) are sampled from  (b)</p>
-<p>d. Goal-conditioned Q-function Q(z,a, $ z_g $) is trained using data from (c) and policy $ \pi_{\theta} (z, z_g) $ will be learnt in the latent space.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-    </section><footer class="post-meta">
-                Sijan Bhandari
-
-        on
-
-        <time class="post-date" datetime="2020-10-31T15:41:42+05:45">
             2020-10-31
         </time></footer></article>
 </div>
