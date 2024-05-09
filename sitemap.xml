@@ -47,7 +47,7 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/</loc>
-  <lastmod>2024-05-09T19:29:00Z</lastmod>
+  <lastmod>2024-05-09T19:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/bayesian-learning/</loc>
@@ -102,6 +102,10 @@
   <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
+  <loc>https://sijanb.com.np/categories/model-evaluation/</loc>
+  <lastmod>2024-05-09T19:33:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://sijanb.com.np/categories/neural-network/</loc>
   <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
@@ -124,6 +128,10 @@
  <url>
   <loc>https://sijanb.com.np/categories/random-forest/</loc>
   <lastmod>2024-04-21T20:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/categories/training-validation-test/</loc>
+  <lastmod>2024-05-09T19:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/designing-recommendation-system-using-k-nearest-neighbor-knn/</loc>
