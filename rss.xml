@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CODEBUG</title><link>https://sijanb.com.np/</link><description>Data Exploration...</description><atom:link href="https://sijanb.com.np/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Thu, 09 May 2024 19:36:29 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>What is Inductive Bias in Machine Learning ?</title><link>https://sijanb.com.np/posts/what-is-inductive-bias-in-machine-learning/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;p&gt;An explicit or implicit assumption or prior information about the model that permits it to generalize
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CODEBUG</title><link>https://sijanb.com.np/</link><description>Data Exploration...</description><atom:link href="https://sijanb.com.np/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Sat, 11 May 2024 08:22:14 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>What is gradient descent ?</title><link>https://sijanb.com.np/posts/what-is-gradient-descent/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;p&gt;Gradient descent is an optimization algorithm which is commonly used to train machine learning models
+and neural networks. Optimization refers to the task of minimizing/maximizing an objective function.
+The process of optimization involves calculating the gradient (or the partial derivatives) of the cost
+function with respect to each parameter (weights and biases) . To do so, the models are fed with training data iteratively.
+and gradient points are calculated. The gradient points in the direction of the
+steepest increase of the function. Gradient descent moves in the opposite direction—the
+direction of the steepest descent—to reduce the cost function value.&lt;/p&gt;</description><category>gradient-descent</category><category>machine-learning</category><category>machine-learning-glossary</category><guid>https://sijanb.com.np/posts/what-is-gradient-descent/</guid><pubDate>Sat, 11 May 2024 07:02:15 GMT</pubDate></item><item><title>What is Inductive Bias in Machine Learning ?</title><link>https://sijanb.com.np/posts/what-is-inductive-bias-in-machine-learning/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;p&gt;An explicit or implicit assumption or prior information about the model that permits it to generalize
 outside of the training set of data is known as inductive bias.&lt;/p&gt;
 &lt;p&gt;Examples of inductive bias:&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
@@ -287,57 +293,4 @@ ii) Second module takes $ \phi(s_t) $ and $ \phi(s_{t+1}) $) as encoded feature 
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/paper-summary-curiosity-driven-exploration-by-self-supervised-prediction/</guid><pubDate>Sat, 31 Oct 2020 14:40:29 GMT</pubDate></item><item><title>Paper Summary : Asynchronous Methods for Deep Reinforcement Learning</title><link>https://sijanb.com.np/posts/paper-summary-asynchronous-methods-for-deep-reinforcement-learning/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Summary of the paper &lt;a href="https://arxiv.org/abs/1602.01783"&gt;"Asynchronous Methods for Deep Reinforcement Learning"&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="Motivation"&gt;Motivation&lt;a class="anchor-link" href="https://sijanb.com.np/posts/paper-summary-asynchronous-methods-for-deep-reinforcement-learning/#Motivation"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Deep Neural Network (DNN) is introduced to Reinforcement Learning (RL) framework in order to make function approximation easier/scable for large state-space problems. DNN itself suffers from overfitting because of the correlated data while nagivating through the environments (e.g. when we play a game, each consecutive moves of a player withing smaller timeframes looks similar, which won't contribute much for learning). In order to avoid it, people started using experience replay, where we have to store navigation experience (e.g. screenshots in games) as a buffer and we can use them later while training/updating policy/model parameters.&lt;/p&gt;
-&lt;p&gt;This works well, but only for off-policy algorithms like Q-learning. How to use on-policy algorithms like SARSA and make it stable learning using DNN ? Also, using experience replay introduces extra memory requirements/ computatonal delay for each update and real interaction with environment.&lt;/p&gt;
-&lt;p&gt;**NOTE :&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;On-policy : The training data is generated by the same policy being trained. e.g : Reinforce&lt;/li&gt;
-&lt;li&gt;Off-Policy : The training data generated from another policy can be used to train the current policy. e.g : Q-learning&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="Contribution"&gt;Contribution&lt;a class="anchor-link" href="https://sijanb.com.np/posts/paper-summary-asynchronous-methods-for-deep-reinforcement-learning/#Contribution"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;In this paper, authors introduced an asynchronous training process by executing multiple agents in parallel in different instances of the same environment using multiple CPU cores. It uses multithreading to run those agents and update the global model parameters asynchronously in online fashion. It is reported that this approach enables stable learning and faster convergence speed.&lt;/p&gt;
-&lt;p&gt;They have introduced asynchronous variants of SARSA, 1-step/n-step Q learning and advantage actor-critic algorithm. Let's discuss some details on Asynchronous Q-learning and Async. Advantage Actor critic (A3C) algorithms.&lt;/p&gt;
-&lt;h6 id="Asynchronous-Q-Learning"&gt;Asynchronous Q-Learning&lt;a class="anchor-link" href="https://sijanb.com.np/posts/paper-summary-asynchronous-methods-for-deep-reinforcement-learning/#Asynchronous-Q-Learning"&gt;¶&lt;/a&gt;&lt;/h6&gt;&lt;p&gt;In Deep Q-Learning (DQN), the neural network (NN) approximates the Q-value function Q(s,a, $\theta$) with loss formulated as:
-$
-\begin{equation}
- L_{i} (\theta_i)  = \mathbb{E} [ r + \gamma Q (s^`, a^`, \theta_{i-1}) - Q(s, a, \theta_i) ]^2 ..........(i)
- \end{equation}
- $&lt;/p&gt;
-&lt;p&gt;In Async 1-step Q learning, each thread maintains it's own copy of environment and agent traverse through the environment with the help of $  \epsilon $ - greedy policy. At each step, we compute teh gradient of the loss (i) and collect gradients over multiple timesteps before updating the parameters.&lt;/p&gt;
-&lt;h6 id="Asynchronous-Advantage-Actor-Critic-(A3C)"&gt;Asynchronous Advantage Actor-Critic (A3C)&lt;a class="anchor-link" href="https://sijanb.com.np/posts/paper-summary-asynchronous-methods-for-deep-reinforcement-learning/#Asynchronous-Advantage-Actor-Critic-(A3C)"&gt;¶&lt;/a&gt;&lt;/h6&gt;&lt;p&gt;Actor-critic method combines both value-pased and policy based methods.&lt;/p&gt;
-&lt;p&gt;It has a policy $ \pi(a_t | s_t; \theta) $ and value function $ V (s_t; \theta_t)$ to be learnt. It uses "forward-view", i.e. selecting actions based on its exploration strategy $ \pi (a_t | s_t; \theta) $ up to some $  t_{max} $  steps in the future, to collect up to $ t_{max} $ rewards since last update.&lt;/p&gt;
-&lt;p&gt;Now, policy and value functions are updated after every $ t_max $ actions as:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Policy Network : $ \bigtriangledown_{\theta} log \pi(a_t | s_t; \theta) (R_t - V(s_t, \theta_v)) $&lt;/li&gt;
-&lt;li&gt;Value Network : $ \bigtriangledown_{v} (R - V(s_t; \theta_v))^2 $&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;In this learning framework, parallel actor-learners updates a shared model and make learning process more robust and stable&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="input_area"&gt;
-&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/paper-summary-asynchronous-methods-for-deep-reinforcement-learning/</guid><pubDate>Sat, 31 Oct 2020 11:41:55 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/paper-summary-curiosity-driven-exploration-by-self-supervised-prediction/</guid><pubDate>Sat, 31 Oct 2020 14:40:29 GMT</pubDate></item></channel></rss>

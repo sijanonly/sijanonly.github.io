@@ -34,6 +34,10 @@
   <lastmod>2024-04-21T20:33:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://sijanb.com.np/categories/gradient-descent.xml</loc>
+  <lastmod>2024-05-11T08:22:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://sijanb.com.np/categories/inductive-bias.xml</loc>
   <lastmod>2024-05-09T19:29:00Z</lastmod>
  </sitemap>
@@ -47,11 +51,11 @@
  </sitemap>
  <sitemap>
   <loc>https://sijanb.com.np/categories/machine-learning-glossary.xml</loc>
-  <lastmod>2024-05-09T19:33:00Z</lastmod>
+  <lastmod>2024-05-11T08:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://sijanb.com.np/categories/machine-learning.xml</loc>
-  <lastmod>2024-05-09T19:33:00Z</lastmod>
+  <lastmod>2024-05-11T08:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://sijanb.com.np/categories/maximum-likelihood-estimation.xml</loc>
@@ -91,10 +95,10 @@
  </sitemap>
  <sitemap>
   <loc>https://sijanb.com.np/rss.xml</loc>
-  <lastmod>2024-05-09T19:33:00Z</lastmod>
+  <lastmod>2024-05-11T08:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://sijanb.com.np/sitemap.xml</loc>
-  <lastmod>2024-05-09T19:33:00Z</lastmod>
+  <lastmod>2024-05-11T08:22:00Z</lastmod>
  </sitemap>
 </sitemapindex>

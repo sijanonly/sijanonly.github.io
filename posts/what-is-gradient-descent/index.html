@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>What is Inductive Bias in Machine Learning ? | CODEBUG</title>
+<title>What is gradient descent ? | CODEBUG</title>
 <link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
@@ -16,23 +16,19 @@
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
-<link rel="canonical" href="https://sijanb.com.np/posts/what-is-inductive-bias-in-machine-learning/">
+<link rel="canonical" href="https://sijanb.com.np/posts/what-is-gradient-descent/">
 <link rel="icon" href="../../favicon.ico" sizes="16x16">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Font Awesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 <meta name="author" content="Sijan Bhandari">
-<link rel="prev" href="../machine-learning-glossary-what-are-model-training-steps/" title="What are model training steps in machine learning ?" type="text/html">
-<link rel="next" href="../what-is-gradient-descent/" title="What is gradient descent ?" type="text/html">
+<link rel="prev" href="../what-is-inductive-bias-in-machine-learning/" title="What is Inductive Bias in Machine Learning ?" type="text/html">
 <meta property="og:site_name" content="CODEBUG">
-<meta property="og:title" content="What is Inductive Bias in Machine Learning ?">
-<meta property="og:url" content="https://sijanb.com.np/posts/what-is-inductive-bias-in-machine-learning/">
-<meta property="og:description" content="An explicit or implicit assumption or prior information about the model that permits it to generalize
-outside of the training set of data is known as inductive bias.
-Examples of inductive bias:
-
-When ">
+<meta property="og:title" content="What is gradient descent ?">
+<meta property="og:url" content="https://sijanb.com.np/posts/what-is-gradient-descent/">
+<meta property="og:description" content="Gradient descent is an optimization algorithm which is commonly used to train machine learning models
+and neural networks. Optimization refers to the task of minimizing/maximizing an objective functio">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2024-05-10T01:06:31+05:45">
-<meta property="article:tag" content="inductive-bias">
+<meta property="article:published_time" content="2024-05-11T12:47:15+05:45">
+<meta property="article:tag" content="gradient-descent">
 <meta property="article:tag" content="machine-learning">
 <meta property="article:tag" content="machine-learning-glossary">
 </head>
@@ -62,31 +58,31 @@ When ">
 <div class="site-wrapper">
     <header class="main-header post-head no-cover"><nav class="main-nav overlay clearfix"><a class="blog-logo" href="https://sijanb.com.np/"><img src="../../images/logo.png" alt="Blog Logo"></a>
             <a class="menu-button" href="#"><span class="burger">☰</span><span class="word">Menu</span></a>
-        </nav></header><main id="content" class="content" role="main"><article class="post post"><header class="post-header"><h1 class="post-title">What is Inductive Bias in Machine Learning ?</h1>
+        </nav></header><main id="content" class="content" role="main"><article class="post post"><header class="post-header"><h1 class="post-title">What is gradient descent ?</h1>
         <section class="post-meta"> by
             Sijan Bhandari
             on
-                <a href="../../categories/inductive-bias/">#inductive-bias</a>,
+                <a href="../../categories/gradient-descent/">#gradient-descent</a>,
                 <a href="../../categories/machine-learning/">#machine-learning</a>,
                 <a href="../../categories/machine-learning-glossary/">#machine-learning-glossary</a>,
-            <time class="post-date" datetime="2024-05-10T01:06:31+05:45">
-                2024-05-10
-            </time></section></header><section class="post-content"><p>An explicit or implicit assumption or prior information about the model that permits it to generalize
-outside of the training set of data is known as inductive bias.</p>
-<p>Examples of inductive bias:</p>
-<ol class="arabic simple">
-<li><p>When it comes to decision trees, shorter trees work better than longer ones.</p></li>
-<li><p>The response variable (y) in linear regression is thought to vary linearly in predictors (X).</p></li>
-<li><p>In general, the belief that the most simplest hypothesis is more accurate than the more complicated one (Occam's razor) .</p></li>
-</ol></section><footer class="post-footer"><section class="comments hidden-print"><h2>Comments</h2>
+            <time class="post-date" datetime="2024-05-11T12:47:15+05:45">
+                2024-05-11
+            </time></section></header><section class="post-content"><p>Gradient descent is an optimization algorithm which is commonly used to train machine learning models
+and neural networks. Optimization refers to the task of minimizing/maximizing an objective function.
+The process of optimization involves calculating the gradient (or the partial derivatives) of the cost
+function with respect to each parameter (weights and biases) . To do so, the models are fed with training data iteratively.
+and gradient points are calculated. The gradient points in the direction of the
+steepest increase of the function. Gradient descent moves in the opposite direction—the
+direction of the steepest descent—to reduce the cost function value.</p>
+    </section><footer class="post-footer"><section class="comments hidden-print"><h2>Comments</h2>
         
     
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="blog-sijanb-com-np",
-            disqus_url="https://sijanb.com.np/posts/what-is-inductive-bias-in-machine-learning/",
-        disqus_title="What is Inductive Bias in Machine Learning ?",
-        disqus_identifier="cache/posts/what-is-inductive-bias-in-machine-learning.html",
+            disqus_url="https://sijanb.com.np/posts/what-is-gradient-descent/",
+        disqus_title="What is gradient descent ?",
+        disqus_identifier="cache/posts/what-is-gradient-descent.html",
         disqus_config = function () {
             this.language = "en";
         };
