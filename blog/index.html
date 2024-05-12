@@ -58,7 +58,30 @@
     </header><main id="content" class="content" role="main"><div class="postindex">
 
 
-<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/what-is-gradient-descent/">What is gradient descent ?</a></h2>
+<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/what-is-overfitting-in-machine-learning/">What is overfitting in Machine Learning ?</a></h2>
+    </header><section class="post-excerpt"><p>Overfitting occurs when the model attempts to match the training set too closely. On fresh data, the overfitted model is unable to produce accurate predictions.</p>
+<p>Important details:</p>
+<ol class="arabic simple">
+<li><p>The model will attempt to match the data too closely and will pick up on noise in the data when the training data set is limited or the given model is complex.</p></li>
+<li><p>An overfitted model picks up patterns that are unique to the training set and overlooks the generic patterns.</p></li>
+<li><p>Regularization can reduce overfitting.</p></li>
+<li><p>Overfitting can also be decreased by training on a large and diversed training data points.</p></li>
+<li><p>Overfitting can be detected by high variation .i.e, if the test data has a high error rate while the training data has a low error rate.</p></li>
+<li><p>A high variance model will overfit the data and is flexible in capturing every detail—relevant or not—and noise in the data.</p></li>
+<li><p>A high variance model is also indicated as: Training error &lt;&lt; Validation error.</p></li>
+<li><p>More training data will improve the generalization of the given model and avoids overfitting.</p></li>
+</ol></section><footer class="post-meta">
+                Sijan Bhandari
+
+        on
+                <a href="../categories/high-variance/">#high-variance</a>,
+                <a href="../categories/machine-learning/">#machine-learning</a>,
+                <a href="../categories/machine-learning-glossary/">#machine-learning-glossary</a>,
+                <a href="../categories/overfitting/">#overfitting</a>,
+
+        <time class="post-date" datetime="2024-05-12T17:38:25+05:45">
+            2024-05-12
+        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/what-is-gradient-descent/">What is gradient descent ?</a></h2>
     </header><section class="post-excerpt"><p>Gradient descent is a widely used optimization approach for training machine learning models and neural networks. Optimization is the process of minimizing or increasing an objective function.
 Optimization entails calculating the gradient (partial derivatives) of the cost function for each parameter (weights and biases). To do this, the models are given training data iteratively.
 And, the gradient points are determined. The gradient represents the steepest rise in the function. Gradient descent lowers cost function values by going in the opposite direction of the steepest decrease.</p>
@@ -433,76 +456,6 @@ indicating whether a particular data instance in minibatch will be selected or n
         on
 
         <time class="post-date" datetime="2020-10-31T21:18:59+05:45">
-            2020-10-31
-        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/paper-summary-curiosity-driven-exploration-by-self-supervised-prediction/">Paper Summary : Curiosity-driven Exploration by Self-supervised Prediction</a></h2>
-    </header><section class="post-excerpt"><div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Summary of the paper <a href="https://arxiv.org/abs/1705.05363">"Curiosity-driven Exploration by Self-supervised Prediction"</a></p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="Motivation">Motivation<a class="anchor-link" href="../posts/paper-summary-curiosity-driven-exploration-by-self-supervised-prediction/#Motivation">¶</a>
-</h5>
-<p>The policy learning process in Reinforcement Learning (RL) is usually suffered due to delayed/sparse rewards. Reward is a direct signal for an agent to evaluate 'how good the current action selection is'. Since reward collection takes time, learning optimal policy also takes longer time to derive. Another factor that influence the learning process is human-designed reward function. These reward functions might not represent the optimal guidance for learning of the agent or won't be scalable to real world problems. We need a way to overcome reward sparsity and also improves exploration of the agent to make learning more robust.</p>
-<p>Human learning process is not only guided by the final goal or achievement, but also driven by motivation or curiosity of the being. Curiosity adds exploratory behaviour to the agent, allowing it to acquire new skills and gain new knowledge about the environment. It also makes agent robust to perform actions which ultimately reduces uncertaintly on it's behaviours to capture the consequences of it's own action.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="Contribution">Contribution<a class="anchor-link" href="../posts/paper-summary-curiosity-driven-exploration-by-self-supervised-prediction/#Contribution">¶</a>
-</h5>
-<p>The authors, in this paper, proposed curiosity-driven learning by uing agent-intrinsic reward (.i.e a reward which is learnt by agent itself by understanding the current environment or possible changes in the states while navigation). In order to quantify curiosity, they have introduced "Intrinsic Curiosity Module".</p>
-<h6 id="Intrinsic-Curiosity-Module-(ICM)">Intrinsic Curiosity Module (ICM)<a class="anchor-link" href="../posts/paper-summary-curiosity-driven-exploration-by-self-supervised-prediction/#Intrinsic-Curiosity-Module-(ICM)">¶</a>
-</h6>
-<p>The output of ICM is the state prediction error, which serves as reward for curiosity. This module has two sub-components, each represented by neural networks.</p>
-<p>a. Inverse Model :</p>
-<p>This model learns feature space using self-supervision. This new feature space is learnt in order to avoid features/information which are irrelevant to the agent while nagivation. Learning feature space is completed within two sub-modules:</p>
-<p>i) First module encodes the raw input state ($s_t$) into a feature vector ($ \phi(s_t) $)
-ii) Second module takes $ \phi(s_t) $ and $ \phi(s_{t+1}) $) as encoded feature inputs and predicts action $ \hat{a_t} $ that agent might take to go to $ s_{t+1} $ from $ s_t $</p>
-<p>$ \hat{a_t} = g(  \phi(s_t), \phi(s_{t+1}), \theta_i ) $</p>
-<p>Here function g represents NN and  $ \hat{a_t} $ is estimated action. The learnable parameters $ \theta_i $ are trained with loss function representing difference between predicted action and actual action. i.e $ L_I( \hat{a_t}, a_t) $</p>
-<p>b. Forward Model :</p>
-<p>This is a NN which predicts the next state ($ s_{t+1} $) with inputs $  \phi(s_t) $ and action executed at $ s_t $.</p>
-<p>$ \hat{\phi(s_{t+1})} = f( \phi(s_t), a_t, \theta_F) $</p>
-<p>$ \hat{\phi(s_{t+1})}$ is the predicted estimation of $ \phi(s_{t+1})$ and $ \theta_F $ represents trainable parameters, with loss function as:</p>
-<p>$ L_F ( \phi(s_{t+1}),  \hat{\phi(s_{t+1})}) = \frac{1}{2} ||  \hat{\phi(s_{t+1})} - \phi(s_{t+1})  ||^2 = \eta L_F $</p>
-<p>Both losses can be jointly expressed as :</p>
-<p>$ \underset{\theta_i, \theta_F} {max} [ (1-\beta) L_I  + \beta L_F ] $</p>
-<p>NOTE:</p>
-<p>** ICM worked with two connected modules - inverse model (which learnt the feature representation of state and next state) and forward model ( which predicts the feature representation of the next state)
-** Curiosity can be calculated by the difference between output of forward model i.e $ \hat{\phi(s_{t+1})} $ and output of the inverse model $  \phi(s_{t+1}) $.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-    </section><footer class="post-meta">
-                Sijan Bhandari
-
-        on
-
-        <time class="post-date" datetime="2020-10-31T20:25:29+05:45">
             2020-10-31
         </time></footer></article>
 </div>

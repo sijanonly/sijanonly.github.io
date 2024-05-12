@@ -27,7 +27,7 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/archive.html</loc>
-  <lastmod>2024-05-11T08:22:00Z</lastmod>
+  <lastmod>2024-05-12T12:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/</loc>
@@ -43,11 +43,11 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/index-3.html</loc>
-  <lastmod>2024-05-11T08:22:00Z</lastmod>
+  <lastmod>2024-05-12T12:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/</loc>
-  <lastmod>2024-05-11T08:22:00Z</lastmod>
+  <lastmod>2024-05-12T12:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/bayesian-learning/</loc>
@@ -80,6 +80,10 @@
  <url>
   <loc>https://sijanb.com.np/categories/gradient-descent/</loc>
   <lastmod>2024-05-11T08:22:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/categories/high-variance/</loc>
+  <lastmod>2024-05-12T12:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/inductive-bias/</loc>
@@ -120,6 +124,10 @@
  <url>
   <loc>https://sijanb.com.np/categories/numpy/</loc>
   <lastmod>2024-04-21T20:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/categories/overfitting/</loc>
+  <lastmod>2024-05-12T12:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/perceptron/</loc>
@@ -268,6 +276,10 @@
  <url>
   <loc>https://sijanb.com.np/posts/what-is-inductive-bias-in-machine-learning/</loc>
   <lastmod>2024-05-09T19:29:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/posts/what-is-overfitting-in-machine-learning/</loc>
+  <lastmod>2024-05-12T12:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/what-is-perceptron-and-how-it-works/</loc>
