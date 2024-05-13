@@ -7,8 +7,8 @@
 .. description: 
 .. type: text
 
-Underfitting occurs in data science when a data model fails to accurately capture the relationship between input and output variables, resulting in high error rates on both the training set and unseen data.
-Underfitting occurs when the model has insufficient training duration or the input variables lack significance to establish a meaningful relationship between the input and output variables. As the model learns, its bias diminishes, but its variance may increase, leading to overfitting. The objective in model fitting is to identify the optimal balance between underfitting and overfitting (.i.e., finding the sweet spot), allowing the model to capture the dominant trend in the training data and generalize effectively to new datasets.
+Underfitting occurs in machine leanrning / data science when a data model fails to accurately capture the relationship between input and output variables, resulting in high error rates on both the training set and unseen data.
+This also entails that the model has insufficient training duration or the input variables lack significance to establish a meaningful relationship between the input and output variables. As the model learns, its bias diminishes, but its variance may increase, leading to overfitting. The objective in model fitting is to identify the optimal balance between underfitting and overfitting (.i.e., finding the sweet spot), allowing the model to capture the dominant trend in the training data and generalize effectively to new datasets.
 
 Important details:
 
