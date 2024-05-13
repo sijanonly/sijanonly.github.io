@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CODEBUG</title><link>https://sijanb.com.np/</link><description>Data Exploration...</description><atom:link href="https://sijanb.com.np/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Sun, 12 May 2024 12:27:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>What is overfitting in Machine Learning ?</title><link>https://sijanb.com.np/posts/what-is-overfitting-in-machine-learning/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;p&gt;Overfitting occurs when the model attempts to match the training set too closely. On fresh data, the overfitted model is unable to produce accurate predictions.&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CODEBUG</title><link>https://sijanb.com.np/</link><description>Data Exploration...</description><atom:link href="https://sijanb.com.np/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Mon, 13 May 2024 20:02:49 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>What is underfitting in Machine Learning ?</title><link>https://sijanb.com.np/posts/what-is-underfitting-in-machine-learning/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;p&gt;Underfitting occurs in data science when a data model fails to accurately capture the relationship between input and output variables, resulting in high error rates on both the training set and unseen data.
+Underfitting occurs when the model has insufficient training duration or the input variables lack significance to establish a meaningful relationship between the input and output variables. As the model learns, its bias diminishes, but its variance may increase, leading to overfitting. The objective in model fitting is to identify the optimal balance between underfitting and overfitting (.i.e., finding the sweet spot), allowing the model to capture the dominant trend in the training data and generalize effectively to new datasets.&lt;/p&gt;
+&lt;p&gt;Important details:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;High biased model (underfitted) is not able to learn the very basic/important patterns in the training data.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Adding more data and making your model simpler won't help to avoid underfitting.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;One should try other sophisticated models (e.g Decision tree in comparision to kNN) or add complexity in the current model.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Using complex models (example : polynomial regression rather than linear one) may be useful to capture the relevant patterns in the training data.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Adding more features (or derived features from existing one) will also increase the model capacity and helps to avoid underfitting.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;If you see unacceptably high training error and test error, the model is underfitted.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;High bias and low variance are the indicators of underfitting models.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Underfitting is easier to track than overfitting since the performance can be measured during training phase.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;</description><category>high-bias</category><category>machine-learning</category><category>machine-learning-glossary</category><category>underfitting</category><guid>https://sijanb.com.np/posts/what-is-underfitting-in-machine-learning/</guid><pubDate>Mon, 13 May 2024 19:40:08 GMT</pubDate></item><item><title>What is overfitting in Machine Learning ?</title><link>https://sijanb.com.np/posts/what-is-overfitting-in-machine-learning/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;p&gt;Overfitting occurs when the model attempts to match the training set too closely. On fresh data, the overfitted model is unable to produce accurate predictions.&lt;/p&gt;
 &lt;p&gt;Important details:&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;&lt;p&gt;The model will attempt to match the data too closely and will pick up on noise in the data when the training data set is limited or the given model is complex.&lt;/p&gt;&lt;/li&gt;
@@ -203,52 +215,4 @@ In this case, when $  (1 - \epsilon) \pi_{\theta old}(a_t | s_t) &amp;gt; \pi_{\
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/paper-summary-proximal-policy-optimization-algorithms/</guid><pubDate>Sat, 31 Oct 2020 16:37:42 GMT</pubDate></item><item><title>Paper Summary : Learning What Data to Learn</title><link>https://sijanb.com.np/posts/paper-summary-learning-what-data-to-learn/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Summary of the paper &lt;a href="https://arxiv.org/pdf/1702.08635.pdf"&gt;"Learning What Data to Learn"&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="Motivation"&gt;Motivation&lt;a class="anchor-link" href="https://sijanb.com.np/posts/paper-summary-learning-what-data-to-learn/#Motivation"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;The performance of learning algorithms based on Machine Learning or Deep Learning rely on amount of training data. Having more data points also has benefit of learning more generalized models and avoiding overfitting. However, collecting data is a painstalking work. Instead, we can learn automatic and adaptive data selection in the training process and make learning faster with minimal data points.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="Contribution"&gt;Contribution&lt;a class="anchor-link" href="https://sijanb.com.np/posts/paper-summary-learning-what-data-to-learn/#Contribution"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;In this paper, authors have introduced  Neural Data Filter (NDF) as an adaptive framework which can learn data selection policy using deep reinforcement learning(DRL) algorithm 'Policy Gradient'.
-Two important aspects of this framework:&lt;/p&gt;
-&lt;p&gt;a. NDF filter the data instances from randomly fetched mini-batches of data during training process.
-b. Training loop provides feedback to NDF policy based on reward signal (e.g. calculated in validation set) and NDF policy is trained using DRL.&lt;/p&gt;
-&lt;h6 id="NDF-in-detail"&gt;NDF in detail&lt;a class="anchor-link" href="https://sijanb.com.np/posts/paper-summary-learning-what-data-to-learn/#NDF-in-detail"&gt;¶&lt;/a&gt;&lt;/h6&gt;&lt;p&gt;NDF is designed to filter out some portion of training data based on some quality measure. The filtered high-quality data points speed up the convergence of the model.&lt;/p&gt;
-&lt;p&gt;In order to formulate Markov Decision Process (MDP) in NDF, authors used 'SGD-MDP' with following tuple:
-&amp;lt;s, a, P, r, $ \gamma $&amp;gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;s : representing mini-batch data and current state of training model (weights/biases) as a state&lt;/li&gt;
-&lt;li&gt;a : binary filtering actions;  $ a = {\{a_m\}}_{m=1}^M \in (0, 1)^M $, M-batch size and $ a_m \in \{0,1\} $
-indicating whether a particular data instance in minibatch will be selected or not.&lt;/li&gt;
-&lt;li&gt;P : P(s`| s, a) is a transition probability&lt;/li&gt;
-&lt;li&gt;r = r(s,a), reward signal based on performance of the current model under consideration (e.g. validation accuracy),&lt;/li&gt;
-&lt;li&gt;$ \gamma \in [0,1] $, discounting factor&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The  NDF policy A(s,a, $ \Theta $) can be represented by a binary classification algorithm such as logistic regression or deep NN, where $ \Theta $ is policy parameter and it is updated as:&lt;/p&gt;
-&lt;p&gt;$ \Theta \gets \Theta + \alpha V_t \sum_m \frac{\partial log P_{\Theta} (a_m|s_m)}{\partial \Theta} $&lt;/p&gt;
-&lt;p&gt;and, $ V_t $ is the sampled estimation of reward $ R(s_t, a_t) $ from one episode.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="input_area"&gt;
-&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/paper-summary-learning-what-data-to-learn/</guid><pubDate>Sat, 31 Oct 2020 15:33:59 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/paper-summary-proximal-policy-optimization-algorithms/</guid><pubDate>Sat, 31 Oct 2020 16:37:42 GMT</pubDate></item></channel></rss>

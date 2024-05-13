@@ -1,0 +1,22 @@
+.. title: What is underfitting in Machine Learning ?
+.. slug: what-is-underfitting-in-machine-learning
+.. date: 2024-05-14 01:25:08 UTC+05:45
+.. tags: underfitting, high-bias, machine-learning, machine-learning-glossary
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+
+Underfitting occurs in data science when a data model fails to accurately capture the relationship between input and output variables, resulting in high error rates on both the training set and unseen data.
+Underfitting occurs when the model has insufficient training duration or the input variables lack significance to establish a meaningful relationship between the input and output variables. As the model learns, its bias diminishes, but its variance may increase, leading to overfitting. The objective in model fitting is to identify the optimal balance between underfitting and overfitting (.i.e., finding the sweet spot), allowing the model to capture the dominant trend in the training data and generalize effectively to new datasets.
+
+Important details:
+
+1. High biased model (underfitted) is not able to learn the very basic/important patterns in the training data.
+2. Adding more data and making your model simpler won't help to avoid underfitting. 
+3. One should try other sophisticated models (e.g Decision tree in comparision to kNN) or add complexity in the current model.
+4. Using complex models (example : polynomial regression rather than linear one) may be useful to capture the relevant patterns in the training data.
+5. Adding more features (or derived features from existing one) will also increase the model capacity and helps to avoid underfitting.
+6. If you see unacceptably high training error and test error, the model is underfitted.
+7. High bias and low variance are the indicators of underfitting models.
+8. Underfitting is easier to track than overfitting since the performance can be measured during training phase.
