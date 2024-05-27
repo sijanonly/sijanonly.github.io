@@ -19,3 +19,8 @@ This batching method enhances computational efficiency; however, it can still re
 Stochastic Gradient Descent (SGD)
 
 Stochastic Gradient Descent (SGD) enhances parameter updates by leveraging individual data points during each iteration. By conducting a training epoch for each dataset example and updating parameters sequentially, SGD minimizes memory requirements, as only a single training example needs to be stored at any given time. These frequent updates, while providing detailed and rapid adjustments, may lead to decreased computational efficiency relative to batch gradient descent. Despite the potential for noisy gradients, which arise from these frequent updates, this noise can facilitate the escape from local minima, thereby aiding in the pursuit of a global minimum. The principle of SGD is characterized by its utilization of a single example per iteration, hence the term "stochastic" reflects the random selection of each example within the batch. Given sufficient iterations, SGD proves effective, albeit with inherent noisiness.
+
+
+Mini Batch Gradient Descent
+
+Mini-batch gradient descent integrates principles from both batch gradient descent and stochastic gradient descent. It partitions the training dataset into smaller batch sizes and executes updates on each of these batches. This methodology achieves a balance between the computational efficiency of batch gradient descent and the rapidity of stochastic gradient descent. Similar to stochastic gradient descent, the average cost over epochs in mini-batch gradient descent exhibits fluctuations due to the averaging of a limited number of examples at a time.
