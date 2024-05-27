@@ -59,7 +59,84 @@
     </header><main id="content" class="content" role="main"><div class="postindex">
 
 
-<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/paper-summary-learning-what-data-to-learn/">Paper Summary : Learning What Data to Learn</a></h2>
+<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/paper-summary-proximal-policy-optimization-algorithms/">Paper Summary : Proximal Policy Optimization Algorithms</a></h2>
+    </header><section class="post-excerpt"><div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Summary of the paper <a href="https://arxiv.org/abs/1707.06347">"Proximal Policy Optimization Algorithms"</a></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Motivation">Motivation<a class="anchor-link" href="../posts/paper-summary-proximal-policy-optimization-algorithms/#Motivation">¶</a>
+</h5>
+<p>Deep Q learning, 'Vanilla' Policy Gradient, REINFORCE are the examples of approaches for function approximation in RL. When it comes to RL, robustness and sample efficiency are the measures that defines effectivenss of the applied algorithm.</p>
+<p>In RL formulation, the agent needs to solve a task/problem in an envronment. Agent countinously interacts with the environment, which provides rewards to the agent, and thereafter agent learns a policy to navigate and tackle the problem. In every time step, RL agent has to make a decision by selecting preferrable action. To do so, agent fully relies on the information of current state and accumulated knowledge (history of rewards) up to current time step. Once the action is performed, the next state/observation is defined by some (stochastic) transition probability model. Also, reward will be signaled to the agent based on this new state information and performed action to get there. In overall, the goal of the agent is to maximize expected cumulative rewards.</p>
+<p>In terms of RL, this goal can be formulated as finding a policy $ \pi (a_t | s_t) $ such that expected reward $ \mathbb{E_{\pi_{\theta, \tau}}} [G_t] $ is maximized.</p>
+<p>In high dimensional/ countinous action space, policy gradient method can be used to solve this problem. In "vanilla" policy gradient method, the policy is parameterized by some parameter $ \theta $ .i.e parametric policy  $ \pi_{\theta} (a_t | s_t) $ and we directly optimize the policy by finding the optimal parameter $ \theta $.</p>
+<p>Even though 'Vanilla' policy gradient/ REINFORCE are simple/easier to implement, they come with some learning issues:</p>
+<p>PROBLEM : Usually give rise to high variance while estimating gradient. This is because, the objective function</p>
+<p>$ J(\theta) =  \mathbb{E_{\pi_{\theta, \tau}}} (G_t) $</p>
+<p>contains expectation; so we can't directly compute the exact gradient. We use stochatic gradient estimates such as REINFORCE based on some batch of trajectories. This sampling approximation adds some variance. That means, we need large number of trajectories to get the best estimation.
+In addition, we can see that collecting trajectories could be a problem in complex environments-might take long time to run.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Contribution">Contribution<a class="anchor-link" href="../posts/paper-summary-proximal-policy-optimization-algorithms/#Contribution">¶</a>
+</h5>
+<p>Authors have introduced a family of policy optimization methods which is build up on the basis of work of Trust-Region Policy optimization. Two main ideas:</p>
+<p>a. Clipped Surrogate Objective Function : It avoids large deviations of learned policy $ \pi_{\theta} $ from old policy $ \pi_{\theta old} $; which is formulated as:</p>
+<p>$ L^{clip}(\theta) = \mathbb{E}_t [ min (r_t (\theta) \hat{A_t}, clip(r_t(\theta), 1 - \epsilon, 1 + \epsilon) \hat{A_t}) ] $</p>
+<p>Here $ r_t(\theta) = \frac{\pi_{\theta}(a_t | s_t)}{\pi_{\theta old}(a_t | s_t)} $</p>
+<p>$ \epsilon $ is hyperparameter, which restricts the new policy from being too far from old policy.
+$ \hat{A_t} $ can be discounted return or advantage function.</p>
+<p>The clipping ensures the updates take place in "trust-region". Also, introduces less variance than vanilla gradient methods</p>
+<p>b. Multiple Epochs for policy update:</p>
+<p>PPO allows to run multiple epochs on the same trajectories and optimize the objective $ L^{clip}(\theta) $. This also reduces the sample inefficieny while learning. In order to collect data, PPO runs policy with parallel actors and then samples mini-batches of the data for training k-epochs using the objective function above.</p>
+<p>Let's observe the behaviour of the objective function based on changes in advantage function.</p>
+<p>CASE I : When $ \hat{A_t} $ is +ve :</p>
+<p>The objective function can be written as :</p>
+<p>$ L^{clip} (\theta) = min ( r_t(\theta), 1 + \epsilon ) \hat{A_t} $</p>
+<p>Since $\hat{A_t} $ is +ve, when the action occurrence likelihood increases (i.e. $ \pi_{\theta}(a_t | s_t) $), the whole objective value will also increase.
+The min operator limits the increasing objective value. So, when  $ \pi_{\theta}(a_t | s_t) ) &gt; (1 + \epsilon) \pi_{\theta old}(a_t | s_t)  $, ceiling occurs at $ (1 + \epsilon) \hat{A_t} $</p>
+<p>CASE II : When $ \hat{A_t} $ is -ve :</p>
+<p>The objective function can be written as :</p>
+<p>$ L^{clip} (\theta) = max ( r_t(\theta), 1 - \epsilon ) \hat{A_t} $</p>
+<p>Now, the objective function value only increases when the likelihood of the action is less likely (i.e. $ if \pi_{\theta}(a_t | s_t) $ decreases, $ L^{clip} (\theta) $ increases )
+In this case, when $  (1 - \epsilon) \pi_{\theta old}(a_t | s_t) &gt; \pi_{\theta}(a_t | s_t) )   $, max operator limits the value at $ (1 - \epsilon) \pi_{\theta old}(a_t | s_t) \hat{A_t} $</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+    </section><footer class="post-meta">
+                Sijan Bhandari
+
+        on
+
+        <time class="post-date" datetime="2020-10-31T22:22:42+05:45">
+            2020-10-31
+        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/paper-summary-learning-what-data-to-learn/">Paper Summary : Learning What Data to Learn</a></h2>
     </header><section class="post-excerpt"><div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>

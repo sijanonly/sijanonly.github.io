@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CODEBUG</title><link>https://sijanb.com.np/</link><description>Data Exploration...</description><atom:link href="https://sijanb.com.np/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Mon, 13 May 2024 20:05:41 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>What is underfitting in Machine Learning ?</title><link>https://sijanb.com.np/posts/what-is-underfitting-in-machine-learning/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;p&gt;Underfitting occurs in machine leanrning / data science when a data model fails to accurately capture the relationship between input and output variables, resulting in high error rates on both the training set and unseen data.
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CODEBUG</title><link>https://sijanb.com.np/</link><description>Data Exploration...</description><atom:link href="https://sijanb.com.np/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Mon, 27 May 2024 17:48:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>What are different types of gradient descent algorithm in machine learning ?</title><link>https://sijanb.com.np/posts/what-are-different-types-of-gradient-descent-algorithm-in-machine-learning/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;p&gt;There exist three distinct types of gradient descent learning algorithms: batch gradient descent, stochastic gradient descent, and mini-batch gradient descent.&lt;/p&gt;
+&lt;p&gt;Batch Gradient Descent&lt;/p&gt;
+&lt;p&gt;In Batch Gradient Descent, the term 'batch' signifies the utilization of the entire training dataset during each iteration of the learning process. By incorporating all training examples for each update, Batch Gradient Descent ensures stable error gradients and a consistent trajectory towards the optimal solution, albeit with significant computational demands.
+This batching method enhances computational efficiency; however, it can still result in extended processing times for large training datasets due to the necessity of storing all data in memory. While Batch Gradient Descent typically yields a stable error gradient and reliable convergence, it occasionally converges to a local minimum rather than the global optimum.&lt;/p&gt;</description><category>gradient-descent</category><category>machine-learning</category><category>machine-learning-glossary</category><guid>https://sijanb.com.np/posts/what-are-different-types-of-gradient-descent-algorithm-in-machine-learning/</guid><pubDate>Mon, 27 May 2024 17:12:35 GMT</pubDate></item><item><title>What is underfitting in Machine Learning ?</title><link>https://sijanb.com.np/posts/what-is-underfitting-in-machine-learning/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;p&gt;Underfitting occurs in machine leanrning / data science when a data model fails to accurately capture the relationship between input and output variables, resulting in high error rates on both the training set and unseen data.
 This also entails that the model has insufficient training duration or the input variables lack significance to establish a meaningful relationship between the input and output variables. As the model learns, its bias diminishes, but its variance may increase, leading to overfitting. The objective in model fitting is to identify the optimal balance between underfitting and overfitting (.i.e., finding the sweet spot), allowing the model to capture the dominant trend in the training data and generalize effectively to new datasets.&lt;/p&gt;
 &lt;p&gt;Important details:&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
@@ -157,62 +160,4 @@ b. Small variation in the value estimation might cause different action selectio
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/paper-summary-policy-gradient-methods-for-rl-with-function-approximation/</guid><pubDate>Sat, 31 Oct 2020 20:18:54 GMT</pubDate></item><item><title>Paper Summary : Proximal Policy Optimization Algorithms</title><link>https://sijanb.com.np/posts/paper-summary-proximal-policy-optimization-algorithms/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Summary of the paper &lt;a href="https://arxiv.org/abs/1707.06347"&gt;"Proximal Policy Optimization Algorithms"&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="Motivation"&gt;Motivation&lt;a class="anchor-link" href="https://sijanb.com.np/posts/paper-summary-proximal-policy-optimization-algorithms/#Motivation"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Deep Q learning, 'Vanilla' Policy Gradient, REINFORCE are the examples of approaches for function approximation in RL. When it comes to RL, robustness and sample efficiency are the measures that defines effectivenss of the applied algorithm.&lt;/p&gt;
-&lt;p&gt;In RL formulation, the agent needs to solve a task/problem in an envronment. Agent countinously interacts with the environment, which provides rewards to the agent, and thereafter agent learns a policy to navigate and tackle the problem. In every time step, RL agent has to make a decision by selecting preferrable action. To do so, agent fully relies on the information of current state and accumulated knowledge (history of rewards) up to current time step. Once the action is performed, the next state/observation is defined by some (stochastic) transition probability model. Also, reward will be signaled to the agent based on this new state information and performed action to get there. In overall, the goal of the agent is to maximize expected cumulative rewards.&lt;/p&gt;
-&lt;p&gt;In terms of RL, this goal can be formulated as finding a policy $ \pi (a_t | s_t) $ such that expected reward $ \mathbb{E_{\pi_{\theta, \tau}}} [G_t] $ is maximized.&lt;/p&gt;
-&lt;p&gt;In high dimensional/ countinous action space, policy gradient method can be used to solve this problem. In "vanilla" policy gradient method, the policy is parameterized by some parameter $ \theta $ .i.e parametric policy  $ \pi_{\theta} (a_t | s_t) $ and we directly optimize the policy by finding the optimal parameter $ \theta $.&lt;/p&gt;
-&lt;p&gt;Even though 'Vanilla' policy gradient/ REINFORCE are simple/easier to implement, they come with some learning issues:&lt;/p&gt;
-&lt;p&gt;PROBLEM : Usually give rise to high variance while estimating gradient. This is because, the objective function&lt;/p&gt;
-&lt;p&gt;$ J(\theta) =  \mathbb{E_{\pi_{\theta, \tau}}} (G_t) $&lt;/p&gt;
-&lt;p&gt;contains expectation; so we can't directly compute the exact gradient. We use stochatic gradient estimates such as REINFORCE based on some batch of trajectories. This sampling approximation adds some variance. That means, we need large number of trajectories to get the best estimation.
-In addition, we can see that collecting trajectories could be a problem in complex environments-might take long time to run.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="Contribution"&gt;Contribution&lt;a class="anchor-link" href="https://sijanb.com.np/posts/paper-summary-proximal-policy-optimization-algorithms/#Contribution"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Authors have introduced a family of policy optimization methods which is build up on the basis of work of Trust-Region Policy optimization. Two main ideas:&lt;/p&gt;
-&lt;p&gt;a. Clipped Surrogate Objective Function : It avoids large deviations of learned policy $ \pi_{\theta} $ from old policy $ \pi_{\theta old} $; which is formulated as:&lt;/p&gt;
-&lt;p&gt;$ L^{clip}(\theta) = \mathbb{E}_t [ min (r_t (\theta) \hat{A_t}, clip(r_t(\theta), 1 - \epsilon, 1 + \epsilon) \hat{A_t}) ] $&lt;/p&gt;
-&lt;p&gt;Here $ r_t(\theta) = \frac{\pi_{\theta}(a_t | s_t)}{\pi_{\theta old}(a_t | s_t)} $&lt;/p&gt;
-&lt;p&gt;$ \epsilon $ is hyperparameter, which restricts the new policy from being too far from old policy.
-$ \hat{A_t} $ can be discounted return or advantage function.&lt;/p&gt;
-&lt;p&gt;The clipping ensures the updates take place in "trust-region". Also, introduces less variance than vanilla gradient methods&lt;/p&gt;
-&lt;p&gt;b. Multiple Epochs for policy update:&lt;/p&gt;
-&lt;p&gt;PPO allows to run multiple epochs on the same trajectories and optimize the objective $ L^{clip}(\theta) $. This also reduces the sample inefficieny while learning. In order to collect data, PPO runs policy with parallel actors and then samples mini-batches of the data for training k-epochs using the objective function above.&lt;/p&gt;
-&lt;p&gt;Let's observe the behaviour of the objective function based on changes in advantage function.&lt;/p&gt;
-&lt;p&gt;CASE I : When $ \hat{A_t} $ is +ve :&lt;/p&gt;
-&lt;p&gt;The objective function can be written as :&lt;/p&gt;
-&lt;p&gt;$ L^{clip} (\theta) = min ( r_t(\theta), 1 + \epsilon ) \hat{A_t} $&lt;/p&gt;
-&lt;p&gt;Since $\hat{A_t} $ is +ve, when the action occurrence likelihood increases (i.e. $ \pi_{\theta}(a_t | s_t) $), the whole objective value will also increase.
-The min operator limits the increasing objective value. So, when  $ \pi_{\theta}(a_t | s_t) ) &amp;gt; (1 + \epsilon) \pi_{\theta old}(a_t | s_t)  $, ceiling occurs at $ (1 + \epsilon) \hat{A_t} $&lt;/p&gt;
-&lt;p&gt;CASE II : When $ \hat{A_t} $ is -ve :&lt;/p&gt;
-&lt;p&gt;The objective function can be written as :&lt;/p&gt;
-&lt;p&gt;$ L^{clip} (\theta) = max ( r_t(\theta), 1 - \epsilon ) \hat{A_t} $&lt;/p&gt;
-&lt;p&gt;Now, the objective function value only increases when the likelihood of the action is less likely (i.e. $ if \pi_{\theta}(a_t | s_t) $ decreases, $ L^{clip} (\theta) $ increases )
-In this case, when $  (1 - \epsilon) \pi_{\theta old}(a_t | s_t) &amp;gt; \pi_{\theta}(a_t | s_t) )   $, max operator limits the value at $ (1 - \epsilon) \pi_{\theta old}(a_t | s_t) \hat{A_t} $&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="input_area"&gt;
-&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/paper-summary-proximal-policy-optimization-algorithms/</guid><pubDate>Sat, 31 Oct 2020 16:37:42 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/paper-summary-policy-gradient-methods-for-rl-with-function-approximation/</guid><pubDate>Sat, 31 Oct 2020 20:18:54 GMT</pubDate></item></channel></rss>
