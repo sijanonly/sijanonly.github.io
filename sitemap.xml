@@ -27,7 +27,7 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/archive.html</loc>
-  <lastmod>2024-05-27T17:48:00Z</lastmod>
+  <lastmod>2024-05-28T18:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/</loc>
@@ -43,15 +43,19 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/index-3.html</loc>
-  <lastmod>2024-05-27T17:48:00Z</lastmod>
+  <lastmod>2024-05-28T18:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/</loc>
-  <lastmod>2024-05-13T20:02:00Z</lastmod>
+  <lastmod>2024-05-28T18:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/bayesian-learning/</loc>
   <lastmod>2024-04-21T20:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/categories/bias-variance-tradeoff/</loc>
+  <lastmod>2024-05-28T18:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/cat_knn/</loc>
@@ -296,6 +300,10 @@
  <url>
   <loc>https://sijanb.com.np/posts/what-is-perceptron-and-how-it-works/</loc>
   <lastmod>2024-04-21T20:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/posts/what-is-the-trade-off-between-bias-and-variance-in-machine-learning/</loc>
+  <lastmod>2024-05-28T18:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/what-is-underfitting-in-machine-learning/</loc>

@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CODEBUG</title><link>https://sijanb.com.np/</link><description>Data Exploration...</description><atom:link href="https://sijanb.com.np/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Mon, 27 May 2024 18:19:26 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>What are different types of gradient descent algorithm in machine learning ?</title><link>https://sijanb.com.np/posts/what-are-different-types-of-gradient-descent-algorithm-in-machine-learning/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;p&gt;There exist three distinct types of gradient descent learning algorithms: batch gradient descent, stochastic gradient descent, and mini-batch gradient descent.&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CODEBUG</title><link>https://sijanb.com.np/</link><description>Data Exploration...</description><atom:link href="https://sijanb.com.np/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Tue, 28 May 2024 18:52:54 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>What is the trade-off between bias and variance in machine learning ?</title><link>https://sijanb.com.np/posts/what-is-the-trade-off-between-bias-and-variance-in-machine-learning/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;p&gt;Short:
+A model with minimal parameters may exhibit high bias and low variance, while a model with numerous parameters may demonstrate high variance and low bias. Therefore, it is essential to achieve an optimal balance to avoid overfitting and underfitting the data. High bias arises from incorrect assumptions made by the learning algorithm, whereas variance arises from a model's sensitivity to minor variations in the training dataset.&lt;/p&gt;
+&lt;p&gt;Detail:
+During development, all algorithms exhibit some degree of bias and variance. Models can be adjusted to address either bias or variance, but it is impossible to reduce both to zero without adversely affecting the other. This introduces the concept of the bias-variance trade-off.
+Bias refers to the discrepancy between the average prediction of our model and the actual value being predicted, indicating the presence of systematic errors in the model.
+Every algorithm inherently possesses some level of bias due to assumptions made within the model to simplify learning the target function. High bias can lead to underfitting, where the algorithm fails to capture relevant relationships between features and target outputs. Simpler algorithms tend to introduce more bias, whereas nonlinear algorithms usually have lower bias. These errors can originate from various sources, including the selection of training data, feature choices, or the training algorithm itself.
+Variance measures how much a model's predictions change with different training sets, indicating the degree of over-specialization to a particular training set (overfitting). The goal is to assess the deviation of our model from the best possible model for the training data.
+The ideal model seeks to minimize both bias and variance, achieving a balance that is neither too simple nor too complex, thereby yielding minimal error.
+Low-variance models typically have a simple structure and are less sophisticated, but they risk being highly biased. Examples include Regression and Naive Bayes.
+Conversely, low-bias models generally have a more flexible and complex structure but are prone to high variance. Examples include Nearest Neighbors and Decision Trees. Overfitting arises when a model is overly complex and learns the noise in the data rather than the actual signals.&lt;/p&gt;</description><category>bias-variance-tradeoff</category><category>machine-learning</category><category>machine-learning-glossary</category><guid>https://sijanb.com.np/posts/what-is-the-trade-off-between-bias-and-variance-in-machine-learning/</guid><pubDate>Tue, 28 May 2024 18:51:40 GMT</pubDate></item><item><title>What are different types of gradient descent algorithm in machine learning ?</title><link>https://sijanb.com.np/posts/what-are-different-types-of-gradient-descent-algorithm-in-machine-learning/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;p&gt;There exist three distinct types of gradient descent learning algorithms: batch gradient descent, stochastic gradient descent, and mini-batch gradient descent.&lt;/p&gt;
 &lt;p&gt;Batch Gradient Descent (BGD)&lt;/p&gt;
 &lt;p&gt;In Batch Gradient Descent, the term 'batch' signifies the utilization of the entire training dataset during each iteration of the learning process. By incorporating all training examples for each update, Batch Gradient Descent ensures stable error gradients and a consistent trajectory towards the optimal solution, albeit with significant computational demands.
 This batching method enhances computational efficiency; however, it can still result in extended processing times for large training datasets due to the necessity of storing all data in memory. While Batch Gradient Descent typically yields a stable error gradient and reliable convergence, it occasionally converges to a local minimum rather than the global optimum.&lt;/p&gt;
@@ -109,59 +118,4 @@ Another challenge is about the distribution of the inputs. In supervised learnin
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/paper-summary-playing-atari-with-deep-reinforcement-learning/</guid><pubDate>Sun, 08 Nov 2020 13:40:42 GMT</pubDate></item><item><title>Paper Summary : Policy Gradient Methods for Reinforcement Learning with Function Approximation</title><link>https://sijanb.com.np/posts/paper-summary-policy-gradient-methods-for-rl-with-function-approximation/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Summary of the paper &lt;a href="https://homes.cs.washington.edu/~todorov/courses/amath579/reading/PolicyGradient.pdf"&gt;"Policy Gradient Methods for Reinforcement Learning with Function Approximation"&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="Motivation"&gt;Motivation&lt;a class="anchor-link" href="https://sijanb.com.np/posts/paper-summary-policy-gradient-methods-for-rl-with-function-approximation/#Motivation"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Reinforcement Learning (RL) solves the problem of learning through experiments in the (dynamic) environments. The learner objective is to find an optimal policy which can guide the agent for the nagivation. This optimal policy is formulated in terms of maximizing future reward of the agent. Value-function $ V_{\pi} (s) $ and action-value function $ Q_{\pi}(s,a) $ are the measure of potential future rewards.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;$ V_{\pi} (s) $ : Goodness measure to be in a state s and then following policy $ \pi $&lt;/li&gt;
-&lt;li&gt;$ Q_{\pi}(s,a) $ : Goodness measure to be in a state s, perform action a and then follow policy $ \pi $&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;NOTE&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Both $ V_{\pi} (s) $ and $ Q_{\pi}(s,a) $ are related to rewards in terms of expectation of the discounted future reards and their values are maintained on a lookup table.&lt;/li&gt;
-&lt;li&gt;Goal : We want to find the value of (state) or (state,action) in a given environment, so that the agent can follow an optimal path, collecting maximum rewards.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;In a large scale RL problem, maintaining lookup table will lead to the the problem of 'curse of dimensionality'. Currently, this problem is solved using function approximation. The function approximation tries to generalize the estimation of value of state or state-action value based on a set of features in a given state/observations. Most of the existing approaches follow the idea of approximating the value function and then deriving policy out of it. Authors have pointed out two major limitations of this approach:&lt;/p&gt;
-&lt;p&gt;a. This approach focused towards finding deterministic policy, which might not be the case for complex problems/environments.
-b. Small variation in the value estimation might cause different action selection; derived policy is sensitive.&lt;/p&gt;
-&lt;h5 id="Contribution"&gt;Contribution&lt;a class="anchor-link" href="https://sijanb.com.np/posts/paper-summary-policy-gradient-methods-for-rl-with-function-approximation/#Contribution"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Authors proposed an alternative way to approximate policy directly using parameterized function. So, we won't be storing any Q-values in a table, but, learnt using a function approximator. For an example, the policy can be represented by a Neural Network (NN) where we can feed state as input and get probability distribution for action selection as output. Considering $ \theta $ as parameters of the NN, representing the policy and $ \rho $ as its performance measure (which can be a loss function), then the parameter $ \theta $ will be updated as:&lt;/p&gt;
-&lt;p&gt;$ \theta_{t+1} \gets \theta_t + \alpha \frac{\partial {\rho}}{ \partial{\theta}} $&lt;/p&gt;
-&lt;h6 id="Policy-Gradient-Theorem:"&gt;Policy Gradient Theorem:&lt;a class="anchor-link" href="https://sijanb.com.np/posts/paper-summary-policy-gradient-methods-for-rl-with-function-approximation/#Policy-Gradient-Theorem:"&gt;¶&lt;/a&gt;&lt;/h6&gt;&lt;p&gt;For any Markov Decision Process (MDP),&lt;/p&gt;
-&lt;p&gt;$ \nabla_{\theta} J(\theta) = \frac{\partial {\rho(\pi)}}{ \partial{\theta}} = \underset{s} \sum d^{\pi} (s)  \underset{a} \sum \frac{\partial{\pi(s,a)}}{\partial(\theta)} Q^{\pi}(s,a) $ ----------(a)&lt;/p&gt;
-&lt;p&gt;Here $ \rho(\pi) $ , the average rewards under current policy ($ \pi $) and $ d^{\pi}(s) $, stationary distribution of states under $ \pi $&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The problem with the above formulation is 'how to get Q(s,a) ?' -&amp;gt; Q(s,a) must be estimated.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;We can see that the state distribution is independent of policy parameter $ \theta $. Since, gradient is independent of MDP dynamics, it allows model-free learning in RL. If we estimate the policy gradient using Monte-Carlo sampling, it will give REINFORCE algorithm.&lt;/p&gt;
-&lt;p&gt;In Monte-Carlo sampling, we take N trajectories using current policy $ \pi $ and collect the returns. However, these returns hae high variance and we might need many episodes for the smooth convergence. The variance is introduced due to the fact that we won't be able to collect same trajectories multiple times(.i.e movement of agent is also dynamic) using out stochastic policies in the stochastic environment.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;QUESTION : How to estimate Q-value in equation (a) ?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Authors used a function approximation $ f_w (s,a) $ with parameters 'w' to estimate $ Q^{\pi} (s,a) $ as :&lt;/p&gt;
-&lt;p&gt;$ \nabla_{\theta} J(\theta) =  \underset{s} \sum d^{\pi(s)} (s)  \underset{a} \sum \frac{\partial{\pi(s,a)}}{\partial(\theta)} f_w(s,a) $ --------- (b)&lt;/p&gt;
-&lt;p&gt;Here $ f_w(s,a) $ is learnt by following $ \pi $ and updating 'w' by minimizing mean-square error between Q-values $ [ Q^{\pi}(s,a) - f_w(s,a) ]^2 $. The neural network/policy will predict some Q-value and also when agent take some action in the environment, we predict Q-value for a given state/action. Algorithm will try to make sure difference between these two remains as close as possible.&lt;/p&gt;
-&lt;p&gt;The resulting formulation (b) gives the idea of actor-critic architecture for RL where&lt;/p&gt;
-&lt;p&gt;i. $ \pi(s,a) $ is the actor which is learning to approximate the policy by maximixing (b)&lt;/p&gt;
-&lt;p&gt;ii. The critic $ f_w(s,a) $ learning to estimate the policy by minimizing MSE with estimated and true Q-values.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="input_area"&gt;
-&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/paper-summary-policy-gradient-methods-for-rl-with-function-approximation/</guid><pubDate>Sat, 31 Oct 2020 20:18:54 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/paper-summary-playing-atari-with-deep-reinforcement-learning/</guid><pubDate>Sun, 08 Nov 2020 13:40:42 GMT</pubDate></item></channel></rss>

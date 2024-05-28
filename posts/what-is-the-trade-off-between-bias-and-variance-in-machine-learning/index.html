@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>What are different types of gradient descent algorithm in machine learning ? | CODEBUG</title>
+<title>What is the trade-off between bias and variance in machine learning ? | CODEBUG</title>
 <link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
@@ -16,21 +16,19 @@
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
-<link rel="canonical" href="https://sijanb.com.np/posts/what-are-different-types-of-gradient-descent-algorithm-in-machine-learning/">
+<link rel="canonical" href="https://sijanb.com.np/posts/what-is-the-trade-off-between-bias-and-variance-in-machine-learning/">
 <link rel="icon" href="../../favicon.ico" sizes="16x16">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Font Awesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 <meta name="author" content="Sijan Bhandari">
-<link rel="prev" href="../what-is-underfitting-in-machine-learning/" title="What is underfitting in Machine Learning ?" type="text/html">
-<link rel="next" href="../what-is-the-trade-off-between-bias-and-variance-in-machine-learning/" title="What is the trade-off between bias and variance in machine learning ?" type="text/html">
+<link rel="prev" href="../what-are-different-types-of-gradient-descent-algorithm-in-machine-learning/" title="What are different types of gradient descent algorithm in machine learning ?" type="text/html">
 <meta property="og:site_name" content="CODEBUG">
-<meta property="og:title" content="What are different types of gradient descent algorithm in machine lear">
-<meta property="og:url" content="https://sijanb.com.np/posts/what-are-different-types-of-gradient-descent-algorithm-in-machine-learning/">
-<meta property="og:description" content="There exist three distinct types of gradient descent learning algorithms: batch gradient descent, stochastic gradient descent, and mini-batch gradient descent.
-Batch Gradient Descent (BGD)
-In Batch Gr">
+<meta property="og:title" content="What is the trade-off between bias and variance in machine learning ?">
+<meta property="og:url" content="https://sijanb.com.np/posts/what-is-the-trade-off-between-bias-and-variance-in-machine-learning/">
+<meta property="og:description" content="Short:
+A model with minimal parameters may exhibit high bias and low variance, while a model with numerous parameters may demonstrate high variance and low bias. Therefore, it is essential to achieve ">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2024-05-27T22:57:35+05:45">
-<meta property="article:tag" content="gradient-descent">
+<meta property="article:published_time" content="2024-05-29T00:36:40+05:45">
+<meta property="article:tag" content="bias-variance-tradeoff">
 <meta property="article:tag" content="machine-learning">
 <meta property="article:tag" content="machine-learning-glossary">
 </head>
@@ -60,32 +58,34 @@ In Batch Gr">
 <div class="site-wrapper">
     <header class="main-header post-head no-cover"><nav class="main-nav overlay clearfix"><a class="blog-logo" href="https://sijanb.com.np/"><img src="../../images/logo.png" alt="Blog Logo"></a>
             <a class="menu-button" href="#"><span class="burger">☰</span><span class="word">Menu</span></a>
-        </nav></header><main id="content" class="content" role="main"><article class="post post"><header class="post-header"><h1 class="post-title">What are different types of gradient descent algorithm in machine learning ?</h1>
+        </nav></header><main id="content" class="content" role="main"><article class="post post"><header class="post-header"><h1 class="post-title">What is the trade-off between bias and variance in machine learning ?</h1>
         <section class="post-meta"> by
             Sijan Bhandari
             on
-                <a href="../../categories/gradient-descent/">#gradient-descent</a>,
+                <a href="../../categories/bias-variance-tradeoff/">#bias-variance-tradeoff</a>,
                 <a href="../../categories/machine-learning/">#machine-learning</a>,
                 <a href="../../categories/machine-learning-glossary/">#machine-learning-glossary</a>,
-            <time class="post-date" datetime="2024-05-27T22:57:35+05:45">
-                2024-05-27
-            </time></section></header><section class="post-content"><p>There exist three distinct types of gradient descent learning algorithms: batch gradient descent, stochastic gradient descent, and mini-batch gradient descent.</p>
-<p>Batch Gradient Descent (BGD)</p>
-<p>In Batch Gradient Descent, the term 'batch' signifies the utilization of the entire training dataset during each iteration of the learning process. By incorporating all training examples for each update, Batch Gradient Descent ensures stable error gradients and a consistent trajectory towards the optimal solution, albeit with significant computational demands.
-This batching method enhances computational efficiency; however, it can still result in extended processing times for large training datasets due to the necessity of storing all data in memory. While Batch Gradient Descent typically yields a stable error gradient and reliable convergence, it occasionally converges to a local minimum rather than the global optimum.</p>
-<p>Stochastic Gradient Descent (SGD)</p>
-<p>Stochastic Gradient Descent (SGD) enhances parameter updates by leveraging individual data points during each iteration. By conducting a training epoch for each dataset example and updating parameters sequentially, SGD minimizes memory requirements, as only a single training example needs to be stored at any given time. These frequent updates, while providing detailed and rapid adjustments, may lead to decreased computational efficiency relative to batch gradient descent. Despite the potential for noisy gradients, which arise from these frequent updates, this noise can facilitate the escape from local minima, thereby aiding in the pursuit of a global minimum. The principle of SGD is characterized by its utilization of a single example per iteration, hence the term "stochastic" reflects the random selection of each example within the batch. Given sufficient iterations, SGD proves effective, albeit with inherent noisiness.</p>
-<p>Mini Batch Gradient Descent</p>
-<p>Mini-batch gradient descent integrates principles from both batch gradient descent and stochastic gradient descent. It partitions the training dataset into smaller batch sizes and executes updates on each of these batches. This methodology achieves a balance between the computational efficiency of batch gradient descent and the rapidity of stochastic gradient descent. Similar to stochastic gradient descent, the average cost over epochs in mini-batch gradient descent exhibits fluctuations due to the averaging of a limited number of examples at a time.</p>
+            <time class="post-date" datetime="2024-05-29T00:36:40+05:45">
+                2024-05-29
+            </time></section></header><section class="post-content"><p>Short:
+A model with minimal parameters may exhibit high bias and low variance, while a model with numerous parameters may demonstrate high variance and low bias. Therefore, it is essential to achieve an optimal balance to avoid overfitting and underfitting the data. High bias arises from incorrect assumptions made by the learning algorithm, whereas variance arises from a model's sensitivity to minor variations in the training dataset.</p>
+<p>Detail:
+During development, all algorithms exhibit some degree of bias and variance. Models can be adjusted to address either bias or variance, but it is impossible to reduce both to zero without adversely affecting the other. This introduces the concept of the bias-variance trade-off.
+Bias refers to the discrepancy between the average prediction of our model and the actual value being predicted, indicating the presence of systematic errors in the model.
+Every algorithm inherently possesses some level of bias due to assumptions made within the model to simplify learning the target function. High bias can lead to underfitting, where the algorithm fails to capture relevant relationships between features and target outputs. Simpler algorithms tend to introduce more bias, whereas nonlinear algorithms usually have lower bias. These errors can originate from various sources, including the selection of training data, feature choices, or the training algorithm itself.
+Variance measures how much a model's predictions change with different training sets, indicating the degree of over-specialization to a particular training set (overfitting). The goal is to assess the deviation of our model from the best possible model for the training data.
+The ideal model seeks to minimize both bias and variance, achieving a balance that is neither too simple nor too complex, thereby yielding minimal error.
+Low-variance models typically have a simple structure and are less sophisticated, but they risk being highly biased. Examples include Regression and Naive Bayes.
+Conversely, low-bias models generally have a more flexible and complex structure but are prone to high variance. Examples include Nearest Neighbors and Decision Trees. Overfitting arises when a model is overly complex and learns the noise in the data rather than the actual signals.</p>
     </section><footer class="post-footer"><section class="comments hidden-print"><h2>Comments</h2>
         
     
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="blog-sijanb-com-np",
-            disqus_url="https://sijanb.com.np/posts/what-are-different-types-of-gradient-descent-algorithm-in-machine-learning/",
-        disqus_title="What are different types of gradient descent algorithm in machine learning ?",
-        disqus_identifier="cache/posts/what-are-different-types-of-gradient-descent-algorithm-in-machine-learning.html",
+            disqus_url="https://sijanb.com.np/posts/what-is-the-trade-off-between-bias-and-variance-in-machine-learning/",
+        disqus_title="What is the trade-off between bias and variance in machine learning ?",
+        disqus_identifier="cache/posts/what-is-the-trade-off-between-bias-and-variance-in-machine-learning.html",
         disqus_config = function () {
             this.language = "en";
         };

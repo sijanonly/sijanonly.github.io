@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CODEBUG (Posts about machine-learning)</title><link>https://sijanb.com.np/</link><description></description><atom:link href="https://sijanb.com.np/categories/machine-learning.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Mon, 27 May 2024 18:19:26 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>What are different types of gradient descent algorithm in machine learning ?</title><link>https://sijanb.com.np/posts/what-are-different-types-of-gradient-descent-algorithm-in-machine-learning/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;p&gt;There exist three distinct types of gradient descent learning algorithms: batch gradient descent, stochastic gradient descent, and mini-batch gradient descent.&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CODEBUG (Posts about machine-learning)</title><link>https://sijanb.com.np/</link><description></description><atom:link href="https://sijanb.com.np/categories/machine-learning.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Tue, 28 May 2024 18:52:54 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>What is the trade-off between bias and variance in machine learning ?</title><link>https://sijanb.com.np/posts/what-is-the-trade-off-between-bias-and-variance-in-machine-learning/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;p&gt;Short:
+A model with minimal parameters may exhibit high bias and low variance, while a model with numerous parameters may demonstrate high variance and low bias. Therefore, it is essential to achieve an optimal balance to avoid overfitting and underfitting the data. High bias arises from incorrect assumptions made by the learning algorithm, whereas variance arises from a model's sensitivity to minor variations in the training dataset.&lt;/p&gt;
+&lt;p&gt;Detail:
+During development, all algorithms exhibit some degree of bias and variance. Models can be adjusted to address either bias or variance, but it is impossible to reduce both to zero without adversely affecting the other. This introduces the concept of the bias-variance trade-off.
+Bias refers to the discrepancy between the average prediction of our model and the actual value being predicted, indicating the presence of systematic errors in the model.
+Every algorithm inherently possesses some level of bias due to assumptions made within the model to simplify learning the target function. High bias can lead to underfitting, where the algorithm fails to capture relevant relationships between features and target outputs. Simpler algorithms tend to introduce more bias, whereas nonlinear algorithms usually have lower bias. These errors can originate from various sources, including the selection of training data, feature choices, or the training algorithm itself.
+Variance measures how much a model's predictions change with different training sets, indicating the degree of over-specialization to a particular training set (overfitting). The goal is to assess the deviation of our model from the best possible model for the training data.
+The ideal model seeks to minimize both bias and variance, achieving a balance that is neither too simple nor too complex, thereby yielding minimal error.
+Low-variance models typically have a simple structure and are less sophisticated, but they risk being highly biased. Examples include Regression and Naive Bayes.
+Conversely, low-bias models generally have a more flexible and complex structure but are prone to high variance. Examples include Nearest Neighbors and Decision Trees. Overfitting arises when a model is overly complex and learns the noise in the data rather than the actual signals.&lt;/p&gt;</description><category>bias-variance-tradeoff</category><category>machine-learning</category><category>machine-learning-glossary</category><guid>https://sijanb.com.np/posts/what-is-the-trade-off-between-bias-and-variance-in-machine-learning/</guid><pubDate>Tue, 28 May 2024 18:51:40 GMT</pubDate></item><item><title>What are different types of gradient descent algorithm in machine learning ?</title><link>https://sijanb.com.np/posts/what-are-different-types-of-gradient-descent-algorithm-in-machine-learning/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;p&gt;There exist three distinct types of gradient descent learning algorithms: batch gradient descent, stochastic gradient descent, and mini-batch gradient descent.&lt;/p&gt;
 &lt;p&gt;Batch Gradient Descent (BGD)&lt;/p&gt;
 &lt;p&gt;In Batch Gradient Descent, the term 'batch' signifies the utilization of the entire training dataset during each iteration of the learning process. By incorporating all training examples for each update, Batch Gradient Descent ensures stable error gradients and a consistent trajectory towards the optimal solution, albeit with significant computational demands.
 This batching method enhances computational efficiency; however, it can still result in extended processing times for large training datasets due to the necessity of storing all data in memory. While Batch Gradient Descent typically yields a stable error gradient and reliable convergence, it occasionally converges to a local minimum rather than the global optimum.&lt;/p&gt;
@@ -210,145 +219,4 @@ combinations from given data features.&lt;/li&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/out-of-sample-accuracy-estimation-using-cross-validation-in-python-and-scikit-learn/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>cross-validation</category><category>kNN</category><category>machine-learning</category><guid>https://sijanb.com.np/posts/out-of-sample-accuracy-estimation-using-cross-validation-in-python-and-scikit-learn/</guid><pubDate>Sat, 09 May 2020 08:49:17 GMT</pubDate></item><item><title>K-Nearest Neighbors Algorithm using Python and Scikit-Learn</title><link>https://sijanb.com.np/posts/k-nearest-neighbors-algorithm-using-python-and-scikit-learn/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;K nearest Neighbors (kNN) works based on calculating distance between given test data point and all the training samples. We, then, collect first K closest points from training set and the majority vote gives you the predicted class for a given test data point.&lt;/p&gt;
-&lt;p&gt;For more intuitive explanation, please follow previous post :&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/how-k-nearest-neighbors-works/"&gt;How kNN works ?&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="input_area"&gt;
-&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;math&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;collections&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Counter&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
-
-&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
-
-&lt;span class="c1"&gt;# making results reproducible&lt;/span&gt;
-&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;seed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;42&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [2]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="input_area"&gt;
-&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="s1"&gt;'https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;header&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sep&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;','&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'CLASS'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'ALCOHOL_LEVEL'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'MALIC_ACID'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'ASH'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'ALCALINITY'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'MAGNESIUM'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'PHENOLS'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
-              &lt;span class="s1"&gt;'FLAVANOIDS'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'NON_FLAVANOID_PHENOL'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'PROANTHOCYANINS'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'COLOR_INTENSITY'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
-              &lt;span class="s1"&gt;'HUE'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'OD280/OD315_DILUTED'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'PROLINE'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-
-&lt;span class="c1"&gt;# Let us use only two features : 'ALCOHOL_LEVEL', 'MALIC_ACID' for this problem&lt;/span&gt;
-&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="s1"&gt;'CLASS'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'ALCOHOL_LEVEL'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'MALIC_ACID'&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
-&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-&lt;div class="output_area"&gt;
-&lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
-&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;&lt;div&gt;
-&lt;style scoped=""&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border="1" class="dataframe"&gt;
-&lt;thead&gt;
-&lt;tr style="text-align: right;"&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;CLASS&lt;/th&gt;
-&lt;th&gt;ALCOHOL_LEVEL&lt;/th&gt;
-&lt;th&gt;MALIC_ACID&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;th&gt;0&lt;/th&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;14.23&lt;/td&gt;
-&lt;td&gt;1.71&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;1&lt;/th&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;13.20&lt;/td&gt;
-&lt;td&gt;1.78&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;2&lt;/th&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;13.16&lt;/td&gt;
-&lt;td&gt;2.36&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;3&lt;/th&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;14.37&lt;/td&gt;
-&lt;td&gt;1.95&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;4&lt;/th&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;13.24&lt;/td&gt;
-&lt;td&gt;2.59&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="input_area"&gt;
-&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# class distribution looks okay; not so imbalanced.&lt;/span&gt;
-&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'CLASS'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;value_counts&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;kind&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"bar"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-&lt;div class="output_area"&gt;
-&lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div class="output_png output_subarea"&gt;
-&lt;img alt="No description has been provided for this image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXQAAAD4CAYAAAD8Zh1EAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAADl0RVh0U29mdHdhcmUAbWF0cGxvdGxpYiB2ZXJzaW9uIDMuMC4zLCBodHRwOi8vbWF0cGxvdGxpYi5vcmcvnQurowAADO1JREFUeJzt3X+o3fV9x/Hnq0a3zo6q9e4STO11NCjCZqwX19JRNlM3i6XJH0WUsYYSln+6zbHBlu2PjcIG8Z91/jHGQrW7g67qXCWixS5kyhgbzuuPtdUo/iDSSH5cO8VaRyX2vT/uN/SS3tvzPeeek5N8fD4gnO9PzxsOPvPle8/3JlWFJOns955pDyBJGg+DLkmNMOiS1AiDLkmNMOiS1AiDLkmNMOiS1AiDLkmNMOiS1IgNp/PNLr744pqbmzudbylJZ73HH3/81aqaGXTcaQ363Nwci4uLp/MtJemsl+TlPsd5y0WSGmHQJakRBl2SGmHQJakRBl2SGmHQJakRBl2SGmHQJakRAx8sSnI5cPeKTb8I/Dnwj932OeAQcFNVvTb+EUc3t/vBaY8wUYf23DjtESSdQQZeoVfVc1W1paq2ANcAbwH3AbuBA1W1GTjQrUuSpmTYWy5bgRer6mVgG7DQbV8Ato9zMEnScIYN+s3A17rl2ao60i0fBWZXOyHJriSLSRaXlpZGHFOSNEjvoCc5D/gM8M+n7quqAmq186pqb1XNV9X8zMzAXxYmSRrRMFfonwKeqKpj3fqxJBsButfj4x5OktTfMEG/hR/fbgG4H9jRLe8A9o1rKEnS8HoFPcn5wPXA11ds3gNcn+R54JPduiRpSnr9AxdV9QPgA6ds+x7L33qRJJ0BfFJUkhph0CWpEQZdkhph0CWpEQZdkhph0CWpEQZdkhph0CWpEQZdkhph0CWpEQZdkhph0CWpEQZdkhph0CWpEQZdkhph0CWpEQZdkhph0CWpEQZdkhph0CWpEb2CnuSCJPcmeTbJwSQfS3JRkv1Jnu9eL5z0sJKktfW9Qr8deKiqrgCuAg4Cu4EDVbUZONCtS5KmZGDQk7wf+ARwB0BVvV1VrwPbgIXusAVg+6SGlCQN1ucK/TJgCfhKkieTfDnJ+cBsVR3pjjkKzK52cpJdSRaTLC4tLY1naknST+gT9A3AR4C/q6qrgR9wyu2VqiqgVju5qvZW1XxVzc/MzKx3XknSGvoE/TBwuKoe7dbvZTnwx5JsBOhej09mRElSHxsGHVBVR5N8N8nlVfUcsBV4pvuzA9jTve6b6KR6V5nb/eC0R5ioQ3tunPYIatDAoHd+D/hqkvOAl4DPs3x1f0+SncDLwE2TGVGS1EevoFfVU8D8Kru2jnccSdKofFJUkhph0CWpEQZdkhph0CWpEQZdkhph0CWpEQZdkhph0CWpEQZdkhph0CWpEQZdkhph0CWpEQZdkhph0CWpEQZdkhph0CWpEQZdkhph0CWpEQZdkhph0CWpEb3+kegkh4DvA+8AJ6pqPslFwN3AHHAIuKmqXpvMmJKkQYa5Qv/1qtpSVfPd+m7gQFVtBg5065KkKVnPLZdtwEK3vABsX/84kqRR9Q16Af+a5PEku7pts1V1pFs+CsyOfTpJUm+97qEDv1pVryT5BWB/kmdX7qyqSlKrndj9BbAL4NJLL13XsJKktfW6Qq+qV7rX48B9wLXAsSQbAbrX42ucu7eq5qtqfmZmZjxTS5J+wsCgJzk/yc+fXAZ+A/gOcD+woztsB7BvUkNKkgbrc8tlFrgvycnj/6mqHkryGHBPkp3Ay8BNkxtTkjTIwKBX1UvAVats/x6wdRJDSZKG1/eHopLU29zuB6c9wkQd2nPjtEdYlY/+S1IjDLokNcKgS1IjDLokNcKgS1IjDLokNcKgS1IjDLokNcKgS1IjDLokNcKgS1IjDLokNcKgS1IjDLokNcKgS1IjDLokNcKgS1IjDLokNcKgS1Ijegc9yTlJnkzyQLd+WZJHk7yQ5O4k501uTEnSIMNcod8KHFyxfhvwpar6MPAasHOcg0mShtMr6Ek2ATcCX+7WA1wH3NsdsgBsn8SAkqR++l6h/w3wx8CPuvUPAK9X1Ylu/TBwyZhnkyQNYWDQk3waOF5Vj4/yBkl2JVlMsri0tDTKf0KS1EOfK/SPA59Jcgi4i+VbLbcDFyTZ0B2zCXhltZOram9VzVfV/MzMzBhGliStZmDQq+pPq2pTVc0BNwP/VlW/BTwMfLY7bAewb2JTSpIGWs/30P8E+MMkL7B8T/2O8YwkSRrFhsGH/FhVPQI80i2/BFw7/pEkSaPwSVFJaoRBl6RGGHRJaoRBl6RGGHRJaoRBl6RGGHRJaoRBl6RGGHRJaoRBl6RGGHRJaoRBl6RGGHRJaoRBl6RGGHRJaoRBl6RGGHRJaoRBl6RGGHRJaoRBl6RGGHRJasTAoCf52ST/neR/kjyd5Ivd9suSPJrkhSR3Jzlv8uNKktbS5wr9h8B1VXUVsAW4IclHgduAL1XVh4HXgJ2TG1OSNMjAoNeyN7vVc7s/BVwH3NttXwC2T2RCSVIvve6hJzknyVPAcWA/8CLwelWd6A45DFyyxrm7kiwmWVxaWhrHzJKkVfQKelW9U1VbgE3AtcAVfd+gqvZW1XxVzc/MzIw4piRpkKG+5VJVrwMPAx8DLkiyodu1CXhlzLNJkobQ51suM0ku6JbfC1wPHGQ57J/tDtsB7JvUkJKkwTYMPoSNwEKSc1j+C+CeqnogyTPAXUn+EngSuGOCc0qSBhgY9Kr6FnD1KttfYvl+uiTpDOCTopLUCIMuSY0w6JLUCIMuSY0w6JLUCIMuSY0w6JLUCIMuSY0w6JLUCIMuSY0w6JLUCIMuSY0w6JLUCIMuSY0w6JLUCIMuSY0w6JLUCIMuSY0w6JLUCIMuSY0YGPQkH0zycJJnkjyd5NZu+0VJ9id5vnu9cPLjSpLW0ucK/QTwR1V1JfBR4AtJrgR2AweqajNwoFuXJE3JwKBX1ZGqeqJb/j5wELgE2AYsdIctANsnNaQkabCh7qEnmQOuBh4FZqvqSLfrKDC7xjm7kiwmWVxaWlrHqJKkn6Z30JO8D/gX4A+q6o2V+6qqgFrtvKraW1XzVTU/MzOzrmElSWvrFfQk57Ic869W1de7zceSbOz2bwSOT2ZESVIffb7lEuAO4GBV/fWKXfcDO7rlHcC+8Y8nSeprQ49jPg78NvDtJE912/4M2APck2Qn8DJw02RGlCT1MTDoVfUfQNbYvXW840iSRuWTopLUCIMuSY0w6JLUCIMuSY0w6JLUCIMuSY0w6JLUCIMuSY0w6JLUCIMuSY0w6JLUCIMuSY0w6JLUCIMuSY0w6JLUCIMuSY0w6JLUCIMuSY0w6JLUCIMuSY0YGPQkdyY5nuQ7K7ZdlGR/kue71wsnO6YkaZA+V+j/ANxwyrbdwIGq2gwc6NYlSVM0MOhV9e/A/56yeRuw0C0vANvHPJckaUij3kOfraoj3fJRYHatA5PsSrKYZHFpaWnEt5MkDbLuH4pWVQH1U/bvrar5qpqfmZlZ79tJktYwatCPJdkI0L0eH99IkqRRjBr0+4Ed3fIOYN94xpEkjarP1xa/BvwXcHmSw0l2AnuA65M8D3yyW5ckTdGGQQdU1S1r7No65lkkSevgk6KS1AiDLkmNMOiS1AiDLkmNMOiS1AiDLkmNMOiS1AiDLkmNMOiS1AiDLkmNMOiS1AiDLkmNMOiS1AiDLkmNMOiS1AiDLkmNMOiS1AiDLkmNMOiS1AiDLkmNWFfQk9yQ5LkkLyTZPa6hJEnDGznoSc4B/hb4FHAlcEuSK8c1mCRpOOu5Qr8WeKGqXqqqt4G7gG3jGUuSNKwN6zj3EuC7K9YPA79y6kFJdgG7utU3kzy3jvc8010MvHq63iy3na53elfwszu7tf75fajPQesJei9VtRfYO+n3ORMkWayq+WnPoeH52Z3d/PyWreeWyyvAB1esb+q2SZKmYD1BfwzYnOSyJOcBNwP3j2csSdKwRr7lUlUnkvwu8E3gHODOqnp6bJOdnd4Vt5Ya5Wd3dvPzA1JV055BkjQGPikqSY0w6JLUCIMuSY2Y+PfQJWncklwLVFU91v3KkRuAZ6vqG1Mebar8oeiIklzB8tOyj1bVmyu231BVD01vMqltSf6C5d8htQHYz/IT6g8D1wPfrKq/muJ4U2XQR5Dk94EvAAeBLcCtVbWv2/dEVX1kmvNpdEk+X1VfmfYcWluSb7P8/93PAEeBTVX1RpL3snyB9ctTHXCKvOUymt8BrqmqN5PMAfcmmauq24FMdTKt1xcBg35mO1FV7wBvJXmxqt4AqKr/S/KjKc82VQZ9NO85eZulqg4l+TWWo/4hDPoZL8m31toFzJ7OWTSSt5P8XFW9BVxzcmOS9wMGXUM7lmRLVT0F0F2pfxq4E/il6Y6mHmaB3wReO2V7gP88/eNoSJ+oqh8CVNXKgJ8L7JjOSGcGgz6azwEnVm6oqhPA55L8/XRG0hAeAN538i/klZI8cvrH0TBOxnyV7a9yGn+F7pnIH4pKUiN8sEiSGmHQJakRBl2SGmHQJakR/w/A/BFM4huusQAAAABJRU5ErkJggg=="&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/k-nearest-neighbors-algorithm-using-python-and-scikit-learn/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>kNN</category><category>machine-learning</category><guid>https://sijanb.com.np/posts/k-nearest-neighbors-algorithm-using-python-and-scikit-learn/</guid><pubDate>Sat, 02 May 2020 09:38:27 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/out-of-sample-accuracy-estimation-using-cross-validation-in-python-and-scikit-learn/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>cross-validation</category><category>kNN</category><category>machine-learning</category><guid>https://sijanb.com.np/posts/out-of-sample-accuracy-estimation-using-cross-validation-in-python-and-scikit-learn/</guid><pubDate>Sat, 09 May 2020 08:49:17 GMT</pubDate></item></channel></rss>
