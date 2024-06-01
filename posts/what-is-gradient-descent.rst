@@ -11,7 +11,7 @@
 
 Short:
 
-Gradient descent is an optimization algorithm employed to determine the coefficients / parameters of a function (f) that minimize a cost function.
+Gradient descent is an optimization algorithm used to determine the coefficients / parameters of a function (f) that minimize a cost function.
 
 `reference <https://machinelearningmastery.com/gradient-descent-for-machine-learning/>`_
 
