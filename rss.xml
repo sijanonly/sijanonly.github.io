@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CODEBUG</title><link>https://sijanb.com.np/</link><description>Data Exploration...</description><atom:link href="https://sijanb.com.np/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Sat, 01 Jun 2024 05:11:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>What is the trade-off between bias and variance in machine learning ?</title><link>https://sijanb.com.np/posts/what-is-the-trade-off-between-bias-and-variance-in-machine-learning/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;p&gt;Short:
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CODEBUG</title><link>https://sijanb.com.np/</link><description>Data Exploration...</description><atom:link href="https://sijanb.com.np/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Sun, 02 Jun 2024 09:24:00 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>How to combat overfitting and underfitting in Machine Learning ?</title><link>https://sijanb.com.np/posts/how-to-combat-overfitting-and-underfitting-in-machine-learning/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;p&gt;Machine Learning models learn the relationship between input (features) and output (target) using learnable parameters. The size of these parameters defines the complexity and flexibility of a given model.&lt;/p&gt;
+&lt;p&gt;There are two typical scenarios. When the flexibility of a model is insufficient to capture the underlying pattern in a training dataset, the model is called underfitted. Conversely, when the model is too flexible to the underlying pattern, it is said that the model has “memorized” the training data, resulting in an overfitted model.&lt;/p&gt;
+&lt;p&gt;Consider a system that can be explained by a quadratic function, but we use a simple line to represent it, i.e., a single parameter to capture the underlying trends in the data. Because the function lacks the required complexity to fit the data (two parameters), we end up with a poor predictor. In this case, the model will have high bias, meaning we will get consistent but consistently wrong answers. This is called an underfitted model.&lt;/p&gt;
+&lt;p&gt;Now imagine that the true system is a parabola, but we use a higher-order polynomial to fit it. Due to natural noise in the data used to fit (deviations from the perfect parabola), the overly complex model treats these fluctuations and noise as intrinsic properties of the system and attempts to fit them. The result is a model with high variance.&lt;/p&gt;
+&lt;p&gt;More details:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://sijanb.com.np/posts/what-is-overfitting-in-machine-learning/"&gt;Overfitting&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://sijanb.com.np/posts/what-is-underfitting-in-machine-learning/"&gt;Underfitting&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><category>machine-learning</category><category>machine-learning-glossary</category><category>overfitting</category><category>underfitting</category><guid>https://sijanb.com.np/posts/how-to-combat-overfitting-and-underfitting-in-machine-learning/</guid><pubDate>Sun, 02 Jun 2024 09:19:06 GMT</pubDate></item><item><title>What is the trade-off between bias and variance in machine learning ?</title><link>https://sijanb.com.np/posts/what-is-the-trade-off-between-bias-and-variance-in-machine-learning/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;p&gt;Short:
 A model with minimal parameters may exhibit high bias and low variance, while a model with numerous parameters may demonstrate high variance and low bias. Therefore, it is essential to achieve an optimal balance to avoid overfitting and underfitting the data. High bias arises from incorrect assumptions made by the learning algorithm, whereas variance arises from a model's sensitivity to minor variations in the training dataset.&lt;/p&gt;
 &lt;p&gt;Detail:
 During development, all algorithms exhibit some degree of bias and variance. Models can be adjusted to address either bias or variance, but it is impossible to reduce both to zero without adversely affecting the other. This introduces the concept of the bias-variance trade-off.
@@ -93,42 +101,4 @@ using a distinct rationale. When dealing with extremely complicated jobs, like s
 which has an impact on the results.
 That implies that, in order to answer this problem logically, we must adjust our handwritten logic for each new change in the outputs.
 Machine Learning (ML), on the other hand, creates the model using a vast amount of data. The data gives the model all of its historical experience,
-which helps it better understand the pattern. We just retrain the model with fresh instances whenever the data changes.&lt;/p&gt;</description><category>machine-learning</category><category>machine-learning-glossary</category><guid>https://sijanb.com.np/posts/machine-learning-glossary-what-is-machine-learning/</guid><pubDate>Sun, 05 May 2024 10:28:45 GMT</pubDate></item><item><title>Paper Summary : Playing Atari With Deep Reinforcement Learning</title><link>https://sijanb.com.np/posts/paper-summary-playing-atari-with-deep-reinforcement-learning/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Summary of the paper &lt;a href="https://www.cs.toronto.edu/~vmnih/docs/dqn.pdf"&gt;"Playing Atari with Deep Reinforcement Learning"&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="Motivation"&gt;Motivation&lt;a class="anchor-link" href="https://sijanb.com.np/posts/paper-summary-playing-atari-with-deep-reinforcement-learning/#Motivation"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Deep Learning (DL) has proven to work well when we have large amount of data. Unline supervised DL algorithm setup, Reinforcement Learning (RL) doesn't have direct access to the targets/labels. RL agent usually get "delayed and sparsed" rewards as a signal to understand about the environment and learn policy for a given environment.
-Another challenge is about the distribution of the inputs. In supervised learning, each batch in training loop is drawn randomly which make sure each inputs/samples are independent and the parameter updates won't overfit to some specific direction/class in the data. In case of RL, inputs are usually correlated. For example, when you collect image inputs/frames of video of games, their pixel positions won't change much. Therefore, many samples will look alike and this might lead to poor learning and local optimal solution. Another problem is the non-stationarity of the target. The target will be changing throughout the episodes when the agent learns new behaviour from the environment, or adopting well.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="Contribution"&gt;Contribution&lt;a class="anchor-link" href="https://sijanb.com.np/posts/paper-summary-playing-atari-with-deep-reinforcement-learning/#Contribution"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Authors proposed 'Deep Q Network' (DQN) learning algorithm with experience replay. This approach solves both the correlated inputs and non-stationarity problems.&lt;/p&gt;
-&lt;p&gt;They uses CNN with a variant of Q-learning algorithm, and uses stochastic gradient descent (SGD) for the training. They maintained a buffer named - 'Experience Replay' of the transitions while the agent nagivates through the environment. While SGD training process, samples from this stored buffer is used to create mini-batches and used for the training of the NN. This refer this NN as Q-network with parameter, $ \theta $, which minimizes the sequences of loss functions $ L_i (\theta_i) $ :&lt;/p&gt;
-&lt;p&gt;$ L_i(\theta_i) $ = $ \mathbb{E_{s,a \sim \rho(.)}} [ (y_i - Q(s, a; \theta_i)^2 ] $&lt;/p&gt;
-&lt;p&gt;Where $ y_i = \mathbb{E_{s' \sim  \varepsilon}} [ r + \gamma \underset{a'} max (s', a', \theta_{i-}) | s,a] $&lt;/p&gt;
-&lt;p&gt;is the target for iteration i.&lt;/p&gt;
-&lt;p&gt;They used the previous iteration parameter value ($ \theta_{i-1} $) in order to calculate the target ($y_i$). The parameter ($ \theta_{i-1} $) from previous iteration won't change for some long future iterations, which makes it stationary and training will be smooth. They also  feed concatenation of four video frames as an input to the CNN in order to avoid the partial observation contraints in the learning. Using four frames, CNN will be able locate the movement direction, speed of the objects in the frames.&lt;/p&gt;
-&lt;p&gt;DQN is used to train on Atari 2600 games. The video frames from emulator are the observations based on discrete actions (up, down, left, rigth..) of the agent in the environment. The network consists of two convolutional layers and two fully connected layers. The last layer outputs the distribution over possible actions.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="input_area"&gt;
-&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/paper-summary-playing-atari-with-deep-reinforcement-learning/</guid><pubDate>Sun, 08 Nov 2020 13:40:42 GMT</pubDate></item></channel></rss>
+which helps it better understand the pattern. We just retrain the model with fresh instances whenever the data changes.&lt;/p&gt;</description><category>machine-learning</category><category>machine-learning-glossary</category><guid>https://sijanb.com.np/posts/machine-learning-glossary-what-is-machine-learning/</guid><pubDate>Sun, 05 May 2024 10:28:45 GMT</pubDate></item></channel></rss>

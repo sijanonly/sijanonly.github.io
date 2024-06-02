@@ -27,11 +27,11 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/archive.html</loc>
-  <lastmod>2024-05-28T18:52:00Z</lastmod>
+  <lastmod>2024-06-02T09:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/</loc>
-  <lastmod>2024-04-21T20:33:00Z</lastmod>
+  <lastmod>2024-06-02T09:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/index-1.html</loc>
@@ -43,7 +43,11 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/index-3.html</loc>
-  <lastmod>2024-05-28T18:52:00Z</lastmod>
+  <lastmod>2024-06-02T09:24:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/blog/index-4.html</loc>
+  <lastmod>2024-06-02T09:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/</loc>
@@ -176,6 +180,10 @@
  <url>
   <loc>https://sijanb.com.np/posts/how-nearest-centroid-classifier-works/</loc>
   <lastmod>2024-04-21T20:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/posts/how-to-combat-overfitting-and-underfitting-in-machine-learning/</loc>
+  <lastmod>2024-06-02T09:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/how-to-tune-hyperparameter-in-k-nearest-neighbors-classifier/</loc>
