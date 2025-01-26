@@ -511,7 +511,7 @@ Test R² Score: 0.5980
 <div class="prompt input_prompt">In [35]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">create_polynomial_features</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">degree</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">polynomial_regression_model</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">degree</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
     <span class="c1"># Create pipeline</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
         <span class="p">(</span><span class="s1">'scaler'</span><span class="p">,</span> <span class="n">StandardScaler</span><span class="p">()),</span>
@@ -537,7 +537,7 @@ Test R² Score: 0.5980
     <span class="k">return</span> <span class="n">model</span><span class="p">,</span> <span class="n">X_train_poly</span><span class="p">,</span> <span class="n">X_test_poly</span>
 
 <span class="c1"># Example usage with housing data</span>
-<span class="n">model_poly</span><span class="p">,</span> <span class="n">X_train_poly</span><span class="p">,</span> <span class="n">X_test_poly</span> <span class="o">=</span> <span class="n">create_polynomial_features</span><span class="p">(</span>
+<span class="n">model_poly</span><span class="p">,</span> <span class="n">X_train_poly</span><span class="p">,</span> <span class="n">X_test_poly</span> <span class="o">=</span> <span class="n">polynomial_regression_model</span><span class="p">(</span>
     <span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">X_test_scaled</span>
 <span class="p">)</span>
 </pre></div>
