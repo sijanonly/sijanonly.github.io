@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CODEBUG</title><link>https://sijanb.com.np/</link><description>Data Exploration...</description><atom:link href="https://sijanb.com.np/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Sun, 26 Jan 2025 15:14:31 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Understanding High Bias in Machine Learning with Real-World Example</title><link>https://sijanb.com.np/posts/understanding-high-bias-in-machine-learning-with-real-world-example/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=40aa6e5c"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CODEBUG</title><link>https://sijanb.com.np/</link><description>Data Exploration...</description><atom:link href="https://sijanb.com.np/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Sun, 26 Jan 2025 15:47:26 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Understanding High Bias in Machine Learning with Real-World Example</title><link>https://sijanb.com.np/posts/understanding-high-bias-in-machine-learning-with-real-world-example/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=40aa6e5c"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;High bias in machine learning results in underfitting, characterized by the model making oversimplified assumptions about the relationships within the data. This leads to subpar performance on both training and test datasets, demonstrating that the model does not possess the necessary complexity to capture the underlying patterns.&lt;/p&gt;
 &lt;p&gt;In this example, we will check house price prediction using two methods:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Linear Regression: The simple linear model does not adequately capture the complex relationships between features and house prices.&lt;/li&gt;
-&lt;li&gt;Polynomial Regression:&lt;/li&gt;
+&lt;li&gt;Polynomial Regression: The PolynomialFeatures step enhances the dataset by generating polynomial and interaction terms from the original features. For instance, when you have a feature x with a degree of 2, it will produce new features such as x, x², and cross-terms like x1 * x2. This approach enables a linear regression model to effectively capture non-linear relationships.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -429,6 +429,10 @@ Test R² Score: 0.5980
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;Why Use both &lt;code&gt;PolynomialFeatures&lt;/code&gt; and &lt;code&gt;LinearRegression&lt;/code&gt; in the Pipeline:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- The first PolynomialFeatures transformation creates a more complex feature space.
+- The LinearRegression then fits a linear model to these non-linear features.
+- This effectively allows a linear model to approximate non-linear relationships.&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;

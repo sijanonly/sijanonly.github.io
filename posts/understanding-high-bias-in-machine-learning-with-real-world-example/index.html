@@ -69,7 +69,7 @@
 <p>In this example, we will check house price prediction using two methods:</p>
 <ol>
 <li>Linear Regression: The simple linear model does not adequately capture the complex relationships between features and house prices.</li>
-<li>Polynomial Regression:</li>
+<li>Polynomial Regression: The PolynomialFeatures step enhances the dataset by generating polynomial and interaction terms from the original features. For instance, when you have a feature x with a degree of 2, it will produce new features such as x, x², and cross-terms like x1 * x2. This approach enables a linear regression model to effectively capture non-linear relationships.</li>
 </ol>
 </div>
 </div>
@@ -499,6 +499,10 @@ Test R² Score: 0.5980
 </ul>
 </li>
 </ul>
+<p>Why Use both <code>PolynomialFeatures</code> and <code>LinearRegression</code> in the Pipeline:</p>
+<pre><code>- The first PolynomialFeatures transformation creates a more complex feature space.
+- The LinearRegression then fits a linear model to these non-linear features.
+- This effectively allows a linear model to approximate non-linear relationships.</code></pre>
 </div>
 </div>
 </div>
