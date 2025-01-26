@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://sijanb.com.np/</loc>
-  <lastmod>2024-05-05T10:34:00Z</lastmod>
+  <lastmod>2025-01-26T15:14:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/2018/</loc>
@@ -26,8 +26,12 @@
   <lastmod>2024-05-05T10:34:00Z</lastmod>
  </url>
  <url>
+  <loc>https://sijanb.com.np/2025/</loc>
+  <lastmod>2025-01-26T15:14:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://sijanb.com.np/archive.html</loc>
-  <lastmod>2024-06-02T09:24:00Z</lastmod>
+  <lastmod>2025-01-26T15:14:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/</loc>
@@ -35,19 +39,19 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/index-1.html</loc>
-  <lastmod>2024-04-21T20:33:00Z</lastmod>
+  <lastmod>2025-01-26T15:14:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/index-2.html</loc>
-  <lastmod>2024-04-21T20:33:00Z</lastmod>
+  <lastmod>2025-01-26T15:14:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/index-3.html</loc>
-  <lastmod>2024-06-02T09:24:00Z</lastmod>
+  <lastmod>2025-01-26T15:14:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/index-4.html</loc>
-  <lastmod>2024-06-02T09:24:00Z</lastmod>
+  <lastmod>2025-01-26T15:14:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/</loc>
@@ -268,6 +272,10 @@
  <url>
   <loc>https://sijanb.com.np/posts/principal-component-analysis-pca-for-visualization-using-python/</loc>
   <lastmod>2024-04-21T20:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/posts/understanding-high-bias-in-machine-learning-with-real-world-example/</loc>
+  <lastmod>2025-01-26T15:14:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/understanding-probability/</loc>
