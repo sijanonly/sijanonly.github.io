@@ -58,7 +58,72 @@
     </header><main id="content" class="content" role="main"><div class="postindex">
 
 
-<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/understanding-high-bias-in-machine-learning-with-real-world-example/">Understanding High Bias in Machine Learning with Real-World Example</a></h2>
+<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/what-are-large-language-models-llms/">What are Large Language Models (LLMs) ?</a></h2>
+    </header><section class="post-excerpt"><div class="cell border-box-sizing text_cell rendered" id="cell-id=d8aa7401">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>The Evolution of Large Language Models: From Turing's Vision to the Reality of ChatGPT</strong></p>
+<p><strong>A 70-Year Journey: From the Turing Test to Contemporary AI</strong></p>
+<p>The journey to develop machines that genuinely grasp human language began in the 1950s with Alan Turing’s introduction of his renowned test for machine intelligence. This monumental challenge posed the question: how can we teach computers to understand the intricacies and nuances of human language?</p>
+<p>Language transcends mere words; it is a complex system enriched with grammar rules, cultural contexts, implied meanings, and creative expression. Imagine attempting to convey sarcasm, poetry, or humor to someone unfamiliar with human emotions. This was the challenge engineers confronted while designing machines capable of understanding language.</p>
+<p><strong>Three Stages of Evolution in Language AI</strong></p>
+<p><strong>Stage 1: Statistical Language Models (1990s-2010s)</strong><br>
+Early language models functioned like advanced autocomplete systems, relying on statistical patterns to predict subsequent words. For instance, if you entered "The weather is," the system would analyze millions of examples to suggest words like "nice," "cold," or "sunny" based on observed frequency patterns.<br><strong>Limitations:</strong> While these models could complete sentences, they lacked true comprehension of meaning or context beyond a few words.</p>
+<p><strong>Stage 2: Neural Language Models (2010s)</strong><br>
+The advent of neural networks transformed language processing, allowing models to grasp context and word relationships. For example, unlike statistical models, neural networks could discern that "bank" has different meanings in "river bank" and "savings bank" by evaluating the surrounding context.<br><strong>Breakthrough:</strong> Models like BERT (2018) significantly improved language comprehension by enabling them to read entire sentences and understand the interconnections between words.</p>
+<p><strong>Stage 3: Large Language Models - The Current Revolution (2020s-Present)</strong><br>
+A remarkable breakthrough emerged when researchers discovered that enlarging language models significantly enhanced their performance and granted them new capabilities.</p>
+<p><strong>The Importance of Scale: Discovering the Impact of Size</strong><br>
+Researchers identified that when language models exceeded specific size thresholds—transitioning from millions to hundreds of billions of parameters—extraordinary advancements occurred. These models not only excelled in existing tasks but also developed entirely new abilities.<br>
+Consider it this way: imagine learning to play the piano, and upon reaching a certain level, you suddenly find yourself able to compose symphonies without formal training in composition.</p>
+<p><strong>What Defines a "Large" Language Model?</strong><br>
+Modern Large Language Models are characterized by:</p>
+<ul>
+<li>Hundreds of billions of parameters, in contrast to older models with millions.</li>
+<li>Training on extensive text datasets sourced from the internet.</li>
+<li>Transformer architecture that enables the processing and understanding of relationships between words over lengthy passages.</li>
+</ul>
+<p>For instance, GPT-3 boasts 175 billion parameters—imagine a brain with 175 billion adjustable connections, each fine-tuned through exposure to a vast array of human-written knowledge.</p>
+<p><strong>Emergent Abilities: Unforeseen Capabilities</strong><br>
+One of the most astonishing features is "in-context learning," which allows models to acquire new tasks simply by observing examples within a conversation.<br><strong>Example:</strong></p>
+<p>If you present the model with: "Dog -&gt; Animal, Rose -&gt; Flower, Oak -&gt; ?”<br>
+It can respond with: "Tree"<br>
+This demonstrates its ability to recognize patterns (specific items to their categories) from the examples provided.</p>
+<p><strong>Additional Emergent Abilities:</strong></p>
+<ul>
+<li>
+<strong>Complex reasoning:</strong> Solving intricate multi-step math problems.</li>
+<li>
+<strong>Creative writing:</strong> Producing poetry, stories, and scripts.</li>
+<li>
+<strong>Code generation:</strong> Writing functional computer programs.</li>
+<li>
+<strong>Language translation:</strong> Converting text between languages even if not specifically trained for those translations.</li>
+</ul>
+<p>Summary:</p>
+<p>Language models create and produce text by predicting the likelihood of a word or series of words appearing within a larger
+context. This capability is particularly beneficial for tasks such as text generation and translation.</p>
+<p>Large language models (LLMs) are sophisticated models that utilize extensive parameters and large datasets,
+allowing them to handle longer text sequences and execute complex functions like summarization and answering questions.</p>
+<p>Transformers serve as a fundamental architecture in LLMs, employing attention mechanisms to prioritize significant parts
+of the input, which improves processing efficiency.</p>
+<p>LLMs offer a wide range of applications, including text generation, translation, sentiment analysis, and code generation.
+However, they also raise important considerations regarding costs, biases, and ethical implications.</p>
+<p>Citation: Zhao, Wayne Xin, et al. "A Survey of Large Language Models." arXiv preprint arXiv:2303.18223 (2023).
+arXiv: <a href="https://arxiv.org/abs/2303.18223">https://arxiv.org/abs/2303.18223</a></p>
+</div>
+</div>
+</div>
+    </section><footer class="post-meta">
+                Sijan Bhandari
+
+        on
+
+        <time class="post-date" datetime="2025-06-08T19:46:53+05:45">
+            2025-06-08
+        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/understanding-high-bias-in-machine-learning-with-real-world-example/">Understanding High Bias in Machine Learning with Real-World Example</a></h2>
     </header><section class="post-excerpt"><div class="cell border-box-sizing text_cell rendered" id="cell-id=40aa6e5c">
 <div class="prompt input_prompt">
 </div>
@@ -78,18 +143,18 @@
 <div class="prompt input_prompt">In [31]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">make_scorer</span><span class="p">,</span> <span class="n">mean_squared_error</span>
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
-<span class="kn">import</span> <span class="nn">sklearn.datasets</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_scorer</span><span class="p">,</span> <span class="n">mean_squared_error</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sklearn.datasets</span>
 
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">PolynomialFeatures</span>
-<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolynomialFeatures</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pipeline</span>
 </pre></div>
 </div>
 </div>
@@ -510,7 +575,7 @@ Test R² Score: 0.5980
 <div class="prompt input_prompt">In [35]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">polynomial_regression_model</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">degree</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">polynomial_regression_model</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">degree</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
     <span class="c1"># Create pipeline</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
         <span class="p">(</span><span class="s1">'scaler'</span><span class="p">,</span> <span class="n">StandardScaler</span><span class="p">()),</span>
@@ -762,19 +827,6 @@ outside of the training set of data is known as inductive bias.</p>
 
         <time class="post-date" datetime="2024-05-07T00:36:31+05:45">
             2024-05-07
-        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/machine-learning-glossary-what-is-model-training-in-machine-learning/">what is model training in machine learning ?</a></h2>
-    </header><section class="post-excerpt"><p>The Machine Learning model is represented by the model parameters. Those parameters are the learnable parameters. Learning happens when these parameters are updated with suitable values and the model is able to solve the given tasks.
-Training is the process of feeding a training dataset to your model. The training process uses an objective function (example MSE) to get the feedback in each iteration. Since we are trying to improve the accuracy of the model on a given
-input, and lower the error between model prediction and actual output, we also called training process as a model optimization process.</p>
-    </section><footer class="post-meta">
-                Sijan Bhandari
-
-        on
-                <a href="../categories/machine-learning/">#machine-learning</a>,
-                <a href="../categories/machine-learning-glossary/">#machine-learning-glossary</a>,
-
-        <time class="post-date" datetime="2024-05-06T23:44:07+05:45">
-            2024-05-06
         </time></footer></article>
 </div>
 
