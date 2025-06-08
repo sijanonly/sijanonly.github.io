@@ -55,7 +55,7 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/</loc>
-  <lastmod>2024-05-28T18:52:00Z</lastmod>
+  <lastmod>2025-06-08T15:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/bayesian-learning/</loc>
@@ -110,8 +110,16 @@
   <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
+  <loc>https://sijanb.com.np/categories/large-language-models/</loc>
+  <lastmod>2025-06-08T15:13:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://sijanb.com.np/categories/linear-regression/</loc>
   <lastmod>2024-04-21T20:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/categories/llms/</loc>
+  <lastmod>2025-06-08T15:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/machine-learning-glossary/</loc>
@@ -160,6 +168,10 @@
  <url>
   <loc>https://sijanb.com.np/categories/training-validation-test/</loc>
   <lastmod>2024-05-09T19:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/categories/transformers/</loc>
+  <lastmod>2025-06-08T15:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/underfitting/</loc>
