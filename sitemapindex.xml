@@ -10,6 +10,10 @@
   <lastmod>2025-06-08T14:54:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://sijanb.com.np/categories/bert.xml</loc>
+  <lastmod>2025-06-10T07:34:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://sijanb.com.np/categories/bias-variance-tradeoff.xml</loc>
   <lastmod>2024-05-28T18:52:00Z</lastmod>
  </sitemap>
@@ -38,6 +42,10 @@
   <lastmod>2024-04-21T20:33:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://sijanb.com.np/categories/foundation-models.xml</loc>
+  <lastmod>2025-06-10T07:34:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://sijanb.com.np/categories/gradient-descent.xml</loc>
   <lastmod>2024-06-01T05:11:00Z</lastmod>
  </sitemap>
@@ -59,7 +67,7 @@
  </sitemap>
  <sitemap>
   <loc>https://sijanb.com.np/categories/large-language-models.xml</loc>
-  <lastmod>2025-06-08T15:20:00Z</lastmod>
+  <lastmod>2025-06-10T07:34:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://sijanb.com.np/categories/linear-regression.xml</loc>
@@ -67,7 +75,7 @@
  </sitemap>
  <sitemap>
   <loc>https://sijanb.com.np/categories/llms.xml</loc>
-  <lastmod>2025-06-08T15:20:00Z</lastmod>
+  <lastmod>2025-06-10T07:34:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://sijanb.com.np/categories/machine-learning-glossary.xml</loc>
@@ -98,6 +106,10 @@
   <lastmod>2025-06-08T14:54:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://sijanb.com.np/categories/openai.xml</loc>
+  <lastmod>2025-06-10T07:34:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://sijanb.com.np/categories/overfitting.xml</loc>
   <lastmod>2024-06-02T09:24:00Z</lastmod>
  </sitemap>
@@ -119,7 +131,7 @@
  </sitemap>
  <sitemap>
   <loc>https://sijanb.com.np/categories/transformers.xml</loc>
-  <lastmod>2025-06-08T15:20:00Z</lastmod>
+  <lastmod>2025-06-10T07:34:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://sijanb.com.np/categories/underfitting.xml</loc>
@@ -127,10 +139,10 @@
  </sitemap>
  <sitemap>
   <loc>https://sijanb.com.np/rss.xml</loc>
-  <lastmod>2025-06-10T07:27:00Z</lastmod>
+  <lastmod>2025-06-10T07:34:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://sijanb.com.np/sitemap.xml</loc>
-  <lastmod>2025-06-10T07:27:00Z</lastmod>
+  <lastmod>2025-06-10T07:34:00Z</lastmod>
  </sitemap>
 </sitemapindex>

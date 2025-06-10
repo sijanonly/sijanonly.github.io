@@ -55,11 +55,15 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/</loc>
-  <lastmod>2025-06-08T15:20:00Z</lastmod>
+  <lastmod>2025-06-10T07:34:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/bayesian-learning/</loc>
   <lastmod>2024-04-21T20:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/categories/bert/</loc>
+  <lastmod>2025-06-10T07:34:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/bias-variance-tradeoff/</loc>
@@ -88,6 +92,10 @@
  <url>
   <loc>https://sijanb.com.np/categories/deep-learning/</loc>
   <lastmod>2024-04-21T20:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/categories/foundation-models/</loc>
+  <lastmod>2025-06-10T07:34:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/gradient-descent/</loc>
@@ -148,6 +156,10 @@
  <url>
   <loc>https://sijanb.com.np/categories/numpy/</loc>
   <lastmod>2024-04-21T20:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/categories/openai/</loc>
+  <lastmod>2025-06-10T07:34:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/overfitting/</loc>

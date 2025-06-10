@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CODEBUG (Posts about large-language-models)</title><link>https://sijanb.com.np/</link><description></description><atom:link href="https://sijanb.com.np/categories/large-language-models.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Tue, 10 Jun 2025 07:34:14 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>What is the future of Foundation Models ?</title><link>https://sijanb.com.np/posts/what-is-the-future-of-foundation-models/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=09ec12c8"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CODEBUG (Posts about openai)</title><link>https://sijanb.com.np/</link><description></description><atom:link href="https://sijanb.com.np/categories/openai.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Tue, 10 Jun 2025 07:34:14 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>What is the future of Foundation Models ?</title><link>https://sijanb.com.np/posts/what-is-the-future-of-foundation-models/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=09ec12c8"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="The-Future-of-AI-Foundation-Models:-Who-Will-Shape-Tomorrow's-Technology?"&gt;The Future of AI Foundation Models: Who Will Shape Tomorrow's Technology?&lt;a class="anchor-link" href="https://sijanb.com.np/posts/what-is-the-future-of-foundation-models/#The-Future-of-AI-Foundation-Models:-Who-Will-Shape-Tomorrow's-Technology?"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="The-Early-Days-of-AI:-Understanding-Our-Current-Landscape"&gt;The Early Days of AI: Understanding Our Current Landscape&lt;a class="anchor-link" href="https://sijanb.com.np/posts/what-is-the-future-of-foundation-models/#The-Early-Days-of-AI:-Understanding-Our-Current-Landscape"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;While recent advancements like ChatGPT have made headlines, we are still in the initial phase of the foundation model revolution. Picture it like the internet in 1995—we recognize the immense potential, yet we are still navigating the necessary rules, standards, and best practices.&lt;/p&gt;
@@ -197,57 +197,4 @@ We find ourselves at a pivotal point in AI development. The choices made in the 
 arXiv: &lt;a href="https://arxiv.org/abs/2108.07258"&gt;https://arxiv.org/abs/2108.07258&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>BERT</category><category>foundation-models</category><category>large-language-models</category><category>llms</category><category>openai</category><category>transformers</category><guid>https://sijanb.com.np/posts/what-is-the-future-of-foundation-models/</guid><pubDate>Tue, 10 Jun 2025 07:17:08 GMT</pubDate></item><item><title>What are Large Language Models (LLMs) ?</title><link>https://sijanb.com.np/posts/what-are-large-language-models-llms/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=d8aa7401"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;strong&gt;The Evolution of Large Language Models: From Turing's Vision to the Reality of ChatGPT&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;A 70-Year Journey: From the Turing Test to Contemporary AI&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;The journey to develop machines that genuinely grasp human language began in the 1950s with Alan Turing’s introduction of his renowned test for machine intelligence. This monumental challenge posed the question: how can we teach computers to understand the intricacies and nuances of human language?&lt;/p&gt;
-&lt;p&gt;Language transcends mere words; it is a complex system enriched with grammar rules, cultural contexts, implied meanings, and creative expression. Imagine attempting to convey sarcasm, poetry, or humor to someone unfamiliar with human emotions. This was the challenge engineers confronted while designing machines capable of understanding language.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Three Stages of Evolution in Language AI&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Stage 1: Statistical Language Models (1990s-2010s)&lt;/strong&gt;&lt;br&gt;
-Early language models functioned like advanced autocomplete systems, relying on statistical patterns to predict subsequent words. For instance, if you entered "The weather is," the system would analyze millions of examples to suggest words like "nice," "cold," or "sunny" based on observed frequency patterns.&lt;br&gt;
-&lt;strong&gt;Limitations:&lt;/strong&gt; While these models could complete sentences, they lacked true comprehension of meaning or context beyond a few words.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Stage 2: Neural Language Models (2010s)&lt;/strong&gt;&lt;br&gt;
-The advent of neural networks transformed language processing, allowing models to grasp context and word relationships. For example, unlike statistical models, neural networks could discern that "bank" has different meanings in "river bank" and "savings bank" by evaluating the surrounding context.&lt;br&gt;
-&lt;strong&gt;Breakthrough:&lt;/strong&gt; Models like BERT (2018) significantly improved language comprehension by enabling them to read entire sentences and understand the interconnections between words.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Stage 3: Large Language Models - The Current Revolution (2020s-Present)&lt;/strong&gt;&lt;br&gt;
-A remarkable breakthrough emerged when researchers discovered that enlarging language models significantly enhanced their performance and granted them new capabilities.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;The Importance of Scale: Discovering the Impact of Size&lt;/strong&gt;&lt;br&gt;
-Researchers identified that when language models exceeded specific size thresholds—transitioning from millions to hundreds of billions of parameters—extraordinary advancements occurred. These models not only excelled in existing tasks but also developed entirely new abilities.&lt;br&gt;
-Consider it this way: imagine learning to play the piano, and upon reaching a certain level, you suddenly find yourself able to compose symphonies without formal training in composition.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;What Defines a "Large" Language Model?&lt;/strong&gt;&lt;br&gt;
-Modern Large Language Models are characterized by:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Hundreds of billions of parameters, in contrast to older models with millions.&lt;/li&gt;
-&lt;li&gt;Training on extensive text datasets sourced from the internet.&lt;/li&gt;
-&lt;li&gt;Transformer architecture that enables the processing and understanding of relationships between words over lengthy passages.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;For instance, GPT-3 boasts 175 billion parameters—imagine a brain with 175 billion adjustable connections, each fine-tuned through exposure to a vast array of human-written knowledge.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Emergent Abilities: Unforeseen Capabilities&lt;/strong&gt;&lt;br&gt;
-One of the most astonishing features is "in-context learning," which allows models to acquire new tasks simply by observing examples within a conversation.&lt;br&gt;
-&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;If you present the model with: "Dog -&amp;gt; Animal, Rose -&amp;gt; Flower, Oak -&amp;gt; ?”&lt;br&gt;
-It can respond with: "Tree"&lt;br&gt;
-This demonstrates its ability to recognize patterns (specific items to their categories) from the examples provided.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Additional Emergent Abilities:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Complex reasoning:&lt;/strong&gt; Solving intricate multi-step math problems.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Creative writing:&lt;/strong&gt; Producing poetry, stories, and scripts.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Code generation:&lt;/strong&gt; Writing functional computer programs.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Language translation:&lt;/strong&gt; Converting text between languages even if not specifically trained for those translations.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Summary:&lt;/p&gt;
-&lt;p&gt;Language models create and produce text by predicting the likelihood of a word or series of words appearing within a larger
-context. This capability is particularly beneficial for tasks such as text generation and translation.&lt;/p&gt;
-&lt;p&gt;Large language models (LLMs) are sophisticated models that utilize extensive parameters and large datasets,
-allowing them to handle longer text sequences and execute complex functions like summarization and answering questions.&lt;/p&gt;
-&lt;p&gt;Transformers serve as a fundamental architecture in LLMs, employing attention mechanisms to prioritize significant parts
-of the input, which improves processing efficiency.&lt;/p&gt;
-&lt;p&gt;LLMs offer a wide range of applications, including text generation, translation, sentiment analysis, and code generation.
-However, they also raise important considerations regarding costs, biases, and ethical implications.&lt;/p&gt;
-&lt;p&gt;Citation: Zhao, Wayne Xin, et al. "A Survey of Large Language Models." arXiv preprint arXiv:2303.18223 (2023).
-arXiv: &lt;a href="https://arxiv.org/abs/2303.18223"&gt;https://arxiv.org/abs/2303.18223&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>large-language-models</category><category>llms</category><category>transformers</category><guid>https://sijanb.com.np/posts/what-are-large-language-models-llms/</guid><pubDate>Sun, 08 Jun 2025 14:01:53 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>BERT</category><category>foundation-models</category><category>large-language-models</category><category>llms</category><category>openai</category><category>transformers</category><guid>https://sijanb.com.np/posts/what-is-the-future-of-foundation-models/</guid><pubDate>Tue, 10 Jun 2025 07:17:08 GMT</pubDate></item></channel></rss>
