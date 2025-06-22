@@ -59,7 +59,31 @@
     </header><main id="content" class="content" role="main"><div class="postindex">
 
 
-<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/what-is-overfitting-in-machine-learning/">What is overfitting in Machine Learning ?</a></h2>
+<article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/what-is-underfitting-in-machine-learning/">What is underfitting in Machine Learning ?</a></h2>
+    </header><section class="post-excerpt"><p>Underfitting occurs in machine leanrning / data science when a data model fails to accurately capture the relationship between input and output variables, resulting in high error rates on both the training set and unseen data.
+This also entails that the model has insufficient training duration or the input variables lack significance to establish a meaningful relationship between the input and output variables. As the model learns, its bias diminishes, but its variance may increase, leading to overfitting. The objective in model fitting is to identify the optimal balance between underfitting and overfitting (.i.e., finding the sweet spot), allowing the model to capture the dominant trend in the training data and generalize effectively to new datasets.</p>
+<p>Important details:</p>
+<ol class="arabic simple">
+<li><p>High biased model (underfitted) is not able to learn the very basic/important patterns in the training data.</p></li>
+<li><p>Adding more data and making your model simpler won't help to avoid underfitting.</p></li>
+<li><p>One should try other sophisticated models (e.g Decision tree in comparision to kNN) or add complexity in the current model.</p></li>
+<li><p>Using complex models (example : polynomial regression rather than linear one) may be useful to capture the relevant patterns in the training data.</p></li>
+<li><p>Adding more features (or derived features from existing one) will also increase the model capacity and helps to avoid underfitting.</p></li>
+<li><p>If you see unacceptably high training error and test error, the model is underfitted.</p></li>
+<li><p>High bias and low variance are the indicators of underfitting models.</p></li>
+<li><p>Underfitting is easier to track than overfitting since the performance can be measured during training phase.</p></li>
+</ol></section><footer class="post-meta">
+                Sijan Bhandari
+
+        on
+                <a href="../categories/high-bias/">#high-bias</a>,
+                <a href="../categories/machine-learning/">#machine-learning</a>,
+                <a href="../categories/machine-learning-glossary/">#machine-learning-glossary</a>,
+                <a href="../categories/underfitting/">#underfitting</a>,
+
+        <time class="post-date" datetime="2024-05-14T01:25:08+05:45">
+            2024-05-14
+        </time></footer></article><article class="post post"><header class="post-header"><h2 class="post-title"><a href="../posts/what-is-overfitting-in-machine-learning/">What is overfitting in Machine Learning ?</a></h2>
     </header><section class="post-excerpt"><p>Overfitting occurs when the model attempts to match the training set too closely. On fresh data, the overfitted model is unable to produce accurate predictions.</p>
 <p>Important details:</p>
 <ol class="arabic simple">
