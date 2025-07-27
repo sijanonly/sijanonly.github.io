@@ -398,6 +398,14 @@ COMPILERS = {
 # Tag pages will still be generated.
 HIDDEN_TAGS = ["mathjax"]
 
+# Generate pages for each section. The site must have at least two sections
+# for this option to take effect. It wouldn't build for just one section.
+# POSTS_SECTIONS = True
+
+# Setting this to False generates a list page instead of an index. Indexes
+# are the default and will apply GENERATE_ATOM if set.
+# POSTS_SECTIONS_ARE_INDEXES = True
+
 # Only include tags on the tag list/overview page if there are at least
 # TAGLIST_MINIMUM_POSTS number of posts or more with every tag. Every tag
 # page is still generated, linked from posts, and included in the sitemap.
@@ -1374,3 +1382,12 @@ GLOBAL_CONTEXT = {}
 # GLOBAL_CONTEXT as parameter when the template is about to be
 # rendered
 GLOBAL_CONTEXT_FILLER = []
+
+# Number of posts to include, defaults to INDEX_DISPLAY_POST_COUNT (10)
+# RECENT_POSTS_JSON_LENGTH       = 5
+
+# # Include {"desc": post.description}, defaults to False
+# RECENT_POSTS_JSON_DESCRIPTION  = False
+
+# # Include {"img": post.meta.previewimage}, defaults to False
+# RECENT_POSTS_JSON_PREVIEWIMAGE = False
