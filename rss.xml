@@ -1,148 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CODEBUG</title><link>https://sijanb.com.np/</link><description>Data Exploration...</description><atom:link href="https://sijanb.com.np/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Sun, 27 Jul 2025 13:50:56 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Unlocking AI's Mind: Can Foundation Models Truly Understand Language?</title><link>https://sijanb.com.np/posts/unlocking-ais-mind-can-foundation-models-truly-understand-language/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=7624bdea"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CODEBUG</title><link>https://sijanb.com.np/</link><description>Data Exploration...</description><atom:link href="https://sijanb.com.np/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:sijanonly@gmail.com"&gt;Sijan Bhandari&lt;/a&gt; </copyright><lastBuildDate>Sun, 03 Aug 2025 16:05:46 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The AI Doctor: Transforming Healthcare and Biomedicine with Foundation Models</title><link>https://sijanb.com.np/posts/the-ai-doctor-transforming-healthcare-and-biomedicine-with-foundation-models/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=76572286"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Unlocking-AI's-Mind:-Can-Foundation-Models-Truly-Understand-Language?"&gt;&lt;strong&gt;Unlocking AI's Mind: Can Foundation Models Truly Understand Language?&lt;/strong&gt;&lt;a class="anchor-link" href="https://sijanb.com.np/posts/unlocking-ais-mind-can-foundation-models-truly-understand-language/#Unlocking-AI's-Mind:-Can-Foundation-Models-Truly-Understand-Language?"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;img alt="No description has been provided for this image" src="https://sijanb.com.np/images/foundation_models_understanding1.png"&gt;
-&lt;img alt="No description has been provided for this image" src="https://sijanb.com.np/images/foundation_models_understanding2.png"&gt;
-&lt;img alt="No description has been provided for this image" src="https://sijanb.com.np/images/foundation_models_understanding3.png"&gt;
-&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/unlocking-ais-mind-can-foundation-models-truly-understand-language/"&gt;Read more…&lt;/a&gt; (19 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>large-language-models</category><category>llms</category><category>transformers</category><guid>https://sijanb.com.np/posts/unlocking-ais-mind-can-foundation-models-truly-understand-language/</guid><pubDate>Sun, 27 Jul 2025 13:26:05 GMT</pubDate></item><item><title>The AI Revolution: How Foundation Models are Reshaping Our Interactions</title><link>https://sijanb.com.np/posts/the-ai-revolution-how-foundation-models-are-reshaping-our-interactions/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=45265894"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="The-AI-Revolution:-How-Foundation-Models-are-Reshaping-Our-Interactions"&gt;&lt;strong&gt;The AI Revolution: How Foundation Models are Reshaping Our Interactions&lt;/strong&gt;&lt;a class="anchor-link" href="https://sijanb.com.np/posts/the-ai-revolution-how-foundation-models-are-reshaping-our-interactions/#The-AI-Revolution:-How-Foundation-Models-are-Reshaping-Our-Interactions"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;img alt="No description has been provided for this image" src="https://sijanb.com.np/images/foundation_models_human_interaction2.png"&gt;
-&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/the-ai-revolution-how-foundation-models-are-reshaping-our-interactions/"&gt;Read more…&lt;/a&gt; (17 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>large-language-models</category><category>llms</category><category>transformers</category><guid>https://sijanb.com.np/posts/the-ai-revolution-how-foundation-models-are-reshaping-our-interactions/</guid><pubDate>Fri, 25 Jul 2025 17:37:53 GMT</pubDate></item><item><title>How AI Foundation Models Are Revolutionizing Complex Reasoning: From Game-Playing to Mathematical Discovery</title><link>https://sijanb.com.np/posts/how-ai-foundation-models-are-revolutionizing-complex-reasoning-from-game-playing-to-mathematical-discovery/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=6f6ec36a"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Introduction:-The-Pursuit-of-Advanced-Artificial-Intelligence"&gt;Introduction: The Pursuit of Advanced Artificial Intelligence&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-ai-foundation-models-are-revolutionizing-complex-reasoning-from-game-playing-to-mathematical-discovery/#Introduction:-The-Pursuit-of-Advanced-Artificial-Intelligence"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Envision a computer capable of solving a geometry problem in a manner akin to a human—not merely by memorizing formulas, but by visualizing shapes, identifying patterns, and making innovative connections. Modern AI foundation models are beginning to achieve this, representing a transformative development in how machines tackle complex reasoning tasks.&lt;/p&gt;
-&lt;p&gt;The advancement of artificial intelligence has consistently been fueled by ambitious objectives: creating machines that can engage in strategic games, uncover mathematical theorems, and solve problems that demand genuine insight rather than mere computational power. Today's foundation models signify a considerable advancement in this endeavor, merging pattern recognition capabilities with adaptable problem-solving skills.&lt;/p&gt;
-&lt;h3 id="The-Evolution-of-AI-Reasoning:-From-Symbol-Manipulation-to-Data-Driven-Learning"&gt;The Evolution of AI Reasoning: From Symbol Manipulation to Data-Driven Learning&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-ai-foundation-models-are-revolutionizing-complex-reasoning-from-game-playing-to-mathematical-discovery/#The-Evolution-of-AI-Reasoning:-From-Symbol-Manipulation-to-Data-Driven-Learning"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;h4 id="The-Limitations-of-Symbolic-AI"&gt;The Limitations of Symbolic AI&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-ai-foundation-models-are-revolutionizing-complex-reasoning-from-game-playing-to-mathematical-discovery/#The-Limitations-of-Symbolic-AI"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Traditional AI systems predominantly relied on symbolic reasoning—programming computers with explicit rules and logical operations. This approach is akin to providing someone with a detailed cookbook for every conceivable cooking scenario. While effective for well-defined problems, it quickly became cumbersome when confronted with the complexities of real-world situations.&lt;/p&gt;
-&lt;p&gt;For instance, early chess programs utilized brute-force search methods combined with manually crafted evaluation functions. Programmers encoded knowledge about advantageous chess positions, resulting in systems that were inflexible and limited in adaptability.&lt;/p&gt;
-&lt;h4 id="The-Shift-to-Data-Driven-Learning"&gt;The Shift to Data-Driven Learning&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-ai-foundation-models-are-revolutionizing-complex-reasoning-from-game-playing-to-mathematical-discovery/#The-Shift-to-Data-Driven-Learning"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Modern foundation models adopt a fundamentally different strategy. Rather than depending on pre-defined rules, these systems learn patterns from extensive datasets. This is comparable to the distinction between memorizing a phrasebook and genuinely learning a language—the latter is significantly more versatile and powerful.&lt;/p&gt;
-&lt;p&gt;Take AlphaGo as an example; it transformed the ancient game of Go by analyzing millions of games and even competing against itself, uncovering innovative strategies that astonished even expert players. This data-centric approach unlocked possibilities that traditional rule-based systems could not achieve.&lt;/p&gt;
-&lt;h3 id="Addressing-Complex-Reasoning-Challenges"&gt;Addressing Complex Reasoning Challenges&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-ai-foundation-models-are-revolutionizing-complex-reasoning-from-game-playing-to-mathematical-discovery/#Addressing-Complex-Reasoning-Challenges"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;h4 id="The-Geometry-Problem:-An-Insight-into-AI-Reasoning"&gt;The Geometry Problem: An Insight into AI Reasoning&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-ai-foundation-models-are-revolutionizing-complex-reasoning-from-game-playing-to-mathematical-discovery/#The-Geometry-Problem:-An-Insight-into-AI-Reasoning"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Let us explore a specific example that highlights the intricacies of reasoning tasks. Proving that the base angles of an isosceles triangle are equal may seem straightforward for a human but presents considerable challenges for AI systems.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;The Human Approach:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Visualize the triangle and its characteristics&lt;/li&gt;
-&lt;li&gt;Recognize the symmetry inherent in the isosceles shape&lt;/li&gt;
-&lt;li&gt;Make a creative leap by drawing an angle bisector from the apex&lt;/li&gt;
-&lt;li&gt;Utilize congruent triangles to finalize the proof&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;The AI Challenge:&lt;/strong&gt;
-At each stage, an AI system encounters numerous possibilities. It could draw various auxiliary lines, introduce different geometric constructions, or apply multiple theorems, resulting in an almost infinite search space, making it impractical to explore every option.&lt;/p&gt;
-&lt;p&gt;Foundation models excel in this regard. Instead of aimlessly navigating through all possibilities, they can learn to identify promising patterns and make informed decisions about which paths to pursue.&lt;/p&gt;
-&lt;h4 id="The-Universal-Nature-of-Reasoning-Problems"&gt;The Universal Nature of Reasoning Problems&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-ai-foundation-models-are-revolutionizing-complex-reasoning-from-game-playing-to-mathematical-discovery/#The-Universal-Nature-of-Reasoning-Problems"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Interestingly, similar structures manifest across diverse domains. Consider the following parallels:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Chemical Synthesis vs. Mathematical Proofs:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Both involve constructing tree-like structures&lt;/li&gt;
-&lt;li&gt;In chemistry: combining molecules to form compounds&lt;/li&gt;
-&lt;li&gt;In mathematics: connecting logical steps to derive conclusions&lt;/li&gt;
-&lt;li&gt;Both necessitate creative insights regarding which paths to follow&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Software Development vs. Theorem Proving:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Both begin with high-level objectives and decompose them into specific tasks&lt;/li&gt;
-&lt;li&gt;Both require comprehension of abstract concepts and their tangible applications&lt;/li&gt;
-&lt;li&gt;Both benefit from recognizing reusable patterns and methodologies&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;This universality implies that reasoning skills acquired in one domain can be applied to others, which is a significant advantage of foundation models.&lt;/p&gt;
-&lt;h3 id="The-Three-Pillars-of-Foundation-Model-Reasoning"&gt;The Three Pillars of Foundation Model Reasoning&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-ai-foundation-models-are-revolutionizing-complex-reasoning-from-game-playing-to-mathematical-discovery/#The-Three-Pillars-of-Foundation-Model-Reasoning"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;h4 id="1.-Generativity:-Crafting-Solutions-from-the-Ground-Up"&gt;1. Generativity: Crafting Solutions from the Ground Up&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-ai-foundation-models-are-revolutionizing-complex-reasoning-from-game-playing-to-mathematical-discovery/#1.-Generativity:-Crafting-Solutions-from-the-Ground-Up"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Traditional AI systems were confined to predicting from a limited set of options. In contrast, foundation models can generate entirely new solutions by modeling the probability distribution of successful approaches.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Analogy:&lt;/strong&gt; This can be likened to the difference between answering multiple-choice questions and writing an essay. Multiple-choice questions restrict you to predefined options, while essay writing enables creative expression and original ideas. Foundation models function more like the essay approach, capable of generating unique constructions, innovative program code, or creative mathematical conjectures.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Real-World Applications:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Drug Discovery:&lt;/strong&gt; Generating new molecular structures with desired characteristics&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Software Engineering:&lt;/strong&gt; Developing novel algorithms to address specific challenges&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Mathematical Research:&lt;/strong&gt; Proposing new theorems and proof strategies&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id="2.-Universality:-Cross-Domain-Learning"&gt;2. Universality: Cross-Domain Learning&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-ai-foundation-models-are-revolutionizing-complex-reasoning-from-game-playing-to-mathematical-discovery/#2.-Universality:-Cross-Domain-Learning"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;A key strength of foundation models is their ability to learn general reasoning patterns applicable across various fields. This is similar to recognizing effective argument structures—once understood in one context, it can be applied to law, science, philosophy, or any other discipline.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Transfer Learning in Practice:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Insights gained from analyzing code can assist in mathematical proofs&lt;/li&gt;
-&lt;li&gt;Geometric reasoning capabilities can aid in molecular modeling&lt;/li&gt;
-&lt;li&gt;Strategic thinking from game-playing can enhance optimization problem-solving&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;This cross-domain knowledge transfer significantly reduces the amount of training data needed for new tasks, resulting in more robust and adaptable solutions.&lt;/p&gt;
-&lt;h4 id="3.-Grounding:-Linking-Symbols-to-Meaning"&gt;3. Grounding: Linking Symbols to Meaning&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-ai-foundation-models-are-revolutionizing-complex-reasoning-from-game-playing-to-mathematical-discovery/#3.-Grounding:-Linking-Symbols-to-Meaning"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;One of the most compelling capabilities of foundation models is their ability to connect abstract symbols to tangible understanding. When humans encounter the term "isosceles triangle," it conjures a visual image and geometric intuitions. Foundation models are beginning to form similar associations.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Multimodal Comprehension:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Connecting mathematical equations to their graphical representations&lt;/li&gt;
-&lt;li&gt;Linking programming code to its visual outcomes&lt;/li&gt;
-&lt;li&gt;Associating chemical formulas with molecular structures&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;This grounding enables AI systems to reason more like humans do—not merely manipulating symbols but understanding the real-world significance of those symbols.&lt;/p&gt;
-&lt;h3 id="Current-Applications-and-Success-Stories"&gt;Current Applications and Success Stories&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-ai-foundation-models-are-revolutionizing-complex-reasoning-from-game-playing-to-mathematical-discovery/#Current-Applications-and-Success-Stories"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;h4 id="Mathematical-Theorem-Proving"&gt;Mathematical Theorem Proving&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-ai-foundation-models-are-revolutionizing-complex-reasoning-from-game-playing-to-mathematical-discovery/#Mathematical-Theorem-Proving"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Contemporary AI systems have demonstrated the ability to discover and prove mathematical theorems, occasionally producing proofs that are more concise and elegant than those developed by humans. These systems can:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Generate conjectures by identifying patterns within mathematical data.&lt;/li&gt;
-&lt;li&gt;Construct formal proofs in a systematic manner.&lt;/li&gt;
-&lt;li&gt;Verify the accuracy of complex mathematical arguments.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id="Program-Synthesis-and-Code-Understanding"&gt;Program Synthesis and Code Understanding&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-ai-foundation-models-are-revolutionizing-complex-reasoning-from-game-playing-to-mathematical-discovery/#Program-Synthesis-and-Code-Understanding"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Foundation models have significantly impacted software development through:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Code Generation:&lt;/strong&gt; Producing programs based on natural language descriptions.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Bug Detection:&lt;/strong&gt; Identifying programming errors and recommending corrections.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Code Translation:&lt;/strong&gt; Converting code between various programming languages.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Documentation:&lt;/strong&gt; Automatically generating explanations for intricate code.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id="Scientific-Discovery"&gt;Scientific Discovery&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-ai-foundation-models-are-revolutionizing-complex-reasoning-from-game-playing-to-mathematical-discovery/#Scientific-Discovery"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;In the fields of chemistry and materials science, AI systems are:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Predicting optimal synthetic routes for novel compounds.&lt;/li&gt;
-&lt;li&gt;Discovering new materials with specific desired properties.&lt;/li&gt;
-&lt;li&gt;Accelerating drug discovery by identifying promising molecular candidates.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="Challenges-and-Future-Directions"&gt;Challenges and Future Directions&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-ai-foundation-models-are-revolutionizing-complex-reasoning-from-game-playing-to-mathematical-discovery/#Challenges-and-Future-Directions"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;h4 id="The-Data-Scarcity-Problem"&gt;The Data Scarcity Problem&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-ai-foundation-models-are-revolutionizing-complex-reasoning-from-game-playing-to-mathematical-discovery/#The-Data-Scarcity-Problem"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;In contrast to images or text, high-quality reasoning data is limited and costly to produce. Mathematical proofs, verified code, and scientific discoveries necessitate expert knowledge and thorough validation, creating a bottleneck in training advanced reasoning systems.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Potential Solutions:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Synthetic Data Generation:&lt;/strong&gt; Developing artificial yet realistic problems and solutions.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Self-Supervised Learning:&lt;/strong&gt; Enabling models to learn from the inherent structure of problems.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Interactive Learning:&lt;/strong&gt; Engaging human experts to facilitate the learning process.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id="The-Need-for-High-Level-Planning"&gt;The Need for High-Level Planning&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-ai-foundation-models-are-revolutionizing-complex-reasoning-from-game-playing-to-mathematical-discovery/#The-Need-for-High-Level-Planning"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Current foundation models are proficient at next-step predictions but face challenges with long-term strategic planning. Humans typically approach complex issues by:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Establishing a high-level strategy.&lt;/li&gt;
-&lt;li&gt;Decomposing it into manageable tasks.&lt;/li&gt;
-&lt;li&gt;Implementing the detailed plan.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Equipping AI systems to operate at this architectural level remains a significant challenge.&lt;/p&gt;
-&lt;h4 id="Reliability-and-Verification"&gt;Reliability and Verification&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-ai-foundation-models-are-revolutionizing-complex-reasoning-from-game-playing-to-mathematical-discovery/#Reliability-and-Verification"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;As AI systems enhance their autonomous reasoning abilities, ensuring their reliability becomes imperative. We require methods to:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Confirm the correctness of AI-generated proofs.&lt;/li&gt;
-&lt;li&gt;Validate that synthesized code performs as intended.&lt;/li&gt;
-&lt;li&gt;Assess scientific discoveries before their practical application.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="The-Road-Ahead:-Implications-and-Opportunities"&gt;The Road Ahead: Implications and Opportunities&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-ai-foundation-models-are-revolutionizing-complex-reasoning-from-game-playing-to-mathematical-discovery/#The-Road-Ahead:-Implications-and-Opportunities"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;h4 id="Education-and-Learning"&gt;Education and Learning&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-ai-foundation-models-are-revolutionizing-complex-reasoning-from-game-playing-to-mathematical-discovery/#Education-and-Learning"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Foundation models with robust reasoning capabilities have the potential to transform education by:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Offering personalized tutoring that adjusts to individual learning preferences.&lt;/li&gt;
-&lt;li&gt;Creating interactive environments for problem-solving.&lt;/li&gt;
-&lt;li&gt;Generating practice problems customized to student requirements.&lt;/li&gt;
-&lt;li&gt;Explaining complex concepts through diverse approaches.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id="Scientific-Acceleration"&gt;Scientific Acceleration&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-ai-foundation-models-are-revolutionizing-complex-reasoning-from-game-playing-to-mathematical-discovery/#Scientific-Acceleration"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;By automating routine reasoning tasks while enhancing human creativity, these systems could significantly accelerate scientific advancements:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Hypothesis Generation:&lt;/strong&gt; Proposing innovative research avenues.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Experimental Design:&lt;/strong&gt; Refining experimental protocols.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Literature Analysis:&lt;/strong&gt; Detecting patterns across extensive research bodies.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Collaborative Discovery:&lt;/strong&gt; Fostering partnerships between humans and AI in research.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id="Ethical-Considerations"&gt;Ethical Considerations&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-ai-foundation-models-are-revolutionizing-complex-reasoning-from-game-playing-to-mathematical-discovery/#Ethical-Considerations"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;As reasoning capabilities evolve, we must thoughtfully address:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Transparency:&lt;/strong&gt; Ensuring AI reasoning processes remain interpretable.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Reliability:&lt;/strong&gt; Developing systems that gracefully handle failures and acknowledge uncertainty.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Human Agency:&lt;/strong&gt; Preserving meaningful human involvement in critical decision-making.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Equity:&lt;/strong&gt; Guaranteeing fair distribution of benefits across society.&lt;/li&gt;
-&lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=3b119ddf"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=a9968ba9"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Conclusion:-The-Promise-of-Intelligent-Partnership"&gt;Conclusion: The Promise of Intelligent Partnership&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-ai-foundation-models-are-revolutionizing-complex-reasoning-from-game-playing-to-mathematical-discovery/#Conclusion:-The-Promise-of-Intelligent-Partnership"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The advancement of foundation models with advanced reasoning capabilities signifies more than a technological milestone; it heralds a future where AI systems can act as true intellectual partners rather than merely tools.&lt;/p&gt;
-&lt;p&gt;These systems will not replace human reasoning but will enhance it, managing routine cognitive tasks and allowing humans to concentrate on creativity, judgment, and meaning-making. Future geometry students may collaborate with AI tutors capable of visualizing problems in various ways, suggesting alternative proof strategies, and providing personalized guidance.&lt;/p&gt;
-&lt;p&gt;As we continue to explore the frontiers of AI reasoning, we are not simply developing smarter machines; we are forging new avenues for collaboration between humans and artificial intelligence to address the intricate challenges that lie ahead.&lt;/p&gt;
-&lt;p&gt;The evolution from rule-based systems to today’s foundation models has been extraordinary, yet we remain in the early phases of this transformation. The coming years will likely introduce even more advanced reasoning capabilities, unlocking possibilities that are currently beyond our imagination.&lt;/p&gt;
-&lt;p&gt;It is clear that the future of problem-solving will rely on a partnership between human insight and artificial intelligence, combining the strengths of both to confront challenges that neither could overcome independently.&lt;/p&gt;
+&lt;p&gt;Have you ever considered the staggering scale of the healthcare industry? We're talking about a massive, global effort that is foundational to a functioning society, and it comes with an enormous price tag. In the US alone, healthcare expenditures account for a whopping 17% of the gross domestic product (GDP), a figure that speaks volumes about its economic and societal importance. Both the delivery of patient care (healthcare) and the scientific pursuit of new therapies and disease understanding (biomedical research) demand significant resources, time, and comprehensive expertise.&lt;/p&gt;
+&lt;p&gt;Now, imagine a powerful new tool, one that could act as a central hub of all this medical knowledge, integrating everything we know about medicine and making it accessible to professionals and the public alike. This isn't some far-fetched fantasy; it's the profound promise of foundation models. In this article, we'll explore the incredible opportunities these models present for revolutionizing healthcare and biomedicine, from enhancing patient care and speeding up drug discovery to the critical challenges we must overcome to get there, including issues of interpretability, privacy, and fairness. It's a journey into a future where AI and medicine work hand-in-hand to save lives and improve health outcomes on an unprecedented scale.&lt;/p&gt;
+&lt;h3 id="A-New-Era-for-Medicine:-What-Foundation-Models-Bring-to-the-Table"&gt;&lt;strong&gt;A New Era for Medicine: What Foundation Models Bring to the Table&lt;/strong&gt;&lt;a class="anchor-link" href="https://sijanb.com.np/posts/the-ai-doctor-transforming-healthcare-and-biomedicine-with-foundation-models/#A-New-Era-for-Medicine:-What-Foundation-Models-Bring-to-the-Table"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;So, how do foundation models fit into this massive, complex ecosystem? I'm talking about a paradigm shift, a revolutionary approach that could tackle some of the biggest challenges facing healthcare and biomedical research today. Foundation models, with their incredible capacity to act as a central knowledge repository, are poised to become a central hub of medical information.&lt;/p&gt;
+&lt;p&gt;Imagine a single, integrated source of medical knowledge that's been trained on an immense and diverse array of medical data. It's a digital brain that can be interactively queried and updated by medical professionals, from healthcare providers accessing published findings to biomedical researchers uploading new publications. This would create a virtuous cycle where new discoveries continuously improve the model, which in turn helps accelerate further discoveries. With their strong adaptation capabilities, these models can be fine-tuned to a vast array of individual tasks in healthcare and biomedicine, from a question-answering app for patients to a system that matches patients to clinical trials. Essentially, foundation models can become the central interface that supports all the various interactions between data, tasks, and people in the medical world. This has the potential to dramatically increase the efficiency and accuracy of a wide range of healthcare and biomedical applications.&lt;/p&gt;
+&lt;h4 id="The-Knowledge-Hub:-Centralizing-Medical-Data-and-Expertise"&gt;&lt;strong&gt;The Knowledge Hub: Centralizing Medical Data and Expertise&lt;/strong&gt;&lt;a class="anchor-link" href="https://sijanb.com.np/posts/the-ai-doctor-transforming-healthcare-and-biomedicine-with-foundation-models/#The-Knowledge-Hub:-Centralizing-Medical-Data-and-Expertise"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Imagine a single, integrated source of medical knowledge that's been trained on an immense and diverse array of medical data – everything from chest X-rays and ultrasound videos to clinical notes, genetic information, and even wearable device data. This isn't science fiction; it's the vision for foundation models in healthcare. By training on these diverse sources and modalities, foundation models can become a central storage of medical knowledge, a reservoir of information that would be incredibly difficult for any single human to comprehend. Medical professionals could then query this knowledge hub, accessing a wealth of published findings and literature in an instant. The public could also benefit from this, querying the model for information and guidance. This centralized, accessible knowledge base is a crucial first step in advancing both healthcare delivery and biomedical research.&lt;/p&gt;
+&lt;h4 id="Efficiency-and-Accuracy:-Addressing-a-Strained-System"&gt;&lt;strong&gt;Efficiency and Accuracy: Addressing a Strained System&lt;/strong&gt;&lt;a class="anchor-link" href="https://sijanb.com.np/posts/the-ai-doctor-transforming-healthcare-and-biomedicine-with-foundation-models/#Efficiency-and-Accuracy:-Addressing-a-Strained-System"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Our healthcare system, while a marvel of human ingenuity, is also burdened by significant inefficiencies and shortages. Every year, healthcare costs continue to climb, and studies estimate that a startling 30% of healthcare spending may be wasteful due to administrative inefficiencies and preventable medical errors. Moreover, as the demand for healthcare grows, we're facing a serious shortage of healthcare providers. This combination of inefficiency and scarcity creates an urgent need for faster and more accurate interfaces for both healthcare providers and patients. Foundation models, with their ability to act as a knowledge reservoir and adapt to various tasks, are perfectly positioned to help solve these critical problems.&lt;/p&gt;
+&lt;h5 id="Saving-Time-and-Resources:-Combating-Administrative-Waste"&gt;&lt;strong&gt;Saving Time and Resources: Combating Administrative Waste&lt;/strong&gt;&lt;a class="anchor-link" href="https://sijanb.com.np/posts/the-ai-doctor-transforming-healthcare-and-biomedicine-with-foundation-models/#Saving-Time-and-Resources:-Combating-Administrative-Waste"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;It's a sobering thought, isn't it, that a significant portion of healthcare spending is simply wasteful? This inefficiency is a major problem, often caused by administrative headaches and preventable medical errors. Healthcare providers, for example, spend an inordinate amount of time editing and managing electronic health records (EHRs) – time that could be spent directly with patients. Preventable medical errors, such as hospital readmissions and surgical mistakes, also cause a huge amount of waste and, more importantly, can have devastating consequences for patients. Foundation models have the potential to be a game-changer here, providing automated aid systems for things like diagnosis, treatment, and summarizing patient records, thereby freeing up valuable time and resources for what truly matters: patient care.&lt;/p&gt;
+&lt;h5 id="Fighting-Crises:-A-Lifeline-in-Public-Health-Emergencies"&gt;&lt;strong&gt;Fighting Crises: A Lifeline in Public Health Emergencies&lt;/strong&gt;&lt;a class="anchor-link" href="https://sijanb.com.np/posts/the-ai-doctor-transforming-healthcare-and-biomedicine-with-foundation-models/#Fighting-Crises:-A-Lifeline-in-Public-Health-Emergencies"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;We've all seen firsthand how a global health crisis can strain our medical resources to the breaking point. In an urgent pandemic, like the one we experienced with COVID-19, speed and accuracy are literally a matter of life and death. Fast and accurate interfaces for diagnosis and screening become vital. Think about the automatic analysis of chest X-ray images for rapid COVID-19 detection. Automated question-answering systems for patients to check their symptoms and receive care instructions are also a critical way to reduce the spread of disease and ensure that limited healthcare resources are allocated to the most critical patients. Foundation models, with their ability to process and generate information at scale, are uniquely suited to serve as these vital interfaces during public health crises, helping to save more lives and manage resources more effectively.&lt;/p&gt;
+&lt;h3 id="Revolutionizing-Patient-Care:-Foundation-Models-as-a-Healthcare-Assistant"&gt;&lt;strong&gt;Revolutionizing Patient Care: Foundation Models as a Healthcare Assistant&lt;/strong&gt;&lt;a class="anchor-link" href="https://sijanb.com.np/posts/the-ai-doctor-transforming-healthcare-and-biomedicine-with-foundation-models/#Revolutionizing-Patient-Care:-Foundation-Models-as-a-Healthcare-Assistant"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Now, let's talk about the practical side of this, specifically how foundation models can improve the actual delivery of care to patients. We’ve established they can act as a central knowledge hub, but how does that translate to tangible benefits in a clinic or hospital setting? The opportunities fall into two main categories: empowering the healthcare providers and directly assisting the patients.&lt;/p&gt;
+&lt;h4 id="Empowering-Healthcare-Providers:-A-Smarter-Interface"&gt;&lt;strong&gt;Empowering Healthcare Providers: A Smarter Interface&lt;/strong&gt;&lt;a class="anchor-link" href="https://sijanb.com.np/posts/the-ai-doctor-transforming-healthcare-and-biomedicine-with-foundation-models/#Empowering-Healthcare-Providers:-A-Smarter-Interface"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;The day-to-day life of a healthcare provider is incredibly demanding, and foundation models have the potential to make their work more efficient and accurate. One of the biggest time sinks for providers is managing electronic health records (EHRs). They spend unnecessary time editing and wading through patient information, which takes away from their ability to focus on direct care. Moreover, preventable medical errors are a serious problem, and foundation models can be a powerful tool in combating them.&lt;/p&gt;
+&lt;h5 id="Streamlining-the-Clinic:-From-EHRs-to-Surgical-Robots"&gt;&lt;strong&gt;Streamlining the Clinic: From EHRs to Surgical Robots&lt;/strong&gt;&lt;a class="anchor-link" href="https://sijanb.com.np/posts/the-ai-doctor-transforming-healthcare-and-biomedicine-with-foundation-models/#Streamlining-the-Clinic:-From-EHRs-to-Surgical-Robots"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Think about a healthcare provider's daily grind. They’re constantly wading through reams of data – clinical notes, lab results, imaging files. Foundation models can serve as an incredibly efficient and accurate interface into these complex EHRs. They could help providers instantly create summaries of patient visits, retrieve relevant case studies and literature, and even suggest potential lab tests, diagnoses, and treatments. This would not only save a tremendous amount of time but also help reduce the chances of overlooking a crucial piece of information. Furthermore, these models could even be adapted to assist surgical robots, helping to monitor and achieve greater accuracy in surgical procedures, thereby improving patient outcomes and reducing surgical errors. It’s a vision of a smarter, more streamlined, and safer clinical environment.&lt;/p&gt;
+&lt;h5 id="Battling-Medical-Errors:-Reducing-Mistakes,-Improving-Outcomes"&gt;&lt;strong&gt;Battling Medical Errors: Reducing Mistakes, Improving Outcomes&lt;/strong&gt;&lt;a class="anchor-link" href="https://sijanb.com.np/posts/the-ai-doctor-transforming-healthcare-and-biomedicine-with-foundation-models/#Battling-Medical-Errors:-Reducing-Mistakes,-Improving-Outcomes"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Medical errors, from hospital readmissions to surgical mistakes, are a serious and costly problem. They not only result in wasteful spending but also have devastating consequences for patients. Foundation models can be a powerful ally in the fight against these errors. By acting as a central knowledge reservoir, they can be adapted to suggest more accurate diagnoses and treatments based on vast amounts of data. They can also help retrieve relevant past cases and literature, serving as an intelligent assistant that helps healthcare providers make more informed decisions. It's like having a tireless, super-knowledgeable second opinion available at all times, helping to catch potential errors before they can harm a patient. This has the potential to not only reduce wasteful spending but, more importantly, to save lives.&lt;/p&gt;
+&lt;h4 id="A-Direct-Line-to-Patients:-The-AI-Health-Companion"&gt;&lt;strong&gt;A Direct Line to Patients: The AI Health Companion&lt;/strong&gt;&lt;a class="anchor-link" href="https://sijanb.com.np/posts/the-ai-doctor-transforming-healthcare-and-biomedicine-with-foundation-models/#A-Direct-Line-to-Patients:-The-AI-Health-Companion"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;But the benefits of foundation models aren't limited to healthcare professionals. These powerful tools can also be adapted to serve as an interface directly for patients, providing them with timely and relevant information right when they need it. From helping with simple logistical tasks to providing critical public health information, foundation models can be a powerful health companion for individuals.&lt;/p&gt;
+&lt;h5 id="Answering-Questions-and-Providing-Care:-From-Appointments-to-Public-Health"&gt;&lt;strong&gt;Answering Questions and Providing Care: From Appointments to Public Health&lt;/strong&gt;&lt;a class="anchor-link" href="https://sijanb.com.np/posts/the-ai-doctor-transforming-healthcare-and-biomedicine-with-foundation-models/#Answering-Questions-and-Providing-Care:-From-Appointments-to-Public-Health"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Have you ever had a simple medical question that you needed an answer to, but you didn't want to bother your doctor? Or have you struggled to find reliable information about a public health issue? Foundation models are poised to become a go-to resource for patients and the general public. They could be adapted to provide relevant information about clinical appointments, answer patient questions related to preventive care, and even provide easy-to-understand medical explanations with graphics. During a public health crisis like a pandemic, these models could serve as a vital interface for the general public, answering questions about disease prevention and symptom checking, and helping to manage the spread of misinformation. They can act as an assistive-care robot, helping with simple tasks for patients who need it.&lt;/p&gt;
+&lt;h5 id="The-Trust-Factor:-Ensuring-Factual-Accuracy-in-Patient-Information"&gt;&lt;strong&gt;The Trust Factor: Ensuring Factual Accuracy in Patient Information&lt;/strong&gt;&lt;a class="anchor-link" href="https://sijanb.com.np/posts/the-ai-doctor-transforming-healthcare-and-biomedicine-with-foundation-models/#The-Trust-Factor:-Ensuring-Factual-Accuracy-in-Patient-Information"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;While providing patients and the public with easy access to medical information is an incredible opportunity, it comes with a huge responsibility. The interface must absolutely guarantee factual accuracy to ensure public trust in the medical advice it provides. Unlike other domains where a simple mistake might be a minor inconvenience, a factual inaccuracy in a medical context could have life-threatening consequences. Therefore, foundation models in this domain must be built with a strong emphasis on providing information that is not only accurate but also grounded in established medical knowledge. They must also be able to quantify their uncertainty and, when in doubt, defer to a human expert. This is a non-negotiable requirement for a foundation model to be a truly reliable and trusted health companion.&lt;/p&gt;
+&lt;h3 id="Accelerating-Discovery:-Foundation-Models-in-Biomedical-Research"&gt;&lt;strong&gt;Accelerating Discovery: Foundation Models in Biomedical Research&lt;/strong&gt;&lt;a class="anchor-link" href="https://sijanb.com.np/posts/the-ai-doctor-transforming-healthcare-and-biomedicine-with-foundation-models/#Accelerating-Discovery:-Foundation-Models-in-Biomedical-Research"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Beyond improving the day-to-day delivery of care, foundation models are also poised to turbocharge the entire field of biomedical research. The journey from a scientific idea to a new medicine or therapy is a long, expensive, and often arduous one. It's a process that requires significant human resources, experimental time, and financial costs. A new drug development, for instance, can take over a decade and cost more than a billion dollars! This inefficiency is a major obstacle to finding new cures and treatments for both existing diseases and novel outbreaks like COVID-19. Foundation models can be particularly helpful in two key aspects of biomedical discovery.&lt;/p&gt;
+&lt;h4 id="The-Generative-Advantage:-Speeding-Up-Drug-Discovery"&gt;&lt;strong&gt;The Generative Advantage: Speeding Up Drug Discovery&lt;/strong&gt;&lt;a class="anchor-link" href="https://sijanb.com.np/posts/the-ai-doctor-transforming-healthcare-and-biomedicine-with-foundation-models/#The-Generative-Advantage:-Speeding-Up-Drug-Discovery"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;The process of drug development is notoriously slow and expensive. We're talking about a complex journey that can take over 10 years and cost more than a billion dollars! It's a resource-intensive marathon that involves everything from identifying a target (like a specific protein) to finding a molecule that can bind to it and treat a disease. The traditional process of wet lab experiments is a time-consuming and costly bottleneck. Foundation models, with their incredible generative capabilities (similar to how they generate coherent text in GPT-3), can dramatically improve this process.&lt;/p&gt;
+&lt;h5 id="From-Molecules-to-Medicines:-A-Faster,-Cheaper-Process"&gt;&lt;strong&gt;From Molecules to Medicines: A Faster, Cheaper Process&lt;/strong&gt;&lt;a class="anchor-link" href="https://sijanb.com.np/posts/the-ai-doctor-transforming-healthcare-and-biomedicine-with-foundation-models/#From-Molecules-to-Medicines:-A-Faster,-Cheaper-Process"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Imagine a world where the search for new medicines isn't a years-long, billion-dollar ordeal. Foundation models are bringing us closer to that reality. The traditional process of drug discovery, from identifying a protein target to finding a molecule that binds to it, is a huge investment in both time and money. Foundation models' generative capability can improve the search space and efficiency of this process. They can be used to design new molecules that work, generating novel chemical compounds and antibodies that could treat diseases. This not only reduces the number of expensive wet lab experiments but also helps researchers discover new and better drugs more efficiently. As an example, language models have already shown great potential in modeling proteins, which helps with everything from predicting viral mutations to designing better therapeutic antibodies.&lt;/p&gt;
+&lt;h5 id="A-Unified-Approach:-Solving-Complex-Problems-Simultaneously"&gt;&lt;strong&gt;A Unified Approach: Solving Complex Problems Simultaneously&lt;/strong&gt;&lt;a class="anchor-link" href="https://sijanb.com.np/posts/the-ai-doctor-transforming-healthcare-and-biomedicine-with-foundation-models/#A-Unified-Approach:-Solving-Complex-Problems-Simultaneously"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;One of the most exciting aspects of using a single foundation model for drug discovery is the potential to tackle multiple, related problems at the same time. Think about it: a drug's effectiveness depends on so many factors. Does it bind to the right target? Does it have undesirable side effects? Is it easily absorbed by the body? Typically, these are all studied separately. But a single foundation model, trained on diverse data, could be tasked with solving all of these problems simultaneously, improving the solution to each of them. For instance, a model could be trained to predict not just a drug's efficacy but also its potential side effects at the same time. This integrated approach can lead to more holistic and ultimately better solutions for drug discovery.&lt;/p&gt;
+&lt;h4 id="Personalized-Medicine:-Tailoring-Treatments-to-Individuals"&gt;&lt;strong&gt;Personalized Medicine: Tailoring Treatments to Individuals&lt;/strong&gt;&lt;a class="anchor-link" href="https://sijanb.com.np/posts/the-ai-doctor-transforming-healthcare-and-biomedicine-with-foundation-models/#Personalized-Medicine:-Tailoring-Treatments-to-Individuals"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Have you ever wondered why a medicine that works for one person might not work as well for another? It's because we're all unique, and our health is influenced by a complex interplay of our genetics, our health history, and countless other individual factors. This is the core idea behind personalized medicine: tailoring the optimal treatment for each individual patient. Foundation models are uniquely powerful here because of their ability to integrate multimodal patient data, ranging from EHRs to medical imaging and molecular measurements. For example, given a patient's genetic data and health history, a foundation model could help predict which drug is most likely to be effective with minimal side effects. This personalized approach to medicine has the potential to revolutionize how we treat everything from cancer to common chronic diseases, ensuring that each patient gets the care that is best for them.&lt;/p&gt;
+&lt;h4 id="Supercharging-Clinical-Trials:-Smarter,-Faster,-and-More-Effective"&gt;&lt;strong&gt;Supercharging Clinical Trials: Smarter, Faster, and More Effective&lt;/strong&gt;&lt;a class="anchor-link" href="https://sijanb.com.np/posts/the-ai-doctor-transforming-healthcare-and-biomedicine-with-foundation-models/#Supercharging-Clinical-Trials:-Smarter,-Faster,-and-More-Effective"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Clinical trials are the crucial final step in bringing a new treatment or drug to market. They're designed to study the efficacy and safety of new candidates. However, the current system is far from perfect. A staggering 80% of clinical trials fail, often due to an inability to prove efficacy or problems with patient matching. Foundation models have the potential to completely transform this process. They could help predict potential failures and design more promising clinical trial protocols based on existing studies. Furthermore, they could automate the process of matching eligible patients to trials based on their individual profiles, which can include a complex array of multimodal data like EHRs and genetic sequences. This would make clinical trials faster, more cost-effective, and ultimately more successful, accelerating the pace at which new life-saving treatments reach the people who need them.&lt;/p&gt;
+&lt;h3 id="Navigating-the-Labyrinth:-Challenges-and-Future-Research"&gt;&lt;strong&gt;Navigating the Labyrinth: Challenges and Future Research&lt;/strong&gt;&lt;a class="anchor-link" href="https://sijanb.com.np/posts/the-ai-doctor-transforming-healthcare-and-biomedicine-with-foundation-models/#Navigating-the-Labyrinth:-Challenges-and-Future-Research"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;As with any powerful new technology, the path forward for foundation models in healthcare and biomedicine is not without its hurdles. The potential is immense, but so are the challenges. These unique applications pose a set of problems that will require significant future research and thoughtful consideration. We must not only focus on the opportunities but also on the critical challenges of multimodality, explainability, legal and ethical regulations, and the ability to extrapolate to new situations.&lt;/p&gt;
+&lt;h4 id="The-Multimodal-Challenge:-Weaving-Together-a-Tapestry-of-Medical-Data"&gt;&lt;strong&gt;The Multimodal Challenge: Weaving Together a Tapestry of Medical Data&lt;/strong&gt;&lt;a class="anchor-link" href="https://sijanb.com.np/posts/the-ai-doctor-transforming-healthcare-and-biomedicine-with-foundation-models/#The-Multimodal-Challenge:-Weaving-Together-a-Tapestry-of-Medical-Data"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Medical data is a beautiful, messy tapestry of information. We're not just talking about text; we're talking about images like chest X-rays, videos from ultrasounds, patient databases, genetic sequences, and more. This data exists at different scales, from the molecular level all the way up to entire populations, and it comes in different styles, from professional clinical language to everyday lay terms. Most of the current self-supervised models are developed for a single modality. The challenge is to get foundation models to jointly learn from all of these diverse modalities, effectively learning the "inter-modality" and "cross-modality" information. If we can successfully crack this problem, we could unify biomedical knowledge in a way that has never been possible before, leading to new discoveries that are impossible to obtain with single-modality data.&lt;/p&gt;
+&lt;h4 id="The-Trust-Imperative:-Explainability-and-Legal-Compliance"&gt;&lt;strong&gt;The Trust Imperative: Explainability and Legal Compliance&lt;/strong&gt;&lt;a class="anchor-link" href="https://sijanb.com.np/posts/the-ai-doctor-transforming-healthcare-and-biomedicine-with-foundation-models/#The-Trust-Imperative:-Explainability-and-Legal-Compliance"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;This is a non-negotiable area. When it comes to healthcare, trust is paramount. A foundation model in this domain must not only be accurate and safe but also be able to explain itself and adhere to a strict set of ethical and legal regulations. This is not just a "nice-to-have" feature; it's a fundamental requirement. The "black box" nature of many deep learning models is a serious problem in medicine, where transparency and accountability are essential.&lt;/p&gt;
+&lt;h5 id="Beyond-the-Black-Box:-Why-Explainability-is-a-Matter-of-Life-and-Death"&gt;&lt;strong&gt;Beyond the Black Box: Why Explainability is a Matter of Life and Death&lt;/strong&gt;&lt;a class="anchor-link" href="https://sijanb.com.np/posts/the-ai-doctor-transforming-healthcare-and-biomedicine-with-foundation-models/#Beyond-the-Black-Box:-Why-Explainability-is-a-Matter-of-Life-and-Death"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Imagine a foundation model recommending a specific treatment for a patient. As a healthcare provider, you can't just blindly follow the suggestion. You need to understand the reasoning behind it. This is why explainability—the ability to provide evidence and logical steps for a decision—is so critically important in healthcare and biomedicine. It's not just a matter of professional responsibility; it's often a legal requirement, such as under the General Data Protection Regulation (GDPR). Explainability helps resolve potential disagreements between the AI system and human experts and is crucial for obtaining informed consent from patients. While foundation models currently lack this feature, future research must focus on incorporating explainability into their training objectives, perhaps by integrating knowledge graphs to provide a clearer, more logical reasoning process.&lt;/p&gt;
+&lt;h5 id="Privacy,-Safety,-and-Fairness:-The-Ethical-Non-Negotiables"&gt;&lt;strong&gt;Privacy, Safety, and Fairness: The Ethical Non-Negotiables&lt;/strong&gt;&lt;a class="anchor-link" href="https://sijanb.com.np/posts/the-ai-doctor-transforming-healthcare-and-biomedicine-with-foundation-models/#Privacy,-Safety,-and-Fairness:-The-Ethical-Non-Negotiables"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;The stakes couldn't be higher when it comes to legal and ethical regulations in healthcare. Patient safety, privacy, and fairness are not just buzzwords; they are absolute necessities that must be guaranteed. Regarding privacy, using patient health records must strictly adhere to laws like HIPAA in the US. Federated learning, where models are trained on decentralized data without the raw, sensitive information ever leaving its source, is one potential solution. Safety is also critical, and an AI's predictions must be factually accurate and grounded in established medical knowledge. Foundation models must also be able to quantify their uncertainty and defer to an expert when they are unsure.&lt;/p&gt;
+&lt;p&gt;Finally, there's the issue of fairness. Healthcare has a long and problematic history of bias in both medical datasets and clinical trials, often failing to be sufficiently representative of different sexes, races, ethnicities, and socioeconomic backgrounds. We must be mindful of this and work to ensure that foundation models don't exacerbate these existing social inequalities. Research is needed to debias and regularize models to ensure fairness, especially when representative data is scarce. Foundation model developers must consult with ethics and law researchers and adhere to the specific regulations of the country or region where their applications are deployed.&lt;/p&gt;
+&lt;h4 id="Looking-to-the-Future:-The-Extrapolation-Problem"&gt;&lt;strong&gt;Looking to the Future: The Extrapolation Problem&lt;/strong&gt;&lt;a class="anchor-link" href="https://sijanb.com.np/posts/the-ai-doctor-transforming-healthcare-and-biomedicine-with-foundation-models/#Looking-to-the-Future:-The-Extrapolation-Problem"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Biomedical discovery is all about pushing boundaries and dealing with the unknown. We're constantly encountering new experimental technologies, new imaging techniques, and most importantly, new diseases. A perfect example is the COVID-19 pandemic, a novel setting that required scientists to quickly adapt and leverage existing data to find new solutions. The ability to take what you've learned from existing datasets and extrapolate it to a new, unseen setting is a key machine learning challenge. While models like GPT-3 show some fascinating extrapolation behaviors, the mechanism is still in its infancy and not well-understood. For foundation models to truly revolutionize biomedicine, they will need to be able to quickly adapt and generalize to these new technologies and diseases, a capability that will require significant future research to perfect.&lt;/p&gt;
+&lt;h2 id="Conclusion:-A-Prescription-for-Progress"&gt;&lt;strong&gt;Conclusion: A Prescription for Progress&lt;/strong&gt;&lt;a class="anchor-link" href="https://sijanb.com.np/posts/the-ai-doctor-transforming-healthcare-and-biomedicine-with-foundation-models/#Conclusion:-A-Prescription-for-Progress"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We've journeyed through the incredible potential of foundation models in healthcare and biomedicine, from acting as a central knowledge hub to accelerating the pace of drug discovery and clinical trials. It's clear that this technology isn't just an interesting development; it's a profound tool that could reshape how we deliver care, understand disease, and ultimately, improve human health. By improving efficiency, empowering professionals and patients, and speeding up the process of scientific discovery, foundation models have the potential to be a powerful force for good.&lt;/p&gt;
+&lt;p&gt;However, the path to realizing this vision is complex and challenging. We must grapple with critical issues of data multimodality, explainability, and the strict ethical and legal regulations that govern the medical field. By prioritizing research in these areas, and by approaching this technology with a commitment to patient safety, privacy, and fairness, we can ensure that foundation models become a trusted and indispensable part of our healthcare future. This is a prescription for progress that could lead to a healthier, more equitable world for everyone.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=c58ead27"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Frequently-Asked-Questions-(FAQs)"&gt;&lt;strong&gt;Frequently Asked Questions (FAQs)&lt;/strong&gt;&lt;a class="anchor-link" href="https://sijanb.com.np/posts/the-ai-doctor-transforming-healthcare-and-biomedicine-with-foundation-models/#Frequently-Asked-Questions-(FAQs)"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Q1: What is a "multimodal" foundation model in healthcare?&lt;/strong&gt;
+A1: A multimodal foundation model in healthcare is an AI system that is trained on and can process a wide variety of medical data types simultaneously. This includes text (clinical notes), images (X-rays, ultrasounds), videos, tables (electronic health records), and genetic data. The goal is to get the model to jointly learn from all these different data sources to form a more comprehensive understanding of a patient's health or a disease.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q2: How can foundation models address the problem of wasted healthcare spending?&lt;/strong&gt;
+A2: Foundation models can help reduce the estimated 30% of wasteful healthcare spending by improving efficiency and reducing medical errors. They can streamline administrative tasks by summarizing patient records and retrieving relevant information for healthcare providers. By assisting in diagnosis and treatment recommendations, they can also help reduce preventable medical errors, which are a major source of waste and harm.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q3: Why is explainability so important for AI in healthcare?&lt;/strong&gt;
+A3: Explainability is crucial in healthcare because it's not enough for an AI to simply make a prediction; the reasoning behind that prediction must be transparent. This allows healthcare providers to verify the AI's logic, resolve potential disagreements, and ultimately build trust in the system. It's also often a legal requirement for obtaining informed consent and ensuring accountability.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q4: Can foundation models help with personalized medicine?&lt;/strong&gt;
+A4: Yes, foundation models are uniquely suited for personalized medicine. Their ability to integrate and analyze a vast amount of multimodal patient data—such as genetics, health history, and medical imaging—allows them to make highly tailored predictions. This can help healthcare providers select the optimal treatment or drug for an individual patient, with minimal side effects.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q5: What are the main ethical concerns with using foundation models in healthcare?&lt;/strong&gt;
+A5: The main ethical concerns revolve around patient privacy, safety, and fairness. It's critical to ensure that patient health records are used in compliance with laws like HIPAA. The AI's predictions must also be factually accurate and safe, with a clear understanding of its uncertainty. Furthermore, because medical datasets have a history of bias, developers must work to ensure that foundation models are fair and representative of different sexes, races, ethnicities, and socioeconomic backgrounds to avoid exacerbating existing social inequalities.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=7ccb38d4"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Citation: Bommasani, R., Hudson, D. A., Adeli, E., Altman, R., Arora, S., von Arx, S., ... &amp;amp; Liang, P. (2022). On the opportunities and risks of foundation models. arXiv preprint arXiv:2108.07258. Available at: &lt;a href="https://arxiv.org/abs/2108.07258"&gt;https://arxiv.org/abs/2108.07258&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>large-language-models</category><category>llms</category><category>transformers</category><guid>https://sijanb.com.np/posts/how-ai-foundation-models-are-revolutionizing-complex-reasoning-from-game-playing-to-mathematical-discovery/</guid><pubDate>Sun, 22 Jun 2025 20:13:34 GMT</pubDate></item><item><title>The Future of Robotics: Building Intelligent Foundation Models for General-Purpose Robots</title><link>https://sijanb.com.np/posts/the-future-of-robotics-building-intelligent-foundation-models-for-general-purpose-robots/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=d905bc8c"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;</description><category>ai-healthcare</category><category>large-language-models</category><category>llms</category><category>transformers</category><guid>https://sijanb.com.np/posts/the-ai-doctor-transforming-healthcare-and-biomedicine-with-foundation-models/</guid><pubDate>Sun, 03 Aug 2025 15:51:50 GMT</pubDate></item><item><title>Unlocking AI's Mind: Can Foundation Models Truly Understand Language?</title><link>https://sijanb.com.np/posts/unlocking-ais-mind-can-foundation-models-truly-understand-language/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=7624bdea"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;img alt="No description has been provided for this image" src="https://sijanb.com.np/images/foundation_models_understanding1.png"&gt;
+&lt;img alt="No description has been provided for this image" src="https://sijanb.com.np/images/foundation_models_understanding2.png"&gt;
+&lt;img alt="No description has been provided for this image" src="https://sijanb.com.np/images/foundation_models_understanding3.png"&gt;
+&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/unlocking-ais-mind-can-foundation-models-truly-understand-language/"&gt;Read more…&lt;/a&gt; (20 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>large-language-models</category><category>llms</category><category>transformers</category><guid>https://sijanb.com.np/posts/unlocking-ais-mind-can-foundation-models-truly-understand-language/</guid><pubDate>Sun, 27 Jul 2025 13:26:05 GMT</pubDate></item><item><title>The AI Revolution: How Foundation Models are Reshaping Our Interactions</title><link>https://sijanb.com.np/posts/the-ai-revolution-how-foundation-models-are-reshaping-our-interactions/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=45265894"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;img alt="No description has been provided for this image" src="https://sijanb.com.np/images/foundation_models_human_interaction2.png"&gt;
+&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/the-ai-revolution-how-foundation-models-are-reshaping-our-interactions/"&gt;Read more…&lt;/a&gt; (18 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>large-language-models</category><category>llms</category><category>transformers</category><guid>https://sijanb.com.np/posts/the-ai-revolution-how-foundation-models-are-reshaping-our-interactions/</guid><pubDate>Fri, 25 Jul 2025 17:37:53 GMT</pubDate></item><item><title>How AI Foundation Models Are Revolutionizing Complex Reasoning: From Game-Playing to Mathematical Discovery</title><link>https://sijanb.com.np/posts/how-ai-foundation-models-are-revolutionizing-complex-reasoning-from-game-playing-to-mathematical-discovery/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=19c49aa5"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;img alt="No description has been provided for this image" src="https://sijanb.com.np/images/foundation_models_reasoning1.png"&gt;
+&lt;img alt="No description has been provided for this image" src="https://sijanb.com.np/images/foundation_models_reasoning2.png"&gt;
+&lt;img alt="No description has been provided for this image" src="https://sijanb.com.np/images/foundation_models_reasoning3.png"&gt;
+&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/how-ai-foundation-models-are-revolutionizing-complex-reasoning-from-game-playing-to-mathematical-discovery/"&gt;Read more…&lt;/a&gt; (8 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>large-language-models</category><category>llms</category><category>transformers</category><guid>https://sijanb.com.np/posts/how-ai-foundation-models-are-revolutionizing-complex-reasoning-from-game-playing-to-mathematical-discovery/</guid><pubDate>Sun, 22 Jun 2025 20:13:34 GMT</pubDate></item><item><title>The Future of Robotics: Building Intelligent Foundation Models for General-Purpose Robots</title><link>https://sijanb.com.np/posts/the-future-of-robotics-building-intelligent-foundation-models-for-general-purpose-robots/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=d905bc8c"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Introduction:-The-Vision-of-Universal-Robots"&gt;Introduction: The Vision of Universal Robots&lt;a class="anchor-link" href="https://sijanb.com.np/posts/the-future-of-robotics-building-intelligent-foundation-models-for-general-purpose-robots/#Introduction:-The-Vision-of-Universal-Robots"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;img alt="No description has been provided for this image" src="https://sijanb.com.np/images/foundational_models_robotics1.png"&gt;
@@ -153,17 +90,16 @@ At each stage, an AI system encounters numerous possibilities. It could draw var
 &lt;p&gt;&lt;a href="https://sijanb.com.np/posts/foundation-models-in-computer-vision-transforming-how-machines-see-and-understand-the-world/"&gt;Read more…&lt;/a&gt; (6 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>large-language-models</category><category>llms</category><category>transformers</category><guid>https://sijanb.com.np/posts/foundation-models-in-computer-vision-transforming-how-machines-see-and-understand-the-world/</guid><pubDate>Sun, 22 Jun 2025 19:06:12 GMT</pubDate></item><item><title>How Foundation Model is changing the Natural Language Processing (NLP) landscape ?</title><link>https://sijanb.com.np/posts/how-foundation-model-is-changing-the-natural-language-processing-nlp-landscape/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=dbeca3f7"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;strong&gt;Foundation Models in Natural Language Processing: A Comprehensive Overview&lt;/strong&gt;&lt;/p&gt;
 &lt;img alt="No description has been provided for this image" src="https://sijanb.com.np/images/foundation_models_landscape.png"&gt;
-&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/how-foundation-model-is-changing-the-natural-language-processing-nlp-landscape/"&gt;Read more…&lt;/a&gt; (4 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>BERT</category><category>foundation-models</category><category>large-language-models</category><category>llms</category><category>openai</category><category>transformers</category><guid>https://sijanb.com.np/posts/how-foundation-model-is-changing-the-natural-language-processing-nlp-landscape/</guid><pubDate>Wed, 11 Jun 2025 19:18:53 GMT</pubDate></item><item><title>What is the future of Foundation Models ?</title><link>https://sijanb.com.np/posts/what-is-the-future-of-foundation-models/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=c8d3f3cf"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/how-foundation-model-is-changing-the-natural-language-processing-nlp-landscape/"&gt;Read more…&lt;/a&gt; (5 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>BERT</category><category>foundation-models</category><category>large-language-models</category><category>llms</category><category>openai</category><category>transformers</category><guid>https://sijanb.com.np/posts/how-foundation-model-is-changing-the-natural-language-processing-nlp-landscape/</guid><pubDate>Wed, 11 Jun 2025 19:18:53 GMT</pubDate></item><item><title>What is the future of Foundation Models ?</title><link>https://sijanb.com.np/posts/what-is-the-future-of-foundation-models/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=c8d3f3cf"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="The-Future-of-AI-Foundation-Models:-Who-Will-Shape-Tomorrow's-Technology?"&gt;The Future of AI Foundation Models: Who Will Shape Tomorrow's Technology?&lt;a class="anchor-link" href="https://sijanb.com.np/posts/what-is-the-future-of-foundation-models/#The-Future-of-AI-Foundation-Models:-Who-Will-Shape-Tomorrow's-Technology?"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;img alt="No description has been provided for this image" src="https://sijanb.com.np/images/foundational_models_future.png"&gt;
-&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/what-is-the-future-of-foundation-models/"&gt;Read more…&lt;/a&gt; (7 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>BERT</category><category>foundation-models</category><category>large-language-models</category><category>llms</category><category>openai</category><category>transformers</category><guid>https://sijanb.com.np/posts/what-is-the-future-of-foundation-models/</guid><pubDate>Tue, 10 Jun 2025 07:17:08 GMT</pubDate></item><item><title>How foundational Models differs from other models such as machine learning or deep learning models ?</title><link>https://sijanb.com.np/posts/how-foundational-models-differs-from-other-models-such-as-machine-learning-or-deep-learning-models/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=270274e8"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;img alt="No description has been provided for this image" src="https://sijanb.com.np/images/foundational_models_future.png"&gt;
+&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/what-is-the-future-of-foundation-models/"&gt;Read more…&lt;/a&gt; (8 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>BERT</category><category>foundation-models</category><category>large-language-models</category><category>llms</category><category>openai</category><category>transformers</category><guid>https://sijanb.com.np/posts/what-is-the-future-of-foundation-models/</guid><pubDate>Tue, 10 Jun 2025 07:17:08 GMT</pubDate></item><item><title>How foundational Models differs from other models such as machine learning or deep learning models ?</title><link>https://sijanb.com.np/posts/how-foundational-models-differs-from-other-models-such-as-machine-learning-or-deep-learning-models/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=270274e8"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Exploring-Foundation-Models:-A-Guide-to-the-AI-Revolution"&gt;Exploring Foundation Models: A Guide to the AI Revolution&lt;a class="anchor-link" href="https://sijanb.com.np/posts/how-foundational-models-differs-from-other-models-such-as-machine-learning-or-deep-learning-models/#Exploring-Foundation-Models:-A-Guide-to-the-AI-Revolution"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;img alt="No description has been provided for this image" src="https://sijanb.com.np/images/foundation_models_difference.png"&gt;
-&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/how-foundational-models-differs-from-other-models-such-as-machine-learning-or-deep-learning-models/"&gt;Read more…&lt;/a&gt; (4 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/how-foundational-models-differs-from-other-models-such-as-machine-learning-or-deep-learning-models/</guid><pubDate>Sun, 08 Jun 2025 15:26:25 GMT</pubDate></item><item><title>What are Large Language Models (LLMs) ?</title><link>https://sijanb.com.np/posts/what-are-large-language-models-llms/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=fc493b6d"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;img alt="No description has been provided for this image" src="https://sijanb.com.np/images/foundation_models_difference.png"&gt;
+&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/how-foundational-models-differs-from-other-models-such-as-machine-learning-or-deep-learning-models/"&gt;Read more…&lt;/a&gt; (5 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://sijanb.com.np/posts/how-foundational-models-differs-from-other-models-such-as-machine-learning-or-deep-learning-models/</guid><pubDate>Sun, 08 Jun 2025 15:26:25 GMT</pubDate></item><item><title>What are Large Language Models (LLMs) ?</title><link>https://sijanb.com.np/posts/what-are-large-language-models-llms/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=fc493b6d"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;strong&gt;The Evolution of Large Language Models: From Turing's Vision to the Reality of ChatGPT&lt;/strong&gt;&lt;/p&gt;
@@ -171,504 +107,4 @@ At each stage, an AI system encounters numerous possibilities. It could draw var
 &lt;img alt="No description has been provided for this image" src="https://sijanb.com.np/images/foundation_models_intro3.png"&gt;
 &lt;img alt="No description has been provided for this image" src="https://sijanb.com.np/images/foundation_models_intro1.png"&gt;
 &lt;img alt="No description has been provided for this image" src="https://sijanb.com.np/images/foundation_models_intro2.png"&gt;
-&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/what-are-large-language-models-llms/"&gt;Read more…&lt;/a&gt; (4 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>large-language-models</category><category>llms</category><category>transformers</category><guid>https://sijanb.com.np/posts/what-are-large-language-models-llms/</guid><pubDate>Sun, 08 Jun 2025 14:01:53 GMT</pubDate></item><item><title>Understanding High Bias in Machine Learning with Real-World Example</title><link>https://sijanb.com.np/posts/understanding-high-bias-in-machine-learning-with-real-world-example/</link><dc:creator>Sijan Bhandari</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=40aa6e5c"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;High bias in machine learning results in underfitting, characterized by the model making oversimplified assumptions about the relationships within the data. This leads to subpar performance on both training and test datasets, demonstrating that the model does not possess the necessary complexity to capture the underlying patterns.&lt;/p&gt;
-&lt;p&gt;In this example, we will check house price prediction using two methods:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Linear Regression: The simple linear model does not adequately capture the complex relationships between features and house prices.&lt;/li&gt;
-&lt;li&gt;Polynomial Regression: The PolynomialFeatures step enhances the dataset by generating polynomial and interaction terms from the original features. For instance, when you have a feature x with a degree of 2, it will produce new features such as x, x², and cross-terms like x1 * x2. This approach enables a linear regression model to effectively capture non-linear relationships.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered" id="cell-id=3cfe78df"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [31]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="input_area"&gt;
-&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;pandas&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;as&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;pd&lt;/span&gt;
-
-&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;as&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;plt&lt;/span&gt;
-
-&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;sklearn.metrics&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;make_scorer&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mean_squared_error&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;sklearn.preprocessing&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;StandardScaler&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;sklearn.model_selection&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;train_test_split&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;sklearn.linear_model&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;LinearRegression&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;sklearn.datasets&lt;/span&gt;
-
-&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;sklearn.preprocessing&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;PolynomialFeatures&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;sklearn.pipeline&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Pipeline&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered" id="cell-id=b700af4d"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [21]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="input_area"&gt;
-&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;house_price_dataset&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sklearn&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;datasets&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fetch_california_housing&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=54eaaab7"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered" id="cell-id=a952b9bf"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [22]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="input_area"&gt;
-&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;house_price_dataset&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DESCR&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-&lt;div class="output_area"&gt;
-&lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
-&lt;pre&gt;.. _california_housing_dataset:
-
-California Housing dataset
---------------------------
-
-**Data Set Characteristics:**
-
-    :Number of Instances: 20640
-
-    :Number of Attributes: 8 numeric, predictive attributes and the target
-
-    :Attribute Information:
-        - MedInc        median income in block group
-        - HouseAge      median house age in block group
-        - AveRooms      average number of rooms per household
-        - AveBedrms     average number of bedrooms per household
-        - Population    block group population
-        - AveOccup      average number of household members
-        - Latitude      block group latitude
-        - Longitude     block group longitude
-
-    :Missing Attribute Values: None
-
-This dataset was obtained from the StatLib repository.
-https://www.dcc.fc.up.pt/~ltorgo/Regression/cal_housing.html
-
-The target variable is the median house value for California districts,
-expressed in hundreds of thousands of dollars ($100,000).
-
-This dataset was derived from the 1990 U.S. census, using one row per census
-block group. A block group is the smallest geographical unit for which the U.S.
-Census Bureau publishes sample data (a block group typically has a population
-of 600 to 3,000 people).
-
-A household is a group of people residing within a home. Since the average
-number of rooms and bedrooms in this dataset are provided per household, these
-columns may take surprisingly large values for block groups with few households
-and many empty houses, such as vacation resorts.
-
-It can be downloaded/loaded using the
-:func:`sklearn.datasets.fetch_california_housing` function.
-
-.. topic:: References
-
-    - Pace, R. Kelley and Ronald Barry, Sparse Spatial Autoregressions,
-      Statistics and Probability Letters, 33 (1997) 291-297
-
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered" id="cell-id=9751a745"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [23]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="input_area"&gt;
-&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Loading the dataset to a pandas dataframe&lt;/span&gt;
-&lt;span class="n"&gt;df_house_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DataFrame&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;house_price_dataset&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;columns&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;house_price_dataset&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;feature_names&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered" id="cell-id=db6e95bf"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [24]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="input_area"&gt;
-&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;df_house_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-&lt;div class="output_area"&gt;
-&lt;div class="prompt output_prompt"&gt;Out[24]:&lt;/div&gt;
-&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;&lt;div&gt;
-&lt;style scoped=""&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border="1" class="dataframe"&gt;
-&lt;thead&gt;
-&lt;tr style="text-align: right;"&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;MedInc&lt;/th&gt;
-&lt;th&gt;HouseAge&lt;/th&gt;
-&lt;th&gt;AveRooms&lt;/th&gt;
-&lt;th&gt;AveBedrms&lt;/th&gt;
-&lt;th&gt;Population&lt;/th&gt;
-&lt;th&gt;AveOccup&lt;/th&gt;
-&lt;th&gt;Latitude&lt;/th&gt;
-&lt;th&gt;Longitude&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;th&gt;0&lt;/th&gt;
-&lt;td&gt;8.3252&lt;/td&gt;
-&lt;td&gt;41.0&lt;/td&gt;
-&lt;td&gt;6.984127&lt;/td&gt;
-&lt;td&gt;1.023810&lt;/td&gt;
-&lt;td&gt;322.0&lt;/td&gt;
-&lt;td&gt;2.555556&lt;/td&gt;
-&lt;td&gt;37.88&lt;/td&gt;
-&lt;td&gt;-122.23&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;1&lt;/th&gt;
-&lt;td&gt;8.3014&lt;/td&gt;
-&lt;td&gt;21.0&lt;/td&gt;
-&lt;td&gt;6.238137&lt;/td&gt;
-&lt;td&gt;0.971880&lt;/td&gt;
-&lt;td&gt;2401.0&lt;/td&gt;
-&lt;td&gt;2.109842&lt;/td&gt;
-&lt;td&gt;37.86&lt;/td&gt;
-&lt;td&gt;-122.22&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;2&lt;/th&gt;
-&lt;td&gt;7.2574&lt;/td&gt;
-&lt;td&gt;52.0&lt;/td&gt;
-&lt;td&gt;8.288136&lt;/td&gt;
-&lt;td&gt;1.073446&lt;/td&gt;
-&lt;td&gt;496.0&lt;/td&gt;
-&lt;td&gt;2.802260&lt;/td&gt;
-&lt;td&gt;37.85&lt;/td&gt;
-&lt;td&gt;-122.24&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;3&lt;/th&gt;
-&lt;td&gt;5.6431&lt;/td&gt;
-&lt;td&gt;52.0&lt;/td&gt;
-&lt;td&gt;5.817352&lt;/td&gt;
-&lt;td&gt;1.073059&lt;/td&gt;
-&lt;td&gt;558.0&lt;/td&gt;
-&lt;td&gt;2.547945&lt;/td&gt;
-&lt;td&gt;37.85&lt;/td&gt;
-&lt;td&gt;-122.25&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;4&lt;/th&gt;
-&lt;td&gt;3.8462&lt;/td&gt;
-&lt;td&gt;52.0&lt;/td&gt;
-&lt;td&gt;6.281853&lt;/td&gt;
-&lt;td&gt;1.081081&lt;/td&gt;
-&lt;td&gt;565.0&lt;/td&gt;
-&lt;td&gt;2.181467&lt;/td&gt;
-&lt;td&gt;37.85&lt;/td&gt;
-&lt;td&gt;-122.25&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered" id="cell-id=ac8cfa52"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [25]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="input_area"&gt;
-&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# add the target column&lt;/span&gt;
-&lt;span class="c1"&gt;# target is median house value in block group (in $100,000s).&lt;/span&gt;
-&lt;span class="n"&gt;df_house_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'price'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;house_price_dataset&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;target&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered" id="cell-id=060b5817"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [26]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="input_area"&gt;
-&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;df_house_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-&lt;div class="output_area"&gt;
-&lt;div class="prompt output_prompt"&gt;Out[26]:&lt;/div&gt;
-&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;&lt;div&gt;
-&lt;style scoped=""&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border="1" class="dataframe"&gt;
-&lt;thead&gt;
-&lt;tr style="text-align: right;"&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;MedInc&lt;/th&gt;
-&lt;th&gt;HouseAge&lt;/th&gt;
-&lt;th&gt;AveRooms&lt;/th&gt;
-&lt;th&gt;AveBedrms&lt;/th&gt;
-&lt;th&gt;Population&lt;/th&gt;
-&lt;th&gt;AveOccup&lt;/th&gt;
-&lt;th&gt;Latitude&lt;/th&gt;
-&lt;th&gt;Longitude&lt;/th&gt;
-&lt;th&gt;price&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;th&gt;0&lt;/th&gt;
-&lt;td&gt;8.3252&lt;/td&gt;
-&lt;td&gt;41.0&lt;/td&gt;
-&lt;td&gt;6.984127&lt;/td&gt;
-&lt;td&gt;1.023810&lt;/td&gt;
-&lt;td&gt;322.0&lt;/td&gt;
-&lt;td&gt;2.555556&lt;/td&gt;
-&lt;td&gt;37.88&lt;/td&gt;
-&lt;td&gt;-122.23&lt;/td&gt;
-&lt;td&gt;4.526&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;1&lt;/th&gt;
-&lt;td&gt;8.3014&lt;/td&gt;
-&lt;td&gt;21.0&lt;/td&gt;
-&lt;td&gt;6.238137&lt;/td&gt;
-&lt;td&gt;0.971880&lt;/td&gt;
-&lt;td&gt;2401.0&lt;/td&gt;
-&lt;td&gt;2.109842&lt;/td&gt;
-&lt;td&gt;37.86&lt;/td&gt;
-&lt;td&gt;-122.22&lt;/td&gt;
-&lt;td&gt;3.585&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;2&lt;/th&gt;
-&lt;td&gt;7.2574&lt;/td&gt;
-&lt;td&gt;52.0&lt;/td&gt;
-&lt;td&gt;8.288136&lt;/td&gt;
-&lt;td&gt;1.073446&lt;/td&gt;
-&lt;td&gt;496.0&lt;/td&gt;
-&lt;td&gt;2.802260&lt;/td&gt;
-&lt;td&gt;37.85&lt;/td&gt;
-&lt;td&gt;-122.24&lt;/td&gt;
-&lt;td&gt;3.521&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;3&lt;/th&gt;
-&lt;td&gt;5.6431&lt;/td&gt;
-&lt;td&gt;52.0&lt;/td&gt;
-&lt;td&gt;5.817352&lt;/td&gt;
-&lt;td&gt;1.073059&lt;/td&gt;
-&lt;td&gt;558.0&lt;/td&gt;
-&lt;td&gt;2.547945&lt;/td&gt;
-&lt;td&gt;37.85&lt;/td&gt;
-&lt;td&gt;-122.25&lt;/td&gt;
-&lt;td&gt;3.413&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;4&lt;/th&gt;
-&lt;td&gt;3.8462&lt;/td&gt;
-&lt;td&gt;52.0&lt;/td&gt;
-&lt;td&gt;6.281853&lt;/td&gt;
-&lt;td&gt;1.081081&lt;/td&gt;
-&lt;td&gt;565.0&lt;/td&gt;
-&lt;td&gt;2.181467&lt;/td&gt;
-&lt;td&gt;37.85&lt;/td&gt;
-&lt;td&gt;-122.25&lt;/td&gt;
-&lt;td&gt;3.422&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=15132a2f"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="House-Price-Prediction-Using-Linear-Regression"&gt;House Price Prediction Using Linear Regression&lt;a class="anchor-link" href="https://sijanb.com.np/posts/understanding-high-bias-in-machine-learning-with-real-world-example/#House-Price-Prediction-Using-Linear-Regression"&gt;¶&lt;/a&gt;&lt;/h5&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered" id="cell-id=86ef8746"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [34]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="input_area"&gt;
-&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Prepare data&lt;/span&gt;
-&lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df_house_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;drop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'price'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;axis&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df_house_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'price'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-
-&lt;span class="c1"&gt;# Split and scale&lt;/span&gt;
-&lt;span class="n"&gt;X_train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;X_test&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_test&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;train_test_split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;test_size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;0.2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;scaler&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;StandardScaler&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;X_train_scaled&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;scaler&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit_transform&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_train&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;X_test_scaled&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;scaler&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;transform&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_test&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="c1"&gt;# Train linear model&lt;/span&gt;
-&lt;span class="n"&gt;model&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;LinearRegression&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;model&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_train_scaled&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_train&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="c1"&gt;# Evaluate&lt;/span&gt;
-&lt;span class="n"&gt;train_pred&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;model&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;predict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_train_scaled&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;test_pred&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;model&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;predict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_test_scaled&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Training MSE:"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mean_squared_error&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y_train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;train_pred&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Test MSE:"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mean_squared_error&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y_test&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;test_pred&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-
-&lt;span class="n"&gt;train_score&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;model&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;score&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_train_scaled&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_train&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;test_score&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;model&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;score&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_test_scaled&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_test&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;"Training R² Score: &lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;train_score&lt;/span&gt;&lt;span class="si"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;.4f&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;"Test R² Score: &lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;test_score&lt;/span&gt;&lt;span class="si"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;.4f&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-&lt;div class="output_area"&gt;
-&lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
-&lt;pre&gt;Training MSE: 0.5240457125963887
-Test MSE: 0.5261093658365182
-Training R² Score: 0.6081
-Test R² Score: 0.5980
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered" id="cell-id=aa6f2c1f"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id="House-Price-Prediction-Using-Polynomial-Regression"&gt;House Price Prediction Using Polynomial Regression&lt;a class="anchor-link" href="https://sijanb.com.np/posts/understanding-high-bias-in-machine-learning-with-real-world-example/#House-Price-Prediction-Using-Polynomial-Regression"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;ul&gt;
-&lt;li&gt;Observations:&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;The mean squared error is decreased in test set.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The R² score is increased in test set.&lt;/p&gt;
-&lt;p&gt;-- R² Interpretation: An R-squared value of 0.75 indicates that 75% of the variation in house prices can be attributed to factors such as square footage, location, and the amenities included in the model.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Why Use both &lt;code&gt;PolynomialFeatures&lt;/code&gt; and &lt;code&gt;LinearRegression&lt;/code&gt; in the Pipeline:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;- The first PolynomialFeatures transformation creates a more complex feature space.
-- The LinearRegression then fits a linear model to these non-linear features.
-- This effectively allows a linear model to approximate non-linear relationships.&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered" id="cell-id=b5e52638"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [35]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="input_area"&gt;
-&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;polynomial_regression_model&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;X_test&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;degree&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="c1"&gt;# Create pipeline&lt;/span&gt;
-    &lt;span class="n"&gt;model&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Pipeline&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;
-        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'scaler'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;StandardScaler&lt;/span&gt;&lt;span class="p"&gt;()),&lt;/span&gt;
-        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'poly'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;PolynomialFeatures&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;degree&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;degree&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
-        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'linear'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;LinearRegression&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
-    &lt;span class="p"&gt;])&lt;/span&gt;
-   
-    &lt;span class="c1"&gt;# Fit and evaluate&lt;/span&gt;
-    &lt;span class="n"&gt;model&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_train&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-    &lt;span class="c1"&gt;# Evaluate&lt;/span&gt;
-    &lt;span class="n"&gt;train_pred&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;model&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;predict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_train_scaled&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;test_pred&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;model&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;predict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_test_scaled&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Training MSE:"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mean_squared_error&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y_train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;train_pred&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Test MSE:"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mean_squared_error&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y_test&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;test_pred&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-
-    &lt;span class="n"&gt;train_score&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;model&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;score&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_train&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;test_score&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;model&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;score&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_test&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_test&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;"Training R² Score: &lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;train_score&lt;/span&gt;&lt;span class="si"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;.4f&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;"Test R² Score: &lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;test_score&lt;/span&gt;&lt;span class="si"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;.4f&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;model&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;X_train_poly&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;X_test_poly&lt;/span&gt;
-
-&lt;span class="c1"&gt;# Example usage with housing data&lt;/span&gt;
-&lt;span class="n"&gt;model_poly&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;X_train_poly&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;X_test_poly&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;polynomial_regression_model&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="n"&gt;X_train_scaled&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;X_test_scaled&lt;/span&gt;
-&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-&lt;div class="output_area"&gt;
-&lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
-&lt;pre&gt;Training MSE: 0.4219834148836872
-Test MSE: 0.42363567392919027
-Training R² Score: 0.6844
-Test R² Score: 0.6763
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered" id="cell-id=011b7ec6"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="input_area"&gt;
-&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>high-bias</category><category>underfitting</category><guid>https://sijanb.com.np/posts/understanding-high-bias-in-machine-learning-with-real-world-example/</guid><pubDate>Sat, 25 Jan 2025 14:46:28 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://sijanb.com.np/posts/what-are-large-language-models-llms/"&gt;Read more…&lt;/a&gt; (4 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>large-language-models</category><category>llms</category><category>transformers</category><guid>https://sijanb.com.np/posts/what-are-large-language-models-llms/</guid><pubDate>Sun, 08 Jun 2025 14:01:53 GMT</pubDate></item></channel></rss>
