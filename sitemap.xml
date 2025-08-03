@@ -31,7 +31,7 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/archive.html</loc>
-  <lastmod>2025-08-03T16:16:00Z</lastmod>
+  <lastmod>2025-08-03T20:11:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/</loc>
@@ -55,15 +55,19 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/index-5.html</loc>
-  <lastmod>2025-08-03T16:16:00Z</lastmod>
+  <lastmod>2025-08-03T20:11:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/</loc>
-  <lastmod>2025-08-03T16:16:00Z</lastmod>
+  <lastmod>2025-08-03T20:11:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/ai-healthcare/</loc>
   <lastmod>2025-08-03T16:05:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/categories/ai-in-education/</loc>
+  <lastmod>2025-08-03T20:11:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/ai-in-law/</loc>
@@ -336,6 +340,10 @@
  <url>
   <loc>https://sijanb.com.np/posts/the-ai-revolution-how-foundation-models-are-reshaping-our-interactions/</loc>
   <lastmod>2025-07-25T17:41:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/posts/the-future-is-now-how-foundation-models-are-reshaping-education/</loc>
+  <lastmod>2025-08-03T20:11:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/the-future-of-robotics-building-intelligent-foundation-models-for-general-purpose-robots/</loc>
