@@ -31,7 +31,7 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/archive.html</loc>
-  <lastmod>2025-08-03T16:05:00Z</lastmod>
+  <lastmod>2025-08-03T16:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/</loc>
@@ -55,15 +55,19 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/index-5.html</loc>
-  <lastmod>2025-08-03T16:05:00Z</lastmod>
+  <lastmod>2025-08-03T16:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/</loc>
-  <lastmod>2025-08-03T16:05:00Z</lastmod>
+  <lastmod>2025-08-03T16:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/ai-healthcare/</loc>
   <lastmod>2025-08-03T16:05:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/categories/ai-in-law/</loc>
+  <lastmod>2025-08-03T16:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/bayesian-learning/</loc>
@@ -260,6 +264,10 @@
  <url>
   <loc>https://sijanb.com.np/posts/intuition-behind-gradient-descent-for-machine-learning-algorithms/</loc>
   <lastmod>2024-04-21T20:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/posts/justice-in-a-byte-foundation-models-and-the-law/</loc>
+  <lastmod>2025-08-03T16:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/k-nearest-neighbors-algorithm-using-python-and-scikit-learn/</loc>
