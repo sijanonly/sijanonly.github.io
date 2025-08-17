@@ -54,8 +54,16 @@
   <lastmod>2024-04-21T20:33:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://sijanb.com.np/categories/discriminative-models.xml</loc>
+  <lastmod>2025-08-17T12:48:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://sijanb.com.np/categories/foundation-models.xml</loc>
   <lastmod>2025-08-03T16:05:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://sijanb.com.np/categories/generative-models.xml</loc>
+  <lastmod>2025-08-17T12:48:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://sijanb.com.np/categories/gradient-descent.xml</loc>
@@ -79,7 +87,7 @@
  </sitemap>
  <sitemap>
   <loc>https://sijanb.com.np/categories/large-language-models.xml</loc>
-  <lastmod>2025-08-17T12:37:00Z</lastmod>
+  <lastmod>2025-08-17T12:48:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://sijanb.com.np/categories/linear-regression.xml</loc>
@@ -87,7 +95,7 @@
  </sitemap>
  <sitemap>
   <loc>https://sijanb.com.np/categories/llms.xml</loc>
-  <lastmod>2025-08-17T12:37:00Z</lastmod>
+  <lastmod>2025-08-17T12:48:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://sijanb.com.np/categories/machine-learning-glossary.xml</loc>
@@ -104,6 +112,10 @@
  <sitemap>
   <loc>https://sijanb.com.np/categories/model-evaluation.xml</loc>
   <lastmod>2024-05-09T19:33:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://sijanb.com.np/categories/multimodal.xml</loc>
+  <lastmod>2025-08-17T12:48:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://sijanb.com.np/categories/neural-network.xml</loc>
@@ -143,7 +155,7 @@
  </sitemap>
  <sitemap>
   <loc>https://sijanb.com.np/categories/transformers.xml</loc>
-  <lastmod>2025-08-17T12:37:00Z</lastmod>
+  <lastmod>2025-08-17T12:48:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://sijanb.com.np/categories/underfitting.xml</loc>
@@ -151,10 +163,10 @@
  </sitemap>
  <sitemap>
   <loc>https://sijanb.com.np/rss.xml</loc>
-  <lastmod>2025-08-17T12:37:00Z</lastmod>
+  <lastmod>2025-08-17T12:48:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://sijanb.com.np/sitemap.xml</loc>
-  <lastmod>2025-08-17T12:37:00Z</lastmod>
+  <lastmod>2025-08-17T12:48:00Z</lastmod>
  </sitemap>
 </sitemapindex>

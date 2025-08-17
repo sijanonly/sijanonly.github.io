@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html prefix="" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>The Secret Sauce of AI: How Foundation Models Are Trained | CODEBUG</title>
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../../assets/css/screen.css">
+<link rel="stylesheet" type="text/css" href="../../assets/css/nav.css">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://sijanb.com.np/posts/the-secret-sauce-of-ai-how-foundation-models-are-trained/">
+<link rel="icon" href="../../favicon.ico" sizes="16x16">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Font Awesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<meta name="author" content="Sijan Bhandari">
+<link rel="prev" href="../understanding-the-building-blocks-of-ai-exploring-the-5-core-properties-of-foundation-models/" title="Understanding the Building Blocks of AI: Exploring the 5 Core Properties of Foundation Models" type="text/html">
+<meta property="og:site_name" content="CODEBUG">
+<meta property="og:title" content="The Secret Sauce of AI: How Foundation Models Are Trained">
+<meta property="og:url" content="https://sijanb.com.np/posts/the-secret-sauce-of-ai-how-foundation-models-are-trained/">
+<meta property="og:description" content="What is a Training Objective?
+The Birth of a Foundation Model
+Have you ever wondered how a massive AI like GPT-3 learns to be so versatile? It's not magic! It all comes down to its training objective.">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2025-08-17T18:25:57+05:45">
+<meta property="article:tag" content="discriminative-models">
+<meta property="article:tag" content="generative-models">
+<meta property="article:tag" content="large-language-models">
+<meta property="article:tag" content="llms">
+<meta property="article:tag" content="multimodal">
+<meta property="article:tag" content="transformers">
+</head>
+<body class="nav-closed">
+
+<div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+<li class="nav-opened" role="presentation">
+            <a href="../../blog/">Blog</a>
+        </li>
+        <li class="nav-opened" role="presentation">
+            <a href="../../categories/">Tags</a>
+        </li>
+        <li class="nav-opened" role="presentation">
+            <a href="../../rss.xml">RSS feed</a>
+        </li>
+    
+    
+    </ul>
+</div>
+<span class="nav-cover"></span>
+
+<div class="site-wrapper">
+    <header class="main-header post-head no-cover"><nav class="main-nav overlay clearfix"><a class="blog-logo" href="https://sijanb.com.np/"><img src="../../images/logo.png" alt="Blog Logo"></a>
+            <a class="menu-button" href="#"><span class="burger">☰</span><span class="word">Menu</span></a>
+        </nav></header><main id="content" class="content" role="main"><article class="post post"><header class="post-header"><h1 class="post-title">The Secret Sauce of AI: How Foundation Models Are Trained</h1>
+        <section class="post-meta"> by
+            Sijan Bhandari
+            on
+                <a href="../../categories/discriminative-models/">#discriminative-models</a>,
+                <a href="../../categories/generative-models/">#generative-models</a>,
+                <a href="../../categories/large-language-models/">#large-language-models</a>,
+                <a href="../../categories/llms/">#llms</a>,
+                <a href="../../categories/multimodal/">#multimodal</a>,
+                <a href="../../categories/transformers/">#transformers</a>,
+            <time class="post-date" datetime="2025-08-17T18:25:57+05:45">
+                2025-08-17
+            </time></section></header><section class="post-content"><div class="cell border-box-sizing text_cell rendered" id="cell-id=b885d9ba">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<img alt="No description has been provided for this image" src="../../images/foundation_models_law3.png"><!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=114b0465">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>What is a Training Objective?</strong></p>
+<p><strong>The Birth of a Foundation Model</strong></p>
+<p>Have you ever wondered how a massive AI like GPT-3 learns to be so versatile? It's not magic! It all comes down to its <strong>training objective</strong>. Think of a training objective as the "rules of the game" for a foundation model. It's a mathematical function that tells the model what to do and how to learn from a huge amount of data. For instance, GPT-3's objective was to predict the next word in a sentence. It was a simple task, but by doing it over and over again on a colossal dataset from the internet, it learned the underlying patterns of language so well that it can now perform a mind-boggling variety of tasks. Let's dig into the main goals of these training approaches, the trade-offs involved, and where we're headed next.</p>
+<hr>
+<p><strong>Key Goals for Foundation Model Training</strong></p>
+<p><strong>Leveraging Broad, Unlabeled Data</strong></p>
+<p>One of the biggest game-changers in AI has been <strong>self-supervised learning (SSL)</strong>. Before this, training a model meant you had to manually label and annotate every single piece of data, which is an impossible task for internet-scale datasets. SSL, however, is a brilliant workaround. It designs training tasks that use the data's own inherent structure to generate a learning signal. So, instead of needing a human to label a picture as "cat," the model might be asked to predict a missing part of the image. This unlocks the power of a vast amount of unlabeled data—from images and videos to text and robotic sensor data—making it the essential first step in creating a foundation model.</p>
+<p><strong>Domain Completeness: The "Generalist" Mindset</strong></p>
+<p>The goal of a foundation model is to be a generalist, not a specialist. We want a model that can handle a wide variety of tasks in a domain, like language. This is where <strong>domain completeness</strong> comes in. A good training objective should be so comprehensive that solving it requires the model to acquire a broad set of capabilities. For example, to predict the next word accurately, a model needs to understand things like grammar, sentiment, and even context. This is what makes a model versatile enough to be a foundation for many different downstream applications. In contrast, a simple supervised task like classifying sentiment might only teach the model a very narrow set of skills.</p>
+<p><strong>Scaling and Compute Efficiency</strong></p>
+<p>In the world of foundation models, size matters. As models and datasets get bigger, we have to make sure our training procedures can keep up. This means they must be reliable and efficient at converting data and compute into a capable model. This has led to a fascinating shift in how we evaluate models: it's not just about how good they are, but also how much compute it takes to get them there. Researchers are always looking for ways to make training objectives more efficient, like the <strong>ELECTRA</strong> model which was 4x more efficient than its predecessor <strong>BERT</strong>. The surprising predictability of how a model's capabilities scale with data and compute is a huge help here; it allows developers to make smarter choices instead of just guessing.</p>
+<p><strong>Design Choices and Trade-offs in Self-Supervised Learning</strong></p>
+<p>Current SSL methods for training foundation models are incredibly diverse, but they all create prediction problems from unlabeled data. The specific "constraints" they put on the data or the model itself determine what kind of skills the model learns. Let's look at some key design choices and their trade-offs.</p>
+<p><strong>Abstraction Level: Raw Bytes vs. Tokens</strong></p>
+<p>A core question is what the model's input should be. Should it look at the raw bytes of an image or text? Or should it use a higher-level representation, like "tokens" which are predefined words or sub-words?  Raw bytes give the model everything, but they can be computationally expensive and might distract the model with low-level details (like audio compression artifacts). Using tokens, on the other hand, can simplify the task and make it more manageable for models like transformers, but you might lose some potentially useful information, like character-level nuances needed for things like rhyming.</p>
+<p><strong>Generative vs. Discriminative Models</strong></p>
+<p>This is a big one! <strong>Generative</strong> models are trained to create new data that looks like the original. Autoregressive models (like GPT-3) generate text word by word, while denoising models (like BERT) restore corrupted or masked data. These methods are powerful because they enable flexible interaction with the model—you can ask them to complete a sentence or fix a typo. On the other hand, <strong>discriminative</strong> models don't create new data. They are trained to classify or compare inputs. For example, they might be trained to determine if two different views of an image are of the same object. While these models are often more efficient for tasks like classification, they can't generate new content. The future likely lies in finding a way to get the best of both worlds.</p>
+<p><strong>Capturing Multimodal Relationships</strong></p>
+<p>A truly intelligent model needs to understand the relationships between different types of data, like text and images. But how should it do this? Models like <strong>CLIP</strong> and <strong>ViLBERT</strong> offer two different approaches. CLIP trains separate encoders for images and text and then compares their outputs at the end. This is great for tasks like image retrieval. ViLBERT, in contrast, processes images and text together from the very beginning. This is better for tasks like visual question answering where the model needs to reason about how the image and text relate to each other. Multimodality is still a young field, and we have a lot to learn about the best ways to connect these different data types.</p>
+<hr>
+<p><strong>Paving the Way Forward for Training Algorithms</strong></p>
+<p><strong>The Quest for an "Out-of-the-Box" Training Objective</strong></p>
+<p>Right now, the training methods for foundation models are very specific to the domain—what works for language doesn't necessarily work for images. This makes it difficult to understand the underlying principles and requires a lot of new research every time we want to apply these models to a new field. A significant milestone would be a single, general training objective that works effectively on any kind of data, from text to medical scans to scientific data. Imagine the possibilities!</p>
+<p><strong>Obtaining a Richer Training Signal</strong></p>
+<p>It's clear that some training objectives are far more efficient than others. Are there "super-efficient" training methods we don't know about yet? We also need to think about data and training as a partnership. Instead of just passively learning from the data, what if a model could actively seek out or create more informative training examples as it gets better? This could accelerate learning to an incredible degree.</p>
+<p><strong>Goal-Directed Training: Beyond the Basics</strong></p>
+<p>The current training of foundation models gives rise to amazing "emergent properties" almost by accident. But what if we could make these models' ability to achieve goals a core part of their training objective? Instead of just predicting the next word, a model could be trained to understand and reliably carry out tasks in a complex world. This could lead to models that not only "know" a lot but can also "do" a lot, like a robotic arm that learns to manipulate objects just from watching videos and interacting with its environment. This is one of the most exciting frontiers in AI.</p>
+<p><strong>The Future of Training is Now</strong></p>
+<p>The training of foundation models is a dynamic field that's at the heart of the AI revolution. By focusing on leveraging broad data, achieving domain completeness, and maximizing efficiency, we're building models that are more powerful and versatile than ever before. While challenges remain in balancing trade-offs between different approaches and finding more general training objectives, the path forward is clear: to create models that are not just knowledgeable, but truly intelligent.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=a4672ff9">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>FAQs on Foundation Model Training</strong></p>
+<p><strong>1. What is the main difference between self-supervised learning and supervised learning?</strong> &lt;br&gt; <strong>Self-supervised learning (SSL)</strong> uses the inherent structure of unlabeled data to create a training signal, while <strong>supervised learning</strong> requires data to be manually labeled by humans. SSL is a key factor in training large foundation models because it doesn't require a human to annotate massive amounts of data.</p>
+<p><strong>2. How does the "abstraction level" affect a model's training?</strong> &lt;br&gt; The abstraction level refers to how the model sees the input data. Using a higher-level abstraction (like tokens for text or patches for images) can make training more efficient by reducing the input size and focusing on more semantic features, but it might also cause the model to miss out on valuable low-level information.</p>
+<p><strong>3. Can a foundation model be both generative and discriminative?</strong> &lt;br&gt; While most models are primarily one or the other, researchers are actively exploring ways to combine the benefits of both. The goal is to create a model that is both highly efficient at learning from data (a discriminative trait) and capable of generating new content and interacting flexibly (a generative trait).</p>
+<p><strong>4. Why is "domain completeness" so important for a foundation model's training objective?</strong> &lt;br&gt; A training objective that is "domain complete" forces the model to learn a wide range of skills to solve the task. This is crucial for creating a general-purpose foundation model that can be easily adapted to many different tasks, rather than being limited to a single function.</p>
+<p><strong>5. What does "goal-directed training" mean for the future of AI?</strong> &lt;br&gt; Goal-directed training means a model would be trained not just to mimic or predict data, but to achieve specific objectives in the real world. This could lead to the development of highly capable AI that can perform complex, multi-step tasks in interactive environments, bringing us closer to truly intelligent agents.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=2d933b3c">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Citation: Bommasani, R., Hudson, D. A., Adeli, E., Altman, R., Arora, S., von Arx, S., ... &amp; Liang, P. (2022). On the opportunities and risks of foundation models. arXiv preprint arXiv:2108.07258. Available at: <a href="https://arxiv.org/abs/2108.07258">https://arxiv.org/abs/2108.07258</a></p>
+</div>
+</div>
+</div>
+    </section><footer class="post-footer"><section class="comments hidden-print"><h2>Comments</h2>
+        
+    
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="blog-sijanb-com-np",
+            disqus_url="https://sijanb.com.np/posts/the-secret-sauce-of-ai-how-foundation-models-are-trained/",
+        disqus_title="The Secret Sauce of AI: How Foundation Models Are Trained",
+        disqus_identifier="cache/posts/the-secret-sauce-of-ai-how-foundation-models-are-trained.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script></footer></article><script>var disqus_shortname="blog-sijanb-com-np";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer class="site-footer clearfix"><section class="poweredby">Contents © 2025         <a href="mailto:sijanonly@gmail.com">Sijan Bhandari</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </section></footer>
+</div>
+
+    <script type="text/javascript" src="../../assets/js/jquery.js"></script><script type="text/javascript" src="../../assets/js/jquery.fitvids.js"></script><script type="text/javascript" src="../../assets/js/index.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-116715433-2"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-116715433-2');
+</script>
+</body>
+</html>

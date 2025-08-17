@@ -31,7 +31,7 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/archive.html</loc>
-  <lastmod>2025-08-17T12:37:00Z</lastmod>
+  <lastmod>2025-08-17T12:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/</loc>
@@ -55,11 +55,11 @@
  </url>
  <url>
   <loc>https://sijanb.com.np/blog/index-5.html</loc>
-  <lastmod>2025-08-17T12:37:00Z</lastmod>
+  <lastmod>2025-08-17T12:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/</loc>
-  <lastmod>2025-08-03T20:11:00Z</lastmod>
+  <lastmod>2025-08-17T12:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/ai-healthcare/</loc>
@@ -110,8 +110,16 @@
   <lastmod>2024-04-21T20:33:00Z</lastmod>
  </url>
  <url>
+  <loc>https://sijanb.com.np/categories/discriminative-models/</loc>
+  <lastmod>2025-08-17T12:48:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://sijanb.com.np/categories/foundation-models/</loc>
   <lastmod>2025-06-10T07:34:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/categories/generative-models/</loc>
+  <lastmod>2025-08-17T12:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/gradient-descent/</loc>
@@ -160,6 +168,10 @@
  <url>
   <loc>https://sijanb.com.np/categories/model-evaluation/</loc>
   <lastmod>2024-05-09T19:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/categories/multimodal/</loc>
+  <lastmod>2025-08-17T12:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/categories/neural-network/</loc>
@@ -348,6 +360,10 @@
  <url>
   <loc>https://sijanb.com.np/posts/the-future-of-robotics-building-intelligent-foundation-models-for-general-purpose-robots/</loc>
   <lastmod>2025-06-22T19:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://sijanb.com.np/posts/the-secret-sauce-of-ai-how-foundation-models-are-trained/</loc>
+  <lastmod>2025-08-17T12:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://sijanb.com.np/posts/understanding-high-bias-in-machine-learning-with-real-world-example/</loc>
