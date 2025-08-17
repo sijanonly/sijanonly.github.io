@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html prefix="" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Understanding the Building Blocks of AI: Exploring the 5 Core Properties of Foundation Models | CODEBUG</title>
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../../assets/css/screen.css">
+<link rel="stylesheet" type="text/css" href="../../assets/css/nav.css">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://sijanb.com.np/posts/understanding-the-building-blocks-of-ai-exploring-the-5-core-properties-of-foundation-models/">
+<link rel="icon" href="../../favicon.ico" sizes="16x16">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Font Awesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<meta name="author" content="Sijan Bhandari">
+<link rel="prev" href="../the-future-is-now-how-foundation-models-are-reshaping-education/" title="The Future is Now: How Foundation Models are Reshaping Education" type="text/html">
+<meta property="og:site_name" content="CODEBUG">
+<meta property="og:title" content="Understanding the Building Blocks of AI: Exploring the 5 Core Properti">
+<meta property="og:url" content="https://sijanb.com.np/posts/understanding-the-building-blocks-of-ai-exploring-the-5-core-properties-of-foundation-models/">
+<meta property="og:description" content="What Are Foundation Models?
+A New Era of AI
+Have you ever been amazed by an AI that can write a short story, answer your complex questions, or even create a stunning piece of art from just a few words">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2025-08-17T18:15:57+05:45">
+<meta property="article:tag" content="large-language-models">
+<meta property="article:tag" content="llms">
+<meta property="article:tag" content="transformers">
+</head>
+<body class="nav-closed">
+
+<div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+<li class="nav-opened" role="presentation">
+            <a href="../../blog/">Blog</a>
+        </li>
+        <li class="nav-opened" role="presentation">
+            <a href="../../categories/">Tags</a>
+        </li>
+        <li class="nav-opened" role="presentation">
+            <a href="../../rss.xml">RSS feed</a>
+        </li>
+    
+    
+    </ul>
+</div>
+<span class="nav-cover"></span>
+
+<div class="site-wrapper">
+    <header class="main-header post-head no-cover"><nav class="main-nav overlay clearfix"><a class="blog-logo" href="https://sijanb.com.np/"><img src="../../images/logo.png" alt="Blog Logo"></a>
+            <a class="menu-button" href="#"><span class="burger">☰</span><span class="word">Menu</span></a>
+        </nav></header><main id="content" class="content" role="main"><article class="post post"><header class="post-header"><h1 class="post-title">Understanding the Building Blocks of AI: Exploring the 5 Core Properties of Foundation Models</h1>
+        <section class="post-meta"> by
+            Sijan Bhandari
+            on
+                <a href="../../categories/large-language-models/">#large-language-models</a>,
+                <a href="../../categories/llms/">#llms</a>,
+                <a href="../../categories/transformers/">#transformers</a>,
+            <time class="post-date" datetime="2025-08-17T18:15:57+05:45">
+                2025-08-17
+            </time></section></header><section class="post-content"><div class="cell border-box-sizing text_cell rendered" id="cell-id=98a102a9">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<img alt="No description has been provided for this image" src="../../images/foundation_models_law3.png"><!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=e0686ca9">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>What Are Foundation Models?</strong></p>
+<p><strong>A New Era of AI</strong>
+Have you ever been amazed by an AI that can write a short story, answer your complex questions, or even create a stunning piece of art from just a few words? These aren't just cool party tricks; they're the result of a new and powerful paradigm in artificial intelligence known as <strong>foundation models</strong>. These are massive AI models, often trained on a vast amount of data, that serve as a "foundation" for a wide range of more specific tasks. Think of them like a master apprentice who has read every book in the world, seen every painting, and listened to every song. They have a deep, broad understanding that can be applied to almost anything. BERT and GPT-3 are great examples that have shown incredible results in understanding human language, while DALL-E has demonstrated a flair for visual creativity. But what exactly makes these models so special? What are the key ingredients that allow them to achieve such remarkable feats?</p>
+<p><strong>What Makes a Model "Foundational"?</strong>
+It's not just about being big or having a lot of data. A true foundation model possesses a set of specific, desirable qualities that enable it to learn and generalize so effectively. The authors of the paper we’re discussing, Drew A. Hudson et al., identify five key properties: <strong>expressivity</strong>, <strong>scalability</strong>, <strong>multimodality</strong>, <strong>memory capacity</strong>, and <strong>compositionality</strong>. These aren't just technical terms; they are the fundamental building blocks that allow these models to distill knowledge, represent it efficiently, and apply it to new, unforeseen situations. Let’s dive into each of these properties to understand what makes them so crucial.</p>
+<hr>
+<p><strong>The 5 Core Properties</strong></p>
+<p><strong>The Five Essential Properties of a Foundation Model</strong></p>
+<p><strong>1. Expressivity: Capturing the World's Richness</strong>
+Expressivity is a model's ability to represent and model the complex data it's trained on. Imagine trying to paint a detailed portrait of a person. You need a brush that's capable of capturing all the nuances—the subtle shades, the texture of the skin, the sparkle in the eyes. In the same way, a foundation model needs to be expressive enough to capture the intricacies of natural information, whether it's the high-dimensional chaos of an image or the delicate, hierarchical structure of human language.</p>
+<p><strong>The Importance of Depth and Inductive Biases</strong>
+One of the biggest drivers of expressivity in modern networks is their sheer depth. We’re talking about models with a large number of stacked layers. The more layers, the more powerful and flexible the model becomes at forming a hierarchical representation of information, allowing it to generalize to new, unseen examples. This is where the concept of <strong>inductive biases</strong> comes in. These are structural assumptions about the data that help a model learn more efficiently. For instance, a convolutional neural network (CNN) is designed with an inductive bias for spatially-invariant information, making it perfect for images, while recurrent neural networks (RNNs) are great for sequential data like language.</p>
+<p><strong>The Rise of Transformers and Attention</strong>
+And then came transformers.  The transformer network, with its groundbreaking self-attention mechanism, changed the game by being able to capture long-range dependencies in data. This is a game-changer because it allows the model to see the big picture. For example, in the sentence "She ate the ice-cream with a spoon," the model can directly link "ate" and "spoon," no matter how far apart they are. This dynamic, adaptable computation is what makes transformers so generally applicable and powerful across a wide range of problems. We've seen a shift from task-specific models to more general-purpose architectures that "let the data speak for itself." While specialized models might learn faster on specific tasks, general-purpose models can scale to higher data volumes and adapt to diverse domains, which is a much more promising approach for the future of AI.</p>
+<p><strong>2. Scalability: Growing with Data and Compute</strong>
+Closely related to expressivity is scalability. In a world where we’re generating a mind-boggling amount of data and computer hardware is getting stronger by the minute, foundation models need to be able to keep up. They must be scalable across all dimensions, including their size, training time, number of parameters, and the amount of data they can process. Think of it like this: if you have a massive library of books, you need a system that can not only fit all those books but also quickly and efficiently catalog, organize, and retrieve information from them.</p>
+<p><strong>The Need for Efficient Optimization and Hardware Compatibility</strong>
+A scalable model should be robust and easy to train, even with noisy or imperfect data. It needs to be resilient to issues like "vanishing" or "exploding" gradients, which are common problems in deep learning that can stop a model from learning effectively. It also needs to be easy to adapt to new tasks without "catastrophic forgetting"—the phenomenon where a model loses its old knowledge when it learns something new. From a practical standpoint, a model must also be designed to take full advantage of modern hardware. This is where things like <strong>parallelizability</strong> come in. Transformers, for example, are highly parallelizable, which is a major reason for their success over older architectures. The future of foundation models will likely see them co-adapting with hardware advancements, leveraging properties like computational sparsity to become even more efficient.</p>
+<p><strong>3. Multimodality: Connecting Different Worlds</strong>
+For a long time, different fields of AI—like computer vision and natural language processing (NLP)—worked in isolation. Multimodality is all about breaking down those walls and creating a single model that can understand and connect various types of data. It’s like teaching a student to not only read a book but also to look at a picture and hear a song, and then to understand how all of those things are related. Multimodality is a crucial component of true intelligence. Language becomes more meaningful when it’s grounded in a real-world environment, and vision becomes richer when it’s linked to semantic concepts.</p>
+<p><strong>Breaking Down the Silos: Vision, Language, and Beyond</strong>
+Foundation models are ideal for this task because they can distill information from different sources—be it text, images, or audio—into a single, shared representation. This shared representation allows the model to understand the full range of interconnections between these different data types. While a lot of progress has been made in aligning vision and language, there's still a lot of room for exploration. We’re on the verge of creating models that can not only describe a picture but also understand the deeper context and relationships within it.</p>
+<p><strong>The Challenge of Multimodal Interaction</strong>
+A key question in multimodal models is how much to specialize or share. Should a model use completely separate components for each data type or should it share parameters? Another challenge is figuring out when and how to merge these different data spaces. Should you merge them early on, reasoning over multiple modalities at once, or should you keep them separate until the very end? The ideal approach is still an open research question, and it's one of the most exciting areas in the field right now.</p>
+<p><strong>4. Memory Capacity: Storing and Retrieving Knowledge</strong>
+A foundation model, with its vast training data, accumulates an incredible amount of knowledge, both a broad understanding of the world and specific niche facts. Storing all this information is no easy task. It’s not enough to just remember things; a model also needs an effective way to access, retrieve, and manipulate that knowledge.</p>
+<p><strong>Implicit vs. Explicit Knowledge</strong>
+An important distinction is between <strong>implicit knowledge</strong>, which is baked directly into the model's weights during training, and <strong>explicit knowledge</strong>, which is stored in an external memory. Think of implicit knowledge as your general understanding of how the world works, and explicit knowledge as specific facts you can look up in a notebook. Decoupling these two types of knowledge has some major advantages. It prevents the model's size from ballooning to an unmanageable degree, it improves the model’s reliability by making its knowledge traceable, and it allows for easier updates. If a fact changes, you just update the external memory, without having to retrain the entire model.</p>
+<p><strong>The Power of Retrieval and Knowledge Manipulation</strong>
+There are various ways a model can retrieve this information. Some models use explicit prompts to query their own knowledge, while others use a separate retrieval system that pulls information from unstructured text repositories or structured knowledge graphs. However, there's a trade-off here. While retrieval is great for memorization, over-relying on it can hinder a model’s ability to learn abstract representations and generalize. A model that has to work with a more bounded memory might learn to distill key insights more effectively. Finally, since knowledge is dynamic, a truly effective model must be able to update and manipulate its knowledge over time. What was true yesterday may not be today, and a foundation model needs to be able to adapt to those changes.</p>
+<p><strong>5. Compositionality: Generalizing to the Unknown</strong>
+Finally, we have compositionality. This is a core principle of human intelligence—the idea that we can understand the meaning of a whole by understanding its parts and the rules for combining them. It's what allows us to generalize to new situations and problems. Think of it like a LEGO set.  You can take a handful of basic bricks and, by combining them in different ways, build a spaceship, a castle, or a car. This is the essence of compositionality. It can be reflected at the model level, the computation level, the training process, and even in the learned representation itself.</p>
+<p><strong>From Symbolic AI to Modern Models</strong>
+While many modern models have focused on creating monolithic, all-encompassing representations, a better path forward lies in finding a balance between contextuality and compositionality. We want models that can both understand the nuances of a phrase like “red wine” (which is not just “red” plus “wine”) and also be able to generalize by combining individual concepts into new ideas. This is why researchers are exploring structured, object-oriented representations that can identify entities and their relationships, enabling stronger out-of-distribution generalization.</p>
+<hr>
+<p><strong>Conclusion</strong>
+<strong>Putting It All Together: The Future of Foundation Models</strong>
+Foundation models are transforming the landscape of artificial intelligence, and it's the combination of these five core properties that makes them so revolutionary. Expressivity allows them to capture the richness of the world, scalability ensures they can grow with the available data and compute, multimodality helps them connect different domains, memory capacity gives them the ability to store and retrieve a vast amount of knowledge, and compositionality is the key to generalizing to novel tasks and environments. As researchers continue to push the boundaries of these properties, we can expect to see AI models that are not only more powerful but also more versatile, reliable, and capable of addressing some of the world's most complex challenges. The journey is just beginning, and these five properties are our roadmap to the future.</p>
+<hr>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=1d6e7c64">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>FAQs about Foundation Models</strong></p>
+<p><strong>1. What is the main difference between a foundation model and a regular AI model?</strong> &lt;br&gt; A foundation model is typically much larger, trained on a massive amount of broad data, and designed to be a versatile base for many different tasks, while a regular AI model is often smaller and trained specifically for a single, narrow task.</p>
+<p><strong>2. How does "compositionality" in AI relate to human intelligence?</strong> &lt;br&gt; Compositionality is a core principle of human thought, allowing us to combine basic concepts to understand new ones (like a "red car," even if we've never seen one). In AI, it's the ability of a model to generalize by understanding and recombining its learned parts, just as we do.</p>
+<p><strong>3. Why is "multimodality" so important for foundation models?</strong> &lt;br&gt; Multimodality is crucial because the real world is inherently multimodal. To truly understand concepts and the relationships between them, a model needs to process information from different sources like text, images, and sound, just as humans do.</p>
+<p><strong>4. What does "scalability" mean in a practical sense for a foundation model?</strong> &lt;br&gt; Practically, scalability means the model can handle a huge increase in data and still learn effectively. It also means the model is designed to be efficient with modern hardware, allowing for faster training and deployment.</p>
+<p><strong>5. What is the difference between implicit and explicit memory in foundation models?</strong> &lt;br&gt; Implicit memory is knowledge stored within the model's internal weights, while explicit memory is stored in an external database. Implicit memory gives the model a broad, general understanding, while explicit memory allows for the storage and easy retrieval of specific facts, making updates much simpler.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=cb16cbe3">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Citation: Bommasani, R., Hudson, D. A., Adeli, E., Altman, R., Arora, S., von Arx, S., ... &amp; Liang, P. (2022). On the opportunities and risks of foundation models. arXiv preprint arXiv:2108.07258. Available at: <a href="https://arxiv.org/abs/2108.07258">https://arxiv.org/abs/2108.07258</a></p>
+</div>
+</div>
+</div>
+    </section><footer class="post-footer"><section class="comments hidden-print"><h2>Comments</h2>
+        
+    
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="blog-sijanb-com-np",
+            disqus_url="https://sijanb.com.np/posts/understanding-the-building-blocks-of-ai-exploring-the-5-core-properties-of-foundation-models/",
+        disqus_title="Understanding the Building Blocks of AI: Exploring the 5 Core Properties of Foundation Models",
+        disqus_identifier="cache/posts/understanding-the-building-blocks-of-ai-exploring-the-5-core-properties-of-foundation-models.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script></footer></article><script>var disqus_shortname="blog-sijanb-com-np";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer class="site-footer clearfix"><section class="poweredby">Contents © 2025         <a href="mailto:sijanonly@gmail.com">Sijan Bhandari</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </section></footer>
+</div>
+
+    <script type="text/javascript" src="../../assets/js/jquery.js"></script><script type="text/javascript" src="../../assets/js/jquery.fitvids.js"></script><script type="text/javascript" src="../../assets/js/index.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-116715433-2"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-116715433-2');
+</script>
+</body>
+</html>
